@@ -4,13 +4,14 @@ main{
     padding: 0 vw(30, 1920);
     width:100%;
     overflow-x:hidden;
+    font-family: avenir-next-lt-pro-condensed, sans-serif;
 }
 
 .top_marquee{
   font-size: vw(200, 1920);
   font-weight: 700;
   white-space: nowrap;
-font-family: 'Avenir Next LT Pro';
+// font-family: 'Avenir Next LT Pro';
 
 font-weight: 800;
 
@@ -45,7 +46,7 @@ color: #000000;
 
   & span{
     /* Industrial Design */
-font-family: 'Avenir Next LT Pro';
+// font-family: 'Avenir Next LT Pro';
 font-weight: 800;
 font-size: 20px;
 line-height: 20px;
@@ -72,7 +73,7 @@ color: #000000;
 width: 215px;
 height: 40px;
 
-font-family: 'Avenir Next LT Pro';
+// font-family: 'Avenir Next LT Pro';
 
 font-weight: 500;
 font-size: 20px;
