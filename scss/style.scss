@@ -1,0 +1,22 @@
+// Base styles
+@use 'base/reset';
+@use 'base/variables' as *;
+@use 'base/functions' as *;
+@use 'base/mixins' as *;
+
+// Layout
+@use 'layout/header';
+@use 'layout/footer';
+
+// Components
+// @use 'components/button';
+// @use 'components/card';
+
+body {
+  font-family: $font-primary;
+}
+
+
+
+
+

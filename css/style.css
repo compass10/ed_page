@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header {
+  position: Fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+header .header_inner {
+  display: flex;
+  justify-content: space-between;
+  height: 5.1041666667vw;
+  padding: 1.5625vw;
+}
+header .header_inner .menu {
+  cursor: pointer;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */

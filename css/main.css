@@ -1,0 +1,74 @@
+main {
+  padding: 0 1.5625vw;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.top_marquee {
+  font-size: 10.4166666667vw;
+  font-weight: 700;
+  white-space: nowrap;
+  font-family: "Avenir Next LT Pro";
+  font-weight: 800;
+  /* or 100% */
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+.top_marquee span {
+  display: inline-block;
+  animation: rolling 10s linear infinite;
+}
+
+@keyframes rolling {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.top_comps {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.top_comps span {
+  /* Industrial Design */
+  font-family: "Avenir Next LT Pro";
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.main_visual {
+  margin-top: 5.2083333333vw;
+  width: 100%;
+}
+.main_visual .flex_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main_visual .flex_box .visual_text {
+  width: 215px;
+  height: 40px;
+  font-family: "Avenir Next LT Pro";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+.main_visual .flex_box .visual_text.right_text {
+  text-align: right;
+}
+.main_visual .flex_box .main_img {
+  max-width: 72.2916666667vw;
+}
+
+/*# sourceMappingURL=main.css.map */
