@@ -5,6 +5,10 @@ main {
   font-family: avenir-next-lt-pro-condensed, sans-serif;
 }
 
+.section {
+  position: relative;
+}
+
 .top_marquee {
   margin-left: -1.5625vw;
   width: 100vw;
@@ -77,39 +81,69 @@ main {
   width: 100%;
 }
 
+#textEd {
+  padding-top: 10.4166666667vw;
+  padding-bottom: 14.0625vw;
+}
 #textEd .text_flex {
   display: flex;
 }
 #textEd .text_flex .left_text {
-  font-family: Instrument;
+  font-family: Instrument Serif;
   font-weight: 400;
   font-style: Regular;
   font-size: 5.2083333333vw;
   line-height: 5.2083333333vw;
-  letter-spacing: -3%;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
 }
 #textEd .text_flex .center_text {
   display: flex;
   flex-direction: column;
   margin-left: 10.78125vw;
-  margin-right: 1.71875vw;
   font-family: Pretendard Variable;
   font-weight: 500;
   font-style: Medium;
   font-size: 1.4583333333vw;
   line-height: 2.0833333333vw;
-  letter-spacing: -3%;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
 }
+#textEd .text_flex .center_text .star svg {
+  animation: starRoll 3s ease alternate;
+}
+@keyframes starRoll {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359.999deg);
+  }
+}
 #textEd .text_flex .right_text {
-  font-family: Avenir Next LT Pro;
+  font-family: "avenir-next-lt-pro-condensed", sans-serif;
   font-weight: 500;
   font-style: Medium Condensed;
   font-size: 1.6666666667vw;
   line-height: 2.0833333333vw;
-  letter-spacing: -3%;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
+}
+#textEd .text_flex .under_text {
+  display: flex;
+  gap: 1.71875vw;
+}
+#textEd .man {
+  max-width: 9.84375vw;
+  position: absolute;
+  left: 29.53125vw;
+  bottom: -0.3125vw;
+}
+#textEd .chat_b {
+  max-width: 10.8333333333vw;
+  position: Absolute;
+  left: 35.9375vw;
+  bottom: 7.9166666667vw;
 }
 
 /*# sourceMappingURL=main.css.map */
