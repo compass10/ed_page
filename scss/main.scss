@@ -1,18 +1,20 @@
 @use 'base/functions' as *;
 
 main{
-    padding: 0 vw(30, 1920);
+    padding: vw(137,1920) vw(30, 1920) 0;
     width:100%;
     overflow-x:hidden;
     font-family: avenir-next-lt-pro-condensed, sans-serif;
 }
 
 .top_marquee{
+  margin-left:vw(-30, 1920);
+  width:100vw;
   font-size: vw(200, 1920);
   font-weight: 700;
   white-space: nowrap;
 // font-family: 'Avenir Next LT Pro';
-
+    line-height:vw(169,1920);
 font-weight: 800;
 
 /* or 100% */
@@ -26,7 +28,9 @@ color: #000000;
 
   & span{
     display:inline-block;
-    animation: rolling 10s linear infinite;
+    width:fit-content;
+
+    animation: rolling 15s linear infinite;
   }
 }
 @keyframes rolling {
@@ -43,13 +47,12 @@ color: #000000;
   justify-content: space-between;
   width:100%;
 
-
   & span{
     /* Industrial Design */
 // font-family: 'Avenir Next LT Pro';
 font-weight: 800;
-font-size: 20px;
-line-height: 20px;
+font-size: vw(20,1920);
+line-height: vw(20,1920);
 letter-spacing: -0.03em;
 text-transform: uppercase;
 
@@ -70,14 +73,14 @@ color: #000000;
 
   
     & .visual_text{
-width: 215px;
-height: 40px;
+width: vw(215,1920);
+height: vw(40,1920);
 
 // font-family: 'Avenir Next LT Pro';
 
 font-weight: 500;
-font-size: 20px;
-line-height: 20px;
+font-size: vw(20,1920);
+line-height: vw(20,1920);
 
 letter-spacing: -0.03em;
 text-transform: uppercase;
@@ -91,10 +94,61 @@ color: #000000;
     }
 
     & .main_img{
+      flex:1;
       max-width: vw(1388,1920);
+      & video{
+        width:100%;
+      }
     }
   }
 }
 
 
 // main_visual
+
+
+// textEd start
+#textEd{
+  & .text_flex{
+    display:flex;
+    
+    & .left_text{
+      font-family: Instrument;
+font-weight: 400;
+font-style: Regular;
+font-size: vw(100,1920);
+line-height: vw(100,1920);
+letter-spacing: -3%;
+text-transform: uppercase;
+
+    }
+    & .center_text{
+      display:flex;
+      flex-direction: column;
+      margin-left:vw(207,1920);
+      margin-right:vw(33,1920);
+      font-family: Pretendard Variable;
+font-weight: 500;
+font-style: Medium;
+font-size: vw(28, 1920);
+line-height: vw(40, 1920);
+letter-spacing: -3%;
+text-transform: uppercase;
+
+    }
+
+    & .right_text{
+      font-family: Avenir Next LT Pro;
+font-weight: 500;
+font-style: Medium Condensed;
+font-size: vw(32,1920);
+line-height: vw(40,1920);
+letter-spacing: -3%;
+text-transform: uppercase;
+
+    }
+  }
+}
+
+
+// textEd end
