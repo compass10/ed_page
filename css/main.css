@@ -295,6 +295,25 @@ main {
 #success .content .content_body {
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+#success .content .content_body .absol_img {
+  position: absolute;
+}
+#success .content .content_body .absol_img01 {
+  width: 9.6354166667vw;
+  top: 20.5729166667vw;
+  left: 36.5104166667vw;
+}
+#success .content .content_body .absol_img02 {
+  width: 9.7395833333vw;
+  top: 82.5520833333vw;
+  left: 38.2291666667vw;
+}
+#success .content .content_body .absol_img03 {
+  width: 9.7916666667vw;
+  top: 99.6875vw;
+  left: -12.1875vw;
 }
 #success .content .content_body table {
   flex: 1;
@@ -353,6 +372,44 @@ main {
 }
 #success .content .content_body table td:last-child {
   min-width: 12.2395833333vw;
+}
+
+#andMore .section_header {
+  display: flex;
+  justify-content: space-between;
+  font-family: "avenir-next-lt-pro-condensed", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 10.4166666667vw;
+  line-height: 10.4166666667vw;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+#andMore .section_header em {
+  font-family: Instrument Serif;
+  text-decoration: underline 0.4166666667vw;
+  text-underline-offset: 1.875vw;
+}
+#andMore .pass_list {
+  display: flex;
+}
+#andMore .pass_list .img_list {
+  flex: 1;
+}
+#andMore .pass_list .img_list li {
+  display: none;
+}
+#andMore .pass_list .article_list {
+  width: 60.15625vw;
+}
+#andMore .pass_list .article_list li .title_area {
+  display: flex;
+  justify-content: space-between;
+}
+#andMore .pass_list .article_list li .hiding_text {
+  overflow: hidden;
+  height: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

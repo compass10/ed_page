@@ -332,6 +332,28 @@ main {
     .content_body {
       display: flex;
       justify-content: space-between;
+      position: relative;
+
+      .absol_img {
+        position: absolute;
+      }
+
+      .absol_img01 {
+        width: vw(185, 1920);
+        top: vw(395, 1920);
+        left: vw(701, 1920);
+      }
+      .absol_img02 {
+        width: vw(187, 1920);
+        top: vw(1585, 1920);
+        left: vw(734, 1920);
+      }
+      .absol_img03 {
+        width: vw(188, 1920);
+        top: vw(1914, 1920);
+        left: vw(-234, 1920);
+      }
+
       table {
         flex: 1;
         height: fit-content;
@@ -405,3 +427,52 @@ main {
 }
 
 // succes end
+
+// andMore start
+#andMore {
+  .section_header {
+    display: flex;
+    justify-content: space-between;
+    font-family: $font-avenir;
+    font-style: italic;
+    font-weight: 500;
+    font-size: vw(200, 1920);
+    line-height: vw(200, 1920);
+
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+
+    color: #000000;
+    em {
+      font-family: $font-instru;
+      text-decoration: underline vw(8, 1920);
+      text-underline-offset: vw(36, 1920);
+    }
+  }
+
+  .pass_list {
+    display: flex;
+    .img_list {
+      flex: 1;
+      li {
+        display: none;
+      }
+    }
+    .article_list {
+      width: vw(1155, 1920);
+
+      li {
+        .title_area {
+          display: flex;
+          justify-content: space-between;
+        }
+        .hiding_text {
+          overflow: hidden;
+          height: 0;
+        }
+      }
+    }
+  }
+}
+
+// andMore end
