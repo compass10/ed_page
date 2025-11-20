@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ED</title>
-    <link rel="stylesheet" href="https://use.typekit.net/ebu3zus.css" />
+    <!-- <link rel="stylesheet" href="https://use.typekit.net/ebu3zus.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet"
@@ -113,79 +117,107 @@
         </div>
       </section>
       <section id="news" class="section section03">
-        <div class="sec_header">
-          <h2 class="header_tit">
-            <span>LATEST<em>NEWS</em></span>
-            <span>OF</span> <span>ED</span>
-          </h2>
-        </div>
-        <div class="news_area">
-          <ul class="news_list">
-            <li>
-              <a href="#">
-                <img src="./asset/images/main/02_01.png" alt="" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./asset/images/main/02_02.png" alt="" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./asset/images/main/02_03.png" alt="" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./asset/images/main/02_04.png" alt="" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./asset/images/main/02_05.png" alt="" />
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="slide_page_nation">
-          <div class="btn_prev pn_btn">
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="20"
-                cy="20"
-                r="19.5"
-                transform="rotate(180 20 20)"
-                stroke="black"
-              />
-              <path d="M23 12L15 20L23 28" stroke="black" stroke-width="3" />
-            </svg>
+        <div class="section_wrap">
+          <div class="sec_header">
+            <h2 class="header_tit">
+              <span>LATEST <em>NEWS</em></span>
+              <span>OF</span> <span>ED</span>
+            </h2>
           </div>
-          <div class="btn_next pn_btn">
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="20" cy="20" r="19.5" stroke="black" />
-              <path d="M17 28L25 20L17 12" stroke="black" stroke-width="3" />
-            </svg>
+          <div class="news_area news_swiper">
+            <ul class="news_list swiper-wrapper">
+              <li class="swiper-slide">
+                <a href="#">
+                  <img src="./asset/images/main/02_01.png" alt="" />
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a href="#">
+                  <img src="./asset/images/main/02_02.png" alt="" />
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a href="#">
+                  <img src="./asset/images/main/02_03.png" alt="" />
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a href="#">
+                  <img src="./asset/images/main/02_04.png" alt="" />
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a href="#">
+                  <img src="./asset/images/main/02_05.png" alt="" />
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a href="#">
+                  <img src="./asset/images/main/02_01.png" alt="" />
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a href="#">
+                  <img src="./asset/images/main/02_02.png" alt="" />
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a href="#">
+                  <img src="./asset/images/main/02_03.png" alt="" />
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a href="#">
+                  <img src="./asset/images/main/02_04.png" alt="" />
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a href="#">
+                  <img src="./asset/images/main/02_05.png" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="slide_page_nation">
+            <div class="btn_prev pn_btn">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="20"
+                  cy="20"
+                  r="19.5"
+                  transform="rotate(180 20 20)"
+                  stroke="black"
+                />
+                <path d="M23 12L15 20L23 28" stroke="black" stroke-width="3" />
+              </svg>
+            </div>
+            <div class="btn_next pn_btn">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="20" cy="20" r="19.5" stroke="black" />
+                <path d="M17 28L25 20L17 12" stroke="black" stroke-width="3" />
+              </svg>
+            </div>
           </div>
         </div>
         <div class="bottom_img">
           <img src="./asset/images/main/sec03_bottom_img.gif" alt="책보는gif" />
         </div>
         <div class="bottom_banner">
+          <!-- 이 부분 질문하기... -->
           <p>
-            Make your dream University your reality. You dream it, we help you
+            Make your dream University your reality.You dream it, we help you
             draw the path.
           </p>
         </div>
@@ -213,36 +245,38 @@
     </main>
 
     <script>
-      (function (d) {
-        var config = {
-            kitId: 'ebu3zus',
-            scriptTimeout: 3000,
-            async: true,
-          },
-          h = d.documentElement,
-          t = setTimeout(function () {
-            h.className =
-              h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive';
-          }, config.scriptTimeout),
-          tk = d.createElement('script'),
-          f = false,
-          s = d.getElementsByTagName('script')[0],
-          a;
-        h.className += ' wf-loading';
-        tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
-        tk.async = true;
-        tk.onload = tk.onreadystatechange = function () {
-          a = this.readyState;
-          if (f || (a && a != 'complete' && a != 'loaded')) return;
-          f = true;
-          clearTimeout(t);
-          try {
-            Typekit.load(config);
-          } catch (e) {}
-        };
-        s.parentNode.insertBefore(tk, s);
-      })(document);
+      // (function (d) {
+      //   var config = {
+      //       kitId: 'ebu3zus',
+      //       scriptTimeout: 3000,
+      //       async: true,
+      //     },
+      //     h = d.documentElement,
+      //     t = setTimeout(function () {
+      //       h.className =
+      //         h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive';
+      //     }, config.scriptTimeout),
+      //     tk = d.createElement('script'),
+      //     f = false,
+      //     s = d.getElementsByTagName('script')[0],
+      //     a;
+      //   h.className += ' wf-loading';
+      //   tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+      //   tk.async = true;
+      //   tk.onload = tk.onreadystatechange = function () {
+      //     a = this.readyState;
+      //     if (f || (a && a != 'complete' && a != 'loaded')) return;
+      //     f = true;
+      //     clearTimeout(t);
+      //     try {
+      //       Typekit.load(config);
+      //     } catch (e) {}
+      //   };
+      //   s.parentNode.insertBefore(tk, s);
+      // })(document);
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
