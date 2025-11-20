@@ -23,3 +23,20 @@ slides.forEach((slide) => {
     slide.style.width = `${baseWidth}px`;
   });
 });
+
+// article_list hover 시 img_list에 active 클래스 추가
+const articleItems = document.querySelectorAll('.article_list > li');
+const imgItems = document.querySelectorAll('.pass_list .img_list > li');
+
+articleItems.forEach((item, index) => {
+  item.addEventListener('mouseenter', () => {
+    imgItems.forEach((img) => img.classList.remove('active'));
+    if (imgItems[index]) {
+      imgItems[index].classList.add('active');
+    }
+  });
+
+  item.addEventListener('mouseleave', () => {
+    imgItems.forEach((img) => img.classList.remove('active'));
+  });
+});
