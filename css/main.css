@@ -225,6 +225,7 @@ main {
 
 #success {
   padding-top: 10.2604166667vw;
+  padding-bottom: 10.4166666667vw;
 }
 #success .title_area {
   width: fit-content;
@@ -255,6 +256,103 @@ main {
   position: absolute;
   top: 0;
   right: 0.1041666667vw;
+}
+#success .content {
+  padding-left: 12.2395833333vw;
+  padding-top: 8.3333333333vw;
+}
+#success .content .content_header {
+  height: 20.625vw;
+  width: 100%;
+  position: Relative;
+  margin-bottom: 7.8125vw;
+}
+#success .content .content_header .left_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 37.96875vw;
+}
+#success .content .content_header .center_gif {
+  position: absolute;
+  width: 9.6354166667vw;
+  left: 38.1770833333vw;
+  top: 8.3854166667vw;
+}
+#success .content .content_header .right_img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 37.96875vw;
+}
+#success .content .content_header .right_img a {
+  position: absolute;
+  top: 1.0416666667vw;
+  right: 0.9375vw;
+  width: 6.71875vw;
+  height: 2.0833333333vw;
+}
+#success .content .content_body {
+  display: flex;
+  justify-content: space-between;
+}
+#success .content .content_body table {
+  flex: 1;
+  height: fit-content;
+  max-width: 35.6770833333vw;
+}
+#success .content .content_body table tr:has(th) {
+  border-bottom: 2px solid #000;
+  line-height: 1.5625vw;
+}
+#success .content .content_body table tr:has(th) th {
+  padding-top: 2.34375vw;
+  padding-bottom: 0.5208333333vw;
+}
+#success .content .content_body table tr:has(td) {
+  border-top: 1px solid #000;
+}
+#success .content .content_body table th {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 1.5625vw;
+  line-height: 1.5625vw;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-align: right;
+  color: #000000;
+}
+#success .content .content_body table th:first-child {
+  text-align: left;
+}
+#success .content .content_body table td {
+  vertical-align: top;
+  text-align: right;
+  height: fit-content;
+  padding-bottom: 0.2604166667vw;
+  padding-top: 0.2604166667vw;
+  font-family: "Pretendard Variable";
+  font-weight: 500;
+  font-size: 1.0416666667vw;
+  line-height: 1.5625vw;
+  /* identical to box height, or 150% */
+  text-align: right;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+#success .content .content_body table td:first-child {
+  text-align: left;
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+#success .content .content_body table td:last-child {
+  min-width: 12.2395833333vw;
 }
 
 /*# sourceMappingURL=main.css.map */

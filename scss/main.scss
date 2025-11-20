@@ -260,6 +260,7 @@ main {
 
 #success {
   padding-top: vw(197, 1920);
+  padding-bottom: vw(200, 1920);
   .title_area {
     width: fit-content;
     position: relative;
@@ -289,6 +290,115 @@ main {
         position: absolute;
         top: 0;
         right: vw(2, 1920);
+      }
+    }
+  }
+  .content {
+    padding-left: vw(235, 1920);
+    padding-top: vw(160, 1920);
+
+    & .content_header {
+      height: vw(396, 1920);
+      width: 100%;
+      position: Relative;
+      margin-bottom: vw(150, 1920);
+      .left_img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: vw(729, 1920);
+      }
+      .center_gif {
+        position: absolute;
+        width: vw(185, 1920);
+        left: vw(733, 1920);
+        top: vw(161, 1920);
+      }
+      .right_img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: vw(729, 1920);
+        a {
+          position: absolute;
+          top: vw(20, 1920);
+
+          right: vw(18, 1920);
+          width: vw(129, 1920);
+          height: vw(40, 1920);
+        }
+      }
+    }
+    .content_body {
+      display: flex;
+      justify-content: space-between;
+      table {
+        flex: 1;
+        height: fit-content;
+        max-width: vw(685, 1920);
+        tr:has(th) {
+          border-bottom: 2px solid #000;
+          line-height: vw(30, 1920);
+          th {
+            padding-top: vw(45, 1920);
+            padding-bottom: vw(10, 1920);
+          }
+        }
+        tr:has(td) {
+          border-top: 1px solid #000;
+        }
+
+        th {
+          font-family: 'Pretendard Variable';
+          font-weight: 700;
+          font-size: vw(30, 1920);
+          line-height: vw(30, 1920);
+          letter-spacing: -0.03em;
+          text-transform: uppercase;
+          text-align: right;
+          color: #000000;
+
+          &:first-child {
+            text-align: left;
+          }
+        }
+        td {
+          vertical-align: top;
+          text-align: right;
+          height: fit-content;
+          padding-bottom: vw(5, 1920);
+          padding-top: vw(5, 1920);
+
+          font-family: 'Pretendard Variable';
+
+          font-weight: 500;
+          font-size: vw(20, 1920);
+          line-height: vw(30, 1920);
+          /* identical to box height, or 150% */
+          text-align: right;
+          letter-spacing: -0.03em;
+          text-transform: uppercase;
+
+          color: #000000;
+
+          &:first-child {
+            text-align: left;
+
+            font-family: 'Pretendard Variable';
+
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 30px;
+
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+
+            color: #000000;
+          }
+          &:last-child {
+            min-width: vw(235, 1920);
+          }
+        }
       }
     }
   }
