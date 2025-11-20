@@ -163,6 +163,7 @@ main {
 #news {
   background: #ebebeb;
   padding-top: 1.5104166667vw;
+  padding-bottom: 0.2604166667vw;
 }
 #news .sec_header h2 {
   font-size: 10.4166666667vw;
@@ -217,9 +218,43 @@ main {
   font-size: 2.6041666667vw;
   line-height: 2.6041666667vw;
   color: #fff;
-  letter-spacing: -0.15em;
+  letter-spacing: -0.03em;
   text-align: center;
   text-transform: uppercase;
+}
+
+#success {
+  padding-top: 10.2604166667vw;
+}
+#success .title_area {
+  width: fit-content;
+  position: relative;
+}
+#success .title_area h2 {
+  font-weight: 500;
+  width: fit-content;
+  font-size: 10.4166666667vw;
+  line-height: 9.375vw;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+  font-style: italic;
+}
+#success .title_area h2 em {
+  font-weight: 400;
+  font-family: Instrument Serif;
+  text-decoration: underline;
+}
+#success .title_area .title_img .chat_b {
+  max-width: 10.625vw;
+  top: 1.8229166667vw;
+  right: 8.2291666667vw;
+  position: absolute;
+}
+#success .title_area .title_img .man {
+  max-width: 9.6354166667vw;
+  position: absolute;
+  top: 0;
+  right: 0.1041666667vw;
 }
 
 /*# sourceMappingURL=main.css.map */

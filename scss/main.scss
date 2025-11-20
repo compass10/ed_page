@@ -192,7 +192,7 @@ main {
 #news {
   background: #ebebeb;
   padding-top: vw(29, 1920);
-
+  padding-bottom: vw(5, 1920);
   .sec_header h2 {
     font-size: vw(200, 1920);
     line-height: vw(180, 1920);
@@ -246,7 +246,7 @@ main {
       font-size: vw(50, 1920);
       line-height: vw(50, 1920);
       color: #fff;
-      letter-spacing: -0.15em;
+      letter-spacing: -0.03em;
       text-align: center;
 
       text-transform: uppercase;
@@ -255,3 +255,43 @@ main {
 }
 
 // news end
+
+// success start
+
+#success {
+  padding-top: vw(197, 1920);
+  .title_area {
+    width: fit-content;
+    position: relative;
+    h2 {
+      font-weight: 500;
+      width: fit-content;
+      font-size: vw(200, 1920);
+      line-height: vw(180, 1920);
+      letter-spacing: -0.07em;
+      text-transform: uppercase;
+      font-style: italic;
+      em {
+        font-weight: 400;
+        font-family: $font-instru;
+        text-decoration: underline;
+      }
+    }
+    .title_img {
+      .chat_b {
+        max-width: vw(204, 1920);
+        top: vw(35, 1920);
+        right: vw(158, 1920);
+        position: absolute;
+      }
+      .man {
+        max-width: vw(185, 1920);
+        position: absolute;
+        top: 0;
+        right: vw(2, 1920);
+      }
+    }
+  }
+}
+
+// succes end

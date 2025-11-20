@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ED</title>
-    <!-- <link rel="stylesheet" href="https://use.typekit.net/ebu3zus.css" /> -->
+    <link rel="stylesheet" href="https://use.typekit.net/ebu3zus.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -225,55 +225,58 @@
       <section id="success" class="section section04">
         <div class="title_area">
           <h2>
-            We can make <br />
-            SUCCESS STORY for you
+            <img
+              src="./asset/images/main/svg/sec04_title.svg"
+              alt="title_img"
+            />
           </h2>
 
           <div class="title_img">
             <img
+              class="chat_b"
               src="./asset/images/main/svg/chat_bubble_02.svg"
               alt="여기 진짜 붙는 애들이 다 모여있어요"
             />
             <img
+              class="man"
               src="./asset/images/main/sec04_title_img.gif"
               alt="노트북 보는 남자 이미지"
             />
           </div>
-          <hr class="bottom_line" />
         </div>
       </section>
     </main>
 
     <script>
-      // (function (d) {
-      //   var config = {
-      //       kitId: 'ebu3zus',
-      //       scriptTimeout: 3000,
-      //       async: true,
-      //     },
-      //     h = d.documentElement,
-      //     t = setTimeout(function () {
-      //       h.className =
-      //         h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive';
-      //     }, config.scriptTimeout),
-      //     tk = d.createElement('script'),
-      //     f = false,
-      //     s = d.getElementsByTagName('script')[0],
-      //     a;
-      //   h.className += ' wf-loading';
-      //   tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
-      //   tk.async = true;
-      //   tk.onload = tk.onreadystatechange = function () {
-      //     a = this.readyState;
-      //     if (f || (a && a != 'complete' && a != 'loaded')) return;
-      //     f = true;
-      //     clearTimeout(t);
-      //     try {
-      //       Typekit.load(config);
-      //     } catch (e) {}
-      //   };
-      //   s.parentNode.insertBefore(tk, s);
-      // })(document);
+      (function (d) {
+        var config = {
+            kitId: 'ebu3zus',
+            scriptTimeout: 3000,
+            async: true,
+          },
+          h = d.documentElement,
+          t = setTimeout(function () {
+            h.className =
+              h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive';
+          }, config.scriptTimeout),
+          tk = d.createElement('script'),
+          f = false,
+          s = d.getElementsByTagName('script')[0],
+          a;
+        h.className += ' wf-loading';
+        tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+          a = this.readyState;
+          if (f || (a && a != 'complete' && a != 'loaded')) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
