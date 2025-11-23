@@ -481,4 +481,164 @@ main {
   border-color: rgb(153, 153, 153);
 }
 
+#opportunity {
+  background-color: #FFEE6E;
+  padding-top: 7.8125vw;
+  padding-bottom: 13.125vw;
+}
+#opportunity .top_area {
+  text-align: center;
+}
+#opportunity .top_area .kr {
+  font-family: Pretendard;
+  font-weight: 600;
+  font-size: 1.4583333333vw;
+  line-height: 2.0833333333vw;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1.0416666667vw;
+}
+#opportunity .top_area .en {
+  font-family: "avenir-next-lt-pro-condensed", sans-serif;
+  font-weight: 500;
+  font-size: 1.0416666667vw;
+  line-height: 1.3020833333vw;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+#opportunity .top_area .bottom_text {
+  margin-top: 8.8541666667vw;
+}
+#opportunity .top_area .bottom_text p {
+  font-family: "avenir-next-lt-pro-condensed", sans-serif;
+  font-weight: 500;
+  font-size: 10.4166666667vw;
+  line-height: 9.375vw;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+#opportunity .top_area .bottom_text p img {
+  max-width: 7.96875vw;
+  max-height: 7.4479166667vw;
+  width: 7.96875vw;
+  height: 7.4479166667vw;
+  object-fit: cover;
+}
+#opportunity .top_area .bottom_text p:nth-child(2) {
+  justify-content: right;
+}
+#opportunity .top_area .top_img_list li {
+  position: absolute;
+  max-width: 9.7916666667vw;
+}
+#opportunity .top_area .top_img_list li img {
+  width: 100%;
+}
+#opportunity .top_area .top_img_list li:nth-child(1) {
+  top: 6.6145833333vw;
+  left: 36.875vw;
+}
+#opportunity .top_area .top_img_list li:nth-child(2) {
+  top: 16.6145833333vw;
+  left: 8.4375vw;
+}
+#opportunity .top_area .top_img_list li:nth-child(3) {
+  top: 16.5625vw;
+  right: 1.5625vw;
+}
+#opportunity .top_area .top_img_list li:nth-child(4) {
+  top: 28.5416666667vw;
+  left: 3.9583333333vw;
+}
+#opportunity .top_area .top_img_list li:nth-child(5) {
+  top: 29.4791666667vw;
+  right: 15vw;
+}
+#opportunity .top_area .top_img_list li:nth-child(6) {
+  top: 31.1458333333vw;
+  right: 8.4375vw;
+}
+#opportunity .top_area .top_img_list li:nth-child(7) {
+  top: 35.1041666667vw;
+  right: 3.75vw;
+}
+#opportunity .bottom_area {
+  margin-top: 11.71875vw;
+  padding-left: 12.2395833333vw;
+}
+#opportunity .bottom_area .bottom_img_list li {
+  position: absolute;
+  max-width: 9.7916666667vw;
+}
+#opportunity .bottom_area .bottom_img_list img {
+  width: 100%;
+}
+#opportunity .bottom_area .bottom_img_list li:nth-child(1) {
+  bottom: 28.8541666667vw;
+  left: 2.65625vw;
+}
+#opportunity .bottom_area .bottom_img_list li:nth-child(2) {
+  bottom: 36.9791666667vw;
+  left: 8.59375vw;
+}
+#opportunity .bottom_area .bottom_img_list li:nth-child(3) {
+  bottom: -0.6770833333vw;
+  right: 36.1979166667vw;
+}
+#opportunity .bottom_area .bottom_img_list li:nth-child(4) {
+  bottom: -0.6770833333vw;
+  right: 13.28125vw;
+}
+#opportunity .bottom_area .bottom_img_list li:nth-child(5) {
+  bottom: 7.9166666667vw;
+  right: 5.3125vw;
+}
+#opportunity .bottom_area .grid_row {
+  max-width: 66.7708333333vw;
+  align-items: center;
+  display: flex;
+  gap: 13.90625vw;
+}
+#opportunity .bottom_area .grid_row:first-child {
+  margin-bottom: 4.7916666667vw;
+}
+#opportunity .bottom_area .grid_row .hiding_text {
+  display: flex;
+  flex: 0;
+  overflow: hidden;
+  transition: flex 0.8s ease-out;
+  justify-content: space-between;
+}
+#opportunity .bottom_area .grid_row .hiding_text.active {
+  flex: 1;
+}
+#opportunity .bottom_area .grid_row .hiding_text .counting {
+  font-family: Instrument Serif;
+  font-weight: 400;
+  font-size: 5.2083333333vw;
+  flex-shrink: 0;
+  line-height: 5.2083333333vw;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+#opportunity .bottom_area .grid_row .hiding_text p {
+  font-family: Pretendard Variable;
+  font-weight: 400;
+  font-size: 0.8333333333vw;
+  line-height: 1.5625vw;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+#opportunity .bottom_area .grid_row .floating {
+  min-width: 17.8125vw;
+  font-weight: 500;
+  font-size: 2.6041666667vw;
+  line-height: 2.6041666667vw;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
 /*# sourceMappingURL=main.css.map */

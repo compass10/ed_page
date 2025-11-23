@@ -40,3 +40,12 @@ articleItems.forEach((item, index) => {
     imgItems.forEach((img) => img.classList.remove('active'));
   });
 });
+
+// #opportunity .bottom_area .hiding_text가 화면에 보일 때 active 추가 + counting 애니메이션
+inView('#opportunity .bottom_area .hiding_text', (el) => {
+  el.classList.add('active');
+  // counting 애니메이션
+countUp('#opportunity .bottom_area .counting');
+});
+
+
