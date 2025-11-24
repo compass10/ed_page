@@ -5,6 +5,7 @@ main {
   width: 100%;
   overflow-x: hidden;
   font-family: avenir-next-lt-pro-condensed, sans-serif;
+  background-color: #fff;
 }
 .section {
   position: relative;
@@ -21,7 +22,7 @@ main {
 }
 
 #topSection {
-  padding-top: vw(137, 1920);
+  padding-top: vw(108, 1920);
 }
 
 .top_marquee {
@@ -33,7 +34,7 @@ main {
   // font-family: 'Avenir Next LT Pro';
   line-height: vw(169, 1920);
   font-weight: 800;
-
+  
   /* or 100% */
   letter-spacing: -0.03em;
   text-transform: uppercase;
@@ -59,7 +60,6 @@ main {
   display: flex;
   justify-content: space-between;
   width: 100%;
-
   & span {
     /* Industrial Design */
     // font-family: 'Avenir Next LT Pro';
@@ -68,8 +68,8 @@ main {
     line-height: vw(20, 1920);
     letter-spacing: -0.03em;
     text-transform: uppercase;
-
-    color: #000000;
+    mix-blend-mode: difference;
+    color: #fff;
   }
 }
 
@@ -134,11 +134,12 @@ main {
     & .center_text {
       display: flex;
       flex-direction: column;
+      gap:vw(40,1920);
       margin-left: vw(207, 1920);
       font-family: Pretendard Variable;
       font-weight: 500;
       font-style: Medium;
-      font-size: vw(28, 1920);
+      font-size: clamp(16px, vw(28, 1920) , 28px);
       line-height: vw(40, 1920);
       letter-spacing: -0.03em;
       text-transform: uppercase;
@@ -373,7 +374,7 @@ main {
         th {
           font-family: 'Pretendard Variable';
           font-weight: 700;
-          font-size: vw(30, 1920);
+          font-size: clamp(14px ,vw(30, 1920) , 18px);
           line-height: vw(30, 1920);
           letter-spacing: -0.03em;
           text-transform: uppercase;
@@ -394,7 +395,7 @@ main {
           font-family: 'Pretendard Variable';
 
           font-weight: 500;
-          font-size: vw(20, 1920);
+          font-size: clamp(13px, vw(20, 1920), 16px);
           line-height: vw(30, 1920);
           /* identical to box height, or 150% */
           text-align: right;
@@ -735,3 +736,169 @@ text-transform: uppercase;
 }
 
 // opportunity end
+
+// portfolio start
+  #portfolio{
+    background-color:#000;
+    color:#fff;
+    padding-bottom:vw(202,1920);
+    .section_header{
+      display:flex;
+    align-items: end;
+      padding-top:vw(30,1920);
+      margin-bottom: vw(80,1920);
+      .title{
+        font-family: $font-avenir;
+font-weight: 500;
+        margin-right:vw(86,1920);
+font-size: vw(100,1920);
+
+line-height: vw(100,1920);
+letter-spacing: -0.03em;
+text-transform: uppercase;
+
+      }
+      .box{
+        display:flex;
+        margin-bottom:vw(26,1920);
+        margin-right:vw(133,1920);
+      }
+      .star{
+        width:vw(19.14, 1920);
+margin-right:vw(215,1920);
+      }
+      .text_01,.text_02{
+        font-family:$font-avenir;
+font-weight: 500;
+font-size: vw(20,1920);
+line-height: vw(20,1920);
+letter-spacing: -0.03em;
+text-transform: uppercase;
+      }
+      .text_01{
+        margin-right:vw(84,1920)
+      }
+      .img_01{
+        max-width:vw(177,1920);
+      }
+
+      .right_text{
+        font-family: $font-avenir;
+font-weight: 500;
+font-size:vw(100,1920);
+line-height: vw(100,1920);
+letter-spacing: -0.03em;
+text-align: right;
+text-transform: uppercase;
+          flex:1;
+      }
+    }
+    .video_area{
+      width:100%;
+      aspect-ratio: 1860 / 1046 auto;
+      video{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+      }
+      
+    }
+
+    .port_box{
+      position:relative;
+
+      .port_slide{
+              width:calc(100% - vw(70,1920));
+      // padding-right:vw(30,1920);
+      overflow:hidden;
+      padding:vw(100,1920) 0;
+      }
+    }
+
+
+.port_list{
+  gap: vw(20,1920);
+
+  li{
+   width: vw(341,1920);
+   height: vw(510,1920);
+    transition:all 0.5s ease;
+    position:relative;
+   img{ 
+     width:100%;
+     height:100%;
+     object-fit: cover;
+     object-position: center;
+         transition:all 0.5s ease;
+   }
+   .right_text{
+    position:absolute;
+    font-family: $font-avenir;
+font-weight: 700;
+
+font-size: vw(20,1920);
+
+line-height: vw(20,1920);
+letter-spacing: -0.03em;
+text-transform: uppercase;
+top:0;
+    right:0;
+    transition:all 0.5s ease;
+    opacity:0;
+    visibility: hidden;;
+
+    .when{
+      margin-left:vw(8,1920);
+    }
+   }
+   
+   &:hover{
+     z-index:10;
+     img{
+      transform:rotate(-10deg);
+
+    }
+    .right_text{
+      transform:translateX(100%);
+      opacity:1;
+      visibility: visible;;
+    }
+   }
+ }
+ &:has(li:hover) li:not(:hover){
+  opacity:0.5;
+ }
+}
+
+.port_next_btn{
+  position:absolute;
+  top:50%;
+  right:0;
+  z-index:10;
+}
+.bottom_bar{
+  font-family: $font-avenir;
+font-weight: 500;
+
+font-size: vw(40,1920);
+
+line-height: vw(50,1920);
+letter-spacing: -0.03em;
+text-align: center;
+text-transform: uppercase;
+color:#fff;
+padding:10px;
+width:100%;
+border-radius:999px;
+border:1px solid #fff;
+cursor: pointer;
+&:hover{
+  color:#000;
+  background-color: #fff;
+  border-color:#000;
+}
+}
+  }
+
+
+// portfolio end

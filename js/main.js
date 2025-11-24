@@ -24,6 +24,17 @@ slides.forEach((slide) => {
   });
 });
 
+
+const portSwiper = new Swiper('.port_slide', {
+  loop:true,
+  slidesPerView:'auto',
+  allowTouchMove: false,
+    navigation: {
+    nextEl: '.port_next_btn',
+    clickable: true,
+  },
+})
+
 // article_list hover 시 img_list에 active 클래스 추가
 const articleItems = document.querySelectorAll('.article_list > li');
 const imgItems = document.querySelectorAll('.pass_list .img_list > li');
