@@ -540,3 +540,198 @@ main {
 }
 
 // andMore end
+
+
+// opportunity start
+
+#opportunity{
+  background-color:#FFEE6E;
+  padding-top: vw(150, 1920);
+  padding-bottom:vw(252,1920);
+    .top_area{
+      text-align:center;
+
+      .kr{
+        font-family: Pretendard;
+font-weight: 600;
+font-size: vw(28,1920);
+
+line-height: vw(40,1920);
+letter-spacing: -0.03em;
+text-align: center;
+text-transform: uppercase;
+        margin-bottom:vw(20,1920);
+      }
+      .en{
+        font-family: $font-avenir;
+font-weight: 500;
+font-size: vw(20,1920);
+
+line-height: vw(25,1920);
+letter-spacing: -0.03em;
+text-align: center;
+
+      }
+
+      .bottom_text{
+        margin-top:vw(170,1920);
+        p{
+          font-family: $font-avenir;
+font-weight: 500;
+font-size: vw(200,1920);
+line-height: vw(180,1920);
+letter-spacing: -0.03em;
+text-transform: uppercase;
+display:flex;
+align-items: center;
+          img{
+            max-width:vw(153,1920);
+            max-height:vw(143,1920);
+            width:vw(153,1920);
+            height:vw(143,1920);
+            object-fit: cover;
+          }
+                  &:nth-child(2){
+          justify-content: right;;
+        }
+        }
+
+
+      }
+
+      .top_img_list{
+        li{
+          position:absolute;
+          max-width:vw(188,1920);
+          img{
+            width:100%;
+          }
+
+          &:nth-child(1){
+            top:vw(127,1920);
+            left:vw(708,1920);
+          }
+          &:nth-child(2){
+            top:vw(319,1920);
+            left:vw(162,1920);
+          }
+          &:nth-child(3){
+            top:vw(318,1920);
+            right:vw(30,1920);
+          }
+          &:nth-child(4){
+            top:vw(548,1920);
+            left:vw(76,1920);
+          }
+          &:nth-child(5){
+            top:vw(566,1920);
+            right:vw(288,1920);
+          }
+          &:nth-child(6){
+            top:vw(598,1920);
+            right:vw(162,1920);
+          }
+          &:nth-child(7){
+            top:vw(674,1920);
+            right:vw(72,1920);
+          }
+        }
+      }
+
+
+    }
+
+    .bottom_area{
+      margin-top:vw(225,1920);
+      padding-left:vw(235,1920);
+      .bottom_img_list{
+        li{
+          position:absolute;
+          max-width:vw(188,1920);
+        }
+        img{
+          width:100%;
+
+        }
+        li:nth-child(1){
+          bottom:vw(554,1920);
+          left:vw(51,1920);
+        }
+        li:nth-child(2){
+          bottom:vw(710,1920);
+          left:vw(165,1920);
+        }
+        li:nth-child(3){
+          bottom:vw(-13,1920);
+          right:vw(695,1920);
+        }
+        li:nth-child(4){
+          bottom:vw(-13,1920);
+          right:vw(255,1920);
+        }
+        li:nth-child(5){
+          bottom:vw(152,1920);
+          right:vw(102,1920);
+        }
+
+      }
+
+      .grid_row{
+        max-width:vw(1282,1920);
+        align-items: center;
+         display:flex;
+         gap:vw(267,1920);
+        &:first-child{
+          margin-bottom:vw(92,1920);
+        }
+                 
+        .hiding_text{
+                  display:flex;
+          flex:0;
+          overflow:hidden;
+          transition: flex 0.8s ease-out;
+          justify-content: space-between;
+          &.active{
+            flex:1;
+          }
+          .counting{
+
+            font-family: $font-instru;
+font-weight: 400;
+            
+font-size: vw(100,1920);;
+            flex-shrink: 0;
+line-height: vw(100,1920);
+letter-spacing: -0.03em;
+text-transform: uppercase;
+
+
+          }
+          p{
+            font-family: Pretendard Variable;
+font-weight: 400;
+font-size: vw(16,1920);
+line-height: vw(30,1920);
+letter-spacing: -0.03em;
+text-transform: uppercase;
+
+          }
+
+        }
+          .floating{
+            min-width:vw(342,1920);
+font-weight: 500;
+
+font-size: vw(50,1920);
+
+line-height: vw(50,1920);
+letter-spacing: -0.03em;
+text-transform: uppercase;
+
+          }
+      }
+    }
+
+}
+
+// opportunity end
