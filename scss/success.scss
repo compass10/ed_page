@@ -1,0 +1,148 @@
+@use 'base/variables' as *;
+@use 'base/functions' as *;
+@use 'base/mixins' as *;
+
+// Success Stories 페이지 전용 스타일
+.page_content {
+  .sec_title {
+    margin-bottom: vw(41, 1920);
+  }
+}
+
+.sec_title_row {
+  display: flex;
+  justify-content: space-between;
+
+  &:nth-child(2) {
+    align-items: center;
+    gap: vw(88, 1920);
+  }
+
+  .left_col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: vw(18, 1920);
+
+    .desc {
+      font-family: $font-avenir;
+      font-weight: 500;
+      font-size: vw(30, 1920);
+      line-height: vw(35, 1920);
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+
+    .bottom_row {
+      display: flex;
+      justify-content: space-between;
+
+      .star {
+        width: vw(36, 1920);
+      }
+
+      .desc_kr {
+        font-family: $font-pretendard;
+        font-weight: 400;
+        font-size: vw(14, 1920);
+        line-height: vw(22, 1920);
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.success_grid {
+  display: grid;
+  grid-template-columns: repeat(4, vw(450, 1920));
+  gap: vw(60, 1920) vw(20, 1920);
+  margin-bottom: vw(60, 1920);
+
+  .success_item {
+    display: block;
+    width: vw(450, 1920);
+    height: vw(296, 1920);
+    border: none;
+    background: #d9d9d9;
+
+    &:hover {
+      border: 1px solid #000;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: vw(10, 1920);
+  margin-top: vw(80, 1920);
+  margin-bottom: vw(317, 1920);
+
+  .page_btn,
+  .page_num {
+    background: none;
+    border: none;
+    font-family: $font-pretendard;
+    font-weight: 400;
+    font-size: vw(14, 1920);
+    line-height: vw(16, 1920);
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Success Detail 페이지 스타일
+.success_detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: vw(20, 1920);
+  margin-bottom: vw(317, 1920);
+
+  .back_btn {
+    display: block;
+    width: vw(40, 1920);
+    height: vw(40, 1920);
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      circle {
+        fill: #fff;
+        stroke: #000;
+      }
+
+      path {
+        stroke: #000;
+      }
+    }
+
+    &:hover svg {
+      circle {
+        fill: #000;
+        stroke: #000;
+      }
+
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+
+  .detail_image {
+    max-width: vw(1155, 1920);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1155 / 770;
+    background: #d9d9d9;
+  }
+}

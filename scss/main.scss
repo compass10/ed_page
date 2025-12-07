@@ -7,19 +7,7 @@ main {
   font-family: avenir-next-lt-pro-condensed, sans-serif;
   background-color: #fff;
 }
-.section {
-  position: relative;
-  padding-left: vw(30, 1920);
-  padding-right: vw(30, 1920);
-}
-.section:has(.section_wrap) {
-  padding-left: 0;
-  padding-right: 0;
-  .section_wrap {
-    padding-left: vw(30, 1920);
-    padding-right: vw(30, 1920);
-  }
-}
+
 
 #topSection {
   padding-top: vw(108, 1920);

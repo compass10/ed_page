@@ -1,123 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
+<?php $pageTitle = '메인'; ?>
+<?php include 'includes/header.php'; ?>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ED</title>
-  <link rel="stylesheet" href="https://use.typekit.net/ebu3zus.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/main.css" />
-</head>
-
-<body>
-  <header id="header"> 
-    <div class="header_inner">
-      <div class="logo_area">
-        <img src="./asset/images/svg/logo.svg" alt="ed_logo" />
-      </div>
-      <div class="menu">
-        <img src="./asset/images/svg/hamburger.svg" alt="menu_icon" />
-      </div>
-    </div>
-    
-
-  </header>
-<div class="side_menu">
-      <div class="top_area">
-        <div class="left">
-          MENU
-        </div>
-        <div class="right">
-          <svg viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.540551 5.65713L6.19741 0.000273908L40.6233 34.4262L34.9664 40.083L0.540551 5.65713Z" fill="black"/>
-<path d="M5.65688 40.0831L2.73422e-05 34.4262L34.4259 0.000371933L40.0828 5.65723L5.65688 40.0831Z" fill="black"/>
-</svg>
-
-        </div>
-      </div>
-      <ul class="menu_list">
-        <li>
-          <div class="title">
-            <span class="num">01</span>
-            Who We Are
-          </div>
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black"/>
-</svg>
-
-        </li>
-        <li>
-          <div class="title">
-            <span class="num">02</span>
-            Contact Us
-          </div>
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black"/>
-</svg>
-
-        </li>
-        <li>
-          <div class="title">
-            <span class="num">03</span>
-            Success stories
-          </div>
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black"/>
-</svg>
-
-        </li>
-        <li>
-          <div class="title">
-            <span class="num">04</span>
-            Our Students
-          </div>
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black"/>
-</svg>
-
-        </li>
-        <li>
-          <div class="title">
-            <span class="num">05</span>
-            Portfolio
-          </div>
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black"/>
-</svg>
-
-        </li>
-        <li>
-          <div class="title">
-            <span class="num">06</span>
-            News
-          </div>
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black"/>
-</svg>
-
-        </li>
-      </ul>
-      <div class="bottom_links">
-        <div class="left_btn">
-          FOllow us :)
-        </div>
-        <div class="right_btns">
-          <a target="_blank" href="https://www.youtube.com/@user-drawing">
-            YoutubE
-          </a>
-          <a target="_blank" href="https://www.instagram.com/archive_ed_illust?utm_source=ig_web_button_share_s">
-            Instagram
-          </a>
-          <a target="_blank" href="https://blog.naver.com/sunsook1006">Blog #1</a>
-          <a target="_blank" href="https://blog.naver.com/sunsook1006">Blog #2</a>
-        </div>
-      </div>
-    </div>
   <main>
     <section id="topSection" class="section01 section">
       <div class="top_elements">
@@ -173,7 +56,7 @@
             </p>
             <p class="right_text">
               At ED, every acceptance is more than an outcome <br />
-              — it’s a story of one’s dream coming true.
+              — it's a story of one's dream coming true.
             </p>
           </div>
         </div>
@@ -268,7 +151,6 @@
         <img src="./asset/images/main/sec03_bottom_img.gif" alt="책보는gif" />
       </div>
       <div class="bottom_banner">
-        <!-- 이 부분 질문하기... -->
         <p>
           Make your dream University your reality.You dream it, we help you
           draw the path.
@@ -901,12 +783,12 @@ Because your dream deserves a real chance.
       </div>
       <div class="video_area">
         <video src="./asset/video/main/main_port.mp4" muted autoplay playsinline loop></video>
-      
+
       </div>
       <div class="port_box">
 
         <div class="port_slide">
-  
+
           <ul class="port_list swiper-wrapper">
             <li class="swiper-slide">
               <img src="./asset/images/main/sec_07_port_img_01.gif" alt="portpholio_img">
@@ -951,7 +833,7 @@ Because your dream deserves a real chance.
               </div>
             </li>
           </ul>
-  
+
         </div>
                 <div class="port_next_btn">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -969,190 +851,5 @@ Because your dream deserves a real chance.
       CHECK OUT Our Story
     </section>
   </main>
-  <footer id="footer">
-    <div class="floating_btn">
-      <p>COntact</p>
-      <p class="flex_row">
-        <span>
-          US
-        </span>
-        <span class="arrow">→→</span>
-      </p>
-    </div>
-    <div class="footer_inner">
-          <ul class="footer_info_list">
-            <li class="by_ed">
-              <div class="cont">
-                              <div class="title_area">
-                <span>
-                  CREATIVE JOURNEY, BY ED
-                </span>
-                <span>
-                  +
-                </span>
-              </div>
-              <div class="cont_area">
-                <div class="company">
-                  미대편입이드 With Us
-                </div>
-                <div class="doing">
-                  시각 | 영상 | 산업 | 공예
-                </div>
-                <div class="director">
-                  ED Illustration Design academy director JAEGYU PARK
-                </div>
-                <div class="copy">
-                  COPYRIGHT 2025 ED ILLUST ACADEMY. ALL RIGHTS RESERVED.
-                </div>
-              </div>
-              </div>
-            </li>
-            <li class="contact">
-          
-              <div class="cont">
-                    <div class="title_area">
-                <span>
-                  Contact Info
-                </span>
-                <span>
-                  +
-                </span>
-              </div>
-              <div class="cont_area">
-                <div class="time">
-                  <div class="work">
-                    <b>운영 시간</b> 09:00 AM - 10:00 PM
-                  </div>
-                  <div class="night">
-                    <b>저녁 시간</b> 05:00 PM - 06:00 PM
-                  </div>
-                </div>
-                <div class="call_mail">
-                  <div class="call">
-                    <b>T</b> +82 10 6225 9197
-                  </div>
-                  <div class="mail">
-                    <b>E</b> sanha10172@gmail.com
-                  </div>
-                </div>
-              </div>
-              </div>
-            </li>
-            <li class="location">
-              <div class="cont">
-                <div class="title_area">
-                <span>
-                  Location info
-                </span>
-                <span>
-                  +
-                </span>
-              </div>
-              
-              <div class="cont_area">
-                <div class="left_cont">
-                  <div class="aca_name">
-                    건대이드 본원
-                  </div>
-                  <div class="tel">
-                    +82 02 464 9197
-                  </div>
-                  <div class="adr">
-                    서울시 광진구 천호대로 512 군자빌딩 4층
-                  </div>
-                  <div class="adr_en">
-                    4F, Gunja Building, 512 Cheonho-daero, <br/>
-Gwangjin-gu, Seoul
-                  </div>
-                </div>
-                <div class="right_cont">
-                  <div class="aca_name">
-                    홍대이드
-                  </div>
-                              <div class="tel">
-                    +82 02 336 9543
-                  </div>
-                  <div class="adr">
-                    서울시 마포구 와우산로 107-1 은혜빌딩2층
-                  </div>
-                  <div class="adr_en">
-                    2F, Eunhye Building, 107-1 Wausan-ro, <br/>
-Mapo-gu, Seoul
-                  </div>
-                </div>
-              </div>
-              </div>
-            </li>
-            <li class="follow">
-              <div class="cont">
-                <div class="title_area">
-                <span>FOLLOW US</span>
-                <span>+</span>
-              </div>
-              <div class="cont_area">
-                <ul class="sns_list">
-                  <li class="youtube">
-                    <a href="#">Youtube →</a>
-                  </li>
-                  <li class="insta">
-                    <a href="#">
-                      Instagram →
-                    </a>
-                  </li>
-                  <li class="blog_01">
-                    <a href="#">
-                      Blog #1 →
-                    </a>
-                  </li>
-                  <li class="blog_02">
-                    <a href="#">
-                      Blog #2→
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              </div>
-            </li>
-    </ul>
-    </div>
 
-
-  </footer>
-  <script>
-    (function (d) {
-      var config = {
-        kitId: 'ebu3zus',
-        scriptTimeout: 3000,
-        async: true,
-      },
-        h = d.documentElement,
-        t = setTimeout(function () {
-          h.className =
-            h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive';
-        }, config.scriptTimeout),
-        tk = d.createElement('script'),
-        f = false,
-        s = d.getElementsByTagName('script')[0],
-        a;
-      h.className += ' wf-loading';
-      tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
-      tk.async = true;
-      tk.onload = tk.onreadystatechange = function () {
-        a = this.readyState;
-        if (f || (a && a != 'complete' && a != 'loaded')) return;
-        f = true;
-        clearTimeout(t);
-        try {
-          Typekit.load(config);
-        } catch (e) { }
-      };
-      s.parentNode.insertBefore(tk, s);
-    })(document);
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/script.js"></script>
-  <script src="./js/main.js"></script>
-</body>
-
-</html>
+<?php include 'includes/footer.php'; ?>

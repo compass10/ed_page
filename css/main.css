@@ -5,21 +5,6 @@ main {
   background-color: #fff;
 }
 
-.section {
-  position: relative;
-  padding-left: 1.5625vw;
-  padding-right: 1.5625vw;
-}
-
-.section:has(.section_wrap) {
-  padding-left: 0;
-  padding-right: 0;
-}
-.section:has(.section_wrap) .section_wrap {
-  padding-left: 1.5625vw;
-  padding-right: 1.5625vw;
-}
-
 #topSection {
   padding-top: 5.625vw;
 }

@@ -1,0 +1,73 @@
+@use 'base/variables' as *;
+@use 'base/functions' as *;
+@use 'base/mixins' as *;
+
+// News 페이지 전용 스타일
+.page_content {
+  .sec_title_row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: vw(31, 1920);
+  }
+}
+
+.news_filter {
+  display: flex;
+  gap: vw(10, 1920);
+  margin-bottom: vw(60, 1920);
+
+  .filter_btn {
+    padding: vw(10, 1920) vw(20, 1920);
+    border: 1px solid #000;
+    background: none;
+    color: #000;
+    font-family: $font-pretendard;
+    font-weight: 700;
+    font-size: vw(20, 1920);
+    line-height: vw(20, 1920);
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &.active {
+      background: #000;
+      color: #fff;
+    }
+  }
+}
+
+.news_list {
+  gap: vw(30, 1920);
+}
+
+.news_swiper .swiper-slide {
+  width: vw(415, 1920);
+  height: vw(500, 1920);
+  transition: width 0.3s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.slide_page_nation {
+  display: flex;
+  margin-top: vw(61, 1920);
+  margin-bottom: vw(142, 1920);
+  justify-content: flex-end;
+  gap: vw(15, 1920);
+
+  .pn_btn {
+    cursor: pointer;
+
+    &:hover svg {
+      fill: #000;
+
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+}

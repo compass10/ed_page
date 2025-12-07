@@ -71,11 +71,15 @@ text-transform: capitalize;
     .menu_list{
       flex:1;
       li{
-        border-bottom:2px solid #000;
-        display:flex;
+
+
+        a{
+                  border-bottom:2px solid #000;
+                  display:flex;
         align-items: center;
         justify-content: space-between;
         padding:vw(10,1920) 0;
+        }
         .title{
           font-family: $font-avenir;
 font-weight: 500;

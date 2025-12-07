@@ -1,0 +1,40 @@
+main {
+  padding-top: 5.1041666667vw;
+}
+
+.page_title {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5625vw;
+  font-family: "avenir-next-lt-pro-condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.0416666667vw;
+  line-height: 1.0416666667vw;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.page_title .num {
+  margin-right: 3.75vw;
+}
+
+.page_content {
+  padding-top: 2.1354166667vw;
+}
+
+.sec_title {
+  font-size: 10.4166666667vw;
+  line-height: 9.375vw;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.sec_title .avenir {
+  font-family: "avenir-next-lt-pro-condensed", sans-serif;
+  font-weight: 500;
+}
+.sec_title .instru {
+  font-family: Instrument Serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/*# sourceMappingURL=sub.css.map */

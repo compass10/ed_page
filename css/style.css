@@ -113,7 +113,7 @@ header .header_inner .menu {
 .side_menu .menu_list {
   flex: 1;
 }
-.side_menu .menu_list li {
+.side_menu .menu_list li a {
   border-bottom: 2px solid #000;
   display: flex;
   align-items: center;
@@ -308,6 +308,21 @@ header .header_inner .menu {
 
 body {
   font-family: "Noto Sans KR", sans-serif;
+}
+
+.section {
+  position: relative;
+  padding-left: 1.5625vw;
+  padding-right: 1.5625vw;
+}
+
+.section:has(.section_wrap) {
+  padding-left: 0;
+  padding-right: 0;
+}
+.section:has(.section_wrap) .section_wrap {
+  padding-left: 1.5625vw;
+  padding-right: 1.5625vw;
 }
 
 /*# sourceMappingURL=style.css.map */

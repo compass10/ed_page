@@ -1,0 +1,48 @@
+@use 'base/variables' as *;
+@use 'base/functions' as *;
+@use 'base/mixins' as *;
+
+// 서브페이지 공통 스타일
+main {
+  padding-top: vw(98, 1920);
+}
+
+// 서브페이지 타이틀 영역
+.page_title {
+  display: flex;
+  align-items: center;
+  padding-left: vw(30, 1920);
+  font-family: $font-avenir;
+  font-weight: 700;
+  font-size: vw(20, 1920);
+  line-height: vw(20, 1920);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+
+  .num {
+    margin-right: vw(72, 1920);
+  }
+}
+
+.page_content {
+  padding-top: vw(41, 1920);
+}
+
+.sec_title {
+  font-size: vw(200, 1920);
+  line-height: vw(180, 1920);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+
+  .avenir {
+    font-family: $font-avenir;
+    font-weight: 500;
+  }
+
+  .instru {
+    font-family: $font-instru;
+    font-weight: 400;
+    font-style: italic;
+  }
+}
+
