@@ -432,6 +432,12 @@
   margin-top: 2.34375vw;
   margin-bottom: 2.34375vw;
 }
+.contact_wrap .contact_right .right_content .pagination .page_btn,
+.contact_wrap .contact_right .right_content .pagination .page_num,
+.location_wrap .contact_right .right_content .pagination .page_btn,
+.location_wrap .contact_right .right_content .pagination .page_num {
+  color: #fff;
+}
 .contact_wrap .contact_right .right_content .board_list .board_header,
 .location_wrap .contact_right .right_content .board_list .board_header {
   display: flex;

@@ -46,3 +46,36 @@ main {
   }
 }
 
+// 공통 페이지네이션 스타일
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: vw(10, 1920);
+  margin-top: vw(40, 1920);
+
+  .page_btn,
+  .page_num {
+    background: none;
+    border: none;
+    font-family: $font-pretendard;
+    font-weight: 400;
+    font-size: vw(14, 1920);
+    line-height: vw(16, 1920);
+    letter-spacing: -0.03em;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+
+    &:disabled,
+    &[disabled] {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    &.active {
+      font-weight: 700;
+    }
+  }
+}
+

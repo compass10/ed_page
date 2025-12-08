@@ -37,4 +37,35 @@ main {
   font-style: italic;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5208333333vw;
+  margin-top: 2.0833333333vw;
+}
+.pagination .page_btn,
+.pagination .page_num {
+  background: none;
+  border: none;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 400;
+  font-size: 0.7291666667vw;
+  line-height: 0.8333333333vw;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+.pagination .page_btn:disabled, .pagination .page_btn[disabled],
+.pagination .page_num:disabled,
+.pagination .page_num[disabled] {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.pagination .page_btn.active,
+.pagination .page_num.active {
+  font-weight: 700;
+}
+
 /*# sourceMappingURL=sub.css.map */

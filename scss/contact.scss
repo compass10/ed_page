@@ -418,6 +418,13 @@
         }
       }
 
+      .pagination {
+        .page_btn,
+        .page_num {
+          color: #fff;
+        }
+      }
+
       .board_list {
         .board_header {
           display: flex;

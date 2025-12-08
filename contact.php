@@ -2,6 +2,25 @@
 $pageTitle = 'Contact Us';
 $isSubPage = true;
 $pageCss = 'contact';
+
+// DB 연결 (운영서버 lib.php 사용)
+include_once('../lib.php');
+
+// 페이지네이션 설정
+$nCount = 10; // 페이지당 표시 개수
+$pg = isset($_GET['pg']) ? (int)$_GET['pg'] : 1;
+if($pg < 1) $pg = 1;
+
+// 전체 개수 조회
+$total_sql = "SELECT COUNT(*) as cnt FROM $inquiry_table WHERE isw != '90'";
+$total_result = mysql_fetch_array(mysql_query($total_sql));
+$nTotalCount = $total_result['cnt'];
+$nTotalPage = ceil($nTotalCount / $nCount);
+
+// 현재 페이지 데이터 조회
+$nFrom = ($pg - 1) * $nCount;
+$inquiry_sql = "SELECT * FROM $inquiry_table WHERE isw != '90' ORDER BY ino DESC LIMIT $nFrom, $nCount";
+$inquiry_result = mysql_query($inquiry_sql);
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -164,43 +183,87 @@ $pageCss = 'contact';
                   <span class="col_status">상태</span>
                 </div>
                 <ul class="board_body">
-                  <!-- 샘플 데이터 - 실제로는 서버에서 불러옴 -->
+                  <?php
+                  if(mysql_num_rows($inquiry_result) > 0) {
+                    $num = $nTotalCount - $nFrom; // 전체 기준 번호
+                    while($inquiry = mysql_fetch_array($inquiry_result)) {
+                      // 이름 마스킹 (홍길동 -> 홍**)
+                      $name = mb_substr($inquiry['iname'], 0, 1, 'UTF-8') . '**';
+                      // 날짜 포맷
+                      $date = date('Y.m.d.', strtotime($inquiry['reg_date']));
+                      // 상태 클래스 및 텍스트
+                      $status_class = '';
+                      $status_text = '';
+                      switch($inquiry['isw']) {
+                        case '5': $status_class = 'waiting'; $status_text = '답변대기'; break;
+                        case '7': $status_class = 'waiting'; $status_text = '상담보류'; break;
+                        case '10': $status_class = 'complete'; $status_text = '답변완료'; break;
+                      }
+                  ?>
                   <li class="board_item">
-                    <span class="col_no">70</span>
-                    <span class="col_title">올해 편입 실기 관련 문의드립니다.</span>
-                    <span class="col_author">김**</span>
-                    <span class="col_date">2025.10.21.</span>
-                    <span class="col_status complete">답변완료</span>
+                    <span class="col_no"><?=$num?></span>
+                    <span class="col_title"><a href="javascript:alert('개인정보보호정책과 관련하여 질문의 내용은 타인에게 공개되지 않으며, 답변은 문의 시 등록하신 이메일로 동시 발송됩니다.');"><?=htmlspecialchars($inquiry['isubject'])?></a></span>
+                    <span class="col_author"><?=$name?></span>
+                    <span class="col_date"><?=$date?></span>
+                    <span class="col_status <?=$status_class?>"><?=$status_text?></span>
                   </li>
+                  <?php
+                      // 답변완료인 경우 RE 행 추가
+                      if($inquiry['isw'] == '10') {
+                  ?>
                   <li class="board_item reply">
                     <span class="col_no"></span>
-                    <span class="col_title">[re] 올해 편입 실기 관련 문의드립니다.</span>
+                    <span class="col_title"><a href="javascript:alert('개인정보보호정책과 관련하여 질문의 내용은 타인에게 공개되지 않으며, 답변은 문의 시 등록하신 이메일로 동시 발송됩니다.');">[re] <?=htmlspecialchars($inquiry['isubject'])?></a></span>
                     <span class="col_author">관리자</span>
-                    <span class="col_date">2025.10.22.</span>
+                    <span class="col_date"><?=$date?></span>
                     <span class="col_status"></span>
                   </li>
+                  <?php
+                      }
+                      $num--;
+                    }
+                  } else {
+                  ?>
                   <li class="board_item">
-                    <span class="col_no">69</span>
-                    <span class="col_title">수강 등록 절차 문의</span>
-                    <span class="col_author">이**</span>
-                    <span class="col_date">2025.10.18.</span>
-                    <span class="col_status waiting">답변대기</span>
+                    <span class="col_no">-</span>
+                    <span class="col_title">등록된 문의가 없습니다.</span>
+                    <span class="col_author">-</span>
+                    <span class="col_date">-</span>
+                    <span class="col_status">-</span>
                   </li>
-                  <li class="board_item">
-                    <span class="col_no">68</span>
-                    <span class="col_title">학사편입 준비 기간 관련 상담 요청</span>
-                    <span class="col_author">박**</span>
-                    <span class="col_date">2025.10.15.</span>
-                    <span class="col_status complete">답변완료</span>
-                  </li>
-                  <li class="board_item reply">
-                    <span class="col_no"></span>
-                    <span class="col_title">[re] 학사편입 준비 기간 관련 상담 요청</span>
-                    <span class="col_author">관리자</span>
-                    <span class="col_date">2025.10.16.</span>
-                    <span class="col_status"></span>
-                  </li>
+                  <?php } ?>
                 </ul>
+                <?php if($nTotalPage > 1) { ?>
+                <div class="pagination">
+                  <?php
+                  // 이전 버튼
+                  if($pg > 1) {
+                    echo '<a href="?pg='.($pg-1).'#board" class="page_btn prev">←</a>';
+                  } else {
+                    echo '<span class="page_btn prev" disabled>←</span>';
+                  }
+
+                  // 페이지 번호 (10개 단위)
+                  $startPage = floor(($pg - 1) / 10) * 10 + 1;
+                  $endPage = min($startPage + 9, $nTotalPage);
+
+                  for($i = $startPage; $i <= $endPage; $i++) {
+                    if($i == $pg) {
+                      echo '<span class="page_num active">'.$i.'</span>';
+                    } else {
+                      echo '<a href="?pg='.$i.'#board" class="page_num">'.$i.'</a>';
+                    }
+                  }
+
+                  // 다음 버튼
+                  if($pg < $nTotalPage) {
+                    echo '<a href="?pg='.($pg+1).'#board" class="page_btn next">→</a>';
+                  } else {
+                    echo '<span class="page_btn next" disabled>→</span>';
+                  }
+                  ?>
+                </div>
+                <?php } ?>
               </div>
             </div>
           </div>

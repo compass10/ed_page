@@ -1,3 +1,33 @@
+// 필터링 함수
+function filterSlides() {
+  const activeFilters = document.querySelectorAll('.filter_btn.active');
+  const isAll = document.querySelector('.filter_btn[data-filter="all"]').classList.contains('active');
+  const slides = document.querySelectorAll('.news_swiper .swiper-slide');
+
+  // 선택된 필터 목록
+  const selectedFilters = [];
+  activeFilters.forEach(btn => {
+    if (btn.dataset.filter !== 'all') {
+      selectedFilters.push(btn.dataset.filter);
+    }
+  });
+
+  // 슬라이드 표시/숨김
+  slides.forEach(slide => {
+    const category = slide.dataset.category;
+    if (isAll || selectedFilters.includes(category)) {
+      slide.style.display = '';
+    } else {
+      slide.style.display = 'none';
+    }
+  });
+
+  // Swiper 업데이트
+  if (typeof newsSwiper !== 'undefined') {
+    newsSwiper.update();
+  }
+}
+
 // 필터 버튼 토글
 document.querySelectorAll('.filter_btn').forEach(btn => {
   btn.addEventListener('click', function() {
@@ -18,6 +48,9 @@ document.querySelectorAll('.filter_btn').forEach(btn => {
         document.querySelector('.filter_btn[data-filter="all"]').classList.add('active');
       }
     }
+
+    // 필터링 적용
+    filterSlides();
   });
 });
 

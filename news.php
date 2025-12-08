@@ -2,6 +2,39 @@
 $pageTitle = 'News';
 $isSubPage = true;
 $pageCss = 'news';
+
+// DB 연결 (운영서버 lib.php 사용)
+include_once('../lib.php');
+
+// 뉴스 데이터 조회 (여러 게시판에서 가져오기 + 날짜순 정렬)
+// notice: 수강생 모집 / review: 합격 소식 / guide: ETC
+$news_sql = "SELECT * FROM $board_table
+             WHERE bid IN ('notice', 'review', 'guide')
+             AND is_hidden='N'
+             ORDER BY bregdate DESC
+             LIMIT 0, 30";
+$news_result = mysql_query($news_sql);
+
+// bid별 카테고리 매핑
+$category_map = array(
+    'notice' => 'recruit',   // 수강생 모집
+    'review' => 'success',   // 합격 소식
+    'guide'  => 'etc'        // ETC
+);
+
+// bid별 썸네일 경로 매핑
+$thumb_path_map = array(
+    'notice' => 'thumb/notice/',
+    'review' => 'thumb/review/',
+    'guide'  => 'thumb/guide/'
+);
+
+// bid별 상세페이지 pcode 매핑
+$pcode_map = array(
+    'notice' => '1000002',
+    'review' => '3000012',
+    'guide'  => '5000020'
+);
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -31,56 +64,36 @@ $pageCss = 'news';
       </div>
       <div class="news_area news_swiper">
         <ul class="news_list swiper-wrapper">
-          <li class="swiper-slide">
-            <a href="#">
-              <img src="./asset/images/main/02_01.png" alt="" />
+          <?php
+          if(mysql_num_rows($news_result) > 0) {
+            while($news = mysql_fetch_array($news_result)) {
+              // bid에 따라 카테고리, 썸네일 경로, pcode 설정
+              $bid = $news['bid'];
+              $category = $category_map[$bid];
+              $thumb_path = $thumb_path_map[$bid];
+              $pcode = $pcode_map[$bid];
+              $thumb_img = $news['bimg'] ? $_url . $thumb_path . $news['bimg'] : "./asset/images/main/02_01.png";
+          ?>
+          <li class="swiper-slide" data-category="<?=$category?>">
+            <a href="../index.php?page=sub&pcode=<?=$pcode?>&mode=view&bno=<?=$news['bno']?>">
+              <img src="<?=$thumb_img?>" alt="<?=htmlspecialchars($news['btitle'])?>" />
+              <div class="news_info">
+                <span class="news_date"><?=substr($news['bregdate'], 0, 10)?></span>
+                <span class="news_title"><?=htmlspecialchars($news['btitle'])?></span>
+              </div>
             </a>
           </li>
+          <?php
+            }
+          } else {
+            // 데이터 없을 때 기본 이미지 표시
+          ?>
           <li class="swiper-slide">
             <a href="#">
-              <img src="./asset/images/main/02_02.png" alt="" />
+              <img src="./asset/images/main/02_01.png" alt="뉴스 준비중" />
             </a>
           </li>
-          <li class="swiper-slide">
-            <a href="#">
-              <img src="./asset/images/main/02_03.png" alt="" />
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="#">
-              <img src="./asset/images/main/02_04.png" alt="" />
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="#">
-              <img src="./asset/images/main/02_05.png" alt="" />
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="#">
-              <img src="./asset/images/main/02_01.png" alt="" />
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="#">
-              <img src="./asset/images/main/02_02.png" alt="" />
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="#">
-              <img src="./asset/images/main/02_03.png" alt="" />
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="#">
-              <img src="./asset/images/main/02_04.png" alt="" />
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="#">
-              <img src="./asset/images/main/02_05.png" alt="" />
-            </a>
-          </li>
+          <?php } ?>
         </ul>
       </div>
       <div class="slide_page_nation">
