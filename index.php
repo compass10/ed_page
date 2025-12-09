@@ -65,8 +65,9 @@
         <div class="man">
           <img src="./asset/images/main/main_text_img.gif" alt="남자 물감" />
         </div>
-        <div class="chat_b">
-          <img src="./asset/images/main/svg/chat_bubble_01.svg" alt="chat_bubble_01" />
+        <div class="title_img">
+          <img class="chat_b pc" src="./asset/images/main/svg/chat_bubble_01.svg" alt="chat_bubble_01" /> 
+          <img class="chat_b mobile" src="./asset/images/main/svg/chat_bubble_01_mob.svg" alt="chat_bubble_01" /> 
         </div>
       </div>
     </section>
@@ -164,21 +165,27 @@
         </h2>
 
         <div class="title_img">
-          <img class="chat_b" src="./asset/images/main/svg/chat_bubble_02.svg" alt="여기 진짜 붙는 애들이 다 모여있어요" />
+          <img class="chat_b pc" src="./asset/images/main/svg/chat_bubble_02.svg" alt="여기 진짜 붙는 애들이 다 모여있어요" />
+          <img class="chat_b mobile" src="./asset/images/main/svg/chat_bubble_02_mob.svg" alt="여기 진짜 붙는 애들이 다 모여있어요" />
           <img class="man" src="./asset/images/main/sec04_title_img.gif" alt="노트북 보는 남자 이미지" />
         </div>
       </div>
       <div class="content">
         <div class="content_header">
           <div class="left_img">
-            <img src="./asset/images/main/svg/chat_bubble_03.svg" alt="2025년도 주요 대학 합격생 명단" />
+            <img class="chat_b pc" src="./asset/images/main/svg/chat_bubble_03.svg" alt="2025년도 주요 대학 합격생 명단" />
+            <img class="chat_b mobile" src="./asset/images/main/svg/chat_bubble_03_mob.svg" alt="2025년도 주요 대학 합격생 명단" />
           </div>
           <div class="center_gif">
             <img src="./asset/images/main/sec04_cont_img.gif" alt="인사gif" />
           </div>
           <div class="right_img">
-            <img src="./asset/images/main/svg/chat_bubble_04.svg" alt="1998년부터 이어진 합격 데이터 보기" />
+            <img class="chat_b pc" src="./asset/images/main/svg/chat_bubble_04.svg" alt="1998년부터 이어진 합격 데이터 보기" />
+            <img class="chat_b mobile" src="./asset/images/main/svg/chat_bubble_04_mob.svg" alt="1998년부터 이어진 합격 데이터 보기" />
             <a href="#"></a>
+          </div>
+          <div class="bottom_center_gif">
+            <img src="./asset/images/main/sec03_bottom_img.gif" alt="책보는gif">
           </div>
         </div>
         <div class="content_body">
