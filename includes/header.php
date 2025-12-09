@@ -22,7 +22,7 @@
   <?php endif; ?>
 </head>
 
-<body>
+<body<?php if (isset($darkTheme) && $darkTheme): ?> class="dark-theme"<?php endif; ?>>
   <header id="header">
     <div class="header_inner">
       <div class="logo_area">

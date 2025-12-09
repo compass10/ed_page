@@ -73,6 +73,13 @@ header .header_inner .menu {
   cursor: pointer;
 }
 
+.dark-theme header .logo_area img {
+  filter: invert(1);
+}
+.dark-theme header .menu img {
+  filter: invert(1);
+}
+
 .side_menu {
   position: fixed;
   top: 0;

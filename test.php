@@ -1,7 +1,7 @@
 <?php
-$pageTitle = 'Our Students';
+$pageTitle = 'Test';
 $isSubPage = true;
-$pageCss = 'students';
+$pageCss = 'test';
 $darkTheme = true;
 ?>
 <?php include 'includes/header.php'; ?>

@@ -23,9 +23,19 @@ header {
       cursor: pointer;
     }
   }
+}
 
+// 다크 테마 헤더 스타일
+.dark-theme {
+  header {
+    .logo_area img {
+      filter: invert(1);
+    }
 
-
+    .menu img {
+      filter: invert(1);
+    }
+  }
 }
 
 
