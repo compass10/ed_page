@@ -75,7 +75,7 @@ $pcode_map = array(
               $thumb_img = $news['bimg'] ? $_url . $thumb_path . $news['bimg'] : "./asset/images/main/02_01.png";
           ?>
           <li class="swiper-slide" data-category="<?=$category?>">
-            <a href="../index.php?page=sub&pcode=<?=$pcode?>&mode=view&bno=<?=$news['bno']?>">
+            <a href="news_detail.php?bno=<?=$news['bno']?>">
               <img src="<?=$thumb_img?>" alt="<?=htmlspecialchars($news['btitle'])?>" />
               <div class="news_info">
                 <span class="news_date"><?=substr($news['bregdate'], 0, 10)?></span>

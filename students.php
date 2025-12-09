@@ -24,6 +24,49 @@ $darkTheme = true;
 
         <!-- 요소들은 JS에서 동적으로 생성됨 -->
       </div>
+
+      <div class="sec_title_row center">
+        <h2 class="sec_title">
+          <span class="avenir">Together,</span>
+          <span class="instru">we create.</span>
+        </h2>
+        <h2 class="sec_title">
+          <div class="line_box">
+            <p class="left_text">We dream,<br>we draw,<br>we cheer<br>for each other.</p>
+            <p class="right_text">We share<br>dreams,<br>colors,<br>and laughter.</p>
+          </div>
+          <span class="avenir">Together, we</span>
+          <span class="instru">grow.</span>
+        </h2>
+      </div>
+
+      <!-- 모바일 전용 이미지 스택 애니메이션 -->
+      <div class="mobile_image_stack">
+        <div class="stack_container">
+          <div class="stack_item" data-index="0">
+            <img src="./asset/images/student/01.JPG" alt="student1">
+          </div>
+          <div class="stack_item" data-index="1">
+            <img src="./asset/images/student/02.png" alt="student2">
+          </div>
+          <div class="stack_item" data-index="2">
+            <img src="./asset/images/student/03.JPG" alt="student3">
+          </div>
+          <div class="stack_item" data-index="3">
+            <img src="./asset/images/student/04.png" alt="student4">
+          </div>
+          <div class="stack_item" data-index="4">
+            <img src="./asset/images/student/05.jpeg" alt="student5">
+          </div>
+          <p class="stack_text_left">We dream,<br>we draw,<br>we cheer<br>for each other.</p>
+          <p class="stack_text_right">We share<br>dreams,<br>colors,<br>and laughter.</p>
+          <div class="stack_title">
+            <span class="avenir">together,</span><br/>
+            <span class="instru">we grow.</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 </main>
@@ -31,6 +74,7 @@ $darkTheme = true;
 <!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script>
   gsap.registerPlugin(MotionPathPlugin);
 
@@ -42,14 +86,15 @@ $darkTheme = true;
 
   // 원본 이미지 소스 배열
   const imageSources = [
-    './asset/images/main/02_01.png',
-    './asset/images/main/02_02.png',
-    './asset/images/main/02_03.png',
-    './asset/images/main/02_04.png',
-    './asset/images/main/02_05.png'
+    './asset/images/student/01.JPG',
+    './asset/images/student/02.png',
+    './asset/images/student/03.JPG',
+    './asset/images/student/04.png',
+    './asset/images/student/05.jpeg'
   ];
 
   let itemSpacing = 510;
+  let isInitialized = false;
 
   // 이미지 프리로드
   function preloadImages() {
@@ -65,6 +110,15 @@ $darkTheme = true;
 
   // 초기화
   async function init() {
+    // 이미 초기화되었으면 애니메이션만 재개
+    if (isInitialized) {
+      gsap.globalTimeline.resume();
+      return;
+    }
+
+    // globalTimeline이 pause 상태일 수 있으므로 resume
+    gsap.globalTimeline.resume();
+
     await preloadImages();
 
     // 임시 요소로 너비 계산
@@ -105,9 +159,9 @@ $darkTheme = true;
     // 각 요소에 독립적인 무한 반복 애니메이션
     items.forEach((item, i) => {
       // 각 요소의 시작 오프셋 (균등 분포)
-      const offsetTime = (i * spacingRatio) * duration;
+      const startProgress = i / itemCount;
 
-      gsap.to(item, {
+      const tween = gsap.to(item, {
         motionPath: {
           path: "#motionPath",
           align: "#motionPath",
@@ -117,7 +171,7 @@ $darkTheme = true;
         duration: duration,
         ease: "none",
         repeat: -1,
-        delay: -offsetTime,
+        paused: true,
         onRepeat: function () {
           // 한 바퀴 돌 때마다 다음 이미지로 교체
           const img = item.querySelector('img');
@@ -136,10 +190,46 @@ $darkTheme = true;
           }
         }
       });
+
+      // 초기 위치로 progress 설정 후 재생
+      tween.progress(startProgress);
+      tween.play();
+    });
+
+    isInitialized = true;
+  }
+
+  // DOM 로드 완료 후 초기화 (렌더링 안정화를 위해 지연)
+  function startInit() {
+    // 여러 번의 렌더링 사이클 후 실행
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          init();
+        }, 1000);
+      });
     });
   }
 
-  init();
+  if (document.readyState === 'complete') {
+    startInit();
+  } else {
+    window.addEventListener('load', startInit);
+  }
+
+  // bfcache에서 복원될 때 애니메이션 재개 (뒤로가기/앞으로가기)
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      gsap.globalTimeline.resume();
+    }
+  });
+
+  // 페이지 visibility 변경 시 처리 (탭 전환)
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      gsap.globalTimeline.resume();
+    }
+  });
 
   // fan_item에 호버 시 전체 멈춤 (이벤트 위임)
   fanWrap.addEventListener('mouseenter', (e) => {
@@ -153,6 +243,106 @@ $darkTheme = true;
       gsap.globalTimeline.resume();
     }
   }, true);
+
+  // 모바일 이미지 스택 애니메이션
+  function initMobileImageStack() {
+    if (window.innerWidth > 1024) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const stackContainer = document.querySelector('.stack_container');
+    const stackItems = document.querySelectorAll('.stack_item');
+    const totalItems = stackItems.length;
+
+    if (!stackContainer || totalItems === 0) return;
+
+    // 초기 상태 설정: 모든 이미지를 오른쪽 아래에 배치, 축소된 상태
+    stackItems.forEach((item, index) => {
+      if (index === 0) {
+        // 첫 번째 이미지는 위에 보이게
+        gsap.set(item, {
+          x: 0,
+          y: 0,
+          scale: 1,
+          zIndex: totalItems - index
+        });
+      } else {
+        // 나머지 이미지는 오른쪽 아래에서 대기, 120px 크기로 축소 (375px 기준 약 32%)
+        gsap.set(item, {
+          x: '30%',
+          y: '100%',
+          scale: 0.32,
+          zIndex: totalItems - index
+        });
+      }
+    });
+
+    // 스크롤 트리거 설정
+    const imageStack = document.querySelector('.mobile_image_stack');
+
+    ScrollTrigger.create({
+      trigger: imageStack,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 1,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        const segmentSize = 1 / (totalItems - 1);
+
+        stackItems.forEach((item, index) => {
+          if (index === 0) return; // 첫 번째 이미지는 고정
+
+          const itemStart = (index - 1) * segmentSize;
+          const itemEnd = index * segmentSize;
+
+          if (progress >= itemStart && progress <= itemEnd) {
+            // 현재 애니메이션 중인 이미지
+            const itemProgress = (progress - itemStart) / segmentSize;
+
+            // 오른쪽 아래에서 위로 올라오면서 확대 (120px 크기에서 시작)
+            gsap.to(item, {
+              x: `${(1 - itemProgress) * 30}%`,
+              y: `${(1 - itemProgress) * 100}%`,
+              scale: 0.32 + (itemProgress * 0.68),
+              duration: 0.1,
+              overwrite: true
+            });
+
+            // 이전 이미지는 위로 빠르게 스르륵 사라짐
+            if (index > 0) {
+              const prevItem = stackItems[index - 1];
+              gsap.to(prevItem, {
+                y: `${-itemProgress * 120}%`,
+                opacity: 1 - itemProgress,
+                duration: 0.15,
+                ease: "power2.out",
+                overwrite: true
+              });
+            }
+          } else if (progress > itemEnd) {
+            // 이미 지나간 이미지
+            gsap.set(item, { x: '0%', y: '0%', scale: 1 });
+          } else {
+            // 아직 안 온 이미지 (120px 크기)
+            gsap.set(item, { x: '30%', y: '100%', scale: 0.32 });
+          }
+        });
+      }
+    });
+  }
+
+  // 모바일에서만 실행
+  if (window.innerWidth <= 1024) {
+    initMobileImageStack();
+  }
+
+  // 리사이즈 시 재초기화
+  window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1024) {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+      initMobileImageStack();
+    }
+  });
 </script>
 
 <?php include 'includes/footer.php'; ?>

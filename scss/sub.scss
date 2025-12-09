@@ -79,3 +79,52 @@ main {
   }
 }
 
+@media (max-width: 1024px) {
+  main {
+    padding-top: mvw(54);
+  }
+
+  .page_title {
+    font-size: mvw(11);
+    line-height: mvw(11);
+    padding-left: mvw(16);
+    padding-right: mvw(16);
+    margin-bottom: mvw(12);
+  }
+
+  .section,
+  .section_wrap {
+    padding-left: mvw(16);
+    padding-right: mvw(16);
+  }
+
+  .section:has(.section_wrap) {
+    padding-left: 0;
+    padding-right: 0;
+
+    .section_wrap {
+      padding-left: mvw(16);
+      padding-right: mvw(16);
+    }
+  }
+
+  .sec_title {
+    font-size: mvw(50);
+    line-height: mvw(45);
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: mvw(28);
+
+    .avenir {
+      font-family: $font-avenir;
+      font-weight: 500;
+    }
+
+    .instru {
+      font-family: $font-instru;
+      font-weight: 400;
+      font-style: italic;
+    }
+  }
+}
+
