@@ -128,3 +128,23 @@ justify-content: space-between;
 
     }
   }
+
+
+@media (max-width: 1024px) {
+  #header  {
+    padding: vw(16, 375);
+    width: 100%;
+    height: vw(54, 375);
+    background: #fff;
+    .header_inner {
+      padding: unset;
+      display: flex;
+      justify-content: space-between;
+      height: unset;
+      img {
+        width: auto;
+        height: vw(24, 375);
+      }
+    }
+  }
+}

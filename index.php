@@ -65,8 +65,9 @@
         <div class="man">
           <img src="./asset/images/main/main_text_img.gif" alt="남자 물감" />
         </div>
-        <div class="chat_b">
-          <img src="./asset/images/main/svg/chat_bubble_01.svg" alt="chat_bubble_01" />
+        <div class="title_img">
+          <img class="chat_b pc" src="./asset/images/main/svg/chat_bubble_01.svg" alt="chat_bubble_01" /> 
+          <img class="chat_b mobile" src="./asset/images/main/svg/chat_bubble_01_mob.svg" alt="chat_bubble_01" /> 
         </div>
       </div>
     </section>
@@ -164,21 +165,27 @@
         </h2>
 
         <div class="title_img">
-          <img class="chat_b" src="./asset/images/main/svg/chat_bubble_02.svg" alt="여기 진짜 붙는 애들이 다 모여있어요" />
+          <img class="chat_b pc" src="./asset/images/main/svg/chat_bubble_02.svg" alt="여기 진짜 붙는 애들이 다 모여있어요" />
+          <img class="chat_b mobile" src="./asset/images/main/svg/chat_bubble_02_mob.svg" alt="여기 진짜 붙는 애들이 다 모여있어요" />
           <img class="man" src="./asset/images/main/sec04_title_img.gif" alt="노트북 보는 남자 이미지" />
         </div>
       </div>
       <div class="content">
         <div class="content_header">
           <div class="left_img">
-            <img src="./asset/images/main/svg/chat_bubble_03.svg" alt="2025년도 주요 대학 합격생 명단" />
+            <img class="chat_b pc" src="./asset/images/main/svg/chat_bubble_03.svg" alt="2025년도 주요 대학 합격생 명단" />
+            <img class="chat_b mobile" src="./asset/images/main/svg/chat_bubble_03_mob.svg" alt="2025년도 주요 대학 합격생 명단" />
           </div>
           <div class="center_gif">
             <img src="./asset/images/main/sec04_cont_img.gif" alt="인사gif" />
           </div>
           <div class="right_img">
-            <img src="./asset/images/main/svg/chat_bubble_04.svg" alt="1998년부터 이어진 합격 데이터 보기" />
+            <img class="chat_b pc" src="./asset/images/main/svg/chat_bubble_04.svg" alt="1998년부터 이어진 합격 데이터 보기" />
+            <img class="chat_b mobile" src="./asset/images/main/svg/chat_bubble_04_mob.svg" alt="1998년부터 이어진 합격 데이터 보기" />
             <a href="#"></a>
+          </div>
+          <div class="bottom_center_gif">
+            <img src="./asset/images/main/sec03_bottom_img.gif" alt="책보는gif">
           </div>
         </div>
         <div class="content_body">
@@ -190,8 +197,13 @@
                 <th>국민대학교</th>
                 <th>학사 1명 모집</th>
                 <th>1명 합격</th>
+                <th class="add_toggle">
+                  <svg width="34" height="34" viewBox="4 4 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.75 4.75A.75.75 0 0 1 15.5 4h.4a.5.5 0 0 1 .5.5V14h9.25a.75.75 0 0 1 0 1.5H16.4v9.25a.5.5 0 0 1-.5.5h-.4a.75.75 0 0 1-.75-.75V15.5H5.5a.75.75 0 0 1 0-1.5h9.25V5.5A.5.5 0 0 1 15.5 5h-.4a.75.75 0 0 1-.75-.75Z"/>
+                  </svg>
+                </th>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 1명 합격</td>
                 <td>김0영</td>
                 <td>영상디자인 학사</td>
@@ -202,13 +214,18 @@
                 <th>서울과학기술대학교</th>
                 <th>일반 2명 모집</th>
                 <th>2명 합격</th>
+                <th class="add_toggle">
+                  <svg width="34" height="34" viewBox="4 4 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.75 4.75A.75.75 0 0 1 15.5 4h.4a.5.5 0 0 1 .5.5V14h9.25a.75.75 0 0 1 0 1.5H16.4v9.25a.5.5 0 0 1-.5.5h-.4a.75.75 0 0 1-.75-.75V15.5H5.5a.75.75 0 0 1 0-1.5h9.25V5.5A.5.5 0 0 1 15.5 5h-.4a.75.75 0 0 1-.75-.75Z"/>
+                  </svg>
+                </th>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 1명 합격</td>
                 <td>김0윤</td>
                 <td>시각디자인전공</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 1명 합격</td>
                 <td>유0량</td>
                 <td>산업디자인전공</td>
@@ -219,8 +236,13 @@
                 <th>단국대학교</th>
                 <th>일반 5명 모집</th>
                 <th>4명 합격</th>
+                <th class="add_toggle">
+                  <svg width="34" height="34" viewBox="4 4 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.75 4.75A.75.75 0 0 1 15.5 4h.4a.5.5 0 0 1 .5.5V14h9.25a.75.75 0 0 1 0 1.5H16.4v9.25a.5.5 0 0 1-.5.5h-.4a.75.75 0 0 1-.75-.75V15.5H5.5a.75.75 0 0 1 0-1.5h9.25V5.5A.5.5 0 0 1 15.5 5h-.4a.75.75 0 0 1-.75-.75Z"/>
+                  </svg>
+                </th>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>5명 모집 4명 합격</td>
                 <td>장0연<br />이0빈<br />이0원<br />박0현</td>
                 <td>
@@ -233,18 +255,23 @@
                 <th>성신여자대학교</th>
                 <th></th>
                 <th>4명 합격</th>
+                <th class="add_toggle">
+                  <svg width="34" height="34" viewBox="4 4 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.75 4.75A.75.75 0 0 1 15.5 4h.4a.5.5 0 0 1 .5.5V14h9.25a.75.75 0 0 1 0 1.5H16.4v9.25a.5.5 0 0 1-.5.5h-.4a.75.75 0 0 1-.75-.75V15.5H5.5a.75.75 0 0 1 0-1.5h9.25V5.5A.5.5 0 0 1 15.5 5h-.4a.75.75 0 0 1-.75-.75Z"/>
+                  </svg>
+                </th>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 1명 합격</td>
                 <td>문0아</td>
                 <td>공예 일반</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 1명 합격</td>
                 <td>윤0<br />예비1<br />예비2</td>
                 <td>공예 학사<br />공예 학사<br />공예 학사</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>2명 모집 2명 합격</td>
                 <td>최0인<br />이0현</td>
                 <td>산업디자인 학사<br />산업디자인 학사</td>
@@ -255,13 +282,18 @@
                 <th>서울여자대학교</th>
                 <th></th>
                 <th>6명 합격</th>
+                <th class="add_toggle">
+                  <svg width="34" height="34" viewBox="4 4 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.75 4.75A.75.75 0 0 1 15.5 4h.4a.5.5 0 0 1 .5.5V14h9.25a.75.75 0 0 1 0 1.5H16.4v9.25a.5.5 0 0 1-.5.5h-.4a.75.75 0 0 1-.75-.75V15.5H5.5a.75.75 0 0 1 0-1.5h9.25V5.5A.5.5 0 0 1 15.5 5h-.4a.75.75 0 0 1-.75-.75Z"/>
+                  </svg>
+                </th>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 1명 합격</td>
                 <td>우0화</td>
                 <td>시각디자인 일반</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 4명 합격</td>
                 <td>박0빈<br />최0인<br />이0빈<br />이0현</td>
                 <td>
@@ -269,7 +301,7 @@
                   학사
                 </td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>2명 모집 1명 합격</td>
                 <td>장0기</td>
                 <td>산업디자인 일반</td>
@@ -280,8 +312,13 @@
                 <th>동덕여자대학교</th>
                 <th></th>
                 <th>5명 합격</th>
+                <th class="add_toggle">
+                  <svg width="34" height="34" viewBox="4 4 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.75 4.75A.75.75 0 0 1 15.5 4h.4a.5.5 0 0 1 .5.5V14h9.25a.75.75 0 0 1 0 1.5H16.4v9.25a.5.5 0 0 1-.5.5h-.4a.75.75 0 0 1-.75-.75V15.5H5.5a.75.75 0 0 1 0-1.5h9.25V5.5A.5.5 0 0 1 15.5 5h-.4a.75.75 0 0 1-.75-.75Z"/>
+                  </svg>
+                </th>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>2명 모집 1명 합격</td>
                 <td>문0우<br />예비1<br />예비4<br />예비6</td>
                 <td>
@@ -289,12 +326,12 @@
                   일반<br />시각실내디자인 일반
                 </td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 1명 합격</td>
                 <td>김0정</td>
                 <td>시각실내디자인 학사</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>2명 모집 3명 합격</td>
                 <td>최0진<br />우0화<br />백0우</td>
                 <td>
@@ -308,8 +345,13 @@
                 <th>중앙대학교</th>
                 <th></th>
                 <th>3명 합격</th>
+                <th class="add_toggle">
+                  <svg width="34" height="34" viewBox="4 4 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.75 4.75A.75.75 0 0 1 15.5 4h.4a.5.5 0 0 1 .5.5V14h9.25a.75.75 0 0 1 0 1.5H16.4v9.25a.5.5 0 0 1-.5.5h-.4a.75.75 0 0 1-.75-.75V15.5H5.5a.75.75 0 0 1 0-1.5h9.25V5.5A.5.5 0 0 1 15.5 5h-.4a.75.75 0 0 1-.75-.75Z"/>
+                  </svg>
+                </th>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>19명 모집 3명 합격</td>
                 <td>김0윤<br />이0윤<br />차0서</td>
                 <td>
@@ -322,8 +364,13 @@
                 <th>서경대학교</th>
                 <th></th>
                 <th>6명 합격</th>
+                <th class="add_toggle">
+                  <svg width="34" height="34" viewBox="4 4 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.75 4.75A.75.75 0 0 1 15.5 4h.4a.5.5 0 0 1 .5.5V14h9.25a.75.75 0 0 1 0 1.5H16.4v9.25a.5.5 0 0 1-.5.5h-.4a.75.75 0 0 1-.75-.75V15.5H5.5a.75.75 0 0 1 0-1.5h9.25V5.5A.5.5 0 0 1 15.5 5h-.4a.75.75 0 0 1-.75-.75Z"/>
+                  </svg>
+                </th>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>4명 모집 5명 합격</td>
                 <td>
                   김0윤<br />차0서<br />백0우<br />손0연<br />현0희<br />예비1<br />예비2<br />예비3<br />예비4<br />예비5<br />예비6<br />예비7
@@ -336,7 +383,7 @@
                   일반
                 </td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 1명 합격</td>
                 <td>정0빈<br />예비1<br />예비3</td>
                 <td>
@@ -355,8 +402,13 @@
                 <th>홍익대학교</th>
                 <th></th>
                 <th>31명 합격</th>
+                <th class="add_toggle">
+                  <svg width="34" height="34" viewBox="4 4 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.75 4.75A.75.75 0 0 1 15.5 4h.4a.5.5 0 0 1 .5.5V14h9.25a.75.75 0 0 1 0 1.5H16.4v9.25a.5.5 0 0 1-.5.5h-.4a.75.75 0 0 1-.75-.75V15.5H5.5a.75.75 0 0 1 0-1.5h9.25V5.5A.5.5 0 0 1 15.5 5h-.4a.75.75 0 0 1-.75-.75Z"/>
+                  </svg>
+                </th>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>19명 모집 16명 합격</td>
                 <td>
                   방0은<br />나0영<br />이0경<br />이0윤<br />서0정<br />이0원<br />이0진<br />유0찬<br />기0은<br />배0리<br />황0영<br />임0지<br />최0정<br />박0명<br />한0원<br />신0희
@@ -370,7 +422,7 @@
                   일반<br />디자인컨버전스 일반
                 </td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>5명 모집 4명 합격</td>
                 <td>구0원<br />최0진<br />조0진<br />이0우</td>
                 <td>
@@ -378,7 +430,7 @@
                   학사<br />디자인컨버전스 학사
                 </td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>연계</td>
                 <td>손0현<br />정0린<br />이0언</td>
                 <td>
@@ -386,24 +438,24 @@
                   연계
                 </td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>4명 모집 3명 합격</td>
                 <td>차0서<br />이0선<br />신0환</td>
                 <td>
                   영상, 애니 일반<br />영상, 애니 일반<br />영상, 애니 일반
                 </td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>3명 모집 1명 합격</td>
                 <td>이0현</td>
                 <td>영상, 애니 학사</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 2명 합격</td>
                 <td>남0운<br />이0빈</td>
                 <td>게임그래픽 학사<br />게임그래픽 학사</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>연계</td>
                 <td>조0찬<br />유0욱</td>
                 <td>게임그래픽 연계<br />게임그래픽 연계</td>
@@ -414,8 +466,13 @@
                 <th>건국대학교</th>
                 <th></th>
                 <th>24명 합격</th>
+                <th class="add_toggle">
+                  <svg width="34" height="34" viewBox="4 4 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.75 4.75A.75.75 0 0 1 15.5 4h.4a.5.5 0 0 1 .5.5V14h9.25a.75.75 0 0 1 0 1.5H16.4v9.25a.5.5 0 0 1-.5.5h-.4a.75.75 0 0 1-.75-.75V15.5H5.5a.75.75 0 0 1 0-1.5h9.25V5.5A.5.5 0 0 1 15.5 5h-.4a.75.75 0 0 1-.75-.75Z"/>
+                  </svg>
+                </th>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>5명 모집 7명 합격</td>
                 <td>
                   김0윤<br />임0운<br />신0<br />백0우<br />이0서<br />유0찬<br />현0희
@@ -426,12 +483,12 @@
                   일반<br />시각영상디자인 일반
                 </td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>2명 모집 1명 합격</td>
                 <td>박0빈</td>
                 <td>시각영상디자인 학사</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>7명 모집 7명 합격</td>
                 <td>
                   서0현<br />김0은<br />우0화<br />조0솔<br />김0진<br />이0현<br />장0수
@@ -443,17 +500,17 @@
                   일반
                 </td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 2명 합격</td>
                 <td>이0현<br />양0은</td>
                 <td>미디어컨텐츠디자인 학사<br />미디어컨텐츠디자인 학사</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 1명 합격</td>
                 <td>조0민</td>
                 <td>산업디자인 학사</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>4명 모집 6명 합격</td>
                 <td>
                   문0아<br />김0서<br />조0인<br />유0욱<br />이0언<br />김0은
@@ -469,18 +526,23 @@
                 <th>상명대학교</th>
                 <th></th>
                 <th>11명 합격</th>
+                <th class="add_toggle">
+                  <svg width="34" height="34" viewBox="4 4 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.75 4.75A.75.75 0 0 1 15.5 4h.4a.5.5 0 0 1 .5.5V14h9.25a.75.75 0 0 1 0 1.5H16.4v9.25a.5.5 0 0 1-.5.5h-.4a.75.75 0 0 1-.75-.75V15.5H5.5a.75.75 0 0 1 0-1.5h9.25V5.5A.5.5 0 0 1 15.5 5h-.4a.75.75 0 0 1-.75-.75Z"/>
+                  </svg>
+                </th>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>3명 모집 2명 합격</td>
                 <td>고0현<br />이0언</td>
                 <td>무대디자인 일반<br />무대디자인 일반</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 2명 합격</td>
                 <td>이0빈<br />박0민</td>
                 <td>무대디자인 학사<br />무대디자인 학사</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>3명 모집 2명 합격</td>
                 <td>장0연<br />신0<br />예비3</td>
                 <td>
@@ -488,7 +550,7 @@
                   일반
                 </td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>2명 모집 3명 합격</td>
                 <td>박0빈<br />최0진<br />양0희<br />예비6<br />예비8</td>
                 <td>
@@ -497,12 +559,12 @@
                   학사
                 </td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>3명 모집 1명 합격</td>
                 <td>최0진</td>
                 <td>텍스타일디자인 일반</td>
               </tr>
-              <tr>
+              <tr class="detail_txt">
                 <td>1명 모집 1명 합격</td>
                 <td>이0림</td>
                 <td>인더스트리얼디자인 학사</td>
@@ -645,6 +707,11 @@
               d="M30.3223 81.5645L31.2012 58.8594L11.8652 71.0176L6.88477 62.375L27.0996 51.8281L6.88477 41.1348L11.8652 32.4922L31.2012 44.6504L30.3223 21.9453H40.2832L39.4043 44.6504L58.7402 32.4922L63.7207 41.1348L43.6523 51.8281L63.7207 62.375L58.7402 71.0176L39.4043 58.8594L40.2832 81.5645H30.3223Z"
               fill="black" />
           </svg>
+          <svg width="71" height="150" viewBox="0 0 71 150" fill="none" xmlns="http://www.w3.org/2000/svg" class="mob_only">
+            <path
+              d="M30.3223 81.5645L31.2012 58.8594L11.8652 71.0176L6.88477 62.375L27.0996 51.8281L6.88477 41.1348L11.8652 32.4922L31.2012 44.6504L30.3223 21.9453H40.2832L39.4043 44.6504L58.7402 32.4922L63.7207 41.1348L43.6523 51.8281L63.7207 62.375L58.7402 71.0176L39.4043 58.8594L40.2832 81.5645H30.3223Z"
+              fill="black" />
+          </svg>
         </div>
         <div class="top_text">
           <ul class="top_img_list">
@@ -677,7 +744,7 @@
           </ul>
           <p class="kr">
             EDILLUST - 진심이 만든 결과.<br />
-            주요 대학 모집인원 80명 중 90%이상 합격, 결과가 쌓이면, 브랜드가 됩니다.
+            주요 대학 모집인원 80명 중 90%이상 합격,<br class="mob_only" /> 결과가 쌓이면, 브랜드가 됩니다.
           </p>
           <p class="en">
             Edillust — Results built on sincerity.<br />
