@@ -178,12 +178,6 @@ main {
       }
     }
   }
-  // & .chat_b {
-  //   max-width: vw(208, 1920);
-  //   position: Absolute;
-  //   left: vw(690, 1920);
-  //   bottom: vw(152, 1920);
-  // }
 }
 
 // textEd end
@@ -633,6 +627,14 @@ align-items: center;
       li{
         position:absolute;
         max-width:vw(188,1920);
+        .chat_b {
+          &.pc {
+            display: block;
+          }
+          &.mobile {
+            display: none;
+          }
+        }
         img{
           width:100%;
         }
@@ -677,11 +679,15 @@ align-items: center;
       }
       img{
         width:100%;
-
       }
       li:nth-child(1){
         bottom:vw(554,1920);
         left:vw(51,1920);
+        .chat_b {
+          &.mobile {
+            display: none;
+          }
+        }
       }
       li:nth-child(2){
         bottom:vw(710,1920);
@@ -1170,7 +1176,6 @@ cursor: pointer;
                 transition: background-color 0.2s ease;
                 .univ_name {
                   padding: 7px 0;
-                  // width: 33.3333%;
                   width: 40%;
                   white-space: nowrap;
                   font-size: 14px;
@@ -1179,7 +1184,6 @@ cursor: pointer;
                   box-sizing: border-box;
                 }
                 .univ_summary {
-                  // width: 33.3333%;
                   width: 30%;
                   white-space: nowrap;
                   font-size: 14px;
@@ -1189,7 +1193,6 @@ cursor: pointer;
                 .accordion_btn {
                   display: flex;
                   justify-content: flex-end;
-                  // width: 33.3333%;
                   width: 30%;
                   border: none;
                   background: transparent;
@@ -1278,6 +1281,12 @@ cursor: pointer;
     }
     #andMore {
       padding: vw(100, 375) vw(15, 375);
+      .section_header {
+        .left, .right {
+          font-size: vw(50, 375);
+          line-height: vw(50, 375);
+        }
+      }
       .pass_list {
         margin: vw(100, 375) 0 0;
         padding: unset;
@@ -1335,6 +1344,16 @@ cursor: pointer;
                 top: unset;
                 bottom: vw(50, 375);
                 left: vw(85, 375);
+                .chat_b {
+                  &.mobile {
+                    position: absolute;
+                    bottom: vw(85, 375);
+                    left: vw(-65, 375);  
+                    display: block;
+                    width: vw(103, 375);
+                    height: auto;
+                  }
+                }
               }
               &:nth-child(2){
                 top: vw(280, 375);
@@ -1350,6 +1369,12 @@ cursor: pointer;
                 right: vw(0, 375);
                 top: vw(405, 375);
               }
+              &:nth-child(5){
+                left: unset;
+                right: vw(90, 375);
+                top: vw(350, 375);
+                max-width: vw(146, 375);
+              }
               &:nth-child(6){
                 right: vw(30, 375);
                 top: vw(365, 375);
@@ -1359,6 +1384,15 @@ cursor: pointer;
                 right: unset;
                 left: vw(10, 375);
                 bottom: vw(0, 375);
+              }
+              .chat_b {
+                max-width: vw(146, 375);
+                &.pc {
+                  display: none;
+                }
+                &.mobile {
+                  display: block;
+                }
               }
               img {
                 width: 100%;
@@ -1418,13 +1452,25 @@ cursor: pointer;
             display: none;
             &:nth-child(1){
               left: unset;
-              right: vw(0, 375);
-              bottom: vw(345, 375);
+              right: vw(10, 375);
+              bottom: vw(365, 375);
               transform: scaleX(-1);
               display: block;
-              max-width: vw(80, 375);
-              width: 100%;
-              
+              img {
+                max-width: unset;
+                width: vw(80, 375);
+              }
+              .chat_b {
+                &.mobile {
+                  position: absolute;
+                  top: vw(-40, 375);
+                  left: vw(35, 375); 
+                  transform: scaleX(-1); 
+                  display: block;
+                  width: vw(124, 375);
+                  height: auto;
+                }
+              }
             }
           }
         }
@@ -1550,6 +1596,7 @@ cursor: pointer;
       .port_box {
         margin: vw(60, 375) 0 vw(60, 375);
         .port_slide {
+          padding: unset;
           width: 100%;
         }
         ul.port_list{

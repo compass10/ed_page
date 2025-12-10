@@ -1460,7 +1460,8 @@
         <div class="top_text">
           <ul class="top_img_list">
             <li>
-              <img src="./asset/images/main/sec_06_top_img_01.gif" alt="sec_06_gif">
+              <img class="chat_b mobile" src="./asset/images/main/svg/sec_06_chat_bubble_03_mob.svg" alt="sec_06_gif">
+              <img src="./asset/images/main/sec_06_top_img_01.gif" alt="sec_06_gif"> 
             </li>
             <li>
               <img src="./asset/images/main/sec_06_top_img_02.gif" alt="sec_06_gif">
@@ -1476,7 +1477,7 @@
             </li>
             <li>
               <img class="chat_b pc" src="./asset/images/main/svg/sec_06_chat_bubble_01.svg" alt="sec_06_gif">
-              <!-- <img class="chat_b mobile" src="./asset/images/main/svg/sec_06_chat_bubble_01_mob.svg" alt="sec_06_gif"> -->
+              <img class="chat_b mobile" src="./asset/images/main/svg/sec_06_chat_bubble_01_mob.svg" alt="sec_06_gif">
             </li>
             <li>
               <img src="./asset/images/main/sec_06_top_img_05.gif" alt="sec_06_gif">
@@ -1515,6 +1516,7 @@
         <ul class="bottom_img_list">
           <li>
             <img src="./asset/images/main/sec_06_bottom_img_01.gif" alt="bottom_area_img">
+            <img class="chat_b mobile" src="./asset/images/main/svg/sec_06_chat_bubble_02_mob.svg" alt="bottom_area_img">
           </li>
           <li>
             <img src="./asset/images/main/svg/sec_06_chat_bubble_02.svg" alt="bottom_area_img">
