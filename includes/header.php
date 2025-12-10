@@ -22,7 +22,7 @@
   <?php endif; ?>
 </head>
 
-<body>
+<body<?php if (isset($darkTheme) && $darkTheme): ?> class="dark-theme"<?php endif; ?>>
   <header id="header">
     <div class="header_inner">
       <div class="logo_area">
@@ -39,7 +39,8 @@
   <div class="side_menu">
     <div class="top_area">
       <div class="left">
-        MENU
+        <span class="menu_text">MENU</span>
+        <img class="menu_logo" src="./asset/images/svg/logo.svg" alt="ed_logo" />
       </div>
       <div class="right">
         <svg viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">

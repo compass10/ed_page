@@ -56,6 +56,17 @@
 .success_grid .success_item:hover {
   border: 1px solid #000;
 }
+.success_grid .success_item.no_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success_grid .success_item.no_image p {
+  font-family: "Pretendard", sans-serif;
+  font-weight: 400;
+  font-size: 0.7291666667vw;
+  color: #666;
+}
 
 .pagination {
   display: flex;
@@ -116,9 +127,24 @@
 .success_detail .detail_image {
   max-width: 60.15625vw;
   width: 100%;
+}
+.success_detail .detail_image img {
+  width: 100%;
   height: auto;
-  aspect-ratio: 1155/770;
+  display: block;
+}
+.success_detail .detail_image.no_image {
+  height: 20.8333333333vw;
   background: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success_detail .detail_image.no_image p {
+  font-family: "Pretendard", sans-serif;
+  font-weight: 400;
+  font-size: 0.8333333333vw;
+  color: #666;
 }
 
 /*# sourceMappingURL=success.css.map */

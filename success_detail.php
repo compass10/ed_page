@@ -2,6 +2,45 @@
 $pageTitle = 'Success Stories';
 $isSubPage = true;
 $pageCss = 'success';
+
+// DB 연결
+include_once('../lib.php');
+
+// bno 파라미터 확인
+$bno = isset($_GET['bno']) ? (int)$_GET['bno'] : 0;
+
+if($bno == 0) {
+    header('Location: success.php');
+    exit;
+}
+
+// 게시물 조회
+$success_sql = "SELECT * FROM $board_table WHERE bno='$bno' AND bid='review'";
+$success_result = mysql_query($success_sql);
+$success = mysql_fetch_array($success_result);
+
+if(!$success) {
+    header('Location: success.php');
+    exit;
+}
+
+// 조회수 증가
+mysql_query("UPDATE $board_table SET bview = bview + 1 WHERE bno='$bno'");
+
+// 업로드 이미지 경로
+$upload_path = 'data/review/';
+$upload_img = $success['bimg'] ? $_url . $upload_path . $success['bimg'] : '';
+
+// 게시글 내용에서 첫 번째 이미지 추출
+$content_img = '';
+if(preg_match('/<img[^>]+src=["\']([^"\']+)["\']/', $success['bcontents'], $matches)) {
+    $content_img = $matches[1];
+}
+
+// 첫 번째 이미지가 없으면 업로드 이미지 사용
+if(!$content_img && $upload_img) {
+    $content_img = $upload_img;
+}
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -48,7 +87,15 @@ $pageCss = 'success';
             <path d="M23 12L15 20L23 28" stroke="black" stroke-width="3"/>
           </svg>
         </a>
-        <div class="detail_image"></div>
+        <?php if($content_img): ?>
+        <div class="detail_image">
+          <img src="<?=$content_img?>" alt="<?=htmlspecialchars($success['btitle'])?>">
+        </div>
+        <?php else: ?>
+        <div class="detail_image no_image">
+          <p>업로드된 이미지가 없습니다.</p>
+        </div>
+        <?php endif; ?>
       </div>
     </section>
   </main>
