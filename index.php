@@ -188,7 +188,7 @@
             <img src="./asset/images/main/sec03_bottom_img.gif" alt="책보는gif">
           </div>
         </div>
-        <div class="content_body">
+        <div class="content_body pc_only">
           <!-- 첫 번째 테이블: 국민대~서경대 -->
           <table class="passed_table table_01">
             <tbody>
@@ -581,6 +581,742 @@
             <img src="./asset/images/main/sec04_absol_img_03.gif" alt="gif 이미지" />
           </div>
         </div>
+        <div class="content_body mob_only">
+          <!-- 국민대학교 -->
+          <div class="accordion_item">
+            <div class="accordion_header">
+              <div class="univ_name">국민대학교</div>
+              <div class="univ_summary">학사 1명 모집 1명 합격</div>
+              <button class="accordion_btn" aria-expanded="false">
+                <span class="icon"></span>
+              </button>
+            </div>
+            <div class="accordion_content">
+              <ul class="pass_list">
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">김0영</span>
+                  <span class="major">영상디자인 학사</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 서울과학기술대학교 -->
+          <div class="accordion_item">
+            <div class="accordion_header">
+              <div class="univ_name">서울과학기술대학교</div>
+              <div class="univ_summary">일반 2명 모집 2명 합격</div>
+              <button class="accordion_btn" aria-expanded="false">
+                <span class="icon"></span>
+              </button>
+            </div>
+            <div class="accordion_content">
+              <ul class="pass_list">
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">김0윤</span>
+                  <span class="major">시각디자인전공</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">유0량</span>
+                  <span class="major">산업디자인전공</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 단국대학교 -->
+          <div class="accordion_item">
+            <div class="accordion_header">
+              <div class="univ_name">단국대학교</div>
+              <div class="univ_summary">일반 5명 모집 4명 합격</div>
+              <button class="accordion_btn" aria-expanded="false">
+                <span class="icon"></span>
+              </button>
+            </div>
+            <div class="accordion_content">
+              <ul class="pass_list">
+                <li>
+                  <span class="recruit">5명 모집 4명 합격</span>
+                  <span class="name">장0연</span>
+                  <span class="major">커뮤니케이션디자인과</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 4명 합격</span>
+                  <span class="name">이0빈</span>
+                  <span class="major">커뮤니케이션디자인과</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 4명 합격</span>
+                  <span class="name">이0원</span>
+                  <span class="major">커뮤니케이션디자인과</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 4명 합격</span>
+                  <span class="name">박0현</span>
+                  <span class="major">커뮤니케이션디자인과</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 성신여자대학교 -->
+          <div class="accordion_item">
+            <div class="accordion_header">
+              <div class="univ_name">성신여자대학교</div>
+              <div class="univ_summary">4명 합격</div>
+              <button class="accordion_btn" aria-expanded="false">
+                <span class="icon"></span>
+              </button>
+            </div>
+            <div class="accordion_content">
+              <ul class="pass_list">
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">문0아</span>
+                  <span class="major">공예 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">윤0</span>
+                  <span class="major">공예 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">예비1</span>
+                  <span class="major">공예 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">예비2</span>
+                  <span class="major">공예 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 2명 합격</span>
+                  <span class="name">최0인</span>
+                  <span class="major">산업디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 2명 합격</span>
+                  <span class="name">이0현</span>
+                  <span class="major">산업디자인 학사</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 서울여자대학교 -->
+          <div class="accordion_item">
+            <div class="accordion_header">
+              <div class="univ_name">서울여자대학교</div>
+              <div class="univ_summary">6명 합격</div>
+              <button class="accordion_btn" aria-expanded="false">
+                <span class="icon"></span>
+              </button>
+            </div>
+            <div class="accordion_content">
+              <ul class="pass_list">
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">우0화</span>
+                  <span class="major">시각디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 4명 합격</span>
+                  <span class="name">박0빈</span>
+                  <span class="major">시각디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 4명 합격</span>
+                  <span class="name">최0인</span>
+                  <span class="major">시각디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 4명 합격</span>
+                  <span class="name">이0빈</span>
+                  <span class="major">시각디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 4명 합격</span>
+                  <span class="name">이0현</span>
+                  <span class="major">시각디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 1명 합격</span>
+                  <span class="name">장0기</span>
+                  <span class="major">산업디자인 일반</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 동덕여자대학교 -->
+          <div class="accordion_item">
+            <div class="accordion_header">
+              <div class="univ_name">동덕여자대학교</div>
+              <div class="univ_summary">5명 합격</div>
+              <button class="accordion_btn" aria-expanded="false">
+                <span class="icon"></span>
+              </button>
+            </div>
+            <div class="accordion_content">
+              <ul class="pass_list">
+                <li>
+                  <span class="recruit">2명 모집 1명 합격</span>
+                  <span class="name">문0우</span>
+                  <span class="major">시각실내디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 1명 합격</span>
+                  <span class="name">예비1</span>
+                  <span class="major">시각실내디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 1명 합격</span>
+                  <span class="name">예비4</span>
+                  <span class="major">시각실내디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 1명 합격</span>
+                  <span class="name">예비6</span>
+                  <span class="major">시각실내디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">김0정</span>
+                  <span class="major">시각실내디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 3명 합격</span>
+                  <span class="name">최0진</span>
+                  <span class="major">미디어디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 3명 합격</span>
+                  <span class="name">우0화</span>
+                  <span class="major">미디어디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 3명 합격</span>
+                  <span class="name">백0우</span>
+                  <span class="major">미디어디자인 일반</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 중앙대학교 -->
+          <div class="accordion_item">
+            <div class="accordion_header">
+              <div class="univ_name">중앙대학교</div>
+              <div class="univ_summary">3명 합격</div>
+              <button class="accordion_btn" aria-expanded="false">
+                <span class="icon"></span>
+              </button>
+            </div>
+            <div class="accordion_content">
+              <ul class="pass_list">
+                <li>
+                  <span class="recruit">19명 모집 3명 합격</span>
+                  <span class="name">김0윤</span>
+                  <span class="major">예술공학부 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 3명 합격</span>
+                  <span class="name">이0윤</span>
+                  <span class="major">예술공학부 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 3명 합격</span>
+                  <span class="name">차0서</span>
+                  <span class="major">예술공학부 일반</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 서경대학교 -->
+          <div class="accordion_item">
+            <div class="accordion_header">
+              <div class="univ_name">서경대학교</div>
+              <div class="univ_summary">6명 합격</div>
+              <button class="accordion_btn" aria-expanded="false">
+                <span class="icon"></span>
+              </button>
+            </div>
+            <div class="accordion_content">
+              <ul class="pass_list">
+                <li>
+                  <span class="recruit">4명 모집 5명 합격</span>
+                  <span class="name">김0윤</span>
+                  <span class="major">비쥬얼디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 5명 합격</span>
+                  <span class="name">차0서</span>
+                  <span class="major">비쥬얼디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 5명 합격</span>
+                  <span class="name">백0우</span>
+                  <span class="major">비쥬얼디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 5명 합격</span>
+                  <span class="name">손0연</span>
+                  <span class="major">비쥬얼디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 5명 합격</span>
+                  <span class="name">현0희</span>
+                  <span class="major">비쥬얼디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 5명 합격</span>
+                  <span class="name">예비1</span>
+                  <span class="major">비쥬얼디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 5명 합격</span>
+                  <span class="name">예비2</span>
+                  <span class="major">비쥬얼디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 5명 합격</span>
+                  <span class="name">예비3</span>
+                  <span class="major">비쥬얼디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 5명 합격</span>
+                  <span class="name">예비4</span>
+                  <span class="major">비쥬얼디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 5명 합격</span>
+                  <span class="name">예비5</span>
+                  <span class="major">비쥬얼디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 5명 합격</span>
+                  <span class="name">예비6</span>
+                  <span class="major">비쥬얼디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 5명 합격</span>
+                  <span class="name">예비7</span>
+                  <span class="major">비쥬얼디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">정0빈</span>
+                  <span class="major">비주얼디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">예비1</span>
+                  <span class="major">비주얼디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">예비3</span>
+                  <span class="major">비주얼디자인 학사</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 홍익대학교 -->
+          <div class="accordion_item">
+            <div class="accordion_header">
+              <div class="univ_name">홍익대학교</div>
+              <div class="univ_summary">31명 합격</div>
+              <button class="accordion_btn" aria-expanded="false">
+                <span class="icon"></span>
+              </button>
+            </div>
+            <div class="accordion_content">
+              <ul class="pass_list">
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">방0은</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">나0영</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">이0경</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">이0윤</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">서0정</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">이0원</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">이0진</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">유0찬</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">기0은</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">배0리</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">황0영</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">임0지</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">최0정</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">박0명</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">한0원</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">19명 모집 16명 합격</span>
+                  <span class="name">신0희</span>
+                  <span class="major">디자인컨버전스 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 4명 합격</span>
+                  <span class="name">구0원</span>
+                  <span class="major">디자인컨버전스 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 4명 합격</span>
+                  <span class="name">최0진</span>
+                  <span class="major">디자인컨버전스 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 4명 합격</span>
+                  <span class="name">조0진</span>
+                  <span class="major">디자인컨버전스 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 4명 합격</span>
+                  <span class="name">이0우</span>
+                  <span class="major">디자인컨버전스 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">연계</span>
+                  <span class="name">손0현</span>
+                  <span class="major">디자인컨버전스 연계</span>
+                </li>
+                <li>
+                  <span class="recruit">연계</span>
+                  <span class="name">정0린</span>
+                  <span class="major">디자인컨버전스 연계</span>
+                </li>
+                <li>
+                  <span class="recruit">연계</span>
+                  <span class="name">이0언</span>
+                  <span class="major">디자인컨버전스 연계</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 3명 합격</span>
+                  <span class="name">차0서</span>
+                  <span class="major">영상, 애니 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 3명 합격</span>
+                  <span class="name">이0선</span>
+                  <span class="major">영상, 애니 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 3명 합격</span>
+                  <span class="name">신0환</span>
+                  <span class="major">영상, 애니 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">3명 모집 1명 합격</span>
+                  <span class="name">이0현</span>
+                  <span class="major">영상, 애니 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 2명 합격</span>
+                  <span class="name">남0운</span>
+                  <span class="major">게임그래픽 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 2명 합격</span>
+                  <span class="name">이0빈</span>
+                  <span class="major">게임그래픽 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">연계</span>
+                  <span class="name">조0찬</span>
+                  <span class="major">게임그래픽 연계</span>
+                </li>
+                <li>
+                  <span class="recruit">연계</span>
+                  <span class="name">유0욱</span>
+                  <span class="major">게임그래픽 연계</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 건국대학교 -->
+          <div class="accordion_item">
+            <div class="accordion_header">
+              <div class="univ_name">건국대학교</div>
+              <div class="univ_summary">24명 합격</div>
+              <button class="accordion_btn" aria-expanded="false">
+                <span class="icon"></span>
+              </button>
+            </div>
+            <div class="accordion_content">
+              <ul class="pass_list">
+                <li>
+                  <span class="recruit">5명 모집 7명 합격</span>
+                  <span class="name">김0윤</span>
+                  <span class="major">시각영상디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 7명 합격</span>
+                  <span class="name">임0운</span>
+                  <span class="major">시각영상디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 7명 합격</span>
+                  <span class="name">신0</span>
+                  <span class="major">시각영상디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 7명 합격</span>
+                  <span class="name">백0우</span>
+                  <span class="major">시각영상디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 7명 합격</span>
+                  <span class="name">이0서</span>
+                  <span class="major">시각영상디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 7명 합격</span>
+                  <span class="name">유0찬</span>
+                  <span class="major">시각영상디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">5명 모집 7명 합격</span>
+                  <span class="name">현0희</span>
+                  <span class="major">시각영상디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 1명 합격</span>
+                  <span class="name">박0빈</span>
+                  <span class="major">시각영상디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">7명 모집 7명 합격</span>
+                  <span class="name">서0현</span>
+                  <span class="major">미디어컨텐츠디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">7명 모집 7명 합격</span>
+                  <span class="name">김0은</span>
+                  <span class="major">미디어컨텐츠디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">7명 모집 7명 합격</span>
+                  <span class="name">우0화</span>
+                  <span class="major">미디어컨텐츠디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">7명 모집 7명 합격</span>
+                  <span class="name">조0솔</span>
+                  <span class="major">미디어컨텐츠디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">7명 모집 7명 합격</span>
+                  <span class="name">김0진</span>
+                  <span class="major">미디어컨텐츠디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">7명 모집 7명 합격</span>
+                  <span class="name">이0현</span>
+                  <span class="major">미디어컨텐츠디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">7명 모집 7명 합격</span>
+                  <span class="name">장0수</span>
+                  <span class="major">미디어컨텐츠디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 2명 합격</span>
+                  <span class="name">이0현</span>
+                  <span class="major">미디어컨텐츠디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 2명 합격</span>
+                  <span class="name">양0은</span>
+                  <span class="major">미디어컨텐츠디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">조0민</span>
+                  <span class="major">산업디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 6명 합격</span>
+                  <span class="name">문0아</span>
+                  <span class="major">산업디자인 연계</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 6명 합격</span>
+                  <span class="name">김0서</span>
+                  <span class="major">산업디자인 연계</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 6명 합격</span>
+                  <span class="name">조0인</span>
+                  <span class="major">산업디자인 연계</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 6명 합격</span>
+                  <span class="name">유0욱</span>
+                  <span class="major">산업디자인 연계</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 6명 합격</span>
+                  <span class="name">이0언</span>
+                  <span class="major">산업디자인 연계</span>
+                </li>
+                <li>
+                  <span class="recruit">4명 모집 6명 합격</span>
+                  <span class="name">김0은</span>
+                  <span class="major">산업디자인 연계</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 상명대학교 -->
+          <div class="accordion_item">
+            <div class="accordion_header">
+              <div class="univ_name">상명대학교</div>
+              <div class="univ_summary">11명 합격</div>
+              <button class="accordion_btn" aria-expanded="false">
+                <span class="icon"></span>
+              </button>
+            </div>
+            <div class="accordion_content">
+              <ul class="pass_list">
+                <li>
+                  <span class="recruit">3명 모집 2명 합격</span>
+                  <span class="name">고0현</span>
+                  <span class="major">무대디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">3명 모집 2명 합격</span>
+                  <span class="name">이0언</span>
+                  <span class="major">무대디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 2명 합격</span>
+                  <span class="name">이0빈</span>
+                  <span class="major">무대디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 2명 합격</span>
+                  <span class="name">박0민</span>
+                  <span class="major">무대디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">3명 모집 2명 합격</span>
+                  <span class="name">장0연</span>
+                  <span class="major">커뮤니케이션디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">3명 모집 2명 합격</span>
+                  <span class="name">신0</span>
+                  <span class="major">커뮤니케이션디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">3명 모집 2명 합격</span>
+                  <span class="name">예비3</span>
+                  <span class="major">커뮤니케이션디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 3명 합격</span>
+                  <span class="name">박0빈</span>
+                  <span class="major">커뮤니케이션디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 3명 합격</span>
+                  <span class="name">최0진</span>
+                  <span class="major">커뮤니케이션디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 3명 합격</span>
+                  <span class="name">양0희</span>
+                  <span class="major">커뮤니케이션디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 3명 합격</span>
+                  <span class="name">예비6</span>
+                  <span class="major">커뮤니케이션디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">2명 모집 3명 합격</span>
+                  <span class="name">예비8</span>
+                  <span class="major">커뮤니케이션디자인 학사</span>
+                </li>
+                <li>
+                  <span class="recruit">3명 모집 1명 합격</span>
+                  <span class="name">최0진</span>
+                  <span class="major">텍스타일디자인 일반</span>
+                </li>
+                <li>
+                  <span class="recruit">1명 모집 1명 합격</span>
+                  <span class="name">이0림</span>
+                  <span class="major">인더스트리얼디자인 학사</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
       </div>
     </section>
     <section id="andMore" class="section section05">
@@ -702,16 +1438,24 @@
     <section id="opportunity" class="section section06">
       <div class="top_area">
         <div class="top_star">
-          <svg width="71" height="150" viewBox="0 0 71 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="71" height="150" viewBox="0 0 71 150" fill="none" xmlns="http://www.w3.org/2000/svg" class="pc_only">
             <path
               d="M30.3223 81.5645L31.2012 58.8594L11.8652 71.0176L6.88477 62.375L27.0996 51.8281L6.88477 41.1348L11.8652 32.4922L31.2012 44.6504L30.3223 21.9453H40.2832L39.4043 44.6504L58.7402 32.4922L63.7207 41.1348L43.6523 51.8281L63.7207 62.375L58.7402 71.0176L39.4043 58.8594L40.2832 81.5645H30.3223Z"
               fill="black" />
           </svg>
-          <svg width="71" height="150" viewBox="0 0 71 150" fill="none" xmlns="http://www.w3.org/2000/svg" class="mob_only">
-            <path
-              d="M30.3223 81.5645L31.2012 58.8594L11.8652 71.0176L6.88477 62.375L27.0996 51.8281L6.88477 41.1348L11.8652 32.4922L31.2012 44.6504L30.3223 21.9453H40.2832L39.4043 44.6504L58.7402 32.4922L63.7207 41.1348L43.6523 51.8281L63.7207 62.375L58.7402 71.0176L39.4043 58.8594L40.2832 81.5645H30.3223Z"
-              fill="black" />
-          </svg>
+          <svg
+          width="18"
+          height="18"
+          viewBox="6.88 21.94 56.84 59.62"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="mob_only"
+        >
+          <path
+            d="M30.3223 81.5645L31.2012 58.8594L11.8652 71.0176L6.88477 62.375L27.0996 51.8281L6.88477 41.1348L11.8652 32.4922L31.2012 44.6504L30.3223 21.9453H40.2832L39.4043 44.6504L58.7402 32.4922L63.7207 41.1348L43.6523 51.8281L63.7207 62.375L58.7402 71.0176L39.4043 58.8594L40.2832 81.5645H30.3223Z"
+            fill="black"
+          />
+        </svg>
         </div>
         <div class="top_text">
           <ul class="top_img_list">
@@ -731,8 +1475,8 @@
 
             </li>
             <li>
-              <img src="./asset/images/main/svg/sec_06_chat_bubble_01.svg" alt="sec_06_gif">
-
+              <img class="chat_b pc" src="./asset/images/main/svg/sec_06_chat_bubble_01.svg" alt="sec_06_gif">
+              <!-- <img class="chat_b mobile" src="./asset/images/main/svg/sec_06_chat_bubble_01_mob.svg" alt="sec_06_gif"> -->
             </li>
             <li>
               <img src="./asset/images/main/sec_06_top_img_05.gif" alt="sec_06_gif">
@@ -759,9 +1503,11 @@
             <span>&nbsp;EFFORT</span>
           </p>
           <p>
+            <img src="./asset/images/main/sec_06_opportunity.png" alt="opportunity_img" class="mob_only">
             <span>meets&nbsp;</span>
-            <img src="./asset/images/main/sec_06_opportunity.png" alt="opportunity_img">
-            <span>&nbsp;opportunity</span>
+            <img src="./asset/images/main/sec_06_opportunity.png" alt="opportunity_img" class="pc_only">
+            <br class="mob_only"/>
+            <span class="mob_transf">&nbsp;opportunity.</span>
           </p>
         </div>
       </div>
@@ -817,15 +1563,25 @@ with ED.
             </div>
           </div>
         </div>
+        <div class="floating_wrap mob_only">
+          <div class="floating">
+            Turning <br/>
+            your potential <br/>
+            into possibility<br/>
+          </div>
+          <div class="floating">
+with ED.
+          </div>
+        </div>
       </div>
     </section>
     <section id="portfolio" class="section section07">
       <div class="section_header">
-        <div class="title">
+        <div class="title pc_only">
                   Portfolio<br/>
         of
         </div>
-        <div class="box">
+        <div class="box pc_only">
                   <div class="star">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4258 19.873H7.71484L8.00781 12.5977L1.85547 16.5039L0 13.2812L6.49414 9.96094L0 6.5918L1.85547 3.36914L8.00781 7.27539L7.71484 0H11.4258L11.084 7.27539L17.2363 3.36914L19.1406 6.5918L12.6465 9.96094L19.1406 13.2812L17.2363 16.5039L11.084 12.5977L11.4258 19.873Z" fill="white"/>
@@ -841,12 +1597,39 @@ step by step with ED.
 Because your dream deserves a real chance.
         </div>
         </div>
-        <div class="img_01">
+        <div class="img_01 pc_only">
           <img src="./asset/images/main/sec_07_header_img_01.gif" alt="sec_07_header_img_01">
         </div>
-        <div class="right_text">
+        <div class="right_text pc_only">
           ED
         </div>
+
+        <div class="box mob_only">
+          <div class="box_left">
+            <div class="title">
+              Portfolio<br/>
+            of
+            </div>
+            <div class="text_01">
+              Build your dream, <br/>
+    step by step with ED.
+            </div>
+            <div class="img_01">
+              <img src="./asset/images/main/sec_07_header_img_01.gif" alt="sec_07_header_img_01">
+            </div>
+          </div>
+          <div class="box_right">
+            <span class="star">
+              <svg width="56" height="60" viewBox="0 0 56 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.877 59.6191L24.4629 35.7422L4.02832 48.2666L0 41.2354L21.0938 29.8828L0 18.3838L4.02832 11.3525L24.4629 23.877L23.877 0H31.9336L31.3477 23.877L51.8555 11.3525L55.8838 18.3838L34.8633 29.8828L55.8838 41.2354L51.8555 48.2666L31.3477 35.7422L31.9336 59.6191H23.877Z" fill="white"></path>
+              </svg>
+            </span>
+            <div class="right_text">
+              ED
+            </div>
+          </div>
+        </div>
+
       </div>
       <div class="video_area">
         <video src="./asset/video/main/main_port.mp4" muted autoplay playsinline loop></video>

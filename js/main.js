@@ -59,4 +59,17 @@ inView('#opportunity .bottom_area .hiding_text', (el) => {
 countUp('#opportunity .bottom_area .counting');
 });
 
+// #success .content_body.mob_only (accordion)
+const accordionHeaders = document.querySelectorAll('.accordion_header');
 
+accordionHeaders.forEach(function(header) {
+  header.addEventListener('click', function() {
+    const btn = header.querySelector('.accordion_btn');
+    const content = header.nextElementSibling;
+
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isExpanded));
+
+    content.classList.toggle('active');
+  });
+});
