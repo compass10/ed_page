@@ -1326,23 +1326,12 @@
       </div>
       <div class="pass_list">
         <ul class="img_list">
-          <li class="">
-            <img src="./asset/images/main/sec_05_left_img_01.jpeg" alt="#" />
-          </li>
-          <li class="">
-            <img src="./asset/images/main/sec_05_left_img_02.png" alt="#" />
-          </li>
-          <li>
-            <img src="./asset/images/main/sec_05_left_img_03.jpeg" alt="#" />
-          </li>
-          <li>
-            <img src="./asset/images/main/sec_05_left_img_04.png" alt="#" />
-          </li>
-          <li>
-            <img src="./asset/images/main/sec_05_left_img_05.png" alt="#" />
-          </li>
+          <li><img src="./asset/images/main/sec_05_left_img_01.jpeg" alt=""></li>
+          <li><img src="./asset/images/main/sec_05_left_img_02.png" alt=""></li>
+          <li><img src="./asset/images/main/sec_05_left_img_03.jpeg" alt=""></li>
+          <li><img src="./asset/images/main/sec_05_left_img_04.png" alt=""></li>
+          <li><img src="./asset/images/main/sec_05_left_img_05.png" alt=""></li>
         </ul>
-
         <ul class="article_list">
           <li>
             <a href="#">
@@ -1699,8 +1688,89 @@ Because your dream deserves a real chance.
         CHeck out more portfolio of ED!
       </div>
     </section>
-    <section id="ourStory" class="section section08">
-      CHECK OUT Our Story
+    <section id="ourStory" class="section section09">
+      <h2 class="sec_title">
+        <span class="avenir">CHECK OUT</span>
+        <span class="vivaldi">Our Story</span>
+      </h2>
+
+      <!-- PC용 -->
+      <div class="sliding_cont pc_only">
+        <div class="slide_front">
+          <span>
+            {
+          </span>
+              <div class="between_cont">
+                From Ambition<br/>
+to admission
+              </div>
+          <span>
+            }
+          </span>
+        </div>
+        <div class="slide_back">
+          <div class="left_slide back_cont">
+            on
+          </div>
+          <div class="right_slide back_cont">
+            Youtube
+          </div>
+        </div>
+      </div>
+
+      <!-- 모바일용 -->
+      <div class="sliding_cont_mobile mobile_only">
+        <p class="mobile_title">check out</p>
+        <div class="mobile_middle">
+          <span class="bracket">{</span>
+            <div class="flex_container">
+              
+              <span class="vivaldi_text our">Our</span>
+              <div class="mobile_between">
+                From Ambition<br/>to admission
+              </div>
+              <span class="vivaldi_text story">Story</span>
+            </div>
+          <span class="bracket">}</span>
+        </div>
+        <p class="mobile_youtube">on youtube</p>
+      </div>
+
+      <div class="youtube_grid">
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_01.png" alt="Youtube thumbnail 1">
+        </a>
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_02.png" alt="Youtube thumbnail 2">
+        </a>
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_03.png" alt="Youtube thumbnail 3">
+        </a>
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_04.png" alt="Youtube thumbnail 4">
+        </a>
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_05.png" alt="Youtube thumbnail 5">
+        </a>
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_06.png" alt="Youtube thumbnail 6">
+        </a>
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_07.png" alt="Youtube thumbnail 7">
+        </a>
+        <div class="youtube_item text_box">
+          <div class="text_top">
+            More Videos<br>
+            on Youtube.<br>
+            Click Here!
+          </div>
+          <div class="text_bottom">
+            <span class="stars">* * *</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+      </div>
+
     </section>
   </main>
 

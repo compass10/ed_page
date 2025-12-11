@@ -12,9 +12,10 @@ main {
   line-height: 1.0416666667vw;
   letter-spacing: -0.03em;
   text-transform: uppercase;
+  margin-bottom: 0.625vw;
 }
 .page_title .num {
-  margin-right: 3.75vw;
+  margin-right: 4.1666666667vw;
 }
 
 .page_content {

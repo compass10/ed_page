@@ -243,10 +243,11 @@ $inquiry_result = mysql_query($inquiry_sql);
                     echo '<span class="page_btn prev" disabled>←</span>';
                   }
 
-                  // 페이지 번호 (10개 단위)
+                  // PC용 페이지 번호 (10개 단위)
                   $startPage = floor(($pg - 1) / 10) * 10 + 1;
                   $endPage = min($startPage + 9, $nTotalPage);
 
+                  echo '<div class="page_nums pc_only">';
                   for($i = $startPage; $i <= $endPage; $i++) {
                     if($i == $pg) {
                       echo '<span class="page_num active">'.$i.'</span>';
@@ -254,6 +255,25 @@ $inquiry_result = mysql_query($inquiry_sql);
                       echo '<a href="?pg='.$i.'#board" class="page_num">'.$i.'</a>';
                     }
                   }
+                  echo '</div>';
+
+                  // 모바일용 페이지 번호 (5개 단위, 현재 페이지 중심)
+                  $mobileStartPage = max(1, $pg - 2);
+                  $mobileEndPage = min($mobileStartPage + 4, $nTotalPage);
+                  // 끝에서 5개 미만이면 시작점 조정
+                  if($mobileEndPage - $mobileStartPage < 4) {
+                    $mobileStartPage = max(1, $mobileEndPage - 4);
+                  }
+
+                  echo '<div class="page_nums mobile_only">';
+                  for($i = $mobileStartPage; $i <= $mobileEndPage; $i++) {
+                    if($i == $pg) {
+                      echo '<span class="page_num active">'.$i.'</span>';
+                    } else {
+                      echo '<a href="?pg='.$i.'#board" class="page_num">'.$i.'</a>';
+                    }
+                  }
+                  echo '</div>';
 
                   // 다음 버튼
                   if($pg < $nTotalPage) {

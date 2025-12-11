@@ -35,20 +35,19 @@ const portSwiper = new Swiper('.port_slide', {
   },
 })
 
-// article_list hover 시 img_list에 active 클래스 추가
-const articleItems = document.querySelectorAll('.article_list > li');
-const imgItems = document.querySelectorAll('.pass_list .img_list > li');
+// #andMore .img_list hover 시 이미지 표시
+const articleItems = document.querySelectorAll('#andMore .article_list li');
+const imgItems = document.querySelectorAll('#andMore .img_list li');
 
 articleItems.forEach((item, index) => {
   item.addEventListener('mouseenter', () => {
-    imgItems.forEach((img) => img.classList.remove('active'));
+    imgItems.forEach(img => img.classList.remove('active'));
     if (imgItems[index]) {
       imgItems[index].classList.add('active');
     }
   });
-
   item.addEventListener('mouseleave', () => {
-    imgItems.forEach((img) => img.classList.remove('active'));
+    imgItems.forEach(img => img.classList.remove('active'));
   });
 });
 
@@ -73,3 +72,13 @@ accordionHeaders.forEach(function(header) {
     content.classList.toggle('active');
   });
 });
+
+// #ourStory .sliding_cont 애니메이션 - 섹션 상단이 화면 상단에 붙었을 때 트리거 (PC)
+inView('#ourStory .sliding_cont.pc_only', (el) => {
+  el.classList.add('active');
+}, { rootMargin: '0px 0px -80% 0px', threshold: 0 });
+
+// #ourStory .sliding_cont_mobile 애니메이션 (모바일)
+inView('#ourStory .sliding_cont_mobile', (el) => {
+  el.classList.add('active');
+}, { rootMargin: '0px 0px -50% 0px', threshold: 0 });

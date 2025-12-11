@@ -419,6 +419,19 @@
       }
 
       .pagination {
+        .page_nums {
+          display: flex;
+          gap: vw(10, 1920);
+
+          &.pc_only {
+            display: flex;
+          }
+
+          &.mobile_only {
+            display: none;
+          }
+        }
+
         .page_btn,
         .page_num {
           color: #fff;
@@ -624,6 +637,448 @@
           letter-spacing: -0.03em;
           text-transform: capitalize;
           color: #999999;
+        }
+      }
+    }
+  }
+}
+
+// 모바일 반응형
+@media (max-width: 1024px) {
+  .tab_content {
+    .sec_title {
+      font-size: mvw(50);
+      line-height: mvw(45);
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: mvw(28);
+
+      .avenir {
+        font-family: $font-avenir;
+        font-weight: 500;
+      }
+
+      .instru {
+        font-family: $font-instru;
+        font-weight: 400;
+        font-style: italic;
+      }
+    }
+  }
+
+  .tab_btns {
+    gap: mvw(12);
+
+    .tab_btn {
+      padding: mvw(8) mvw(12);
+      font-family: $font-pretendard;
+      font-weight: 700;
+      font-size: mvw(14);
+      line-height: mvw(14);
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+  }
+
+  .contact_wrap,
+  .location_wrap {
+    flex-direction: column;
+
+    .contact_left,
+    .location_left {
+      padding-top: mvw(32);
+      margin-bottom: mvw(40);
+
+      .left_bottom {
+        display: none;
+      }
+
+      .left_text_ko {
+        margin-bottom: mvw(12);
+        font-family: $font-pretendard;
+        font-weight: 500;
+        font-size: mvw(14);
+        line-height: mvw(20);
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+
+      .left_text_en {
+        margin-left: 0;
+        font-family: $font-avenir;
+        font-weight: 500;
+        font-size: mvw(14);
+        line-height: mvw(20);
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+    }
+
+    .contact_right {
+      width: 100%;
+
+      .right_tabs {
+        .right_tab {
+          padding: mvw(8) mvw(12);
+          font-family: $font-avenir;
+          font-weight: 700;
+          font-size: mvw(14);
+          line-height: mvw(14);
+          letter-spacing: -0.03em;
+          text-transform: uppercase;
+        }
+      }
+
+      .right_content {
+        min-height: mvw(891);
+        padding: mvw(12) mvw(14);
+
+        .contact_form {
+          .form_row {
+            padding: mvw(8) 0;
+
+            &.privacy_row {
+              flex-direction: column;
+
+              .form_label {
+                width: auto;
+                font-family: $font-pretendard;
+                font-weight: 400;
+                font-size: mvw(12);
+                line-height: mvw(16);
+                letter-spacing: -0.03em;
+                margin-bottom: mvw(12);
+              }
+
+              .checkbox_group {
+                margin-bottom: mvw(12);
+              }
+
+              .privacy_wrap .privacy_detail .privacy_sub {
+                margin-bottom: mvw(12);
+
+                input[type='checkbox'] {
+                  width: mvw(9) !important;
+                  height: mvw(9) !important;
+                  margin-top: mvw(6);
+                }
+
+                .checkbox_label {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 1px;
+                  margin-top: mvw(4);
+
+                  .privacy_title {
+                    font-family: $font-pretendard;
+                    font-weight: 400;
+                    font-size: mvw(12);
+                    line-height: mvw(16);
+                    letter-spacing: -0.03em;
+                    margin-left: mvw(6);
+                  }
+
+                  .privacy_content {
+                    font-family: $font-pretendard;
+                    font-weight: 400;
+                    font-size: mvw(12);
+                    line-height: mvw(16);
+                    letter-spacing: -0.03em;
+                    margin-left: mvw(-12.5);
+                  }
+                }
+              }
+            }
+          }
+
+          .form_row .form_label {
+            width: mvw(116);
+            font-family: $font-pretendard;
+            font-weight: 700;
+            font-size: mvw(14);
+            line-height: mvw(16);
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+          }
+
+          .form_row.privacy_row .form_label {
+            width: auto !important;
+            font-family: $font-pretendard;
+            font-weight: 400;
+            font-size: mvw(12);
+            line-height: mvw(16);
+            letter-spacing: -0.03em;
+            margin-bottom: mvw(12);
+          }
+
+          .form_input,
+          .form_file {
+            font-family: $font-pretendard;
+            font-weight: 400;
+            font-size: mvw(14);
+            line-height: mvw(16);
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+
+            &::placeholder {
+              font-family: $font-pretendard;
+              font-weight: 400;
+              font-size: mvw(14);
+              line-height: mvw(16);
+              letter-spacing: -0.03em;
+              text-transform: uppercase;
+            }
+          }
+
+          .form_textarea {
+            font-family: $font-pretendard;
+            font-weight: 400;
+            font-size: mvw(14);
+            line-height: mvw(16);
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            height: mvw(160);
+
+            &::placeholder {
+              font-family: $font-pretendard;
+              font-weight: 400;
+              font-size: mvw(14);
+              line-height: mvw(16);
+              letter-spacing: -0.03em;
+              text-transform: uppercase;
+            }
+          }
+
+          .checkbox_group {
+            flex-wrap: wrap;
+
+            .checkbox_item {
+              .checkbox_label {
+                font-family: $font-pretendard;
+                font-weight: 400;
+                font-size: mvw(14);
+                line-height: mvw(16);
+                letter-spacing: -0.03em;
+                text-transform: uppercase;
+              }
+
+              input[type='checkbox'],
+              input[type='radio'] {
+                width: mvw(9);
+                height: mvw(9);
+              }
+
+              &.teps {
+                margin-right: 0;
+              }
+            }
+
+            .score_input {
+              width: 100%;
+              border-top: 1px solid #fff;
+              padding: mvw(8) 0;
+              margin-top: mvw(8);
+              margin-left: 0;
+              gap: mvw(20);
+
+              .score_label {
+                font-family: $font-pretendard;
+                font-weight: 700;
+                font-size: mvw(16);
+                line-height: mvw(16);
+                letter-spacing: -0.03em;
+                text-transform: uppercase;
+              }
+
+              input {
+                width: 0;
+                flex: 1;
+                font-family: $font-pretendard;
+                font-weight: 400;
+                font-size: mvw(14);
+                line-height: mvw(16);
+                letter-spacing: -0.03em;
+                text-transform: uppercase;
+              }
+            }
+          }
+
+          .submit_btn {
+            padding: mvw(8);
+            font-family: $font-avenir;
+            font-weight: 700;
+            font-size: mvw(20);
+            line-height: mvw(20);
+            letter-spacing: -0.03em;
+            text-align: center;
+            text-transform: uppercase;
+          }
+        }
+
+        .board_list {
+          .board_header {
+            padding: mvw(8) 0;
+
+            span {
+              font-family: $font-pretendard;
+              font-weight: 700;
+              font-size: mvw(16);
+              line-height: mvw(16);
+              letter-spacing: -0.03em;
+              text-transform: uppercase;
+            }
+
+            .col_no {
+              width: mvw(40);
+            }
+
+            .col_author {
+              width: mvw(60);
+            }
+
+            .col_date,
+            .col_status {
+              display: none;
+            }
+          }
+
+          .board_body {
+            .board_item {
+              padding: mvw(8) 0;
+
+              span {
+                font-family: $font-pretendard;
+                font-weight: 400;
+                font-size: mvw(14);
+                line-height: mvw(16);
+                letter-spacing: -0.03em;
+                text-transform: uppercase;
+              }
+
+              .col_no {
+                width: mvw(40);
+              }
+
+              .col_author {
+                width: mvw(60);
+              }
+
+              .col_date,
+              .col_status {
+                display: none;
+              }
+
+              &:has(+ .reply) {
+                padding-bottom: 0;
+
+                .col_title,
+                .col_author {
+                  padding-bottom: mvw(8);
+                }
+              }
+
+              &.reply {
+                span {
+                  font-family: $font-pretendard;
+                  font-weight: 400;
+                  font-size: mvw(14);
+                  line-height: mvw(16);
+                  letter-spacing: -0.03em;
+                  text-transform: uppercase;
+                }
+              }
+            }
+          }
+        }
+
+        .pagination {
+          gap: mvw(30);
+          margin-top: mvw(40);
+
+          .page_nums {
+            display: flex;
+            gap: mvw(30);
+
+            &.pc_only {
+              display: none;
+            }
+
+            &.mobile_only {
+              display: flex;
+            }
+          }
+
+          .page_btn,
+          .page_num {
+            font-family: $font-pretendard;
+            font-weight: 400;
+            font-size: mvw(14);
+            line-height: mvw(16);
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+
+  }
+
+  .location_wrap {
+    .location_right {
+      width: 100%;
+
+      .location_box {
+        padding: mvw(12) mvw(16);
+
+        .location_top {
+          gap: mvw(25);
+
+          .location_name {
+            font-family: $font-pretendard;
+            font-weight: 700;
+            font-size: mvw(16);
+            line-height: mvw(18);
+            letter-spacing: -0.03em;
+            text-transform: capitalize;
+          }
+
+          .location_phone {
+            font-family: $font-pretendard;
+            font-weight: 400;
+            font-size: mvw(14);
+            line-height: mvw(18);
+            letter-spacing: -0.03em;
+            text-transform: capitalize;
+            text-decoration: underline;
+          }
+
+          .location_addr {
+            font-family: $font-pretendard;
+            font-weight: 400;
+            font-size: mvw(14);
+            line-height: mvw(18);
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            text-decoration: underline;
+          }
+        }
+
+        .location_map {
+          height: 310px;
+          margin-top: mvw(16);
+          margin-bottom: mvw(12);
+        }
+
+        .location_address {
+          .address_text {
+            font-family: $font-pretendard;
+            font-weight: 400;
+            font-size: mvw(12);
+            line-height: mvw(20);
+            letter-spacing: -0.03em;
+            text-align: right;
+            text-transform: capitalize;
+          }
         }
       }
     }

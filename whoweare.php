@@ -147,6 +147,99 @@ $pageCss = 'whoweare';
               </div>
             </div>
           </div>
+          <!-- 모바일 아코디언 -->
+          <div class="right_col_mobile">
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">상주 전문 강사진</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">늘 곁에서 지켜보는 멘토</p>
+                <p class="desc">이드 학원은 언제나 학원에 상주하는 경험 많고 실력 있는 강사진이 함께합니다. 학생들은 필요한 순간마다 즉각적인 피드백과 지도를 받을 수 있어, 혼자 고민하는 시간을 줄이고 빠르게 성장할 수 있습니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">높은 미대 편입 합격률</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">숫자로 증명되는 자신감</p>
+                <p class="desc">매년 수많은 합격 사례로 증명된 압도적인 합격률은 이드 학원의 가장 큰 자부심입니다. 단순한 합격을 넘어, 학생들이 원하는 대학과 학과에 진학할 수 있도록 끝까지 책임집니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">맞춤형 시간표</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">나만의 속도를 존중하는 1:1 학습 설계</p>
+                <p class="desc">학생마다 목표와 학습 스타일은 다릅니다. 이드 학원은 획일적인 수업이 아닌, 개개인의 상황에 맞춘 맞춤형 시간표를 제공합니다. 이를 통해 학생들은 자신만의 학습 리듬을 유지하며 효율적인 성장을 이끌어냅니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">지정좌석제</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">오직 나만의 자리, 언제나 내 공간</p>
+                <p class="desc">이드 학원은 학생 개개인에게 고유의 좌석을 제공합니다. 자신의 책상에서 안정감을 느끼며 자습할 수 있어, 꾸준함과 몰입도를 높입니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">두 가지 실기 준비 원칙</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">두 가지 무기를 동시에 준비하는 전략적 훈련</p>
+                <p class="desc">이드 학원은 학생 1인당 두 가지 실기를 반드시 준비하는 것을 원칙으로 합니다. 다양한 실기 능력을 함께 개발하여 시험에서의 선택 폭을 넓히고, 변화하는 전형에도 유연하게 대응할 수 있도록 합니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">정규 수업</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">하루를 꽉 채우는 집중의 힘</p>
+                <p class="desc">단순히 오전반, 오후반으로 나뉘는 짧은 수업이 아닙니다. 하루 전체를 미술에 온전히 집중할 수 있도록 설계된 정규 수업은 깊이 있는 실력 향상과 입시 준비를 위한 최적의 환경을 만들어 줍니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">특강기간 동안 개방 공간</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">닫히지 않는 배움의 문</p>
+                <p class="desc">특강 기간에는 학원 공간이 학생들에게 자유롭게 열립니다. 원하는 시간에 와서 집중하고, 자유롭게 작업할 수 있는 환경은 스스로의 페이스를 지키며 성장하고자 하는 학생들에게 큰 자산이 됩니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">포스터 실기 전형 석권</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">포스터 실기의 왕좌를 차지하다</p>
+                <p class="desc">이드 학원은 포스터 실기 전형에서 독보적인 성과를 자랑합니다. 체계적인 훈련과 탄탄한 노하우를 바탕으로, 포스터 전형을 준비하는 학생들에게 가장 확실한 선택이 됩니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">CIP 전형 압도적 합격률</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">CIP, 누구도 따라올 수 없는 성과</p>
+                <p class="desc">CIP 전형에서 이드 학원은 매년 압도적인 합격률을 기록합니다. 다년간의 데이터 분석과 전형별 맞춤 전략은 CIP 합격을 목표로 하는 학생들에게 최고의 선택지가 됩니다.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
