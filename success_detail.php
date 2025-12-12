@@ -55,6 +55,10 @@ if(!$content_img && $upload_img) {
           <span class="avenir">Every</span>
           <span class="instru">name</span>
         </h2>
+        <h2 class="sec_title">
+          <span class="avenir">tells a</span>
+          <span class="instru">story.</span>
+        </h2>
       </div>
       <div class="sec_title_row">
         <div class="left_col">
@@ -78,6 +82,11 @@ if(!$content_img && $upload_img) {
           <span class="avenir">tells a</span>
           <span class="instru">story.</span>
         </h2>
+      </div>
+      <!-- 모바일 전용 설명 -->
+      <div class="mobile_desc">
+        <p class="desc_kr">모든 합격의 뒤에는 도전과 성장의 이야기가 있습니다.<br/>이드에서는 결과뿐 아니라 그 여정 자체를 함께 축하합니다.</p>
+        <p class="desc_en">Behind every success is a story of challenge and growth.<br/>At ED, we celebrate not just results, but the journey itself.</p>
       </div>
       <!-- 상세 콘텐츠 영역 -->
       <div class="success_detail">

@@ -322,9 +322,7 @@ $inquiry_result = mysql_query($inquiry_sql);
                 <span class="location_phone">+82 02<br/>464 9197</span>
                 <span class="location_addr">4F, Gunja Building, 512 Cheonho-daero,<br/>Gwangjin-gu, Seoul</span>
               </div>
-              <div class="location_map">
-                <!-- 지도 연동 예정 -->
-              </div>
+              <div class="location_map" id="map_konkuk"></div>
               <div class="location_address">
                 <span class="address_text">서울시 광진구 천호대로 512 군자빌딩 4층</span>
               </div>
@@ -335,9 +333,7 @@ $inquiry_result = mysql_query($inquiry_sql);
                 <span class="location_phone">+82 02<br/>336 9543</span>
                 <span class="location_addr">2F, Eunhye Building, 107-1 Wausan-ro,<br/>Mapo-gu, Seoul</span>
               </div>
-              <div class="location_map">
-                <!-- 지도 연동 예정 -->
-              </div>
+              <div class="location_map" id="map_hongdae"></div>
               <div class="location_address">
                 <span class="address_text">서울시 마포구 와우산로 107-1 은혜빌딩2층</span>
               </div>
@@ -350,3 +346,77 @@ $inquiry_result = mysql_query($inquiry_sql);
 
 <?php include 'includes/footer.php'; ?>
 <script src="js/contact.js"></script>
+
+<!-- 네이버 지도 API -->
+<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=5plzhiw4g6"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 위치안내 탭이 활성화될 때 지도 초기화
+  let mapsInitialized = false;
+
+  function initMaps() {
+    if (mapsInitialized) return;
+
+    // 건대이드 본원 좌표 (서울시 광진구 천호대로 512)
+    const konkukPosition = new naver.maps.LatLng(37.5572, 127.0742);
+
+    // 홍대이드 좌표 (서울시 마포구 와우산로 107-1)
+    const hongdaePosition = new naver.maps.LatLng(37.5547, 126.9236);
+
+    // 건대 지도
+    const mapKonkuk = new naver.maps.Map('map_konkuk', {
+      center: konkukPosition,
+      zoom: 17,
+      zoomControl: true,
+      zoomControlOptions: {
+        position: naver.maps.Position.TOP_RIGHT
+      }
+    });
+
+    // 건대 마커
+    new naver.maps.Marker({
+      position: konkukPosition,
+      map: mapKonkuk,
+      title: '건대이드 본원'
+    });
+
+    // 홍대 지도
+    const mapHongdae = new naver.maps.Map('map_hongdae', {
+      center: hongdaePosition,
+      zoom: 17,
+      zoomControl: true,
+      zoomControlOptions: {
+        position: naver.maps.Position.TOP_RIGHT
+      }
+    });
+
+    // 홍대 마커
+    new naver.maps.Marker({
+      position: hongdaePosition,
+      map: mapHongdae,
+      title: '홍대이드'
+    });
+
+    mapsInitialized = true;
+  }
+
+  // 탭 전환 감지 - 위치안내 탭(data-tab="2") 클릭 시 지도 초기화
+  const tabBtns = document.querySelectorAll('.tab_btn[data-tab="2"]');
+  tabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setTimeout(initMaps, 100);
+    });
+  });
+
+  // URL 해시로 바로 위치안내 탭으로 접근한 경우
+  if (window.location.hash === '#location') {
+    setTimeout(initMaps, 100);
+  }
+
+  // 페이지 로드 시 위치안내 탭이 이미 활성화되어 있는 경우
+  const activeTab = document.querySelector('.tab_content[data-tab="2"].active');
+  if (activeTab) {
+    setTimeout(initMaps, 100);
+  }
+});
+</script>

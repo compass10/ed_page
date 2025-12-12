@@ -1324,7 +1324,7 @@
         <div class="left">@ 2025</div>
         <div class="right">and <em>More</em></div>
       </div>
-      <div class="pass_list">
+      <div class="pass_list pc_only">
         <ul class="img_list">
           <li><img src="./asset/images/main/sec_05_left_img_01.jpeg" alt=""></li>
           <li><img src="./asset/images/main/sec_05_left_img_02.png" alt=""></li>
@@ -1420,6 +1420,81 @@
                 1명, 성신여대 1명, 서울여대 1명 동덕여대 1명!
               </div>
             </a>
+          </li>
+        </ul>
+      </div>
+      <!-- 모바일 전용 pass_list -->
+      <div class="pass_list_mobile mobile_only">
+        <ul class="article_list">
+          <li>
+            <div class="title_area">
+              <p>2025 합격자 바로가기</p>
+              <div class="btn">
+                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                </svg>
+              </div>
+            </div>
+            <div class="hiding_text">
+              <p>2025년 압도적 점유율 1위대학 30개 대학! 서울 최상위권대학은 100% 점유!</p>
+              <img src="./asset/images/main/sec_05_left_img_01.jpeg" alt="2025 합격자">
+            </div>
+          </li>
+          <li>
+            <div class="title_area">
+              <p>2024 합격자 바로가기</p>
+              <div class="btn">
+                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                </svg>
+              </div>
+            </div>
+            <div class="hiding_text">
+              <p>2024학년도 이드 합격자 101명! 이드의 합격자는 in서울과 수도권 중심 대학만을 지원합니다</p>
+              <img src="./asset/images/main/sec_05_left_img_02.png" alt="2024 합격자">
+            </div>
+          </li>
+          <li>
+            <div class="title_area">
+              <p>2023 합격자 바로가기</p>
+              <div class="btn">
+                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                </svg>
+              </div>
+            </div>
+            <div class="hiding_text">
+              <p>2023년도 이드합격자 서울,수도권대학 총 98명 합격의 쾌거!</p>
+              <img src="./asset/images/main/sec_05_left_img_03.jpeg" alt="2023 합격자">
+            </div>
+          </li>
+          <li>
+            <div class="title_area">
+              <p>2022 합격자 바로가기</p>
+              <div class="btn">
+                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                </svg>
+              </div>
+            </div>
+            <div class="hiding_text">
+              <p>총 합격자 수 89명! 포트폴리오 전형 29명 합격</p>
+              <img src="./asset/images/main/sec_05_left_img_04.png" alt="2022 합격자">
+            </div>
+          </li>
+          <li>
+            <div class="title_area">
+              <p>2021 합격자 바로가기</p>
+              <div class="btn">
+                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                </svg>
+              </div>
+            </div>
+            <div class="hiding_text">
+              <p>2021년도 총 50명 합격! 홍익대학교 17명, 건국대 12명, 경희대 1명, 성신여대 1명, 서울여대 1명 동덕여대 1명!</p>
+              <img src="./asset/images/main/sec_05_left_img_05.png" alt="2021 합격자">
+            </div>
           </li>
         </ul>
       </div>
@@ -1773,5 +1848,28 @@ to admission
 
     </section>
   </main>
+
+  <!-- 모바일 #andMore 아코디언 토글 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileItems = document.querySelectorAll('.pass_list_mobile .article_list li');
+
+      mobileItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+          // 현재 아이템이 이미 active면 닫기
+          if (this.classList.contains('active')) {
+            this.classList.remove('active');
+          } else {
+            // 다른 모든 아이템 닫기
+            mobileItems.forEach(function(otherItem) {
+              otherItem.classList.remove('active');
+            });
+            // 클릭한 아이템 열기
+            this.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
 
 <?php include 'includes/footer.php'; ?>

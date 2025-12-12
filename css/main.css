@@ -1,3 +1,15 @@
+.mobile_only {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .pc_only {
+    display: none !important;
+  }
+  .mobile_only {
+    display: block !important;
+  }
+}
 main {
   width: 100%;
   overflow-x: hidden;
@@ -495,7 +507,7 @@ main {
 }
 
 #opportunity {
-  background-color: #FFEE6E;
+  background-color: #ffee6e;
   padding-top: 7.8125vw;
   padding-bottom: 13.125vw;
 }
@@ -706,7 +718,8 @@ main {
   width: 0.996875vw;
   margin-right: 11.1979166667vw;
 }
-#portfolio .section_header .text_01, #portfolio .section_header .text_02 {
+#portfolio .section_header .text_01,
+#portfolio .section_header .text_02 {
   font-family: "avenir-next-lt-pro-condensed", sans-serif;
   font-weight: 500;
   font-size: 1.0416666667vw;
@@ -1153,35 +1166,74 @@ main {
   main #andMore {
     padding: min(26.6666666667vw, 100px) min(4vw, 15px);
   }
-  main #andMore .section_header .left, main #andMore .section_header .right {
+  main #andMore .section_header .left,
+  main #andMore .section_header .right {
     font-size: min(13.3333333333vw, 50px);
     line-height: min(13.3333333333vw, 50px);
   }
-  main #andMore .pass_list {
+  main #andMore .pass_list_mobile {
     margin: min(26.6666666667vw, 100px) 0 0;
-    padding: unset;
   }
-  main #andMore .pass_list .article_list {
+  main #andMore .pass_list_mobile .article_list {
     padding: unset;
     width: 100%;
+    list-style: none;
   }
-  main #andMore .pass_list .article_list li {
+  main #andMore .pass_list_mobile .article_list li {
     padding: unset;
+    border-bottom: 1px solid #000;
+    cursor: pointer;
   }
-  main #andMore .pass_list .article_list li .title_area {
-    padding: min(2.6666666667vw, 10px) 0;
+  main #andMore .pass_list_mobile .article_list li:first-child {
+    border-top: 1px solid #000;
+  }
+  main #andMore .pass_list_mobile .article_list li .title_area {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: min(2.6666666667vw, 10px) 0;
   }
-  main #andMore .pass_list .article_list li .title_area p {
+  main #andMore .pass_list_mobile .article_list li .title_area p {
+    font-family: "Pretendard", sans-serif;
+    font-weight: 500;
     font-size: min(3.7333333333vw, 14px);
     line-height: min(3.7333333333vw, 14px);
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
   }
-  main #andMore .pass_list .article_list li .title_area .btn {
+  main #andMore .pass_list_mobile .article_list li .title_area .btn {
     display: flex;
+    transition: transform 0.3s ease;
   }
-  main #andMore .pass_list .article_list li .title_area .btn svg {
+  main #andMore .pass_list_mobile .article_list li .title_area .btn svg {
     width: min(3.7333333333vw, 14px);
     height: min(3.7333333333vw, 14px);
+  }
+  main #andMore .pass_list_mobile .article_list li .hiding_text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding-bottom 0.3s ease;
+  }
+  main #andMore .pass_list_mobile .article_list li .hiding_text p {
+    font-family: "Pretendard", sans-serif;
+    font-weight: 400;
+    font-size: min(3.2vw, 12px);
+    line-height: min(4.2666666667vw, 16px);
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+  main #andMore .pass_list_mobile .article_list li .hiding_text img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: min(3.2vw, 12px);
+  }
+  main #andMore .pass_list_mobile .article_list li.active .title_area .btn {
+    transform: rotate(90deg);
+  }
+  main #andMore .pass_list_mobile .article_list li.active .hiding_text {
+    max-height: min(106.6666666667vw, 400px);
+    padding-bottom: min(4.2666666667vw, 16px);
   }
   main #opportunity {
     padding: min(16vw, 60px) min(4vw, 15px) min(53.3333333333vw, 200px);
@@ -1770,5 +1822,3 @@ main {
     line-height: min(3.7333333333vw, 14px);
   }
 }
-
-/*# sourceMappingURL=main.css.map */

@@ -147,4 +147,100 @@
   color: #666;
 }
 
+.mobile_desc {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .sec_title_row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sec_title_row:nth-child(2) {
+    display: none;
+  }
+  .sec_title_row .left_col {
+    display: none;
+  }
+  .page_content .sec_title {
+    margin-bottom: 0;
+  }
+  .page_content .sec_title .avenir {
+    font-family: "avenir-next-lt-pro-condensed", sans-serif;
+    font-weight: 500;
+    font-size: min(13.3333333333vw, 50px);
+    line-height: min(12vw, 45px);
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+  .page_content .sec_title .instru {
+    font-family: Instrument Serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: min(13.3333333333vw, 50px);
+    line-height: min(12vw, 45px);
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+  .mobile_desc {
+    display: block;
+    margin-top: min(8.5333333333vw, 32px);
+    margin-bottom: min(8.5333333333vw, 32px);
+  }
+  .mobile_desc .desc_kr {
+    font-family: "Pretendard", sans-serif;
+    font-weight: 500;
+    font-size: min(3.7333333333vw, 14px);
+    line-height: min(5.3333333333vw, 20px);
+    letter-spacing: -0.03em;
+    margin-bottom: min(3.2vw, 12px);
+  }
+  .mobile_desc .desc_en {
+    font-family: "avenir-next-lt-pro-condensed", sans-serif;
+    font-weight: 500;
+    font-size: min(3.7333333333vw, 14px);
+    line-height: min(5.3333333333vw, 20px);
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+  .success_grid {
+    grid-template-columns: 1fr;
+    gap: min(5.3333333333vw, 20px);
+    margin-bottom: min(8.5333333333vw, 32px);
+  }
+  .success_grid .success_item {
+    width: 100%;
+    height: min(44.5333333333vw, 167px);
+    min-height: min(60.1146666667vw, 225.43px);
+  }
+  .pagination {
+    gap: min(2.6666666667vw, 10px);
+    margin-top: min(10.6666666667vw, 40px);
+    margin-bottom: min(26.6666666667vw, 100px);
+  }
+  .pagination .page_btn,
+  .pagination .page_num {
+    font-size: min(3.7333333333vw, 14px);
+    line-height: min(4.2666666667vw, 16px);
+  }
+  .success_detail {
+    flex-direction: column;
+    gap: min(4.2666666667vw, 16px);
+    margin-bottom: min(26.6666666667vw, 100px);
+  }
+  .success_detail .back_btn {
+    width: min(8.5333333333vw, 32px);
+    height: min(8.5333333333vw, 32px);
+  }
+  .success_detail .detail_image {
+    max-width: 100%;
+  }
+  .success_detail .detail_image.no_image {
+    height: min(53.3333333333vw, 200px);
+  }
+  .success_detail .detail_image.no_image p {
+    font-size: min(3.7333333333vw, 14px);
+  }
+}
+
 /*# sourceMappingURL=success.css.map */

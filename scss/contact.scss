@@ -265,8 +265,8 @@
               margin-right: vw(128, 1920);
             }
 
-            input[type="checkbox"],
-            input[type="radio"] {
+            input[type='checkbox'],
+            input[type='radio'] {
               appearance: none;
               width: vw(9, 1920);
               height: vw(9, 1920);
@@ -352,7 +352,7 @@
                 gap: vw(8, 1920);
                 margin-bottom: vw(10, 1920);
 
-                input[type="checkbox"] {
+                input[type='checkbox'] {
                   appearance: none;
                   width: vw(9, 1920);
                   height: vw(9, 1920);
@@ -1020,7 +1020,6 @@
         }
       }
     }
-
   }
 
   .location_wrap {
