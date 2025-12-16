@@ -9,11 +9,12 @@ body.dark-theme .sec_title {
   color: #fff;
 }
 
-.page_content {
-  overflow: hidden;
-}
 .page_content .section_wrap {
   padding-bottom: 15.625vw;
+}
+
+main {
+  overflow: hidden;
 }
 
 .fan_wrap {
@@ -45,7 +46,7 @@ body.dark-theme .sec_title {
 .curve_path {
   position: absolute;
   width: 180%;
-  bottom: 0%;
+  bottom: 5vw;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -74,7 +75,6 @@ body.dark-theme .sec_title {
   text-align: center;
   z-index: 10;
   margin-top: 3.125vw;
-  gap: 2.5vw;
   position: absolute;
   top: 27.34375vw;
 }

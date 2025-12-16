@@ -36,6 +36,10 @@ header {
       filter: invert(1);
     }
   }
+
+  .side_menu {
+    color: #000;
+  }
 }
 
 
@@ -49,7 +53,9 @@ header {
     padding:vw(30,1920);
     background-color:#FFEE6E;
     display:flex;
-    flex-direction: column;;
+    flex-direction: column;
+    transition: right 0.5s ease;
+    border-left: 1px solid #000;
     &.open{
       right:0;
     }
@@ -74,9 +80,12 @@ text-transform: capitalize;
       .right{
         width:vw(41,1920);
         height:vw(41,1920);
+        display: flex;
+        justify-content: center;
+        align-items: center;
         svg{
-          width:100%;
-          height:100%;
+          width:90%;
+          height:90%;
           cursor:pointer;
         }
       }
@@ -106,6 +115,7 @@ text-transform: uppercase;
         svg{
           width:vw(22,1920);
           height:vw(22,1920);
+          display:none;
         }
       }
     }

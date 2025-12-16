@@ -19,13 +19,13 @@ main {
 }
 
 .page_content {
-  padding-top: 2.1354166667vw;
+  padding-top: 0;
 }
 
 .sec_title {
   font-size: 10.4166666667vw;
-  line-height: 9.375vw;
-  letter-spacing: -0.03em;
+  line-height: 8.8541666667vw;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
 }
 .sec_title .avenir {

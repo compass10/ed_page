@@ -17,11 +17,13 @@ body.dark-theme {
 }
 
 .page_content {
-  overflow: hidden;
-
   .section_wrap {
     padding-bottom: vw(300, 1920);
   }
+}
+
+main {
+  overflow: hidden;
 }
 
 // 캐러셀 슬라이드 영역 (GSAP MotionPath)
@@ -61,7 +63,7 @@ body.dark-theme {
 .curve_path {
   position: absolute;
   width: 180%;
-  bottom: 0%;
+  bottom: 5vw;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -92,7 +94,6 @@ body.dark-theme {
   text-align: center;
   z-index: 10;
   margin-top: vw(60, 1920);
-  gap: vw(48, 1920);
   position: absolute;
   top: vw(525, 1920);
   .sec_title {

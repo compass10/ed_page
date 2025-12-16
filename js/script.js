@@ -26,10 +26,13 @@ titleArea.forEach(item => {
       }
     } else {
       // PC: 전체 푸터 토글
+      const toggleIcons = footer.querySelectorAll('.title_area span:last-child');
       if(footer.classList.contains('show_content')){
         footer.classList.remove('show_content');
+        toggleIcons.forEach(icon => icon.textContent = '+');
       }else{
         footer.classList.add('show_content');
+        toggleIcons.forEach(icon => icon.textContent = '-');
       }
     }
   })

@@ -17,6 +17,8 @@ body.dark-theme {
 }
 
 .page_content {
+  overflow: hidden;
+
   .section_wrap {
     padding-bottom: vw(300, 1920);
   }
@@ -102,8 +104,7 @@ body.dark-theme {
 
   .port_slide {
     width: calc(100% - vw(70, 1920));
-    overflow: hidden;
-    padding: vw(100, 1920) 0;
+    padding: vw(100, 1920) 0 vw(60, 1920);
   }
 }
 
@@ -174,10 +175,11 @@ body.dark-theme {
 .port_bottom_row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
 
   .left_box {
     width: vw(275, 1920);
+    padding-top: vw(20, 1920);
 
     p {
       text-align: left;

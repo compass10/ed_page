@@ -9,6 +9,9 @@ body.dark-theme .sec_title {
   color: #fff;
 }
 
+.page_content {
+  overflow: hidden;
+}
 .page_content .section_wrap {
   padding-bottom: 15.625vw;
 }
@@ -85,8 +88,7 @@ body.dark-theme .sec_title {
 }
 .port_box .port_slide {
   width: calc(100% - 3.6458333333vw);
-  overflow: hidden;
-  padding: 5.2083333333vw 0;
+  padding: 5.2083333333vw 0 3.125vw;
 }
 
 .port_list {
@@ -148,10 +150,11 @@ body.dark-theme .sec_title {
 .port_bottom_row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 .port_bottom_row .left_box {
   width: 14.3229166667vw;
+  padding-top: 1.0416666667vw;
 }
 .port_bottom_row .left_box p {
   text-align: left;

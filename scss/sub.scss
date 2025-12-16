@@ -26,13 +26,13 @@ main {
 }
 
 .page_content {
-  padding-top: vw(41, 1920);
+  padding-top: 0;
 }
 
 .sec_title {
   font-size: vw(200, 1920);
-  line-height: vw(180, 1920);
-  letter-spacing: -0.03em;
+  line-height: vw(170, 1920);
+  letter-spacing: -0.05em;
   text-transform: uppercase;
 
   .avenir {

@@ -95,8 +95,9 @@ main {
 }
 
 #textEd {
-  padding-top: 10.4166666667vw;
-  padding-bottom: 14.0625vw;
+  height: 100vh;
+  padding-top: 18.75vw;
+  padding-bottom: 18.75vw;
 }
 #textEd .text_flex {
   display: flex;
@@ -204,6 +205,9 @@ main {
   width: 21.6145833333vw;
   height: 26.0416666667vw;
   transition: width 0.3s ease;
+}
+#news .news_swiper .swiper-slide img {
+  width: 100%;
 }
 #news .bottom_img {
   max-width: 9.6354166667vw;
@@ -382,8 +386,8 @@ main {
   text-align: left;
   font-family: "Pretendard Variable";
   font-weight: 700;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: clamp(13px, 1.0416666667vw, 16px);
+  line-height: 1.5625vw;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: #000000;
@@ -757,7 +761,6 @@ main {
 }
 #portfolio .port_box .port_slide {
   width: calc(100% - 3.6458333333vw);
-  overflow: hidden;
   padding: 5.2083333333vw 0;
 }
 #portfolio .port_list {
@@ -1822,3 +1825,5 @@ main {
     line-height: min(3.7333333333vw, 14px);
   }
 }
+
+/*# sourceMappingURL=main.css.map */

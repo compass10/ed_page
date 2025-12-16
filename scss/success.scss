@@ -13,6 +13,14 @@
   display: flex;
   justify-content: space-between;
 
+  &:first-child {
+    margin-top: vw(40, 1920);
+
+    .sec_title:nth-child(2) {
+      display: none;
+    }
+  }
+
   &:nth-child(2) {
     align-items: center;
     gap: vw(88, 1920);
@@ -188,6 +196,14 @@
   .sec_title_row {
     flex-direction: column;
     align-items: flex-start;
+
+    &:first-child {
+      margin-top: mvw(40);
+
+      .sec_title:nth-child(2) {
+        display: block;
+      }
+    }
 
     &:nth-child(2) {
       display: none;

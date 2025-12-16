@@ -1,6 +1,6 @@
 .tab_content {
   display: none;
-  padding-bottom: 17.5520833333vw;
+  padding-bottom: 15.625vw;
 }
 .tab_content.active {
   display: block;
@@ -29,7 +29,6 @@
 .tab_detail {
   display: flex;
   gap: 1.0416666667vw;
-  margin-bottom: 17.7604166667vw;
 }
 .tab_detail .left_col {
   width: 23.4375vw;
@@ -321,11 +320,8 @@
 .core_value_list .core_value_col .core_value_item.active {
   height: 8.6979166667vw;
 }
-.core_value_list .core_value_col .core_value_item.active .item_toggle::before {
-  transform: rotate(90deg);
-}
 .core_value_list .core_value_col .core_value_item.active .item_toggle::after {
-  transform: rotate(0deg);
+  opacity: 0;
 }
 .core_value_list .core_value_col .core_value_item .item_header {
   display: flex;
@@ -860,6 +856,9 @@
   }
   .core_value_list .core_value_col .core_value_item.active {
     height: min(32.5333333333vw, 122px);
+  }
+  .core_value_list .core_value_col .core_value_item.active .item_toggle::after {
+    opacity: 0;
   }
   .core_value_list .core_value_col .core_value_item .item_header {
     height: min(11.7333333333vw, 44px);

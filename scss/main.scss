@@ -118,8 +118,9 @@ main {
 
 // textEd start
 #textEd {
-  padding-top: vw(200, 1920);
-  padding-bottom: vw(270, 1920);
+  height: 100vh;
+  padding-top: vw(360, 1920);
+  padding-bottom: vw(360, 1920);
   & .text_flex {
     display: flex;
 
@@ -237,6 +238,9 @@ main {
     width: vw(415, 1920);
     height: vw(500, 1920);
     transition: width 0.3s ease;
+    img {
+      width: 100%;
+    }
   }
   .bottom_img {
     max-width: vw(185, 1920);
@@ -436,8 +440,8 @@ main {
               font-family: 'Pretendard Variable';
 
               font-weight: 700;
-              font-size: 20px;
-              line-height: 30px;
+              font-size: clamp(13px, vw(20, 1920), 16px);
+              line-height: vw(30, 1920);
 
               letter-spacing: -0.03em;
               text-transform: uppercase;
@@ -861,7 +865,6 @@ main {
     .port_slide {
       width: calc(100% - vw(70, 1920));
       // padding-right:vw(30,1920);
-      overflow: hidden;
       padding: vw(100, 1920) 0;
     }
   }

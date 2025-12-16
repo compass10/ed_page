@@ -5,7 +5,7 @@
 // Who We Are 페이지 전용 스타일
 .tab_content {
   display: none;
-  padding-bottom: vw(337, 1920);
+  padding-bottom: vw(300, 1920);
 
   &.active {
     display: block;
@@ -37,7 +37,6 @@
 .tab_detail {
   display: flex;
   gap: vw(20, 1920);
-  margin-bottom: vw(341, 1920);
 
   .left_col {
     width: vw(450, 1920);
@@ -375,12 +374,8 @@
         height: vw(167, 1920);
 
         .item_toggle {
-          &::before {
-            transform: rotate(90deg);
-          }
-
           &::after {
-            transform: rotate(0deg);
+            opacity: 0;
           }
         }
       }
@@ -1010,6 +1005,12 @@
 
       &.active {
         height: mvw(122);
+
+        .item_toggle {
+          &::after {
+            opacity: 0;
+          }
+        }
       }
 
       .item_header {

@@ -3,7 +3,10 @@
     "allow": [
       "Bash(cat:*)",
       "Bash(find:*)",
-      "Bash(sass:*)"
+      "Bash(sass:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []

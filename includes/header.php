@@ -23,7 +23,7 @@
 </head>
 
 <body<?php if (isset($darkTheme) && $darkTheme): ?> class="dark-theme"<?php endif; ?>>
-  <header id="header">
+  <header id="header" class="down">
     <div class="header_inner">
       <div class="logo_area">
         <a href="index.php">

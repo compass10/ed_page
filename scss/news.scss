@@ -3,6 +3,10 @@
 @use 'base/mixins' as *;
 
 // News 페이지 전용 스타일
+main {
+  background-color: #EBEBEB;
+}
+
 .page_content {
   .section_wrap {
     padding-bottom: vw(300, 1920);
@@ -11,6 +15,7 @@
   .sec_title_row {
     display: flex;
     justify-content: space-between;
+    margin-top: vw(40, 1920);
     margin-bottom: vw(31, 1920);
   }
 }
@@ -26,7 +31,7 @@
     border-radius: 999px;
     background: none;
     color: #000;
-    font-family: $font-pretendard;
+    font-family: $font-avenir;
     font-weight: 700;
     font-size: vw(20, 1920);
     line-height: vw(20, 1920);
@@ -45,10 +50,14 @@
   gap: vw(30, 1920);
 }
 
+.news_info {
+  display: none;
+}
+
 .news_swiper .swiper-slide {
   width: vw(415, 1920);
   height: vw(500, 1920);
-  transition: width 0.3s ease;
+  transition: all 0.3s ease;
 
   img {
     width: 100%;
@@ -60,7 +69,7 @@
 .slide_page_nation {
   display: flex;
   margin-top: vw(61, 1920);
-  margin-bottom: vw(142, 1920);
+  padding-bottom: vw(300, 1920);
   justify-content: flex-end;
   gap: vw(15, 1920);
 
@@ -79,7 +88,7 @@
 
 // News Detail 페이지 스타일
 .news_detail {
-  margin-bottom: vw(317, 1920);
+  padding-bottom: vw(300, 1920);
 
   .back_btn {
     display: block;
@@ -171,10 +180,11 @@
         height: auto;
         aspect-ratio: 1154 / 770;
         background: #d9d9d9;
+        border: 1px solid #000;
 
         img {
           width: 100%;
-          height: 100%;
+          height: auto;
           object-fit: cover;
         }
       }

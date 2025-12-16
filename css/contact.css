@@ -112,6 +112,7 @@
 .contact_wrap .contact_right,
 .location_wrap .contact_right {
   width: 37.65625vw;
+  margin-right: 11.6145833333vw;
 }
 .contact_wrap .contact_right .right_tabs,
 .location_wrap .contact_right .right_tabs {
@@ -119,7 +120,7 @@
 }
 .contact_wrap .contact_right .right_tabs .right_tab,
 .location_wrap .contact_right .right_tabs .right_tab {
-  width: fit-content;
+  width: 5.625vw;
   padding: 0.5208333333vw 1.0416666667vw;
   font-family: "avenir-next-lt-pro-condensed", sans-serif;
   font-weight: 700;
@@ -570,6 +571,7 @@
 .contact_wrap .location_right,
 .location_wrap .location_right {
   width: 37.65625vw;
+  margin-right: 11.6145833333vw;
   display: flex;
   flex-direction: column;
   gap: 1.0416666667vw;

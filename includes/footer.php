@@ -1,5 +1,5 @@
   <footer id="footer">
-    <div class="floating_btn">
+    <a href="contact.php" class="floating_btn">
       <p>COntact</p>
       <p class="flex_row">
         <span>
@@ -7,7 +7,7 @@
         </span>
         <span class="arrow">→→</span>
       </p>
-    </div>
+    </a>
     <div class="footer_inner">
       <ul class="footer_info_list">
         <li class="by_ed">
