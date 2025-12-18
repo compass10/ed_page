@@ -647,6 +647,10 @@
 
 // 모바일 반응형
 @media (max-width: 1024px) {
+  .page_content {
+    padding-bottom: mvw(130);
+  }
+
   .tab_content {
     .sec_title {
       font-size: mvw(50);
@@ -670,6 +674,7 @@
 
   .tab_btns {
     gap: mvw(12);
+    margin-bottom: mvw(32);
 
     .tab_btn {
       padding: mvw(8) mvw(12);
@@ -713,6 +718,10 @@
         line-height: mvw(20);
         letter-spacing: -0.03em;
         text-transform: uppercase;
+
+        br.pc_only {
+          display: none;
+        }
       }
     }
 
@@ -721,6 +730,7 @@
 
       .right_tabs {
         .right_tab {
+          width: mvw(80);
           padding: mvw(8) mvw(12);
           font-family: $font-avenir;
           font-weight: 700;
@@ -738,9 +748,11 @@
         .contact_form {
           .form_row {
             padding: mvw(8) 0;
+            align-items: flex-start;
 
             &.privacy_row {
               flex-direction: column;
+              padding-top: mvw(32);
 
               .form_label {
                 width: auto;
@@ -763,6 +775,13 @@
                   width: mvw(9) !important;
                   height: mvw(9) !important;
                   margin-top: mvw(6);
+                  background-color: #999;
+                  border-color: #999;
+
+                  &:checked {
+                    background-color: #999;
+                    border-color: #999;
+                  }
                 }
 
                 .checkbox_label {
@@ -853,12 +872,14 @@
 
           .checkbox_group {
             flex-wrap: wrap;
+            gap: mvw(10);
 
             .checkbox_item {
+              gap: mvw(4);
               .checkbox_label {
                 font-family: $font-pretendard;
                 font-weight: 400;
-                font-size: mvw(14);
+                font-size: mvw(12);
                 line-height: mvw(16);
                 letter-spacing: -0.03em;
                 text-transform: uppercase;
@@ -881,7 +902,7 @@
               padding: mvw(8) 0;
               margin-top: mvw(8);
               margin-left: 0;
-              gap: mvw(20);
+              gap: mvw(32);
 
               .score_label {
                 font-family: $font-pretendard;
@@ -1025,13 +1046,56 @@
   }
 
   .location_wrap {
+    .location_left {
+      order: 2;
+      margin-bottom: 0;
+
+      .left_text_ko,
+      .left_text_en {
+        display: none;
+      }
+
+      .left_bottom {
+        display: flex;
+        margin-top: mvw(41);
+
+        svg {
+          width: mvw(30);
+          height: auto;
+
+          &:first-child {
+            margin-right: mvw(14);
+          }
+
+          &:nth-child(2) {
+            margin-right: mvw(67);
+          }
+        }
+
+        .bottom_text {
+          font-family: $font-avenir;
+          font-weight: 500;
+          font-size: mvw(14);
+          line-height: mvw(14);
+          letter-spacing: -0.03em;
+          text-transform: uppercase;
+
+          &:first-of-type {
+            margin-right: mvw(12);
+          }
+        }
+      }
+    }
+
     .location_right {
+      order: 1;
       width: 100%;
 
       .location_box {
         padding: mvw(12) mvw(16);
 
         .location_top {
+          justify-content: space-between;
           gap: mvw(25);
 
           .location_name {

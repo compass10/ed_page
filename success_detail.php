@@ -14,32 +14,25 @@ if($bno == 0) {
     exit;
 }
 
-// 게시물 조회
-$success_sql = "SELECT * FROM $board_table WHERE bno='$bno' AND bid='review'";
+// 게시물 조회 (합격자 명단 = passlist)
+$success_sql = "SELECT * FROM $board_table WHERE bno='$bno' AND bid='passlist'";
 $success_result = mysql_query($success_sql);
-$success = mysql_fetch_array($success_result);
+$row = mysql_fetch_array($success_result);
 
-if(!$success) {
+if(!$row) {
     header('Location: success.php');
     exit;
 }
 
-// 조회수 증가
-mysql_query("UPDATE $board_table SET bview = bview + 1 WHERE bno='$bno'");
-
 // 업로드 이미지 경로
-$upload_path = 'data/review/';
-$upload_img = $success['bimg'] ? $_url . $upload_path . $success['bimg'] : '';
+$upload_path = 'thumb/passlist/';
 
-// 게시글 내용에서 첫 번째 이미지 추출
+// 내용 이미지 (bimg2) 우선, 없으면 썸네일 (bimg) 사용
 $content_img = '';
-if(preg_match('/<img[^>]+src=["\']([^"\']+)["\']/', $success['bcontents'], $matches)) {
-    $content_img = $matches[1];
-}
-
-// 첫 번째 이미지가 없으면 업로드 이미지 사용
-if(!$content_img && $upload_img) {
-    $content_img = $upload_img;
+if($row['bimg2']) {
+    $content_img = $_url . $upload_path . $row['bimg2'];
+} else if($row['bimg']) {
+    $content_img = $_url . $upload_path . $row['bimg'];
 }
 ?>
 <?php include 'includes/header.php'; ?>

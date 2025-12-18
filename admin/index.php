@@ -1,16 +1,4 @@
 <?php
-// 디버깅용 에러 출력
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-session_start();
-
-// 로그인 안되어있으면 login.php로 이동
-if(!isset($_SESSION['logged_no']) || !$_SESSION['logged_no']) {
-  header("Location: login.php");
-  exit;
-}
-
 $pageTitle = '대시보드';
 include 'header.php';
 

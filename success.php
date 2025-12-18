@@ -11,23 +11,23 @@ $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $per_page = 8; // 한 페이지당 8개
 $offset = ($page - 1) * $per_page;
 
-// 전체 게시물 수 조회 (합격소식 = review)
-$count_sql = "SELECT COUNT(*) as cnt FROM $board_table WHERE bid='review' AND is_hidden='N'";
+// 전체 게시물 수 조회 (합격자 명단 = passlist)
+$count_sql = "SELECT COUNT(*) as cnt FROM $board_table WHERE bid='passlist' AND is_hidden='N'";
 $count_result = mysql_query($count_sql);
 $count_row = mysql_fetch_array($count_result);
 $total_count = $count_row['cnt'];
 $total_pages = ceil($total_count / $per_page);
 
-// 합격소식 데이터 조회 (review 게시판)
+// 합격자 명단 데이터 조회 (최신순 = bno DESC)
 $success_sql = "SELECT * FROM $board_table
-                WHERE bid='review'
+                WHERE bid='passlist'
                 AND is_hidden='N'
-                ORDER BY bregdate DESC
+                ORDER BY bno DESC
                 LIMIT $offset, $per_page";
 $success_result = mysql_query($success_sql);
 
 // 업로드 이미지 경로
-$upload_path = 'data/review/';
+$upload_path = 'thumb/passlist/';
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -78,37 +78,27 @@ $upload_path = 'data/review/';
       <div class="success_grid">
         <?php
         if(mysql_num_rows($success_result) > 0) {
-          while($success = mysql_fetch_array($success_result)) {
-            // 게시글 내용에서 첫 번째 이미지 추출
-            $content_img = '';
-            if(preg_match('/<img[^>]+src=["\']([^"\']+)["\']/', $success['bcontents'], $matches)) {
-              $content_img = $matches[1];
-            }
-            // 내용에 이미지가 없으면 업로드 이미지 사용
-            if(!$content_img && $success['bimg']) {
-              $content_img = $_url . $upload_path . $success['bimg'];
-            }
+          while($row = mysql_fetch_array($success_result)) {
+            // 썸네일 이미지 경로
+            $thumb_img = $row['bimg'] ? $_url . $upload_path . $row['bimg'] : '';
         ?>
-        <?php if($content_img): ?>
-        <a href="success_detail.php?bno=<?=$success['bno']?>" class="success_item" style="background-image: url('<?=$content_img?>'); background-repeat: no-repeat; background-size: cover; background-position: center;"></a>
+        <?php if($thumb_img): ?>
+        <a href="success_detail.php?bno=<?=$row['bno']?>" class="success_item" style="background-image: url('<?=$thumb_img?>'); background-repeat: no-repeat; background-size: cover; background-position: center;"></a>
         <?php else: ?>
-        <a href="success_detail.php?bno=<?=$success['bno']?>" class="success_item no_image"><p>업로드된 이미지가 없습니다.</p></a>
+        <a href="success_detail.php?bno=<?=$row['bno']?>" class="success_item no_image"><p>이미지 없음</p></a>
         <?php endif; ?>
         <?php
           }
         } else {
-          // 데이터 없을 때 빈 아이템 표시
-          for($i = 0; $i < 8; $i++) {
         ?>
-        <a href="#" class="success_item"></a>
+        <p class="empty_msg">등록된 합격자 명단이 없습니다.</p>
         <?php
-          }
         }
         ?>
       </div>
       <?php if($total_pages > 1):
-        // 10개씩 페이지 그룹
-        $page_group_size = 10;
+        // 5개씩 페이지 그룹
+        $page_group_size = 5;
         $current_group = ceil($page / $page_group_size);
         $start_page = ($current_group - 1) * $page_group_size + 1;
         $end_page = min($current_group * $page_group_size, $total_pages);

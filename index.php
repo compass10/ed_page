@@ -1,4 +1,37 @@
-<?php $pageTitle = '메인'; ?>
+<?php
+$pageTitle = '메인';
+
+// DB 연결
+include_once('../lib.php');
+
+// 뉴스 데이터 조회 (최신순, 10개)
+$news_sql = "SELECT * FROM $board_table
+             WHERE bid IN ('notice', 'review', 'guide')
+             AND is_hidden='N'
+             ORDER BY bregdate DESC
+             LIMIT 0, 10";
+$news_result = mysql_query($news_sql);
+
+// bid별 썸네일 경로 매핑
+$thumb_path_map = array(
+    'notice' => 'thumb/notice/',
+    'review' => 'thumb/review/',
+    'guide'  => 'thumb/guide/'
+);
+
+// 포트폴리오 슬라이드 조회 (순서대로)
+$portslide_sql = "SELECT * FROM $board_table WHERE bid='portslide' AND is_hidden='N' ORDER BY bpw ASC, bno DESC";
+$portslide_result = mysql_query($portslide_sql);
+
+// 슬라이드 데이터 배열 생성
+$port_slides = array();
+while($row = mysql_fetch_array($portslide_result)) {
+    $port_slides[] = array(
+        'img' => $row['bimg'] ? $_url . 'thumb/portslide/' . $row['bimg'] : '',
+        'text' => $row['btitle']
+    );
+}
+?>
 <?php include 'includes/header.php'; ?>
 
   <main>
@@ -81,56 +114,29 @@
         </div>
         <div class="news_area news_swiper">
           <ul class="news_list swiper-wrapper">
+            <?php
+            if($news_result && mysql_num_rows($news_result) > 0) {
+              while($news = mysql_fetch_array($news_result)) {
+                $bid = $news['bid'];
+                $thumb_path = $thumb_path_map[$bid];
+                $thumb_img = $news['bimg'] ? $_url . $thumb_path . $news['bimg'] : "./asset/images/main/02_01.png";
+            ?>
             <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_01.png" alt="" />
+              <a href="news_detail.php?bno=<?=$news['bno']?>">
+                <img src="<?=$thumb_img?>" alt="<?=htmlspecialchars($news['btitle'])?>" />
               </a>
             </li>
+            <?php
+              }
+            } else {
+              // 데이터 없을 때 기본 이미지
+            ?>
             <li class="swiper-slide">
               <a href="#">
-                <img src="./asset/images/main/02_02.png" alt="" />
+                <img src="./asset/images/main/02_01.png" alt="뉴스 준비중" />
               </a>
             </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_03.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_04.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_05.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_01.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_02.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_03.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_04.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_05.png" alt="" />
-              </a>
-            </li>
+            <?php } ?>
           </ul>
         </div>
         <div class="slide_page_nation">
@@ -182,7 +188,7 @@
           <div class="right_img">
             <img class="chat_b pc" src="./asset/images/main/svg/chat_bubble_04.svg" alt="1998년부터 이어진 합격 데이터 보기" />
             <img class="chat_b mobile" src="./asset/images/main/svg/chat_bubble_04_mob.svg" alt="1998년부터 이어진 합격 데이터 보기" />
-            <a href="#"></a>
+            <a href="success.php"></a>
           </div>
           <div class="bottom_center_gif">
             <img src="./asset/images/main/sec03_bottom_img.gif" alt="책보는gif">
@@ -1334,7 +1340,7 @@
         </ul>
         <ul class="article_list">
           <li>
-            <a href="#">
+            <a href="success.php">
               <div class="title_area">
                 <p>2025 합격자 바로가기</p>
                 <div class="btn">
@@ -1352,7 +1358,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="success.php">
               <div class="title_area">
                 <p>2024 합격자 바로가기</p>
                 <div class="btn">
@@ -1370,7 +1376,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="success.php">
               <div class="title_area">
                 <p>2023 합격자 바로가기</p>
                 <div class="btn">
@@ -1387,7 +1393,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="success.php">
               <div class="title_area">
                 <p>2022 합격자 바로가기</p>
                 <div class="btn">
@@ -1404,7 +1410,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="success.php">
               <div class="title_area">
                 <p>2021 합격자 바로가기</p>
                 <div class="btn">
@@ -1609,8 +1615,8 @@
             </div>
             <div class="floating">
               Turning <br/>
-              your potential <br/>
-              into possibility<br/>
+              your <span class="instru">potential</span> <br/>
+              into <span class="instru">possibility</span><br/>
             </div>
           </div>
           <div class="second_row grid_row">
@@ -1632,8 +1638,8 @@ with ED.
         <div class="floating_wrap mob_only">
           <div class="floating">
             Turning <br/>
-            your potential <br/>
-            into possibility<br/>
+            your <span class="instru">potential</span> <br/>
+            into <span class="instru">possibility</span><br/>
           </div>
           <div class="floating">
 with ED.
@@ -1706,48 +1712,38 @@ Because your dream deserves a real chance.
         <div class="port_slide">
 
           <ul class="port_list swiper-wrapper">
+            <?php if(!empty($port_slides)): ?>
+              <?php foreach($port_slides as $slide): ?>
             <li class="swiper-slide">
-              <img src="./asset/images/main/sec_07_port_img_01.gif" alt="portpholio_img">
+              <img src="<?=$slide['img']?>" alt="portfolio_img">
+              <div class="right_text">
+                <?=nl2br(htmlspecialchars($slide['text']))?>
+              </div>
+            </li>
+              <?php endforeach; ?>
+            <?php else: ?>
+            <li class="swiper-slide">
+              <img src="./asset/images/main/sec_07_port_img_01.gif" alt="portfolio_img">
               <div class="right_text">
                 <span class="cate">BRAND DEsign</span><br/>
                 <span class="when">BATHE CAMPAIGN, 2025</span>
               </div>
             </li>
             <li class="swiper-slide">
-              <img src="./asset/images/main/sec_07_port_img_02.png" alt="portpholio_img">
+              <img src="./asset/images/main/sec_07_port_img_02.png" alt="portfolio_img">
               <div class="right_text">
                 <span class="cate">BRAND DEsign</span><br/>
                 <span class="when">BATHE CAMPAIGN, 2025</span>
               </div>
             </li>
             <li class="swiper-slide">
-              <img src="./asset/images/main/sec_07_port_img_03.png" alt="portpholio_img">
+              <img src="./asset/images/main/sec_07_port_img_03.png" alt="portfolio_img">
               <div class="right_text">
                 <span class="cate">BRAND DEsign</span><br/>
                 <span class="when">BATHE CAMPAIGN, 2025</span>
               </div>
             </li>
-            <li class="swiper-slide">
-              <img src="./asset/images/main/sec_07_port_img_04.png" alt="portpholio_img">
-              <div class="right_text">
-                <span class="cate">BRAND DEsign</span><br/>
-                <span class="when">BATHE CAMPAIGN, 2025</span>
-              </div>
-            </li>
-            <li class="swiper-slide">
-              <img src="./asset/images/main/sec_07_port_img_05.png" alt="portpholio_img">
-              <div class="right_text">
-                <span class="cate">BRAND DEsign</span><br/>
-                <span class="when">BATHE CAMPAIGN, 2025</span>
-              </div>
-            </li>
-            <li class="swiper-slide">
-              <img src="./asset/images/main/sec_07_port_img_06.png" alt="portpholio_img">
-              <div class="right_text">
-                <span class="cate">BRAND DEsign</span>
-                <span class="when">BATHE CAMPAIGN, 2025</span>
-              </div>
-            </li>
+            <?php endif; ?>
           </ul>
 
         </div>
@@ -1760,7 +1756,7 @@ Because your dream deserves a real chance.
         </div>
       </div>
       <div class="bottom_bar">
-        CHeck out more portfolio of ED!
+        <a href="portfolio.php">CHeck out more portfolio of ED!</a>
       </div>
     </section>
     <section id="ourStory" class="section section09">

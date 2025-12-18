@@ -138,6 +138,7 @@
   width: 100%;
   height: auto;
   display: block;
+  border: 1px solid #000;
 }
 .success_detail .detail_image.no_image {
   height: 20.8333333333vw;
@@ -176,6 +177,7 @@
   }
   .page_content .sec_title {
     margin-bottom: 0;
+    line-height: min(10.6666666667vw, 40px);
   }
   .page_content .sec_title .avenir {
     font-family: "avenir-next-lt-pro-condensed", sans-serif;
@@ -234,6 +236,9 @@
   .pagination .page_num {
     font-size: min(3.7333333333vw, 14px);
     line-height: min(4.2666666667vw, 16px);
+  }
+  .page_content:has(.success_detail) .mobile_desc {
+    display: none;
   }
   .success_detail {
     flex-direction: column;

@@ -3,9 +3,13 @@
 @use 'base/mixins' as *;
 
 // Who We Are 페이지 전용 스타일
+br.mob_only {
+  display: none;
+}
+
 .tab_content {
   display: none;
-  padding-bottom: vw(300, 1920);
+  padding-bottom: 0;
 
   &.active {
     display: block;
@@ -636,12 +640,17 @@
         font-weight: 400;
         font-style: italic;
       }
+
+      br.mob_only {
+        display: block;
+      }
     }
   }
 
   .tab_btns {
     display: flex;
     gap: mvw(12);
+    margin-bottom: mvw(32);
 
     .tab_btn {
       font-family: $font-pretendard;
@@ -679,6 +688,11 @@
         line-height: mvw(22);
         letter-spacing: -0.03em;
         text-transform: uppercase;
+        word-break: keep-all;
+
+        br.pc_only {
+          display: none;
+        }
       }
     }
 
@@ -821,6 +835,11 @@
         line-height: mvw(22);
         letter-spacing: -0.03em;
         text-transform: uppercase;
+        word-break: keep-all;
+
+        br {
+          display: none;
+        }
       }
     }
   }
@@ -916,6 +935,7 @@
 
   .curriculum_intro {
     flex-direction: column;
+    gap: mvw(48);
 
     .curriculum_item {
       padding: mvw(16);
@@ -939,7 +959,13 @@
           line-height: mvw(24);
           letter-spacing: -0.03em;
           text-transform: uppercase;
+          text-align: left;
           margin-bottom: mvw(12);
+          word-break: keep-all;
+
+          br {
+            display: none;
+          }
         }
 
         .curriculum_bot {
@@ -949,6 +975,11 @@
           line-height: mvw(22);
           letter-spacing: -0.03em;
           text-transform: uppercase;
+          word-break: keep-all;
+
+          br {
+            display: none;
+          }
         }
 
         .curriculum_gif {
@@ -975,6 +1006,11 @@
           letter-spacing: -0.03em;
           text-transform: uppercase;
           margin-bottom: mvw(12);
+          word-break: keep-all;
+
+          br {
+            display: none;
+          }
         }
 
         .curriculum_news {
@@ -999,6 +1035,10 @@
   .core_value_list {
     flex-direction: column;
     margin-bottom: mvw(48);
+
+    .core_value_col {
+      gap: mvw(8);
+    }
 
     .core_value_col .core_value_item {
       height: mvw(44);
@@ -1114,6 +1154,15 @@
           line-height: mvw(22);
           letter-spacing: -0.03em;
           text-transform: uppercase;
+          word-break: keep-all;
+
+          br {
+            display: none;
+
+            &.show {
+              display: block;
+            }
+          }
         }
 
         .step_tags {
@@ -1125,7 +1174,7 @@
             padding: mvw(8) mvw(12);
             font-family: $font-pretendard;
             font-weight: 700;
-            font-size: mvw(11);
+            font-size: mvw(13);
             line-height: mvw(13);
             letter-spacing: -0.03em;
             text-transform: uppercase;

@@ -1,5 +1,6 @@
 <?php
-session_start();
+// lib.php에서 세션 시작 (세션 경로 설정 포함)
+@include_once $_SERVER['DOCUMENT_ROOT'].'/web/lib.php';
 
 // 이미 로그인 상태면 관리 페이지로 이동
 if(isset($_SESSION['logged_no']) && $_SESSION['logged_no']) {

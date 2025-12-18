@@ -168,6 +168,10 @@ main {
   background: #ebebeb;
   padding-top: 1.5104166667vw;
   padding-bottom: 0.2604166667vw;
+  height: 60.8333333333vw;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
 }
 #news .sec_header h2 {
   font-size: 10.4166666667vw;
@@ -204,10 +208,12 @@ main {
 #news .news_swiper .swiper-slide {
   width: 21.6145833333vw;
   height: 26.0416666667vw;
-  transition: width 0.3s ease;
+  transition: all 0.3s ease;
 }
 #news .news_swiper .swiper-slide img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 #news .bottom_img {
   max-width: 9.6354166667vw;
@@ -218,6 +224,10 @@ main {
 #news .bottom_banner {
   background-color: #000;
   padding: 0.5208333333vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 #news .bottom_banner p {
   font-family: "avenir-next-lt-pro-condensed", sans-serif;
@@ -529,6 +539,7 @@ main {
   letter-spacing: -0.03em;
   text-align: center;
   text-transform: uppercase;
+  margin-top: 4.1666666667vw;
   margin-bottom: 1.0416666667vw;
 }
 #opportunity .top_area .kr br.mob_only {
@@ -686,6 +697,10 @@ main {
   line-height: 2.6041666667vw;
   letter-spacing: -0.03em;
   text-transform: uppercase;
+}
+#opportunity .bottom_area .grid_row .floating .instru {
+  font-family: Instrument Serif;
+  font-style: italic;
 }
 #opportunity .floating_wrap.mob_only {
   display: none;
@@ -855,7 +870,7 @@ main {
   main #topSection .top_comps span {
     margin-top: min(1.0666666667vw, 4px);
     font-size: min(2.9333333333vw, 11px);
-    font-weight: 400;
+    font-weight: 800;
     line-height: min(2.9333333333vw, 11px);
   }
   main #topSection .main_visual {
@@ -1430,6 +1445,10 @@ main {
     letter-spacing: -0.03em;
     text-transform: uppercase;
   }
+  main #opportunity .floating_wrap.mob_only .floating .instru {
+    font-family: Instrument Serif;
+    font-style: italic;
+  }
   main #opportunity .floating_wrap.mob_only .floating:last-child {
     top: min(29.3333333333vw, 110px);
     right: min(0vw, 0px);
@@ -1486,7 +1505,7 @@ main {
   }
   main #portfolio .section_header .box.mob_only .box_right .star {
     position: absolute;
-    right: min(-2.4vw, -9px);
+    right: -19px;
     top: min(-21.3333333333vw, -80px);
     margin: unset;
     padding: min(1.3333333333vw, 5px) 0 0;

@@ -167,6 +167,7 @@
       width: 100%;
       height: auto;
       display: block;
+      border: 1px solid #000;
     }
 
     &.no_image {
@@ -217,6 +218,7 @@
   .page_content {
     .sec_title {
       margin-bottom: 0;
+      line-height: mvw(40);
 
       .avenir {
         font-family: $font-avenir;
@@ -285,6 +287,11 @@
       font-size: mvw(14);
       line-height: mvw(16);
     }
+  }
+
+  // Success Detail 페이지에서는 mobile_desc 숨김
+  .page_content:has(.success_detail) .mobile_desc {
+    display: none;
   }
 
   // Success Detail 페이지 모바일

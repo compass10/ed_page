@@ -7,6 +7,17 @@ main {
   background-color: #EBEBEB;
 }
 
+// News 목록 페이지 전용 (news_detail 제외)
+body.news-list {
+  main {
+    overflow: hidden;
+  }
+
+  .page_content {
+    height: vw(1229, 1920);
+  }
+}
+
 .page_content {
   .section_wrap {
     padding-bottom: vw(300, 1920);
@@ -58,6 +69,8 @@ main {
   width: vw(415, 1920);
   height: vw(500, 1920);
   transition: all 0.3s ease;
+  border-radius: vw(15, 1920);
+  overflow: hidden;
 
   img {
     width: 100%;
@@ -147,24 +160,35 @@ main {
         padding: vw(15, 1920) vw(20, 1920);
         background-color: #fff;
         border: 1px solid #000;
+        font-family: $font-pretendard;
+        font-weight: 400;
+        font-size: vw(14, 1920);
+        line-height: vw(22, 1920);
+        letter-spacing: -0.03em;
+
+        // 모든 내부 요소 폰트 사이즈 통일
+        h1, h2, h3, h4, h5, h6, p, span, strong, b, em, i, a {
+          font-size: inherit;
+          line-height: inherit;
+          font-weight: inherit;
+        }
+
+        strong, b {
+          font-weight: 700;
+        }
+
+        em, i {
+          font-style: italic;
+        }
 
         .text {
-          font-family: $font-pretendard;
-          font-weight: 400;
-          font-size: vw(14, 1920);
-          line-height: vw(22, 1920);
-          letter-spacing: -0.03em;
-          text-transform: uppercase;
           margin-bottom: vw(32, 1920);
         }
 
         .detail_date {
           display: block;
-          font-family: $font-pretendard;
-          font-weight: 400;
           font-size: vw(14, 1920);
           line-height: vw(14, 1920);
-          letter-spacing: -0.03em;
           text-transform: uppercase;
           color: #999;
         }
@@ -193,6 +217,18 @@ main {
 }
 
 @media (max-width: 1024px) {
+  body.news-list .page_content {
+    height: auto;
+  }
+
+  .sec_title {
+    margin-bottom: mvw(32);
+
+    .instru {
+      margin-left: mvw(-4);
+    }
+  }
+
   .news_filter {
     gap: mvw(12);
     margin-bottom: mvw(32);
@@ -210,10 +246,9 @@ main {
 
   .news_swiper {
     .news_list {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: mvw(8);
-      justify-content: center;
     }
 
     .swiper-slide {
@@ -232,7 +267,7 @@ main {
     .back_btn {
       width: mvw(30);
       height: mvw(30);
-      margin-bottom: mvw(20);
+      margin-bottom: mvw(32);
     }
 
     .detail_content {

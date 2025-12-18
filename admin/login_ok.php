@@ -1,8 +1,5 @@
 <?php
-session_start();
-
-// DB 연결 (운영서버 lib.php 사용)
-// /web/new/admin/ 에서 /web/lib.php 로 접근
+// DB 연결 (운영서버 lib.php 사용) - lib.php에서 세션도 시작함
 @include_once $_SERVER['DOCUMENT_ROOT'].'/web/lib.php';
 
 $user_id = htmlspecialchars(trim($_POST['user_id']));

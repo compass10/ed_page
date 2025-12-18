@@ -128,7 +128,7 @@ main {
       font-family: $font-avenir;
       font-size: vw(200, 1920);
       font-weight: 500;
-      line-height: vw(200, 1920);
+      line-height: vw(170, 1920);
       letter-spacing: -0.03em;
       text-transform: uppercase;
     }
@@ -138,7 +138,7 @@ main {
       font-size: vw(200, 1920);
       font-weight: 400;
       font-style: italic;
-      line-height: vw(200, 1920);
+      line-height: vw(170, 1920);
       letter-spacing: -0.03em;
       text-transform: uppercase;
     }
@@ -151,6 +151,10 @@ main {
 }
 
 @media (max-width: 1024px) {
+  main {
+    overflow: unset;
+  }
+
   .page_content {
     overflow: visible;
   }
@@ -168,6 +172,17 @@ main {
 
     .sec_title {
       flex-direction: column;
+      margin-bottom: 0;
+
+      .avenir {
+        font-size: mvw(50);
+        line-height: mvw(40);
+      }
+
+      .instru {
+        font-size: mvw(50);
+        line-height: mvw(40);
+      }
 
       &:nth-child(2) {
         display: none;
@@ -197,6 +212,7 @@ main {
       aspect-ratio: 1 / 1;
       overflow: hidden;
       will-change: transform, opacity;
+      transition: all 0.1s ease;
 
       img {
         width: 100%;
@@ -234,7 +250,7 @@ main {
     .stack_title {
       position: absolute;
       bottom: mvw(104);
-      left: mvw(16);
+      left: 0;
 
       .avenir {
         font-family: $font-avenir;

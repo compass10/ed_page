@@ -22,7 +22,12 @@
   <?php endif; ?>
 </head>
 
-<body<?php if (isset($darkTheme) && $darkTheme): ?> class="dark-theme"<?php endif; ?>>
+<body<?php
+  $classes = array();
+  if (isset($darkTheme) && $darkTheme) $classes[] = 'dark-theme';
+  if (isset($bodyClass) && $bodyClass) $classes[] = $bodyClass;
+  if (!empty($classes)) echo ' class="' . implode(' ', $classes) . '"';
+?>>
   <header id="header" class="down">
     <div class="header_inner">
       <div class="logo_area">

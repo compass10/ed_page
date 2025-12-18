@@ -2,6 +2,7 @@
 $pageTitle = 'News';
 $isSubPage = true;
 $pageCss = 'news';
+$bodyClass = 'news-list';
 
 // DB 연결 (운영서버 lib.php 사용)
 include_once('../lib.php');

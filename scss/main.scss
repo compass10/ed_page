@@ -201,6 +201,10 @@ main {
   background: #ebebeb;
   padding-top: vw(29, 1920);
   padding-bottom: vw(5, 1920);
+  height: vw(1168, 1920);
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
   .sec_header h2 {
     font-size: vw(200, 1920);
     line-height: vw(180, 1920);
@@ -237,9 +241,11 @@ main {
   .news_swiper .swiper-slide {
     width: vw(415, 1920);
     height: vw(500, 1920);
-    transition: width 0.3s ease;
+    transition: all 0.3s ease;
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
   .bottom_img {
@@ -251,6 +257,10 @@ main {
   .bottom_banner {
     background-color: #000;
     padding: vw(10, 1920);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     p {
       font-family: $font-avenir;
       font-weight: 500;
@@ -607,6 +617,7 @@ main {
       letter-spacing: -0.03em;
       text-align: center;
       text-transform: uppercase;
+      margin-top: vw(80, 1920);
       margin-bottom: vw(20, 1920);
       br.mob_only {
         display: none;
@@ -779,6 +790,11 @@ main {
         line-height: vw(50, 1920);
         letter-spacing: -0.03em;
         text-transform: uppercase;
+
+        .instru {
+          font-family: $font-instru;
+          font-style: italic;
+        }
       }
     }
   }
@@ -971,7 +987,7 @@ main {
       .top_comps span {
         margin-top: mvw(4);
         font-size: mvw(11);
-        font-weight: 400;
+        font-weight: 800;
         line-height: mvw(11);
       }
       .main_visual {
@@ -1588,6 +1604,12 @@ main {
             line-height: mvw(28);
             letter-spacing: -0.03em;
             text-transform: uppercase;
+
+            .instru {
+              font-family: $font-instru;
+              font-style: italic;
+            }
+
             &:last-child {
               top: mvw(110);
               right: mvw(0);
@@ -1644,7 +1666,7 @@ main {
             flex-direction: column;
             .star {
               position: absolute;
-              right: mvw(-9);
+              right: -19px;
               top: mvw(-80);
               margin: unset;
               padding: mvw(5) 0 0;

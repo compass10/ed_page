@@ -3,6 +3,32 @@ $pageTitle = 'Our Students';
 $isSubPage = true;
 $pageCss = 'students';
 $darkTheme = true;
+
+// DB 연결
+include_once('../lib.php');
+
+// 포트폴리오 이미지 조회 (순서대로)
+$portfolio_sql = "SELECT * FROM $board_table WHERE bid='portfolio' AND is_hidden='N' ORDER BY bpw ASC, bno DESC";
+$portfolio_result = mysql_query($portfolio_sql);
+
+// 이미지 경로 배열 생성
+$imageSources = array();
+while($row = mysql_fetch_array($portfolio_result)) {
+    if($row['bimg']) {
+        $imageSources[] = $_url . 'thumb/portfolio/' . $row['bimg'];
+    }
+}
+
+// 이미지가 없으면 기본 이미지 사용
+if(empty($imageSources)) {
+    $imageSources = array(
+        './asset/images/student/01.JPG',
+        './asset/images/student/02.png',
+        './asset/images/student/03.JPG',
+        './asset/images/student/04.png',
+        './asset/images/student/05.jpeg'
+    );
+}
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -43,21 +69,14 @@ $darkTheme = true;
       <!-- 모바일 전용 이미지 스택 애니메이션 -->
       <div class="mobile_image_stack">
         <div class="stack_container">
-          <div class="stack_item" data-index="0">
-            <img src="./asset/images/student/01.JPG" alt="student1">
+          <?php
+          $mobileImages = array_slice($imageSources, 0, 5); // 최대 5개만 사용
+          foreach($mobileImages as $idx => $imgSrc):
+          ?>
+          <div class="stack_item" data-index="<?=$idx?>">
+            <img src="<?=$imgSrc?>" alt="student<?=$idx + 1?>">
           </div>
-          <div class="stack_item" data-index="1">
-            <img src="./asset/images/student/02.png" alt="student2">
-          </div>
-          <div class="stack_item" data-index="2">
-            <img src="./asset/images/student/03.JPG" alt="student3">
-          </div>
-          <div class="stack_item" data-index="3">
-            <img src="./asset/images/student/04.png" alt="student4">
-          </div>
-          <div class="stack_item" data-index="4">
-            <img src="./asset/images/student/05.jpeg" alt="student5">
-          </div>
+          <?php endforeach; ?>
           <p class="stack_text_left">We dream,<br>we draw,<br>we cheer<br>for each other.</p>
           <p class="stack_text_right">We share<br>dreams,<br>colors,<br>and laughter.</p>
           <div class="stack_title">
@@ -84,14 +103,8 @@ $darkTheme = true;
   const gap = 5;
   const duration = 20;
 
-  // 원본 이미지 소스 배열
-  const imageSources = [
-    './asset/images/student/01.JPG',
-    './asset/images/student/02.png',
-    './asset/images/student/03.JPG',
-    './asset/images/student/04.png',
-    './asset/images/student/05.jpeg'
-  ];
+  // 원본 이미지 소스 배열 (PHP에서 전달)
+  const imageSources = <?=json_encode($imageSources)?>;
 
   let itemSpacing = 510;
   let isInitialized = false;

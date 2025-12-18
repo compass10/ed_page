@@ -1,6 +1,10 @@
+br.mob_only {
+  display: none;
+}
+
 .tab_content {
   display: none;
-  padding-bottom: 15.625vw;
+  padding-bottom: 0;
 }
 .tab_content.active {
   display: block;
@@ -547,9 +551,13 @@
     font-weight: 400;
     font-style: italic;
   }
+  .tab_content .sec_title br.mob_only {
+    display: block;
+  }
   .tab_btns {
     display: flex;
     gap: min(3.2vw, 12px);
+    margin-bottom: min(8.5333333333vw, 32px);
   }
   .tab_btns .tab_btn {
     font-family: "Pretendard", sans-serif;
@@ -584,6 +592,10 @@
     line-height: min(5.8666666667vw, 22px);
     letter-spacing: -0.03em;
     text-transform: uppercase;
+    word-break: keep-all;
+  }
+  .tab_detail .left_col .content br.pc_only {
+    display: none;
   }
   .tab_detail .right_col {
     display: none;
@@ -706,6 +718,10 @@
     line-height: min(5.8666666667vw, 22px);
     letter-spacing: -0.03em;
     text-transform: uppercase;
+    word-break: keep-all;
+  }
+  .space_intro .intro_item .intro_content br {
+    display: none;
   }
   .space_list .space_row {
     flex-direction: column;
@@ -781,6 +797,7 @@
   }
   .curriculum_intro {
     flex-direction: column;
+    gap: min(12.8vw, 48px);
   }
   .curriculum_intro .curriculum_item {
     padding: min(4.2666666667vw, 16px);
@@ -802,7 +819,12 @@
     line-height: min(6.4vw, 24px);
     letter-spacing: -0.03em;
     text-transform: uppercase;
+    text-align: left;
     margin-bottom: min(3.2vw, 12px);
+    word-break: keep-all;
+  }
+  .curriculum_intro .curriculum_item.left .curriculum_mid br {
+    display: none;
   }
   .curriculum_intro .curriculum_item.left .curriculum_bot {
     font-family: "Pretendard", sans-serif;
@@ -811,6 +833,10 @@
     line-height: min(5.8666666667vw, 22px);
     letter-spacing: -0.03em;
     text-transform: uppercase;
+    word-break: keep-all;
+  }
+  .curriculum_intro .curriculum_item.left .curriculum_bot br {
+    display: none;
   }
   .curriculum_intro .curriculum_item.left .curriculum_gif {
     display: none;
@@ -832,6 +858,10 @@
     letter-spacing: -0.03em;
     text-transform: uppercase;
     margin-bottom: min(3.2vw, 12px);
+    word-break: keep-all;
+  }
+  .curriculum_intro .curriculum_item.right .curriculum_content br {
+    display: none;
   }
   .curriculum_intro .curriculum_item.right .curriculum_news {
     display: grid;
@@ -850,6 +880,9 @@
   .core_value_list {
     flex-direction: column;
     margin-bottom: min(12.8vw, 48px);
+  }
+  .core_value_list .core_value_col {
+    gap: min(2.1333333333vw, 8px);
   }
   .core_value_list .core_value_col .core_value_item {
     height: min(11.7333333333vw, 44px);
@@ -947,6 +980,13 @@
     line-height: min(5.8666666667vw, 22px);
     letter-spacing: -0.03em;
     text-transform: uppercase;
+    word-break: keep-all;
+  }
+  .transfer_list .transfer_step .step_body p br {
+    display: none;
+  }
+  .transfer_list .transfer_step .step_body p br.show {
+    display: block;
   }
   .transfer_list .transfer_step .step_body .step_tags {
     bottom: min(4.5333333333vw, 17px);
@@ -957,7 +997,7 @@
     padding: min(2.1333333333vw, 8px) min(3.2vw, 12px);
     font-family: "Pretendard", sans-serif;
     font-weight: 700;
-    font-size: min(2.9333333333vw, 11px);
+    font-size: min(3.4666666667vw, 13px);
     line-height: min(3.4666666667vw, 13px);
     letter-spacing: -0.03em;
     text-transform: uppercase;

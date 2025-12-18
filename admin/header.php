@@ -25,8 +25,10 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
 // 메뉴 활성화 체크
 $active_setup = in_array($current_page, array('setup', 'mainbanner_list', 'mainbanner_form')) ? 'active' : '';
 $active_page = in_array($current_page, array('page_list', 'page_form')) ? 'active' : '';
-$active_contents = in_array($current_page, array('notice_list', 'notice_form', 'tutor_list', 'tutor_form', 'link_list', 'link_form', 'pass_list', 'pass_form', 'review_list', 'review_form', 'guide_list', 'guide_form', 'practice_list', 'practice_form', 'faq_list', 'faq_form')) ? 'active' : '';
+$active_contents = in_array($current_page, array('notice_list', 'notice_form', 'tutor_list', 'tutor_form', 'link_list', 'link_form', 'pass_list', 'pass_form', 'passlist_list', 'passlist_form', 'review_list', 'review_form', 'guide_list', 'guide_form', 'practice_list', 'practice_form', 'faq_list', 'faq_form')) ? 'active' : '';
 $active_gallery = in_array($current_page, array('gallery_list', 'gallery_form')) ? 'active' : '';
+$active_portfolio = in_array($current_page, array('portfolio_list', 'portfolio_form')) ? 'active' : '';
+$active_portslide = in_array($current_page, array('portslide_list', 'portslide_form')) ? 'active' : '';
 $active_video = in_array($current_page, array('video_list', 'video_form')) ? 'active' : '';
 $active_inquiry = in_array($current_page, array('inquiry_list', 'inquiry_form')) ? 'active' : '';
 ?>
@@ -100,6 +102,7 @@ $active_inquiry = in_array($current_page, array('inquiry_list', 'inquiry_form'))
                 <li><a href="tutor_list.php">이드강사진</a></li>
                 <li><a href="link_list.php">ED커뮤니티</a></li>
                 <li><a href="pass_list.php">연도별합격자</a></li>
+                <li><a href="passlist_list.php">합격자명단</a></li>
                 <li><a href="review_list.php">합격수기</a></li>
                 <li><a href="guide_list.php">편입모집요강</a></li>
                 <li><a href="practice_list.php">대학별실기</a></li>
@@ -117,6 +120,12 @@ $active_inquiry = in_array($current_page, array('inquiry_list', 'inquiry_form'))
                 <li><a href="gallery_list.php?type=6">연필정밀</a></li>
                 <li><a href="gallery_list.php?type=7">선생님작품</a></li>
               </ul>
+            </li>
+            <li class="<?=$active_portfolio?>">
+              <a href="portfolio_list.php">students 관리</a>
+            </li>
+            <li class="<?=$active_portslide?>">
+              <a href="portslide_list.php">portfolio 관리</a>
             </li>
             <li class="has_sub <?=$active_video?>">
               <a href="video_list.php?type=1">영상관리</a>
