@@ -41,7 +41,7 @@ $darkTheme = true;
   const duration = 20;
 
   // 원본 이미지 소스 배열
-  const imageSources = [
+  const imageSources = [ 
     './asset/images/main/02_01.png',
     './asset/images/main/02_02.png',
     './asset/images/main/02_03.png',
