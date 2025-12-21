@@ -79,7 +79,9 @@
             <div class="cont_area">
               <div class="left_cont">
                 <div class="aca_name">
-                  건대이드 본원
+                  <a href="https://naver.me/GVEQ1tek" target="_blank">
+                    건대이드 본원
+                  </a>
                 </div>
                 <div class="tel">
                   +82 02 464 9197
@@ -94,7 +96,9 @@
               </div>
               <div class="right_cont">
                 <div class="aca_name">
-                  홍대이드
+                  <a href="https://naver.me/xQitY2LP" target="_blank">
+                    홍대이드
+                  </a>
                 </div>
                 <div class="tel">
                   +82 02 336 9543

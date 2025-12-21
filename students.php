@@ -56,13 +56,15 @@ if(empty($imageSources)) {
           <span class="avenir">Together,</span>
           <span class="instru">we create.</span>
         </h2>
-        <h2 class="sec_title">
+        <h2 class="sec_title" >
           <div class="line_box">
             <p class="left_text">We dream,<br>we draw,<br>we cheer<br>for each other.</p>
             <p class="right_text">We share<br>dreams,<br>colors,<br>and laughter.</p>
           </div>
-          <span class="avenir">Together, we</span>
+          <div class="text_box">
+            <span class="avenir">Together, we</span>
           <span class="instru">grow.</span>
+          </div>
         </h2>
       </div>
 
@@ -247,13 +249,13 @@ if(empty($imageSources)) {
   // fan_item에 호버 시 전체 멈춤 (이벤트 위임)
   fanWrap.addEventListener('mouseenter', (e) => {
     if (e.target.closest('.fan_item')) {
-      gsap.globalTimeline.pause();
+      // gsap.globalTimeline.pause();
     }
   }, true);
 
   fanWrap.addEventListener('mouseleave', (e) => {
     if (e.target.closest('.fan_item')) {
-      gsap.globalTimeline.resume();
+      // gsap.globalTimeline.resume();
     }
   }, true);
 

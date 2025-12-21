@@ -21,7 +21,7 @@ body.dark-theme .sec_title {
 }
 .page_content .sec_title_row .sec_title {
   display: flex;
-  gap: 0.625vw;
+  gap: 2vw;
 }
 .page_content .sec_title_row .sec_title .avenir {
   font-family: "avenir-next-lt-pro-condensed", sans-serif;
@@ -59,7 +59,7 @@ body.dark-theme .sec_title {
   border-radius: 999px;
   background: none;
   color: #fff;
-  font-family: "Pretendard", sans-serif;
+  font-family: "avenir-next-lt-pro-condensed", sans-serif;
   font-weight: 700;
   font-size: 1.0416666667vw;
   line-height: 1.0416666667vw;
@@ -84,7 +84,6 @@ body.dark-theme .sec_title {
 
 .port_box {
   position: relative;
-  margin-bottom: 3.125vw;
 }
 .port_box .port_slide {
   width: calc(100% - 3.6458333333vw);
@@ -175,6 +174,8 @@ body.dark-theme .sec_title {
 }
 .port_bottom_row .right_box {
   text-align: right;
+  display: flex;
+  gap: 2vw;
 }
 .port_bottom_row .right_box .avenir {
   font-family: "avenir-next-lt-pro-condensed", sans-serif;

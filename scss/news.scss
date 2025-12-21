@@ -26,7 +26,7 @@ body.news-list {
   .sec_title_row {
     display: flex;
     justify-content: space-between;
-    margin-top: vw(40, 1920);
+    // margin-top: vw(40, 1920);
     margin-bottom: vw(31, 1920);
   }
 }
@@ -79,10 +79,14 @@ body.news-list {
   }
 }
 
+.top_menu_line{
+  display:flex;
+  justify-content: space-between;
+}
 .slide_page_nation {
   display: flex;
-  margin-top: vw(61, 1920);
-  padding-bottom: vw(300, 1920);
+  // margin-top: vw(61, 1920);
+  // padding-bottom: vw(300, 1920);
   justify-content: flex-end;
   gap: vw(15, 1920);
 

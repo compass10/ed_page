@@ -1,4 +1,4 @@
-.page_content .sec_title {
+.page_content .sec_title:nth-child(2) {
   margin-bottom: 2.1354166667vw;
 }
 

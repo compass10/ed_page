@@ -456,7 +456,7 @@
 .location_wrap .contact_right .right_content .board_list .board_header {
   display: flex;
   align-items: center;
-  padding: 0.5208333333vw 0;
+  padding: 0 0 0.5208333333vw;
   border-bottom: 1px solid #fff;
 }
 .contact_wrap .contact_right .right_content .board_list .board_header span,
@@ -472,7 +472,8 @@
 .contact_wrap .contact_right .right_content .board_list .board_header .col_no,
 .location_wrap .contact_right .right_content .board_list .board_header .col_no {
   width: 2.6041666667vw;
-  text-align: center;
+  text-align: left;
+  margin-right: 10px;
 }
 .contact_wrap .contact_right .right_content .board_list .board_header .col_title,
 .location_wrap .contact_right .right_content .board_list .board_header .col_title {
@@ -481,7 +482,7 @@
 .contact_wrap .contact_right .right_content .board_list .board_header .col_author,
 .location_wrap .contact_right .right_content .board_list .board_header .col_author {
   width: 4.1666666667vw;
-  text-align: center;
+  text-align: left;
 }
 .contact_wrap .contact_right .right_content .board_list .board_header .col_date,
 .location_wrap .contact_right .right_content .board_list .board_header .col_date {
@@ -491,7 +492,7 @@
 .contact_wrap .contact_right .right_content .board_list .board_header .col_status,
 .location_wrap .contact_right .right_content .board_list .board_header .col_status {
   width: 4.1666666667vw;
-  text-align: center;
+  text-align: right;
 }
 .contact_wrap .contact_right .right_content .board_list .board_body,
 .location_wrap .contact_right .right_content .board_list .board_body {
@@ -519,7 +520,8 @@
 .contact_wrap .contact_right .right_content .board_list .board_body .board_item .col_no,
 .location_wrap .contact_right .right_content .board_list .board_body .board_item .col_no {
   width: 2.6041666667vw;
-  text-align: center;
+  text-align: left;
+  margin-right: 10px;
 }
 .contact_wrap .contact_right .right_content .board_list .board_body .board_item .col_title,
 .location_wrap .contact_right .right_content .board_list .board_body .board_item .col_title {
@@ -528,7 +530,7 @@
 .contact_wrap .contact_right .right_content .board_list .board_body .board_item .col_author,
 .location_wrap .contact_right .right_content .board_list .board_body .board_item .col_author {
   width: 4.1666666667vw;
-  text-align: center;
+  text-align: left;
 }
 .contact_wrap .contact_right .right_content .board_list .board_body .board_item .col_date,
 .location_wrap .contact_right .right_content .board_list .board_body .board_item .col_date {
@@ -538,7 +540,7 @@
 .contact_wrap .contact_right .right_content .board_list .board_body .board_item .col_status,
 .location_wrap .contact_right .right_content .board_list .board_body .board_item .col_status {
   width: 4.1666666667vw;
-  text-align: center;
+  text-align: right;
 }
 .contact_wrap .contact_right .right_content .board_list .board_body .board_item:has(+ .reply),
 .location_wrap .contact_right .right_content .board_list .board_body .board_item:has(+ .reply) {

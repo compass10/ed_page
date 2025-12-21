@@ -443,7 +443,7 @@
         .board_header {
           display: flex;
           align-items: center;
-          padding: vw(10, 1920) 0;
+          padding:0 0 vw(10, 1920);
           border-bottom: 1px solid #fff;
 
           span {
@@ -458,7 +458,9 @@
 
           .col_no {
             width: vw(50, 1920);
-            text-align: center;
+            text-align: left;
+
+            margin-right:10px;
           }
 
           .col_title {
@@ -467,7 +469,7 @@
 
           .col_author {
             width: vw(80, 1920);
-            text-align: center;
+            text-align: left;
           }
 
           .col_date {
@@ -477,7 +479,7 @@
 
           .col_status {
             width: vw(80, 1920);
-            text-align: center;
+            text-align: right;
           }
         }
 
@@ -504,7 +506,8 @@
 
             .col_no {
               width: vw(50, 1920);
-              text-align: center;
+              text-align: left;
+              margin-right:10px;
             }
 
             .col_title {
@@ -513,7 +516,7 @@
 
             .col_author {
               width: vw(80, 1920);
-              text-align: center;
+              text-align: left;
             }
 
             .col_date {
@@ -523,7 +526,7 @@
 
             .col_status {
               width: vw(80, 1920);
-              text-align: center;
+              text-align: right;
             }
 
             &:has(+ .reply) {

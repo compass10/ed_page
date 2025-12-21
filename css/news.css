@@ -15,7 +15,6 @@ body.news-list .page_content {
 .page_content .sec_title_row {
   display: flex;
   justify-content: space-between;
-  margin-top: 2.0833333333vw;
   margin-bottom: 1.6145833333vw;
 }
 
@@ -64,10 +63,13 @@ body.news-list .page_content {
   object-fit: cover;
 }
 
+.top_menu_line {
+  display: flex;
+  justify-content: space-between;
+}
+
 .slide_page_nation {
   display: flex;
-  margin-top: 3.1770833333vw;
-  padding-bottom: 15.625vw;
   justify-content: flex-end;
   gap: 0.78125vw;
 }

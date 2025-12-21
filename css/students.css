@@ -22,6 +22,7 @@ main {
   height: 100vh;
   margin-top: 1.0416666667vw;
   position: relative;
+  z-index: -1;
 }
 .fan_wrap::before, .fan_wrap::after {
   content: "";
@@ -46,7 +47,7 @@ main {
 .curve_path {
   position: absolute;
   width: 180%;
-  bottom: 5vw;
+  bottom: 3vw;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -81,7 +82,9 @@ main {
 .sec_title_row.center .sec_title {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.625vw;
+  width: 96.875vw;
 }
 .sec_title_row.center .sec_title .line_box {
   width: 17.96875vw;
@@ -102,6 +105,10 @@ main {
 }
 .sec_title_row.center .sec_title .line_box .right_text {
   text-align: left;
+}
+.sec_title_row.center .sec_title:nth-child(2) {
+  justify-content: space-between;
+  width: 100%;
 }
 .sec_title_row.center .sec_title .avenir {
   font-family: "avenir-next-lt-pro-condensed", sans-serif;

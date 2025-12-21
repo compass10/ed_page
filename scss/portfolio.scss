@@ -29,7 +29,7 @@ body.dark-theme {
 
     .sec_title {
       display: flex;
-      gap: vw(12, 1920);
+      gap: vw(38.4, 1920);
 
       .avenir {
         font-family: $font-avenir;
@@ -72,7 +72,7 @@ body.dark-theme {
     border-radius: 999px;
     background: none;
     color: #fff;
-    font-family: $font-pretendard;
+    font-family: $font-avenir;
     font-weight: 700;
     font-size: vw(20, 1920);
     line-height: vw(20, 1920);
@@ -100,7 +100,7 @@ body.dark-theme {
 
 .port_box {
   position: relative;
-  margin-bottom: vw(60, 1920);
+  // margin-bottom: vw(60, 1920);
 
   .port_slide {
     width: calc(100% - vw(70, 1920));
@@ -204,7 +204,8 @@ body.dark-theme {
 
   .right_box {
     text-align: right;
-
+    display:flex;
+    gap:vw(38.4, 1920);
     .avenir {
       font-family: $font-avenir;
       font-weight: 500;

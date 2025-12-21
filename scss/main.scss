@@ -146,7 +146,7 @@ main {
       letter-spacing: -0.03em;
       text-transform: uppercase;
       & .star {
-        & svg {
+        &.active svg {
           animation: starRoll 3s ease alternate;
         }
       }
@@ -218,13 +218,20 @@ main {
     }
   }
   .news_list {
-    gap: vw(30, 1920);
-    margin-top: vw(141, 1920);
+    gap: vw(20, 1920);
+
+        margin-bottom: vw(142, 1920);
+            margin-top: vw(61, 1920);
+    li{
+      border-radius:15px;
+      overflow:hidden;
+      border:1px solid #000;
+    }
   }
   .slide_page_nation {
     display: flex;
-    margin-top: vw(61, 1920);
-    margin-bottom: vw(142, 1920);
+    margin-top: vw(48, 1920);
+    // margin-bottom: vw(142, 1920);
     justify-content: right;
     gap: vw(15, 1920);
     .pn_btn {
@@ -973,9 +980,9 @@ main {
     padding-left: mvw(16);
     padding-right: mvw(16);
   }
-
   main {
     margin-top: mvw(54);
+
     #topSection {
       padding: 0 mvw(15) mvw(30);
       .top_marquee {
@@ -1019,6 +1026,7 @@ main {
       }
     }
     #textEd {
+      height:unset;
       padding: mvw(80) mvw(15) mvw(160);
       .text_flex {
         display: unset;
@@ -1079,19 +1087,21 @@ main {
     }
     #news {
       padding: unset;
+      height: mvw(397);
       .section_wrap {
         position: relative;
-        padding: mvw(15) mvw(15) 0;
+        padding: mvw(15) mvw(15) mvw(81);
         h2 {
           line-height: 40px;
         }
         .news_swiper {
           .swiper-slide {
             width: mvw(167);
-            height: auto;
+            height: mvw(200);
           }
         }
         .slide_page_nation {
+          display:none;
           margin: mvw(25) 0 mvw(25);
           gap: mvw(18);
           .pn_btn {

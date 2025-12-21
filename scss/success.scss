@@ -4,7 +4,7 @@
 
 // Success Stories 페이지 전용 스타일
 .page_content {
-  .sec_title {
+  .sec_title:nth-child(2) {
     margin-bottom: vw(41, 1920);
   }
 }

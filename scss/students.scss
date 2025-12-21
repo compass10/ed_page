@@ -32,7 +32,7 @@ main {
   height: 100vh;
   margin-top: vw(20, 1920);
   position: relative;
-
+  z-index:-1;
   // 양쪽 그라디언트 오버레이
   &::before,
   &::after {
@@ -63,7 +63,7 @@ main {
 .curve_path {
   position: absolute;
   width: 180%;
-  bottom: 5vw;
+  bottom: 3vw;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -99,8 +99,9 @@ main {
   .sec_title {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: vw(12, 1920);
-
+    width:calc(100vw - vw(60));
     .line_box {
       width: vw(345, 1920);
       border-top: vw(15, 1920) solid #fff;
@@ -122,8 +123,13 @@ main {
       .right_text {
         text-align: left;
       }
-    }
 
+    }
+      &:nth-child(2){
+        justify-content:space-between;
+
+        width:100%;
+      }
     .avenir {
       font-family: $font-avenir;
       font-size: vw(200, 1920);

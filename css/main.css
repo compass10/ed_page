@@ -124,7 +124,7 @@ main {
   letter-spacing: -0.03em;
   text-transform: uppercase;
 }
-#textEd .text_flex .center_text .star svg {
+#textEd .text_flex .center_text .star.active svg {
   animation: starRoll 3s ease alternate;
 }
 @keyframes starRoll {
@@ -186,13 +186,18 @@ main {
   font-family: Instrument Serif;
 }
 #news .news_list {
-  gap: 1.5625vw;
-  margin-top: 7.34375vw;
+  gap: 1.0416666667vw;
+  margin-bottom: 7.3958333333vw;
+  margin-top: 3.1770833333vw;
+}
+#news .news_list li {
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #000;
 }
 #news .slide_page_nation {
   display: flex;
-  margin-top: 3.1770833333vw;
-  margin-bottom: 7.3958333333vw;
+  margin-top: 2.5vw;
   justify-content: right;
   gap: 0.78125vw;
 }
@@ -900,6 +905,7 @@ main {
     max-width: 100%;
   }
   main #textEd {
+    height: unset;
     padding: min(21.3333333333vw, 80px) min(4vw, 15px) min(42.6666666667vw, 160px);
   }
   main #textEd .text_flex {
@@ -958,19 +964,21 @@ main {
   }
   main #news {
     padding: unset;
+    height: min(105.8666666667vw, 397px);
   }
   main #news .section_wrap {
     position: relative;
-    padding: min(4vw, 15px) min(4vw, 15px) 0;
+    padding: min(4vw, 15px) min(4vw, 15px) min(21.6vw, 81px);
   }
   main #news .section_wrap h2 {
     line-height: 40px;
   }
   main #news .section_wrap .news_swiper .swiper-slide {
     width: min(44.5333333333vw, 167px);
-    height: auto;
+    height: min(53.3333333333vw, 200px);
   }
   main #news .section_wrap .slide_page_nation {
+    display: none;
     margin: min(6.6666666667vw, 25px) 0 min(6.6666666667vw, 25px);
     gap: min(4.8vw, 18px);
   }

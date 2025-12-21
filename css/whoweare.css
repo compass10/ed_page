@@ -2,6 +2,10 @@ br.mob_only {
   display: none;
 }
 
+.page_content {
+  padding-bottom: 300px;
+}
+
 .tab_content {
   display: none;
   padding-bottom: 0;
@@ -13,6 +17,8 @@ br.mob_only {
 .tab_btns {
   margin-top: 1.5625vw;
   margin-bottom: 2.6041666667vw;
+  display: flex;
+  gap: 0.78125vw;
 }
 .tab_btns .tab_btn {
   font-family: "Pretendard", sans-serif;
@@ -284,6 +290,9 @@ br.mob_only {
 .curriculum_intro .curriculum_item.right .curriculum_news .news_item {
   width: 10.9375vw;
   height: 13.0729166667vw;
+  border-radius: 0.5208333333vw;
+  border: 1px solid #000;
+  overflow: hidden;
 }
 .curriculum_intro .curriculum_item.right .curriculum_news .news_item img {
   width: 100%;
