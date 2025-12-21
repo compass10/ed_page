@@ -1,4 +1,37 @@
-<?php $pageTitle = '메인'; ?>
+<?php
+$pageTitle = '메인';
+
+// DB 연결
+include_once('../lib.php');
+
+// 뉴스 데이터 조회 (최신순, 10개)
+$news_sql = "SELECT * FROM $board_table
+             WHERE bid IN ('notice', 'review', 'guide')
+             AND is_hidden='N'
+             ORDER BY bregdate DESC
+             LIMIT 0, 10";
+$news_result = mysql_query($news_sql);
+
+// bid별 썸네일 경로 매핑
+$thumb_path_map = array(
+    'notice' => 'thumb/notice/',
+    'review' => 'thumb/review/',
+    'guide'  => 'thumb/guide/'
+);
+
+// 포트폴리오 슬라이드 조회 (순서대로)
+$portslide_sql = "SELECT * FROM $board_table WHERE bid='portslide' AND is_hidden='N' ORDER BY bpw ASC, bno DESC";
+$portslide_result = mysql_query($portslide_sql);
+
+// 슬라이드 데이터 배열 생성
+$port_slides = array();
+while($row = mysql_fetch_array($portslide_result)) {
+    $port_slides[] = array(
+        'img' => $row['bimg'] ? $_url . 'thumb/portslide/' . $row['bimg'] : '',
+        'text' => $row['btitle']
+    );
+}
+?>
 <?php include 'includes/header.php'; ?>
 
   <main>
@@ -79,61 +112,7 @@
             <span>OF</span> <span>ED</span>
           </h2>
         </div>
-        <div class="news_area news_swiper">
-          <ul class="news_list swiper-wrapper">
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_01.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_02.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_03.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_04.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_05.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_01.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_02.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_03.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_04.png" alt="" />
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#">
-                <img src="./asset/images/main/02_05.png" alt="" />
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="slide_page_nation">
+               <div class="slide_page_nation">
           <div class="btn_prev pn_btn">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="20" cy="20" r="19.5" transform="rotate(180 20 20)" stroke="black" />
@@ -147,6 +126,34 @@
             </svg>
           </div>
         </div>
+        <div class="news_area news_swiper">
+          <ul class="news_list swiper-wrapper">
+            <?php
+            if($news_result && mysql_num_rows($news_result) > 0) {
+              while($news = mysql_fetch_array($news_result)) {
+                $bid = $news['bid'];
+                $thumb_path = $thumb_path_map[$bid];
+                $thumb_img = $news['bimg'] ? $_url . $thumb_path . $news['bimg'] : "./asset/images/main/02_01.png";
+            ?>
+            <li class="swiper-slide">
+              <a href="news_detail.php?bno=<?=$news['bno']?>">
+                <img src="<?=$thumb_img?>" alt="<?=htmlspecialchars($news['btitle'])?>" />
+              </a>
+            </li>
+            <?php
+              }
+            } else {
+              // 데이터 없을 때 기본 이미지
+            ?>
+            <li class="swiper-slide">
+              <a href="#">
+                <img src="./asset/images/main/02_01.png" alt="뉴스 준비중" />
+              </a>
+            </li>
+            <?php } ?>
+          </ul>
+        </div>
+ 
       </div>
       <div class="bottom_img">
         <img src="./asset/images/main/sec03_bottom_img.gif" alt="책보는gif" />
@@ -182,7 +189,7 @@
           <div class="right_img">
             <img class="chat_b pc" src="./asset/images/main/svg/chat_bubble_04.svg" alt="1998년부터 이어진 합격 데이터 보기" />
             <img class="chat_b mobile" src="./asset/images/main/svg/chat_bubble_04_mob.svg" alt="1998년부터 이어진 합격 데이터 보기" />
-            <a href="#"></a>
+            <a href="success.php"></a>
           </div>
           <div class="bottom_center_gif">
             <img src="./asset/images/main/sec03_bottom_img.gif" alt="책보는gif">
@@ -1324,28 +1331,17 @@
         <div class="left">@ 2025</div>
         <div class="right">and <em>More</em></div>
       </div>
-      <div class="pass_list">
+      <div class="pass_list pc_only">
         <ul class="img_list">
-          <li class="">
-            <img src="./asset/images/main/sec_05_left_img_01.jpeg" alt="#" />
-          </li>
-          <li class="">
-            <img src="./asset/images/main/sec_05_left_img_02.png" alt="#" />
-          </li>
-          <li>
-            <img src="./asset/images/main/sec_05_left_img_03.jpeg" alt="#" />
-          </li>
-          <li>
-            <img src="./asset/images/main/sec_05_left_img_04.png" alt="#" />
-          </li>
-          <li>
-            <img src="./asset/images/main/sec_05_left_img_05.png" alt="#" />
-          </li>
+          <li><img src="./asset/images/main/sec_05_left_img_01.jpeg" alt=""></li>
+          <li><img src="./asset/images/main/sec_05_left_img_02.png" alt=""></li>
+          <li><img src="./asset/images/main/sec_05_left_img_03.jpeg" alt=""></li>
+          <li><img src="./asset/images/main/sec_05_left_img_04.png" alt=""></li>
+          <li><img src="./asset/images/main/sec_05_left_img_05.png" alt=""></li>
         </ul>
-
         <ul class="article_list">
           <li>
-            <a href="#">
+            <a href="success.php">
               <div class="title_area">
                 <p>2025 합격자 바로가기</p>
                 <div class="btn">
@@ -1363,7 +1359,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="success.php">
               <div class="title_area">
                 <p>2024 합격자 바로가기</p>
                 <div class="btn">
@@ -1381,7 +1377,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="success.php">
               <div class="title_area">
                 <p>2023 합격자 바로가기</p>
                 <div class="btn">
@@ -1398,7 +1394,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="success.php">
               <div class="title_area">
                 <p>2022 합격자 바로가기</p>
                 <div class="btn">
@@ -1415,7 +1411,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="success.php">
               <div class="title_area">
                 <p>2021 합격자 바로가기</p>
                 <div class="btn">
@@ -1431,6 +1427,81 @@
                 1명, 성신여대 1명, 서울여대 1명 동덕여대 1명!
               </div>
             </a>
+          </li>
+        </ul>
+      </div>
+      <!-- 모바일 전용 pass_list -->
+      <div class="pass_list_mobile mobile_only">
+        <ul class="article_list">
+          <li>
+            <div class="title_area">
+              <p>2025 합격자 바로가기</p>
+              <div class="btn">
+                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                </svg>
+              </div>
+            </div>
+            <div class="hiding_text">
+              <p>2025년 압도적 점유율 1위대학 30개 대학! 서울 최상위권대학은 100% 점유!</p>
+              <img src="./asset/images/main/sec_05_left_img_01.jpeg" alt="2025 합격자">
+            </div>
+          </li>
+          <li>
+            <div class="title_area">
+              <p>2024 합격자 바로가기</p>
+              <div class="btn">
+                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                </svg>
+              </div>
+            </div>
+            <div class="hiding_text">
+              <p>2024학년도 이드 합격자 101명! 이드의 합격자는 in서울과 수도권 중심 대학만을 지원합니다</p>
+              <img src="./asset/images/main/sec_05_left_img_02.png" alt="2024 합격자">
+            </div>
+          </li>
+          <li>
+            <div class="title_area">
+              <p>2023 합격자 바로가기</p>
+              <div class="btn">
+                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                </svg>
+              </div>
+            </div>
+            <div class="hiding_text">
+              <p>2023년도 이드합격자 서울,수도권대학 총 98명 합격의 쾌거!</p>
+              <img src="./asset/images/main/sec_05_left_img_03.jpeg" alt="2023 합격자">
+            </div>
+          </li>
+          <li>
+            <div class="title_area">
+              <p>2022 합격자 바로가기</p>
+              <div class="btn">
+                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                </svg>
+              </div>
+            </div>
+            <div class="hiding_text">
+              <p>총 합격자 수 89명! 포트폴리오 전형 29명 합격</p>
+              <img src="./asset/images/main/sec_05_left_img_04.png" alt="2022 합격자">
+            </div>
+          </li>
+          <li>
+            <div class="title_area">
+              <p>2021 합격자 바로가기</p>
+              <div class="btn">
+                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                </svg>
+              </div>
+            </div>
+            <div class="hiding_text">
+              <p>2021년도 총 50명 합격! 홍익대학교 17명, 건국대 12명, 경희대 1명, 성신여대 1명, 서울여대 1명 동덕여대 1명!</p>
+              <img src="./asset/images/main/sec_05_left_img_05.png" alt="2021 합격자">
+            </div>
           </li>
         </ul>
       </div>
@@ -1545,8 +1616,8 @@
             </div>
             <div class="floating">
               Turning <br/>
-              your potential <br/>
-              into possibility<br/>
+              your <span class="instru">potential</span> <br/>
+              into <span class="instru">possibility</span><br/>
             </div>
           </div>
           <div class="second_row grid_row">
@@ -1568,8 +1639,8 @@ with ED.
         <div class="floating_wrap mob_only">
           <div class="floating">
             Turning <br/>
-            your potential <br/>
-            into possibility<br/>
+            your <span class="instru">potential</span> <br/>
+            into <span class="instru">possibility</span><br/>
           </div>
           <div class="floating">
 with ED.
@@ -1642,48 +1713,38 @@ Because your dream deserves a real chance.
         <div class="port_slide">
 
           <ul class="port_list swiper-wrapper">
+            <?php if(!empty($port_slides)): ?>
+              <?php foreach($port_slides as $slide): ?>
             <li class="swiper-slide">
-              <img src="./asset/images/main/sec_07_port_img_01.gif" alt="portpholio_img">
+              <img src="<?=$slide['img']?>" alt="portfolio_img">
+              <div class="right_text">
+                <?=nl2br(htmlspecialchars($slide['text']))?>
+              </div>
+            </li>
+              <?php endforeach; ?>
+            <?php else: ?>
+            <li class="swiper-slide">
+              <img src="./asset/images/main/sec_07_port_img_01.gif" alt="portfolio_img">
               <div class="right_text">
                 <span class="cate">BRAND DEsign</span><br/>
                 <span class="when">BATHE CAMPAIGN, 2025</span>
               </div>
             </li>
             <li class="swiper-slide">
-              <img src="./asset/images/main/sec_07_port_img_02.png" alt="portpholio_img">
+              <img src="./asset/images/main/sec_07_port_img_02.png" alt="portfolio_img">
               <div class="right_text">
                 <span class="cate">BRAND DEsign</span><br/>
                 <span class="when">BATHE CAMPAIGN, 2025</span>
               </div>
             </li>
             <li class="swiper-slide">
-              <img src="./asset/images/main/sec_07_port_img_03.png" alt="portpholio_img">
+              <img src="./asset/images/main/sec_07_port_img_03.png" alt="portfolio_img">
               <div class="right_text">
                 <span class="cate">BRAND DEsign</span><br/>
                 <span class="when">BATHE CAMPAIGN, 2025</span>
               </div>
             </li>
-            <li class="swiper-slide">
-              <img src="./asset/images/main/sec_07_port_img_04.png" alt="portpholio_img">
-              <div class="right_text">
-                <span class="cate">BRAND DEsign</span><br/>
-                <span class="when">BATHE CAMPAIGN, 2025</span>
-              </div>
-            </li>
-            <li class="swiper-slide">
-              <img src="./asset/images/main/sec_07_port_img_05.png" alt="portpholio_img">
-              <div class="right_text">
-                <span class="cate">BRAND DEsign</span><br/>
-                <span class="when">BATHE CAMPAIGN, 2025</span>
-              </div>
-            </li>
-            <li class="swiper-slide">
-              <img src="./asset/images/main/sec_07_port_img_06.png" alt="portpholio_img">
-              <div class="right_text">
-                <span class="cate">BRAND DEsign</span>
-                <span class="when">BATHE CAMPAIGN, 2025</span>
-              </div>
-            </li>
+            <?php endif; ?>
           </ul>
 
         </div>
@@ -1696,12 +1757,116 @@ Because your dream deserves a real chance.
         </div>
       </div>
       <div class="bottom_bar">
-        CHeck out more portfolio of ED!
+        <a href="portfolio.php">CHeck out more portfolio of ED!</a>
       </div>
     </section>
-    <section id="ourStory" class="section section08">
-      CHECK OUT Our Story
+    <section id="ourStory" class="section section09">
+      <h2 class="sec_title">
+        <span class="avenir">CHECK OUT</span>
+        <span class="vivaldi">Our Story</span>
+      </h2>
+
+      <!-- PC용 -->
+      <div class="sliding_cont pc_only">
+        <div class="slide_front">
+          <span>
+            {
+          </span>
+              <div class="between_cont">
+                From Ambition<br/>
+to admission
+              </div>
+          <span>
+            }
+          </span>
+        </div>
+        <div class="slide_back">
+          <div class="left_slide back_cont">
+            on
+          </div>
+          <div class="right_slide back_cont">
+            Youtube
+          </div>
+        </div>
+      </div>
+
+      <!-- 모바일용 -->
+      <div class="sliding_cont_mobile mobile_only">
+        <p class="mobile_title">check out</p>
+        <div class="mobile_middle">
+          <span class="bracket">{</span>
+            <div class="flex_container">
+              
+              <span class="vivaldi_text our">Our</span>
+              <div class="mobile_between">
+                From Ambition<br/>to admission
+              </div>
+              <span class="vivaldi_text story">Story</span>
+            </div>
+          <span class="bracket">}</span>
+        </div>
+        <p class="mobile_youtube">on youtube</p>
+      </div>
+
+      <div class="youtube_grid">
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_01.png" alt="Youtube thumbnail 1">
+        </a>
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_02.png" alt="Youtube thumbnail 2">
+        </a>
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_03.png" alt="Youtube thumbnail 3">
+        </a>
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_04.png" alt="Youtube thumbnail 4">
+        </a>
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_05.png" alt="Youtube thumbnail 5">
+        </a>
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_06.png" alt="Youtube thumbnail 6">
+        </a>
+        <a href="#" class="youtube_item">
+          <img src="asset/images/main/youtube_thumb_07.png" alt="Youtube thumbnail 7">
+        </a>
+        <div class="youtube_item text_box">
+          <div class="text_top">
+            More Videos<br>
+            on Youtube.<br>
+            Click Here!
+          </div>
+          <div class="text_bottom">
+            <span class="stars">* * *</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+      </div>
+
     </section>
   </main>
+
+  <!-- 모바일 #andMore 아코디언 토글 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileItems = document.querySelectorAll('.pass_list_mobile .article_list li');
+
+      mobileItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+          // 현재 아이템이 이미 active면 닫기
+          if (this.classList.contains('active')) {
+            this.classList.remove('active');
+          } else {
+            // 다른 모든 아이템 닫기
+            mobileItems.forEach(function(otherItem) {
+              otherItem.classList.remove('active');
+            });
+            // 클릭한 아이템 열기
+            this.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
 
 <?php include 'includes/footer.php'; ?>

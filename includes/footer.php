@@ -1,5 +1,5 @@
   <footer id="footer">
-    <div class="floating_btn">
+    <a href="contact.php" class="floating_btn">
       <p>COntact</p>
       <p class="flex_row">
         <span>
@@ -7,7 +7,7 @@
         </span>
         <span class="arrow">→→</span>
       </p>
-    </div>
+    </a>
     <div class="footer_inner">
       <ul class="footer_info_list">
         <li class="by_ed">
@@ -79,7 +79,9 @@
             <div class="cont_area">
               <div class="left_cont">
                 <div class="aca_name">
-                  건대이드 본원
+                  <a href="https://naver.me/GVEQ1tek" target="_blank">
+                    건대이드 본원
+                  </a>
                 </div>
                 <div class="tel">
                   +82 02 464 9197
@@ -94,7 +96,9 @@
               </div>
               <div class="right_cont">
                 <div class="aca_name">
-                  홍대이드
+                  <a href="https://naver.me/xQitY2LP" target="_blank">
+                    홍대이드
+                  </a>
                 </div>
                 <div class="tel">
                   +82 02 336 9543
@@ -198,6 +202,16 @@
       s.parentNode.insertBefore(tk, s);
     })(document);
   </script>
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'ebu3zus',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/script.js"></script>

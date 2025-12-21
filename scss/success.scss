@@ -4,7 +4,7 @@
 
 // Success Stories 페이지 전용 스타일
 .page_content {
-  .sec_title {
+  .sec_title:nth-child(2) {
     margin-bottom: vw(41, 1920);
   }
 }
@@ -12,6 +12,14 @@
 .sec_title_row {
   display: flex;
   justify-content: space-between;
+
+  &:first-child {
+    margin-top: vw(40, 1920);
+
+    .sec_title:nth-child(2) {
+      display: none;
+    }
+  }
 
   &:nth-child(2) {
     align-items: center;
@@ -159,6 +167,7 @@
       width: 100%;
       height: auto;
       display: block;
+      border: 1px solid #000;
     }
 
     &.no_image {
@@ -173,6 +182,138 @@
         font-weight: 400;
         font-size: vw(16, 1920);
         color: #666;
+      }
+    }
+  }
+}
+
+// 모바일 전용 설명 (PC에서 숨김)
+.mobile_desc {
+  display: none;
+}
+
+// 모바일 반응형
+@media (max-width: 1024px) {
+  .sec_title_row {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &:first-child {
+      margin-top: mvw(40);
+
+      .sec_title:nth-child(2) {
+        display: block;
+      }
+    }
+
+    &:nth-child(2) {
+      display: none;
+    }
+
+    .left_col {
+      display: none;
+    }
+  }
+
+  .page_content {
+    .sec_title {
+      margin-bottom: 0;
+      line-height: mvw(40);
+
+      .avenir {
+        font-family: $font-avenir;
+        font-weight: 500;
+        font-size: mvw(50);
+        line-height: mvw(45);
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+
+      .instru {
+        font-family: $font-instru;
+        font-weight: 400;
+        font-style: italic;
+        font-size: mvw(50);
+        line-height: mvw(45);
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .mobile_desc {
+    display: block;
+    margin-top: mvw(32);
+    margin-bottom: mvw(32);
+
+    .desc_kr {
+      font-family: $font-pretendard;
+      font-weight: 500;
+      font-size: mvw(14);
+      line-height: mvw(20);
+      letter-spacing: -0.03em;
+      margin-bottom: mvw(12);
+    }
+
+    .desc_en {
+      font-family: $font-avenir;
+      font-weight: 500;
+      font-size: mvw(14);
+      line-height: mvw(20);
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+  }
+
+  .success_grid {
+    grid-template-columns: 1fr;
+    gap: mvw(20);
+    margin-bottom: mvw(32);
+
+    .success_item {
+      width: 100%;
+      height: mvw(167);
+      min-height: mvw(225.43);
+    }
+  }
+
+  .pagination {
+    gap: mvw(10);
+    margin-top: mvw(40);
+    margin-bottom: mvw(100);
+
+    .page_btn,
+    .page_num {
+      font-size: mvw(14);
+      line-height: mvw(16);
+    }
+  }
+
+  // Success Detail 페이지에서는 mobile_desc 숨김
+  .page_content:has(.success_detail) .mobile_desc {
+    display: none;
+  }
+
+  // Success Detail 페이지 모바일
+  .success_detail {
+    flex-direction: column;
+    gap: mvw(16);
+    margin-bottom: mvw(100);
+
+    .back_btn {
+      width: mvw(32);
+      height: mvw(32);
+    }
+
+    .detail_image {
+      max-width: 100%;
+
+      &.no_image {
+        height: mvw(200);
+
+        p {
+          font-size: mvw(14);
+        }
       }
     }
   }

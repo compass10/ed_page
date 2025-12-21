@@ -2,6 +2,7 @@
 $pageTitle = 'News';
 $isSubPage = true;
 $pageCss = 'news';
+$bodyClass = 'news-list';
 
 // DB 연결 (운영서버 lib.php 사용)
 include_once('../lib.php');
@@ -56,11 +57,27 @@ $pcode_map = array(
           <span class="instru">ED</span>
         </h2>
       </div>
-      <div class="news_filter">
+      <div class="top_menu_line">
+        <div class="news_filter">
         <button class="filter_btn active" data-filter="all">All</button>
         <button class="filter_btn" data-filter="recruit">수강생 모집</button>
         <button class="filter_btn" data-filter="success">합격 소식</button>
         <button class="filter_btn" data-filter="etc">ETC</button>
+      </div>
+      <div class="slide_page_nation">
+        <div class="btn_prev pn_btn">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="19.5" transform="rotate(180 20 20)" stroke="black" />
+            <path d="M23 12L15 20L23 28" stroke="black" stroke-width="3" />
+          </svg>
+        </div>
+        <div class="btn_next pn_btn">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="19.5" stroke="black" />
+            <path d="M17 28L25 20L17 12" stroke="black" stroke-width="3" />
+          </svg>
+        </div>
+      </div>
       </div>
       <div class="news_area news_swiper">
         <ul class="news_list swiper-wrapper">
@@ -96,20 +113,7 @@ $pcode_map = array(
           <?php } ?>
         </ul>
       </div>
-      <div class="slide_page_nation">
-        <div class="btn_prev pn_btn">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="19.5" transform="rotate(180 20 20)" stroke="black" />
-            <path d="M23 12L15 20L23 28" stroke="black" stroke-width="3" />
-          </svg>
-        </div>
-        <div class="btn_next pn_btn">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="19.5" stroke="black" />
-            <path d="M17 28L25 20L17 12" stroke="black" stroke-width="3" />
-          </svg>
-        </div>
-      </div>
+      
     </section>
   </main>
 

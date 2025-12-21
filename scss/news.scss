@@ -3,6 +3,21 @@
 @use 'base/mixins' as *;
 
 // News 페이지 전용 스타일
+main {
+  background-color: #EBEBEB;
+}
+
+// News 목록 페이지 전용 (news_detail 제외)
+body.news-list {
+  main {
+    overflow: hidden;
+  }
+
+  .page_content {
+    height: vw(1229, 1920);
+  }
+}
+
 .page_content {
   .section_wrap {
     padding-bottom: vw(300, 1920);
@@ -11,6 +26,7 @@
   .sec_title_row {
     display: flex;
     justify-content: space-between;
+    // margin-top: vw(40, 1920);
     margin-bottom: vw(31, 1920);
   }
 }
@@ -26,7 +42,7 @@
     border-radius: 999px;
     background: none;
     color: #000;
-    font-family: $font-pretendard;
+    font-family: $font-avenir;
     font-weight: 700;
     font-size: vw(20, 1920);
     line-height: vw(20, 1920);
@@ -45,10 +61,16 @@
   gap: vw(30, 1920);
 }
 
+.news_info {
+  display: none;
+}
+
 .news_swiper .swiper-slide {
   width: vw(415, 1920);
   height: vw(500, 1920);
-  transition: width 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: vw(15, 1920);
+  overflow: hidden;
 
   img {
     width: 100%;
@@ -57,10 +79,14 @@
   }
 }
 
+.top_menu_line{
+  display:flex;
+  justify-content: space-between;
+}
 .slide_page_nation {
   display: flex;
-  margin-top: vw(61, 1920);
-  margin-bottom: vw(142, 1920);
+  // margin-top: vw(61, 1920);
+  // padding-bottom: vw(300, 1920);
   justify-content: flex-end;
   gap: vw(15, 1920);
 
@@ -79,7 +105,7 @@
 
 // News Detail 페이지 스타일
 .news_detail {
-  margin-bottom: vw(317, 1920);
+  padding-bottom: vw(300, 1920);
 
   .back_btn {
     display: block;
@@ -138,24 +164,35 @@
         padding: vw(15, 1920) vw(20, 1920);
         background-color: #fff;
         border: 1px solid #000;
+        font-family: $font-pretendard;
+        font-weight: 400;
+        font-size: vw(14, 1920);
+        line-height: vw(22, 1920);
+        letter-spacing: -0.03em;
+
+        // 모든 내부 요소 폰트 사이즈 통일
+        h1, h2, h3, h4, h5, h6, p, span, strong, b, em, i, a {
+          font-size: inherit;
+          line-height: inherit;
+          font-weight: inherit;
+        }
+
+        strong, b {
+          font-weight: 700;
+        }
+
+        em, i {
+          font-style: italic;
+        }
 
         .text {
-          font-family: $font-pretendard;
-          font-weight: 400;
-          font-size: vw(14, 1920);
-          line-height: vw(22, 1920);
-          letter-spacing: -0.03em;
-          text-transform: uppercase;
           margin-bottom: vw(32, 1920);
         }
 
         .detail_date {
           display: block;
-          font-family: $font-pretendard;
-          font-weight: 400;
           font-size: vw(14, 1920);
           line-height: vw(14, 1920);
-          letter-spacing: -0.03em;
           text-transform: uppercase;
           color: #999;
         }
@@ -171,10 +208,11 @@
         height: auto;
         aspect-ratio: 1154 / 770;
         background: #d9d9d9;
+        border: 1px solid #000;
 
         img {
           width: 100%;
-          height: 100%;
+          height: auto;
           object-fit: cover;
         }
       }
@@ -183,6 +221,18 @@
 }
 
 @media (max-width: 1024px) {
+  body.news-list .page_content {
+    height: auto;
+  }
+
+  .sec_title {
+    margin-bottom: mvw(32);
+
+    .instru {
+      margin-left: mvw(-4);
+    }
+  }
+
   .news_filter {
     gap: mvw(12);
     margin-bottom: mvw(32);
@@ -200,10 +250,9 @@
 
   .news_swiper {
     .news_list {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: mvw(8);
-      justify-content: center;
     }
 
     .swiper-slide {
@@ -222,7 +271,7 @@
     .back_btn {
       width: mvw(30);
       height: mvw(30);
-      margin-bottom: mvw(20);
+      margin-bottom: mvw(32);
     }
 
     .detail_content {

@@ -3,6 +3,47 @@ $pageTitle = 'Portfolio';
 $isSubPage = true;
 $pageCss = 'portfolio';
 $darkTheme = true;
+
+// DB 연결
+include_once('../lib.php');
+
+// 포트폴리오 슬라이드 조회 (순서대로)
+$portslide_sql = "SELECT * FROM $board_table WHERE bid='portslide' AND is_hidden='N' ORDER BY bpw ASC, bno DESC";
+$portslide_result = mysql_query($portslide_sql);
+
+// 슬라이드 데이터 배열 생성
+$slides = array();
+while($row = mysql_fetch_array($portslide_result)) {
+    $slides[] = array(
+        'bno' => $row['bno'],
+        'img' => $row['bimg'] ? $_url . 'thumb/portslide/' . $row['bimg'] : '',
+        'category' => $row['bcate'],
+        'text' => $row['btitle']
+    );
+}
+
+// 슬라이드가 없으면 기본 데이터 사용
+if(empty($slides)) {
+    $slides = array(
+        array('bno' => 0, 'img' => './asset/images/main/sec_07_port_img_01.gif', 'category' => 'branding', 'text' => "BRAND DESIGN\nBATHE CAMPAIGN, 2025"),
+        array('bno' => 0, 'img' => './asset/images/main/sec_07_port_img_02.png', 'category' => 'branding', 'text' => "BRAND DESIGN\nBATHE CAMPAIGN, 2025"),
+        array('bno' => 0, 'img' => './asset/images/main/sec_07_port_img_03.png', 'category' => 'poster', 'text' => "BRAND DESIGN\nBATHE CAMPAIGN, 2025"),
+        array('bno' => 0, 'img' => './asset/images/main/sec_07_port_img_04.png', 'category' => 'editorial', 'text' => "BRAND DESIGN\nBATHE CAMPAIGN, 2025"),
+        array('bno' => 0, 'img' => './asset/images/main/sec_07_port_img_05.png', 'category' => 'illustration', 'text' => "BRAND DESIGN\nBATHE CAMPAIGN, 2025"),
+        array('bno' => 0, 'img' => './asset/images/main/sec_07_port_img_06.png', 'category' => 'motion', 'text' => "BRAND DESIGN\nBATHE CAMPAIGN, 2025"),
+    );
+}
+
+// 카테고리 목록
+$categories = array(
+    'all' => 'All',
+    'branding' => 'Branding',
+    'poster' => 'Poster',
+    'editorial' => 'Editorial',
+    'illustration' => 'Illustration',
+    'motion' => 'Motion',
+    'uiux' => 'UI/UX'
+);
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -31,13 +72,9 @@ $darkTheme = true;
         </div>
         <div class="filter_video_wrap">
           <div class="portfolio_filter">
-            <button class="filter_btn active" data-filter="all">All</button>
-            <button class="filter_btn" data-filter="branding">Branding</button>
-            <button class="filter_btn" data-filter="poster">Poster</button>
-            <button class="filter_btn" data-filter="editorial">Editorial</button>
-            <button class="filter_btn" data-filter="illustration">Illustration</button>
-            <button class="filter_btn" data-filter="motion">Motion</button>
-            <button class="filter_btn" data-filter="uiux">UI/UX</button>
+            <?php foreach($categories as $key => $name): ?>
+            <button class="filter_btn <?=$key == 'all' ? 'active' : ''?>" data-filter="<?=$key?>"><?=$name?></button>
+            <?php endforeach; ?>
           </div>
           <div class="portfolio_video">
             <video autoplay muted loop playsinline>
@@ -48,48 +85,14 @@ $darkTheme = true;
         <div class="port_box">
           <div class="port_slide">
             <ul class="port_list swiper-wrapper">
-              <li class="swiper-slide">
-                <img src="./asset/images/main/sec_07_port_img_01.gif" alt="portfolio_img">
+              <?php foreach($slides as $slide): ?>
+              <li class="swiper-slide" data-category="<?=$slide['category']?>">
+                <img src="<?=$slide['img']?>" alt="portfolio_img">
                 <div class="right_text">
-                  <span class="cate">BRAND DEsign</span><br/>
-                  <span class="when">BATHE CAMPAIGN, 2025</span>
+                  <?=nl2br(htmlspecialchars($slide['text']))?>
                 </div>
               </li>
-              <li class="swiper-slide">
-                <img src="./asset/images/main/sec_07_port_img_02.png" alt="portfolio_img">
-                <div class="right_text">
-                  <span class="cate">BRAND DEsign</span><br/>
-                  <span class="when">BATHE CAMPAIGN, 2025</span>
-                </div>
-              </li>
-              <li class="swiper-slide">
-                <img src="./asset/images/main/sec_07_port_img_03.png" alt="portfolio_img">
-                <div class="right_text">
-                  <span class="cate">BRAND DEsign</span><br/>
-                  <span class="when">BATHE CAMPAIGN, 2025</span>
-                </div>
-              </li>
-              <li class="swiper-slide">
-                <img src="./asset/images/main/sec_07_port_img_04.png" alt="portfolio_img">
-                <div class="right_text">
-                  <span class="cate">BRAND DEsign</span><br/>
-                  <span class="when">BATHE CAMPAIGN, 2025</span>
-                </div>
-              </li>
-              <li class="swiper-slide">
-                <img src="./asset/images/main/sec_07_port_img_05.png" alt="portfolio_img">
-                <div class="right_text">
-                  <span class="cate">BRAND DEsign</span><br/>
-                  <span class="when">BATHE CAMPAIGN, 2025</span>
-                </div>
-              </li>
-              <li class="swiper-slide">
-                <img src="./asset/images/main/sec_07_port_img_06.png" alt="portfolio_img">
-                <div class="right_text">
-                  <span class="cate">BRAND DEsign</span>
-                  <span class="when">BATHE CAMPAIGN, 2025</span>
-                </div>
-              </li>
+              <?php endforeach; ?>
             </ul>
           </div>
           <div class="port_next_btn">
@@ -117,13 +120,97 @@ $darkTheme = true;
 
 <?php include 'includes/footer.php'; ?>
 <script>
-const portSwiper = new Swiper('.port_slide', {
-  loop: true,
-  slidesPerView: 'auto',
-  allowTouchMove: false,
-  navigation: {
-    nextEl: '.port_next_btn',
-    clickable: true,
-  },
+// 슬라이드 데이터 (PHP에서 전달)
+const allSlides = <?=json_encode($slides)?>;
+
+// Swiper 인스턴스
+let portSwiper = null;
+
+// Swiper 초기화 함수
+function initSwiper(slides) {
+  // 기존 Swiper 제거
+  if(portSwiper) {
+    portSwiper.destroy(true, true);
+  }
+
+  // 슬라이드 HTML 생성
+  const wrapper = document.querySelector('.port_list');
+  wrapper.innerHTML = slides.map(slide => `
+    <li class="swiper-slide" data-category="${slide.category}">
+      <img src="${slide.img}" alt="portfolio_img">
+      <div class="right_text">
+        ${slide.text.replace(/\n/g, '<br>')}
+      </div>
+    </li>
+  `).join('');
+
+  // 슬라이드가 있을 때만 Swiper 초기화
+  if(slides.length > 0) {
+    portSwiper = new Swiper('.port_slide', {
+      loop: slides.length > 1,
+      slidesPerView: 'auto',
+      allowTouchMove: false,
+      navigation: {
+        nextEl: '.port_next_btn',
+        clickable: true,
+      },
+    });
+  }
+}
+
+// 활성화된 필터 목록
+let activeFilters = ['all'];
+
+// 필터링 함수
+function filterSlides() {
+  let filteredSlides;
+
+  if(activeFilters.includes('all')) {
+    filteredSlides = allSlides;
+  } else {
+    filteredSlides = allSlides.filter(slide => activeFilters.includes(slide.category));
+  }
+
+  // Swiper 재초기화
+  initSwiper(filteredSlides);
+}
+
+// 필터 버튼 클릭 이벤트
+document.querySelectorAll('.filter_btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const filter = this.dataset.filter;
+
+    if(filter === 'all') {
+      // All 클릭 시 다른 필터 모두 해제
+      activeFilters = ['all'];
+      document.querySelectorAll('.filter_btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    } else {
+      // All 버튼 비활성화
+      const allBtn = document.querySelector('.filter_btn[data-filter="all"]');
+      allBtn.classList.remove('active');
+      activeFilters = activeFilters.filter(f => f !== 'all');
+
+      // 토글 방식으로 활성화/비활성화
+      if(this.classList.contains('active')) {
+        this.classList.remove('active');
+        activeFilters = activeFilters.filter(f => f !== filter);
+      } else {
+        this.classList.add('active');
+        activeFilters.push(filter);
+      }
+
+      // 아무것도 선택 안 되면 All 활성화
+      if(activeFilters.length === 0) {
+        activeFilters = ['all'];
+        allBtn.classList.add('active');
+      }
+    }
+
+    filterSlides();
+  });
 });
+
+// 초기 로드
+filterSlides();
 </script>

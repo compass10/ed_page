@@ -17,11 +17,13 @@ body.dark-theme {
 }
 
 .page_content {
-  overflow: hidden;
-
   .section_wrap {
     padding-bottom: vw(300, 1920);
   }
+}
+
+main {
+  overflow: hidden;
 }
 
 // 캐러셀 슬라이드 영역 (GSAP MotionPath)
@@ -30,7 +32,7 @@ body.dark-theme {
   height: 100vh;
   margin-top: vw(20, 1920);
   position: relative;
-
+  z-index:-1;
   // 양쪽 그라디언트 오버레이
   &::before,
   &::after {
@@ -61,7 +63,7 @@ body.dark-theme {
 .curve_path {
   position: absolute;
   width: 180%;
-  bottom: 0%;
+  bottom: 3vw;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -90,16 +92,16 @@ body.dark-theme {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  z-index:10;
+  z-index: 10;
   margin-top: vw(60, 1920);
-  gap: vw(48, 1920);
-  position:absolute;
-  top: vw(525,1920);
+  position: absolute;
+  top: vw(525, 1920);
   .sec_title {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: vw(12, 1920);
-
+    width:calc(100vw - vw(60));
     .line_box {
       width: vw(345, 1920);
       border-top: vw(15, 1920) solid #fff;
@@ -121,13 +123,18 @@ body.dark-theme {
       .right_text {
         text-align: left;
       }
-    }
 
+    }
+      &:nth-child(2){
+        justify-content:space-between;
+
+        width:100%;
+      }
     .avenir {
       font-family: $font-avenir;
       font-size: vw(200, 1920);
       font-weight: 500;
-      line-height: vw(200, 1920);
+      line-height: vw(170, 1920);
       letter-spacing: -0.03em;
       text-transform: uppercase;
     }
@@ -137,7 +144,7 @@ body.dark-theme {
       font-size: vw(200, 1920);
       font-weight: 400;
       font-style: italic;
-      line-height: vw(200, 1920);
+      line-height: vw(170, 1920);
       letter-spacing: -0.03em;
       text-transform: uppercase;
     }
@@ -150,6 +157,10 @@ body.dark-theme {
 }
 
 @media (max-width: 1024px) {
+  main {
+    overflow: unset;
+  }
+
   .page_content {
     overflow: visible;
   }
@@ -167,6 +178,17 @@ body.dark-theme {
 
     .sec_title {
       flex-direction: column;
+      margin-bottom: 0;
+
+      .avenir {
+        font-size: mvw(50);
+        line-height: mvw(40);
+      }
+
+      .instru {
+        font-size: mvw(50);
+        line-height: mvw(40);
+      }
 
       &:nth-child(2) {
         display: none;
@@ -196,6 +218,7 @@ body.dark-theme {
       aspect-ratio: 1 / 1;
       overflow: hidden;
       will-change: transform, opacity;
+      transition: all 0.1s ease;
 
       img {
         width: 100%;
@@ -233,7 +256,7 @@ body.dark-theme {
     .stack_title {
       position: absolute;
       bottom: mvw(104);
-      left: mvw(16);
+      left: 0;
 
       .avenir {
         font-family: $font-avenir;

@@ -66,16 +66,21 @@ const newsSwiper = new Swiper('.news_swiper', {
   },
 });
 
-// 슬라이드 hover 시 1.05배 확대
-const slides = document.querySelectorAll('.news_swiper .swiper-slide');
-slides.forEach((slide) => {
-  const baseWidth = slide.offsetWidth;
+// 슬라이드 hover 시 1.15배 확대 (vw 단위)
+const newsSlides = document.querySelectorAll('.news_swiper .swiper-slide');
+const baseWidthVw = (415 / 1920) * 100; // 기본 width vw 값
+const baseHeightVw = (500 / 1920) * 100; // 기본 height vw 값
+const hoverWidthVw = baseWidthVw * 1.15; // hover 시 1.15배
+const hoverHeightVw = baseHeightVw * 1.15; // hover 시 1.15배
 
+newsSlides.forEach((slide) => {
   slide.addEventListener('mouseenter', () => {
-    slide.style.width = `${baseWidth * 1.05}px`;
+    slide.style.width = `${hoverWidthVw}vw`;
+    slide.style.height = `${hoverHeightVw}vw`;
   });
 
   slide.addEventListener('mouseleave', () => {
-    slide.style.width = `${baseWidth}px`;
+    slide.style.width = `${baseWidthVw}vw`;
+    slide.style.height = `${baseHeightVw}vw`;
   });
 });

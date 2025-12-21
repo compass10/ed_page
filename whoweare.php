@@ -30,21 +30,10 @@ $pageCss = 'whoweare';
           <div class="left_col">
             <h3 class="title">We're ED!</h3>
             <p class="content">
-              우리 학원은 단순히 그림을 잘 그리게 만드는 곳이 아니라,<br/>
-              학생 한 사람의 가능성을 발견하고 끝까지 성장시키는 공간입니다.<br/>
-              <br/>
-              처음에는 상담을 통해 목표 전공과 대학을 설정하고, 개인의 배경과 준비 기간을 진단하여 가장 효율적인 학습 경로를 만듭니다. 기초 드로잉과 색채,<br/>
-              조형 훈련으로 기본기를 다지는 동시에, 개성과 재능을 살려<br/>
-              나만의 작품 세계를 구축하도록 지도합니다.<br/>
-              <br/>
-              완성된 포트폴리오는 단순한 평가 자료가 아닌, 학생의 비전과<br/>
-              정체성을 담은 결과물이 됩니다. 또한 실제 시험과 동일한 환경에서<br/>
-              모의 실기를 경험하고, 대학별 면접 대비 훈련을 통해 자신 있게<br/>
-              표현할 수 있도록 준비합니다.<br/>
-              <br/>
-              특강기간에는 자유롭게 이용할 수 있는 학원 공간과 세심한 피드백 속에서<br/>
-              학생들은 몰입하며 성장할 수 있고, 우리는 그 길 끝까지 함께하는<br/>
-              든든한 동반자가 됩니다.
+              우리 학원은 단순히 그림을 잘 그리게 만드는 곳이 아니라, 학생 한 사람의 가능성을 발견하고 끝까지 성장시키는 공간입니다.<br/><br/>
+              처음에는 상담을 통해 목표 전공과 대학을 설정하고, 개인의 배경과 준비 기간을 진단하여 가장 효율적인 학습 경로를 만듭니다. 기초 드로잉과 색채, 조형 훈련으로 기본기를 다지는 동시에, 개성과 재능을 살려 나만의 작품 세계를 구축하도록 지도합니다.<br/><br/>
+              완성된 포트폴리오는 단순한 평가 자료가 아닌, 학생의 비전과 정체성을 담은 결과물이 됩니다. 또한 실제 시험과 동일한 환경에서 모의 실기를 경험하고, 대학별 면접 대비 훈련을 통해 자신 있게 표현할 수 있도록 준비합니다.<br/><br/>
+              특강기간에는 자유롭게 이용할 수 있는 학원 공간과 세심한 피드백 속에서 학생들은 몰입하며 성장할 수 있고, 우리는 그 길 끝까지 함께하는 든든한 동반자가 됩니다.
             </p>
           </div>
           <div class="right_col">
@@ -147,6 +136,99 @@ $pageCss = 'whoweare';
               </div>
             </div>
           </div>
+          <!-- 모바일 아코디언 -->
+          <div class="right_col_mobile">
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">상주 전문 강사진</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">늘 곁에서 지켜보는 멘토</p>
+                <p class="desc">이드 학원은 언제나 학원에 상주하는 경험 많고 실력 있는 강사진이 함께합니다. 학생들은 필요한 순간마다 즉각적인 피드백과 지도를 받을 수 있어, 혼자 고민하는 시간을 줄이고 빠르게 성장할 수 있습니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">높은 미대 편입 합격률</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">숫자로 증명되는 자신감</p>
+                <p class="desc">매년 수많은 합격 사례로 증명된 압도적인 합격률은 이드 학원의 가장 큰 자부심입니다. 단순한 합격을 넘어, 학생들이 원하는 대학과 학과에 진학할 수 있도록 끝까지 책임집니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">맞춤형 시간표</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">나만의 속도를 존중하는 1:1 학습 설계</p>
+                <p class="desc">학생마다 목표와 학습 스타일은 다릅니다. 이드 학원은 획일적인 수업이 아닌, 개개인의 상황에 맞춘 맞춤형 시간표를 제공합니다. 이를 통해 학생들은 자신만의 학습 리듬을 유지하며 효율적인 성장을 이끌어냅니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">지정좌석제</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">오직 나만의 자리, 언제나 내 공간</p>
+                <p class="desc">이드 학원은 학생 개개인에게 고유의 좌석을 제공합니다. 자신의 책상에서 안정감을 느끼며 자습할 수 있어, 꾸준함과 몰입도를 높입니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">두 가지 실기 준비 원칙</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">두 가지 무기를 동시에 준비하는 전략적 훈련</p>
+                <p class="desc">이드 학원은 학생 1인당 두 가지 실기를 반드시 준비하는 것을 원칙으로 합니다. 다양한 실기 능력을 함께 개발하여 시험에서의 선택 폭을 넓히고, 변화하는 전형에도 유연하게 대응할 수 있도록 합니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">정규 수업</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">하루를 꽉 채우는 집중의 힘</p>
+                <p class="desc">단순히 오전반, 오후반으로 나뉘는 짧은 수업이 아닙니다. 하루 전체를 미술에 온전히 집중할 수 있도록 설계된 정규 수업은 깊이 있는 실력 향상과 입시 준비를 위한 최적의 환경을 만들어 줍니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">특강기간 동안 개방 공간</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">닫히지 않는 배움의 문</p>
+                <p class="desc">특강 기간에는 학원 공간이 학생들에게 자유롭게 열립니다. 원하는 시간에 와서 집중하고, 자유롭게 작업할 수 있는 환경은 스스로의 페이스를 지키며 성장하고자 하는 학생들에게 큰 자산이 됩니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">포스터 실기 전형 석권</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">포스터 실기의 왕좌를 차지하다</p>
+                <p class="desc">이드 학원은 포스터 실기 전형에서 독보적인 성과를 자랑합니다. 체계적인 훈련과 탄탄한 노하우를 바탕으로, 포스터 전형을 준비하는 학생들에게 가장 확실한 선택이 됩니다.</p>
+              </div>
+            </div>
+            <div class="accordion_item">
+              <div class="accordion_header">
+                <span class="accordion_title">CIP 전형 압도적 합격률</span>
+                <button class="accordion_btn" aria-expanded="false"><span class="icon"></span></button>
+              </div>
+              <div class="accordion_content">
+                <p class="sub_title">CIP, 누구도 따라올 수 없는 성과</p>
+                <p class="desc">CIP 전형에서 이드 학원은 매년 압도적인 합격률을 기록합니다. 다년간의 데이터 분석과 전형별 맞춤 전략은 CIP 합격을 목표로 하는 학생들에게 최고의 선택지가 됩니다.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -233,7 +315,7 @@ $pageCss = 'whoweare';
               <div class="space_bottom">
                 <h4 class="space_title">포트폴리오 강의실</h4>
                 <p class="space_desc">
-                  포트폴리오 강의실은 실기하는 공간에서 함께하는 것이 아닌  독립공간에서 디자인 제작의 효율을 위해 분리하였습니다.<br/>
+                  포트폴리오 강의실은 실기하는 공간에서 함께하는 것이 아닌  독립공간에서 디자인 제작의 효율을 위해 분리하였습니다.
                   노트북 사용을 위해 각 자리에 콘센트를 배치하여 원활한 실기를 돕고자 하였습니다.
                 </p>
               </div>
@@ -292,6 +374,7 @@ $pageCss = 'whoweare';
           <span class="avenir">From</span>
           <span class="instru">Basics</span>
           <span class="avenir">to</span>
+          <br class="mob_only"/>
           <span class="instru">Success,</span>
         </h2>
         <h2 class="sec_title">
@@ -409,7 +492,7 @@ $pageCss = 'whoweare';
               <span class="step_title">편입 전형 선택</span>
             </div>
             <div class="step_body">
-              <p>편입을 고려하고 계신다면, 먼저 본인에게<br/>가장 적합한 전형(일반편입/학사편입)을 신중하게 선택해 주세요.<br/>현재 대학에 재학 중이시라면 일반편입이 적절하며,<br/>이미 졸업했거나 자퇴하신 경우라면 학점은행제를 활용하는 학사편입이 더 유리할 수 있습니다.</p>
+              <p>편입을 고려하고 계신다면, 먼저 본인에게 가장 적합한 전형(일반편입/학사편입)을 신중하게 선택해 주세요.<br class="show"/> 현재 대학에 재학 중이시라면 일반편입이 적절하며, 이미 졸업했거나 자퇴하신 경우라면 학점은행제를 활용하는 학사편입이 더 유리할 수 있습니다.</p>
               <div class="step_tags">
                 <span class="tag">일반편입</span>
                 <span class="tag">학사편입</span>
@@ -422,7 +505,7 @@ $pageCss = 'whoweare';
               <span class="step_title">실기 전형 선택</span>
             </div>
             <div class="step_body">
-              <p>편입 준비 방향을 잡는 것이 중요합니다.<br/>실기, 포트폴리오, 영어 중 어떤 과정을 중심으로 준비하실지 선택해 주세요.<br/>어느 것이 정답이라고 할 수는 없습니다.<br/>고객님의 목표와 계획을 가장 잘 실현할 수 있는 방향이 무엇인지 함께 고민해 보는 것이 중요합니다.</p>
+              <p>편입 준비 방향을 잡는 것이 중요합니다.<br class="show"/> 실기, 포트폴리오, 영어 중 어떤 과정을 중심으로 준비하실지 선택해 주세요.<br class="show"/> 어느 것이 정답이라고 할 수는 없습니다.<br class="show"/> 고객님의 목표와 계획을 가장 잘 실현할 수 있는 방향이 무엇인지 함께 고민해 보는 것이 중요합니다.</p>
               <div class="step_tags">
                 <span class="tag">공인영어</span>
                 <span class="tag">전공실기</span>
