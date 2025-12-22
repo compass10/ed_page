@@ -548,16 +548,6 @@ br.mob_only {
 }
 
 @media (max-width: 1024px) {
-  .space_label {
-    font-family: "avenir-next-lt-pro-condensed", sans-serif;
-    font-weight: 500;
-    font-size: min(8vw, 30px);
-  }
-  .space_num {
-    font-family: Instrument Serif;
-    font-weight: 400;
-    font-size: min(8vw, 30px);
-  }
   .page_content {
     padding-bottom: min(34.6666666667vw, 130px);
   }
@@ -777,6 +767,16 @@ br.mob_only {
   }
   .space_list .space_row .space_top {
     margin-bottom: min(5.3333333333vw, 20px);
+  }
+  .space_list .space_row .space_top .space_label {
+    font-family: "avenir-next-lt-pro-condensed", sans-serif;
+    font-weight: 500;
+    font-size: min(8vw, 30px);
+  }
+  .space_list .space_row .space_top .space_num {
+    font-family: Instrument Serif;
+    font-weight: 400;
+    font-size: min(8vw, 30px);
   }
   .space_list .space_row .space_top .num {
     font-family: "avenir-next-lt-pro-condensed", sans-serif;
