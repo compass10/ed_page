@@ -33,6 +33,9 @@ br.mob_only {
     border: 1px solid #000;
     padding: vw(10, 1920) vw(20, 1920);
     border-radius: 999px;
+    color: #000;
+    background-color: transparent;
+    text-decoration: none;
 
     &.active {
       background-color: #000;
@@ -341,6 +344,7 @@ br.mob_only {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transform:scalc(1.025)
           }
         }
       }
@@ -665,6 +669,9 @@ br.mob_only {
       letter-spacing: -0.03em;
       text-transform: uppercase;
       padding: mvw(8) mvw(12);
+      color: #000;
+      background-color: transparent;
+      text-decoration: none;
     }
   }
 
@@ -1022,6 +1029,11 @@ br.mob_only {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: mvw(8);
+
+          .news_item {
+            width: mvw(152);
+            height: mvw(181);
+          }
         }
       }
     }

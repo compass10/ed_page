@@ -30,6 +30,9 @@
     border: 1px solid #000;
     padding: vw(10, 1920) vw(20, 1920);
     border-radius: 999px;
+    color: #000;
+    background-color: transparent;
+    text-decoration: none;
 
     &.active {
       background-color: #000;

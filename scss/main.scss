@@ -1187,6 +1187,13 @@ main {
                 width: 100%;
               }
             }
+            a {
+              position: absolute;
+              top: mvw(97);
+              right: mvw(140);
+              width: mvw(67);
+              height: mvw(20);
+            }
           }
           .bottom_center_gif {
             position: absolute;
@@ -1921,6 +1928,10 @@ main {
         }
       }
     }
+  }
+
+  .port_next_btn {
+    display: none;
   }
 }
 

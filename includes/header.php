@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><?php echo isset($pageTitle) ? $pageTitle . ' | ED' : 'ED'; ?></title>
+  <link rel="icon" type="image/png" href="ed_favicon.png" />
   <link rel="stylesheet" href="https://use.typekit.net/ebu3zus.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

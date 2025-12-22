@@ -1058,6 +1058,13 @@ main {
     display: block;
     width: 100%;
   }
+  main #success .content .content_header .right_img a {
+    position: absolute;
+    top: min(25.8666666667vw, 97px);
+    right: min(37.3333333333vw, 140px);
+    width: min(17.8666666667vw, 67px);
+    height: min(5.3333333333vw, 20px);
+  }
   main #success .content .content_header .bottom_center_gif {
     position: absolute;
     left: min(1.0666666667vw, 4px);
@@ -1720,6 +1727,9 @@ main {
   background: #fff;
   color: #000;
   border-color: #000;
+}
+#ourStory .port_next_btn {
+  display: none;
 }
 
 @media (max-width: 1024px) {

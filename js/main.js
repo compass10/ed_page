@@ -64,8 +64,8 @@ slides.forEach((slide) => {
 const portSwiper = new Swiper('.port_slide', {
   loop:true,
   slidesPerView:'auto',
-  allowTouchMove: false,
-    navigation: {
+  allowTouchMove: window.innerWidth <= 1024,
+  navigation: {
     nextEl: '.port_next_btn',
     clickable: true,
   },

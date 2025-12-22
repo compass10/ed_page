@@ -180,7 +180,7 @@ while($row = mysql_fetch_array($portslide_result)) {
           <div class="right_img">
             <img class="chat_b pc" src="./asset/images/main/svg/chat_bubble_04.svg" alt="1998년부터 이어진 합격 데이터 보기" />
             <img class="chat_b mobile" src="./asset/images/main/svg/chat_bubble_04_mob.svg" alt="1998년부터 이어진 합격 데이터 보기" />
-            <a href="success.php"></a>
+            <a href="https://www.edillust.co.kr/success.php"></a>
           </div>
           <div class="bottom_center_gif">
             <img src="./asset/images/main/sec03_bottom_img.gif" alt="책보는gif">

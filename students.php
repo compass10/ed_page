@@ -271,6 +271,11 @@ if(empty($imageSources)) {
 
     if (!stackContainer || totalItems === 0) return;
 
+    // GPU 가속을 위한 will-change 설정
+    stackItems.forEach((item) => {
+      item.style.willChange = 'transform, opacity';
+    });
+
     // 초기 상태 설정: 모든 이미지를 오른쪽 아래에 배치, 축소된 상태
     stackItems.forEach((item, index) => {
       if (index === 0) {
@@ -279,7 +284,9 @@ if(empty($imageSources)) {
           x: 0,
           y: 0,
           scale: 1,
-          zIndex: totalItems - index
+          opacity: 1,
+          zIndex: totalItems - index,
+          force3D: true
         });
       } else {
         // 나머지 이미지는 오른쪽 아래에서 대기, 120px 크기로 축소 (375px 기준 약 32%)
@@ -287,7 +294,9 @@ if(empty($imageSources)) {
           x: '30%',
           y: '100%',
           scale: 0.32,
-          zIndex: totalItems - index
+          opacity: 1,
+          zIndex: totalItems - index,
+          force3D: true
         });
       }
     });
@@ -299,13 +308,27 @@ if(empty($imageSources)) {
       trigger: imageStack,
       start: 'top top',
       end: 'bottom bottom',
-      scrub: 1,
+      scrub: 0.3, // 더 빠른 응답
       onUpdate: (self) => {
         const progress = self.progress;
         const segmentSize = 1 / (totalItems - 1);
 
         stackItems.forEach((item, index) => {
-          if (index === 0) return; // 첫 번째 이미지는 고정
+          // 첫 번째 이미지: 두 번째 이미지가 올라올 때 함께 사라짐
+          if (index === 0) {
+            if (progress > 0 && progress <= segmentSize) {
+              const firstProgress = progress / segmentSize;
+              gsap.set(item, {
+                y: `${-firstProgress * 120}%`,
+                opacity: 1 - firstProgress
+              });
+            } else if (progress > segmentSize) {
+              gsap.set(item, { y: '-120%', opacity: 0 });
+            } else {
+              gsap.set(item, { y: '0%', opacity: 1 });
+            }
+            return;
+          }
 
           const itemStart = (index - 1) * segmentSize;
           const itemEnd = index * segmentSize;
@@ -314,24 +337,19 @@ if(empty($imageSources)) {
             // 현재 애니메이션 중인 이미지
             const itemProgress = (progress - itemStart) / segmentSize;
 
-            // 오른쪽 아래에서 위로 올라오면서 확대 (120px 크기에서 시작)
-            gsap.to(item, {
+            // gsap.set으로 즉시 적용 (트윈 생성 없이)
+            gsap.set(item, {
               x: `${(1 - itemProgress) * 30}%`,
               y: `${(1 - itemProgress) * 100}%`,
-              scale: 0.32 + (itemProgress * 0.68),
-              duration: 0.1,
-              overwrite: true
+              scale: 0.32 + (itemProgress * 0.68)
             });
 
-            // 이전 이미지는 위로 빠르게 스르륵 사라짐
+            // 이전 이미지는 위로 사라짐
             if (index > 0) {
               const prevItem = stackItems[index - 1];
-              gsap.to(prevItem, {
+              gsap.set(prevItem, {
                 y: `${-itemProgress * 120}%`,
-                opacity: 1 - itemProgress,
-                duration: 0.15,
-                ease: "power2.out",
-                overwrite: true
+                opacity: 1 - itemProgress
               });
             }
           } else if (progress > itemEnd) {
@@ -339,7 +357,7 @@ if(empty($imageSources)) {
             gsap.set(item, { x: '0%', y: '0%', scale: 1 });
           } else {
             // 아직 안 온 이미지 (120px 크기)
-            gsap.set(item, { x: '30%', y: '100%', scale: 0.32 });
+            gsap.set(item, { x: '30%', y: '100%', scale: 0.32, opacity: 1 });
           }
         });
       }
