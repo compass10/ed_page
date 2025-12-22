@@ -630,17 +630,17 @@ br.mob_only {
 
 // 모바일 반응형
 @media (max-width: 1024px) {
-  
+
   .space_label {
     font-family: "avenir-next-lt-pro-condensed", sans-serif;
     font-weight: 500;
-    font-size: 30px;
+    font-size: mvw(30);
   }
   
   .space_num {
-          font-family: $font-instru;
-          font-weight: 400;
-          font-size: 30px;
+    font-family: $font-instru;
+    font-weight: 400;
+    font-size: mvw(30);
   }
 
   .page_content {

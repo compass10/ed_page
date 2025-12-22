@@ -551,12 +551,12 @@ br.mob_only {
   .space_label {
     font-family: "avenir-next-lt-pro-condensed", sans-serif;
     font-weight: 500;
-    font-size: 30px;
+    font-size: min(8vw, 30px);
   }
   .space_num {
     font-family: Instrument Serif;
     font-weight: 400;
-    font-size: 30px;
+    font-size: min(8vw, 30px);
   }
   .page_content {
     padding-bottom: min(34.6666666667vw, 130px);
