@@ -171,8 +171,8 @@ main {
   }
   .mobile_image_stack .stack_container {
     position: sticky;
-    top: min(14.4vw, 54px);
-    padding-top: min(4.2666666667vw, 16px);
+    top: min(22.9333333333vw, 86px);
+    padding-top: min(8.5333333333vw, 32px);
     border-top: 4px solid #fff;
     height: 100vh;
     overflow: hidden;

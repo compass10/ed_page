@@ -344,10 +344,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (mapsInitialized) return;
 
     // 건대이드 본원 좌표 (서울특별시 광진구 천호대로 512)
-    const konkukPosition = new naver.maps.LatLng(37.5463894, 127.0704041);
+    const konkukPosition = new naver.maps.LatLng(37.5583894, 127.0753041);
 
     // 홍대이드 좌표 (서울특별시 마포구 와우산로 107-1)
-    const hongdaePosition = new naver.maps.LatLng(37.5546556, 126.9246033);
+    const hongdaePosition = new naver.maps.LatLng(37.5534556, 126.9254033);
 
     // 건대 지도
     const mapKonkuk = new naver.maps.Map('map_konkuk', {

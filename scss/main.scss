@@ -138,7 +138,7 @@ main {
       flex-direction: column;
       gap: vw(40, 1920);
       margin-left: vw(207, 1920);
-      font-family: Pretendard Variable;
+      font-family: $font-pretendard;
       font-weight: 500;
       font-style: Medium;
       font-size: clamp(16px, vw(28, 1920), 28px);
@@ -416,7 +416,7 @@ main {
           }
 
           th {
-            font-family: 'Pretendard Variable';
+            font-family: $font-pretendard;
             font-weight: 700;
             font-size: clamp(14px, vw(30, 1920), 18px);
             line-height: vw(30, 1920);
@@ -439,7 +439,7 @@ main {
             padding-bottom: vw(5, 1920);
             padding-top: vw(5, 1920);
 
-            font-family: 'Pretendard Variable';
+            font-family: $font-pretendard;
 
             font-weight: 500;
             font-size: clamp(13px, vw(20, 1920), 16px);
@@ -454,7 +454,7 @@ main {
             &:first-child {
               text-align: left;
 
-              font-family: 'Pretendard Variable';
+              font-family: $font-pretendard;
 
               font-weight: 700;
               font-size: clamp(13px, vw(20, 1920), 16px);
@@ -563,7 +563,7 @@ main {
           justify-content: space-between;
 
           p {
-            font-family: Pretendard;
+            font-family:$font-pretendard;
             font-weight: 500;
             font-size: vw(40, 1920);
             line-height: vw(40, 1920);
@@ -616,7 +616,7 @@ main {
       display: none;
     }
     .kr {
-      font-family: Pretendard;
+      font-family: $font-pretendard;
       font-weight: 600;
       font-size: vw(28, 1920);
 
@@ -780,7 +780,7 @@ main {
           text-transform: uppercase;
         }
         p {
-          font-family: Pretendard Variable;
+          font-family: $font-pretendard;
           font-weight: 400;
           font-size: vw(16, 1920);
           line-height: vw(30, 1920);
@@ -1633,7 +1633,7 @@ main {
           }
         }
       }
-    }
+    } 
     #portfolio {
       padding: mvw(15);
       .section_header {

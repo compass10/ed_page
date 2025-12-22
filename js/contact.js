@@ -34,8 +34,44 @@ document.querySelectorAll('.right_tab').forEach(btn => {
 
     this.classList.add('active');
     document.querySelector(`.right_content[data-right-tab="${tabName}"]`).classList.add('active');
+
+    // URL 해시 업데이트
+    history.replaceState(null, '', `#${tabName}`);
   });
 });
+
+// URL 해시에 따라 탭 자동 활성화
+function activateTabByHash() {
+  const hash = window.location.hash;
+  let targetTab = null;
+
+  if (hash === '#board') {
+    targetTab = 'board';
+  } else if (hash === '#contact') {
+    targetTab = 'contact';
+  }
+
+  if (targetTab) {
+    document.querySelectorAll('.right_tab').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    document.querySelectorAll('.right_content').forEach(content => {
+      content.classList.remove('active');
+    });
+
+    const tab = document.querySelector(`.right_tab[data-right-tab="${targetTab}"]`);
+    const content = document.querySelector(`.right_content[data-right-tab="${targetTab}"]`);
+
+    if (tab) tab.classList.add('active');
+    if (content) content.classList.add('active');
+  }
+}
+
+// 페이지 로드 시 해시 확인
+activateTabByHash();
+
+// 해시 변경 시에도 탭 전환 (브라우저 뒤로가기/앞으로가기 대응)
+window.addEventListener('hashchange', activateTabByHash);
 
 // 개인정보 동의함 선택 시 하위 체크박스 자동 체크
 const privacyRadios = document.querySelectorAll('input[name="privacy"]');

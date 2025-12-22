@@ -51,7 +51,7 @@ text-decoration-skip-ink: auto;
   justify-content: space-between;
   }
 .arrow{
-  font-family: Pretendard Variable;
+  font-family: $font-pretendard;
 font-weight: 400;
 
 font-size: vw(25,1920);
@@ -92,7 +92,7 @@ text-transform: uppercase;
         --show_state:block;
       }
       &.by_ed{
-        font-family: Pretendard Variable;
+        font-family: $font-pretendard;
 font-weight: 400;
 
 font-size: vw(12,1920);
@@ -120,7 +120,7 @@ text-transform: uppercase;
       &.contact{
         .cont_area{
           --show_state:flex;
-          font-family: Pretendard Variable;
+          font-family: $font-pretendard;
 font-weight: 400;
 
 font-size: vw(12,1920);
@@ -142,7 +142,7 @@ text-transform: capitalize;
         .cont_area{
           --show_state : flex;
           gap:vw(27,1920);
-font-family: Pretendard Variable;
+font-family: $font-pretendard;
 font-weight: 400;
 
 font-size: vw(12,1920);
@@ -165,7 +165,7 @@ text-transform: capitalize;
         .cont{
           flex:1;
         max-width:vw(215,1920);
-        font-family: Pretendard Variable;
+        font-family: $font-pretendard;
 font-weight: 700;
 font-style: Bold;
 font-size: vw(12,1920);
@@ -217,7 +217,7 @@ text-transform: capitalize;
         text-decoration: none;
 
         .arrow {
-          font-family: Pretendard Variable;
+          font-family: $font-pretendard;
           font-weight: 400;
           font-size: mvw(14);
           line-height: mvw(14);
@@ -267,7 +267,7 @@ text-transform: capitalize;
           display: block;
 
           .company {
-            font-family: Pretendard Variable;
+            font-family:$font-pretendard;
             font-weight: 700;
             font-size: mvw(12);
             line-height: mvw(18);
@@ -277,7 +277,7 @@ text-transform: capitalize;
 
           .doing,
           .director {
-            font-family: Pretendard Variable;
+            font-family: $font-pretendard;
             font-weight: 400;
             font-size: mvw(12);
             line-height: mvw(18);
@@ -292,7 +292,7 @@ text-transform: capitalize;
 
         &.contact {
           .time {
-            font-family: Pretendard Variable;
+            font-family: $font-pretendard;
             font-weight: 400;
             font-size: mvw(12);
             line-height: mvw(18);
@@ -301,7 +301,7 @@ text-transform: capitalize;
           }
 
           .call_mail {
-            font-family: Pretendard Variable;
+            font-family: $font-pretendard;
             font-weight: 400;
             font-size: mvw(12);
             line-height: mvw(18);
@@ -316,7 +316,7 @@ text-transform: capitalize;
 
         &.location {
           .aca_name {
-            font-family: Pretendard Variable;
+            font-family: $font-pretendard;
             font-weight: 700;
             font-size: mvw(12);
             line-height: mvw(18);
@@ -326,7 +326,7 @@ text-transform: capitalize;
 
           .tel,
           .adr {
-            font-family: Pretendard Variable;
+            font-family: $font-pretendard;
             font-weight: 400;
             font-size: mvw(12);
             line-height: mvw(18);

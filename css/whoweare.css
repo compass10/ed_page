@@ -356,6 +356,12 @@ br.mob_only {
   letter-spacing: -0.03em;
   text-transform: uppercase;
 }
+.core_value_list .core_value_col .core_value_item .item_header .item_num .pc {
+  display: inline;
+}
+.core_value_list .core_value_col .core_value_item .item_header .item_num .mob {
+  display: none;
+}
 .core_value_list .core_value_col .core_value_item .item_header .item_title {
   flex: 1;
   font-family: "Pretendard", sans-serif;
@@ -737,6 +743,9 @@ br.mob_only {
   .space_intro .intro_item .intro_content br {
     display: none;
   }
+  .space_list {
+    gap: min(5.3333333333vw, 20px);
+  }
   .space_list .space_row {
     flex-direction: column;
     height: auto;
@@ -907,10 +916,13 @@ br.mob_only {
     height: min(11.7333333333vw, 44px);
   }
   .core_value_list .core_value_col .core_value_item.active {
-    height: min(32.5333333333vw, 122px);
+    height: auto;
   }
   .core_value_list .core_value_col .core_value_item.active .item_toggle::after {
     opacity: 0;
+  }
+  .core_value_list .core_value_col .core_value_item.active .item_body {
+    padding-bottom: min(3.2vw, 12px);
   }
   .core_value_list .core_value_col .core_value_item .item_header {
     height: min(11.7333333333vw, 44px);
@@ -934,6 +946,12 @@ br.mob_only {
     line-height: min(5.3333333333vw, 20px);
     letter-spacing: -0.03em;
     text-transform: uppercase;
+  }
+  .core_value_list .core_value_col .core_value_item .item_header .item_num .pc {
+    display: none;
+  }
+  .core_value_list .core_value_col .core_value_item .item_header .item_num .mob {
+    display: inline;
   }
   .core_value_list .core_value_col .core_value_item .item_header .item_title {
     font-family: "Pretendard", sans-serif;

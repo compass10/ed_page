@@ -924,8 +924,8 @@
             .score_input {
               width: 100%;
               border-top: 1px solid #fff;
-              padding: mvw(8) 0;
-              margin-top: mvw(8);
+              padding: mvw(8) 0 0;
+              margin-top: mvw(0);
               margin-left: 0;
               gap: mvw(32);
 
@@ -1121,7 +1121,7 @@
 
         .location_top {
           justify-content: space-between;
-          gap: mvw(25);
+          gap: unset;
 
           .location_name {
             font-family: $font-pretendard;
@@ -1150,6 +1150,8 @@
             letter-spacing: -0.03em;
             text-transform: uppercase;
             text-decoration: underline;
+            word-break:break-all;
+            max-width:mvw(144);
           }
         }
 

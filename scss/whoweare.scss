@@ -408,6 +408,13 @@ br.mob_only {
           line-height: vw(22, 1920);
           letter-spacing: -0.03em;
           text-transform: uppercase;
+
+          .pc {
+            display: inline;
+          }
+          .mob {
+            display: none;
+          }
         }
 
         .item_title {
@@ -853,7 +860,9 @@ br.mob_only {
       }
     }
   }
-
+  .space_list{
+    gap:mvw(20);
+  }
   .space_list .space_row {
     flex-direction: column;
     height: auto;
@@ -1060,12 +1069,16 @@ br.mob_only {
       height: mvw(44);
 
       &.active {
-        height: mvw(122);
+        height: auto;
 
         .item_toggle {
           &::after {
             opacity: 0;
           }
+        }
+
+        .item_body {
+          padding-bottom: mvw(12);
         }
       }
 
@@ -1094,6 +1107,13 @@ br.mob_only {
           line-height: mvw(20);
           letter-spacing: -0.03em;
           text-transform: uppercase;
+
+          .pc {
+            display: none;
+          }
+          .mob {
+            display: inline;
+          }
         }
 
         .item_title {

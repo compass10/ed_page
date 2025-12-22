@@ -943,8 +943,8 @@
   .location_wrap .contact_right .right_content .contact_form .checkbox_group .score_input {
     width: 100%;
     border-top: 1px solid #fff;
-    padding: min(2.1333333333vw, 8px) 0;
-    margin-top: min(2.1333333333vw, 8px);
+    padding: min(2.1333333333vw, 8px) 0 0;
+    margin-top: min(0vw, 0px);
     margin-left: 0;
     gap: min(8.5333333333vw, 32px);
   }
@@ -1123,7 +1123,7 @@
   }
   .location_wrap .location_right .location_box .location_top {
     justify-content: space-between;
-    gap: min(6.6666666667vw, 25px);
+    gap: unset;
   }
   .location_wrap .location_right .location_box .location_top .location_name {
     font-family: "Pretendard", sans-serif;
@@ -1150,6 +1150,8 @@
     letter-spacing: -0.03em;
     text-transform: uppercase;
     text-decoration: underline;
+    word-break: break-all;
+    max-width: min(38.4vw, 144px);
   }
   .location_wrap .location_right .location_box .location_map {
     height: 310px;
@@ -1166,3 +1168,5 @@
     text-transform: capitalize;
   }
 }
+
+/*# sourceMappingURL=contact.css.map */

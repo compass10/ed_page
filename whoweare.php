@@ -447,7 +447,7 @@ $news_result = @mysql_query($news_sql);
           <div class="core_value_col">
             <div class="core_value_item">
               <div class="item_header">
-                <span class="item_num">01</span>
+                <span class="item_num"><span class="pc">01</span><span class="mob">01</span></span>
                 <span class="item_title">정보력</span>
                 <span class="item_toggle"></span>
               </div>
@@ -457,7 +457,7 @@ $news_result = @mysql_query($news_sql);
             </div>
             <div class="core_value_item">
               <div class="item_header">
-                <span class="item_num">04</span>
+                <span class="item_num"><span class="pc">04</span><span class="mob">02</span></span>
                 <span class="item_title">1인 2실기 커리 큘럼</span>
                 <span class="item_toggle"></span>
               </div>
@@ -469,7 +469,7 @@ $news_result = @mysql_query($news_sql);
           <div class="core_value_col">
             <div class="core_value_item">
               <div class="item_header">
-                <span class="item_num">02</span>
+                <span class="item_num"><span class="pc">02</span><span class="mob">03</span></span>
                 <span class="item_title">철저한 수업과 향상</span>
                 <span class="item_toggle"></span>
               </div>
@@ -479,7 +479,7 @@ $news_result = @mysql_query($news_sql);
             </div>
             <div class="core_value_item">
               <div class="item_header">
-                <span class="item_num">05</span>
+                <span class="item_num"><span class="pc">05</span><span class="mob">04</span></span>
                 <span class="item_title">개인별 커리큘럼</span>
                 <span class="item_toggle"></span>
               </div>
@@ -491,7 +491,7 @@ $news_result = @mysql_query($news_sql);
           <div class="core_value_col">
             <div class="core_value_item">
               <div class="item_header">
-                <span class="item_num">03</span>
+                <span class="item_num"><span class="pc">03</span><span class="mob">05</span></span>
                 <span class="item_title">편입전문학원</span>
                 <span class="item_toggle"></span>
               </div>
@@ -501,7 +501,7 @@ $news_result = @mysql_query($news_sql);
             </div>
             <div class="core_value_item">
               <div class="item_header">
-                <span class="item_num">06</span>
+                <span class="item_num"><span class="pc">06</span><span class="mob">06</span></span>
                 <span class="item_title">실전 합격 데이터 기반 피드백</span>
                 <span class="item_toggle"></span>
               </div>

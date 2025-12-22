@@ -88,7 +88,7 @@ header .header_inner .menu {
   top: 0;
   right: -100%;
   bottom: 0;
-  z-index: 100;
+  z-index: 1000;
   width: 38.28125vw;
   padding: 1.5625vw;
   background-color: #FFEE6E;
@@ -295,7 +295,7 @@ header .header_inner .menu {
   justify-content: space-between;
 }
 #footer .floating_btn p .arrow {
-  font-family: Pretendard Variable;
+  font-family: "Pretendard", sans-serif;
   font-weight: 400;
   font-size: 1.3020833333vw;
   line-height: 1.25vw;
@@ -330,7 +330,7 @@ header .header_inner .menu {
   --show_state:block;
 }
 #footer .footer_info_list li.by_ed {
-  font-family: Pretendard Variable;
+  font-family: "Pretendard", sans-serif;
   font-weight: 400;
   font-size: 0.625vw;
   line-height: 0.9375vw;
@@ -350,7 +350,7 @@ header .header_inner .menu {
 }
 #footer .footer_info_list li.contact .cont_area {
   --show_state:flex;
-  font-family: Pretendard Variable;
+  font-family: "Pretendard", sans-serif;
   font-weight: 400;
   font-size: 0.625vw;
   line-height: 0.9375vw;
@@ -364,7 +364,7 @@ header .header_inner .menu {
 #footer .footer_info_list li.location .cont_area {
   --show_state: flex;
   gap: 1.40625vw;
-  font-family: Pretendard Variable;
+  font-family: "Pretendard", sans-serif;
   font-weight: 400;
   font-size: 0.625vw;
   line-height: 0.9375vw;
@@ -381,7 +381,7 @@ header .header_inner .menu {
 #footer .footer_info_list li.follow .cont {
   flex: 1;
   max-width: 11.1979166667vw;
-  font-family: Pretendard Variable;
+  font-family: "Pretendard", sans-serif;
   font-weight: 700;
   font-style: Bold;
   font-size: 0.625vw;
@@ -414,7 +414,7 @@ header .header_inner .menu {
     text-decoration: none;
   }
   #footer .floating_btn p .arrow {
-    font-family: Pretendard Variable;
+    font-family: "Pretendard", sans-serif;
     font-weight: 400;
     font-size: min(3.7333333333vw, 14px);
     line-height: min(3.7333333333vw, 14px);
@@ -454,7 +454,7 @@ header .header_inner .menu {
     display: block;
   }
   #footer .footer_info_list > li.by_ed .company {
-    font-family: Pretendard Variable;
+    font-family: "Pretendard", sans-serif;
     font-weight: 700;
     font-size: min(3.2vw, 12px);
     line-height: min(4.8vw, 18px);
@@ -463,7 +463,7 @@ header .header_inner .menu {
   }
   #footer .footer_info_list > li.by_ed .doing,
   #footer .footer_info_list > li.by_ed .director {
-    font-family: Pretendard Variable;
+    font-family: "Pretendard", sans-serif;
     font-weight: 400;
     font-size: min(3.2vw, 12px);
     line-height: min(4.8vw, 18px);
@@ -474,7 +474,7 @@ header .header_inner .menu {
     display: none;
   }
   #footer .footer_info_list > li.contact .time {
-    font-family: Pretendard Variable;
+    font-family: "Pretendard", sans-serif;
     font-weight: 400;
     font-size: min(3.2vw, 12px);
     line-height: min(4.8vw, 18px);
@@ -482,7 +482,7 @@ header .header_inner .menu {
     text-transform: capitalize;
   }
   #footer .footer_info_list > li.contact .call_mail {
-    font-family: Pretendard Variable;
+    font-family: "Pretendard", sans-serif;
     font-weight: 400;
     font-size: min(3.2vw, 12px);
     line-height: min(4.8vw, 18px);
@@ -493,7 +493,7 @@ header .header_inner .menu {
     font-weight: 700;
   }
   #footer .footer_info_list > li.location .aca_name {
-    font-family: Pretendard Variable;
+    font-family: "Pretendard", sans-serif;
     font-weight: 700;
     font-size: min(3.2vw, 12px);
     line-height: min(4.8vw, 18px);
@@ -502,7 +502,7 @@ header .header_inner .menu {
   }
   #footer .footer_info_list > li.location .tel,
   #footer .footer_info_list > li.location .adr {
-    font-family: Pretendard Variable;
+    font-family: "Pretendard", sans-serif;
     font-weight: 400;
     font-size: min(3.2vw, 12px);
     line-height: min(4.8vw, 18px);
