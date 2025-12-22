@@ -185,7 +185,7 @@ body.news-list .page_content {
     padding-bottom: min(37.3333333333vw, 140px);
   }
   .sec_title {
-    margin-bottom: min(8.5333333333vw, 32px);
+    margin-bottom: min(2.1333333333vw, 8px);
   }
   .sec_title .instru {
     margin-left: min(-1.0666666667vw, -4px);
@@ -221,7 +221,7 @@ body.news-list .page_content {
   .news_detail .back_btn {
     width: min(8vw, 30px);
     height: min(8vw, 30px);
-    margin-bottom: min(8.5333333333vw, 32px);
+    margin-bottom: min(4.2666666667vw, 16px);
   }
   .news_detail .detail_content {
     flex-direction: column;
@@ -250,6 +250,8 @@ body.news-list .page_content {
   }
   .news_detail .detail_content .detail_left .detail_text .detail_date {
     text-align: right;
+    font-size: min(3.2vw, 12px);
+    line-height: min(3.2vw, 12px);
   }
   .news_detail .detail_content .detail_right {
     max-width: 100%;

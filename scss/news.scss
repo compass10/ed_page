@@ -228,7 +228,7 @@ body.news-list {
   }
 
   .sec_title {
-    margin-bottom: mvw(32);
+    margin-bottom: mvw(8);
 
     .instru {
       margin-left: mvw(-4);
@@ -273,7 +273,7 @@ body.news-list {
     .back_btn {
       width: mvw(30);
       height: mvw(30);
-      margin-bottom: mvw(32);
+      margin-bottom: mvw(16);
     }
 
     .detail_content {
@@ -306,6 +306,8 @@ body.news-list {
 
           .detail_date {
             text-align: right;
+            font-size: mvw(12);
+            line-height: mvw(12);
           }
         }
       }
