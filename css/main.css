@@ -116,7 +116,7 @@ main {
   flex-direction: column;
   gap: 2.0833333333vw;
   margin-left: 10.78125vw;
-  font-family: "Pretendard", sans-serif;
+  font-family: Pretendard Variable;
   font-weight: 500;
   font-style: Medium;
   font-size: clamp(16px, 1.4583333333vw, 28px);
@@ -188,7 +188,7 @@ main {
 #news .news_list {
   gap: 1.0416666667vw;
   margin-bottom: 7.3958333333vw;
-  margin-top: 3.1770833333vw;
+  margin-top: 32px;
 }
 #news .news_list li {
   border-radius: 15px;
@@ -366,7 +366,7 @@ main {
   border-top: 1px solid #000;
 }
 #success .content .content_body.pc_only table th {
-  font-family: "Pretendard", sans-serif;
+  font-family: "Pretendard Variable";
   font-weight: 700;
   font-size: clamp(14px, 1.5625vw, 18px);
   line-height: 1.5625vw;
@@ -387,7 +387,7 @@ main {
   height: fit-content;
   padding-bottom: 0.2604166667vw;
   padding-top: 0.2604166667vw;
-  font-family: "Pretendard", sans-serif;
+  font-family: "Pretendard Variable";
   font-weight: 500;
   font-size: clamp(13px, 1.0416666667vw, 16px);
   line-height: 1.5625vw;
@@ -399,7 +399,7 @@ main {
 }
 #success .content .content_body.pc_only table td:first-child {
   text-align: left;
-  font-family: "Pretendard", sans-serif;
+  font-family: "Pretendard Variable";
   font-weight: 700;
   font-size: clamp(13px, 1.0416666667vw, 16px);
   line-height: 1.5625vw;
@@ -494,7 +494,7 @@ main {
   justify-content: space-between;
 }
 #andMore .pass_list .article_list li .title_area p {
-  font-family: "Pretendard", sans-serif;
+  font-family: Pretendard;
   font-weight: 500;
   font-size: 2.0833333333vw;
   line-height: 2.0833333333vw;
@@ -537,7 +537,7 @@ main {
   display: none;
 }
 #opportunity .top_area .kr {
-  font-family: "Pretendard", sans-serif;
+  font-family: Pretendard;
   font-weight: 600;
   font-size: 1.4583333333vw;
   line-height: 2.0833333333vw;
@@ -688,7 +688,7 @@ main {
   text-transform: uppercase;
 }
 #opportunity .bottom_area .grid_row .hiding_text p {
-  font-family: "Pretendard", sans-serif;
+  font-family: Pretendard Variable;
   font-weight: 400;
   font-size: 0.8333333333vw;
   line-height: 1.5625vw;
@@ -1028,7 +1028,7 @@ main {
   }
   main #success .content .content_header {
     margin: unset;
-    height: min(80vw, 300px);
+    height: min(74.6666666667vw, 280px);
   }
   main #success .content .content_header .left_img {
     width: min(57.3333333333vw, 215px);
@@ -1058,13 +1058,6 @@ main {
     display: block;
     width: 100%;
   }
-  main #success .content .content_header .right_img a {
-    position: absolute;
-    top: min(25.8666666667vw, 97px);
-    right: min(37.3333333333vw, 140px);
-    width: min(17.8666666667vw, 67px);
-    height: min(5.3333333333vw, 20px);
-  }
   main #success .content .content_header .bottom_center_gif {
     position: absolute;
     left: min(1.0666666667vw, 4px);
@@ -1082,7 +1075,7 @@ main {
     display: none;
   }
   main #success .content .content_body.mob_only {
-    margin: min(26.6666666667vw, 100px) 0 0;
+    margin: min(16vw, 60px) 0 0;
     display: block;
   }
   main #success .content .content_body.mob_only .accordion_item {
@@ -1294,8 +1287,6 @@ main {
     top: unset;
     bottom: 13.3333333333vw;
     left: 22.6666666667vw;
-    bottom: min(13.3333333333vw, 50px);
-    left: min(22.6666666667vw, 85px);
   }
   main #opportunity .top_area .top_text ul.top_img_list li:nth-child(1) .chat_b.mobile {
     position: absolute;
@@ -1304,6 +1295,10 @@ main {
     display: block;
     width: 27.4666666667vw;
     height: auto;
+  }
+  main #opportunity .top_area .top_text ul.top_img_list li:nth-child(1) {
+    bottom: min(13.3333333333vw, 50px);
+    left: min(22.6666666667vw, 85px);
   }
   main #opportunity .top_area .top_text ul.top_img_list li:nth-child(2) {
     top: min(74.6666666667vw, 280px);
@@ -1406,8 +1401,6 @@ main {
     bottom: min(92vw, 345px);
     transform: scaleX(-1);
     display: block;
-    max-width: min(21.3333333333vw, 80px);
-    width: 100%;
   }
   main #opportunity .bottom_area .bottom_img_list li:nth-child(1) img {
     max-width: unset;
@@ -1421,6 +1414,10 @@ main {
     display: block;
     width: 33.0666666667vw;
     height: auto;
+  }
+  main #opportunity .bottom_area .bottom_img_list li:nth-child(1) {
+    max-width: min(21.3333333333vw, 80px);
+    width: 100%;
   }
   main #opportunity .bottom_area .grid_row:first-child {
     margin: 0 0 min(10.6666666667vw, 40px);
@@ -1727,9 +1724,6 @@ main {
   background: #fff;
   color: #000;
   border-color: #000;
-}
-#ourStory .port_next_btn {
-  display: none;
 }
 
 @media (max-width: 1024px) {

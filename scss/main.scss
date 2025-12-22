@@ -138,7 +138,7 @@ main {
       flex-direction: column;
       gap: vw(40, 1920);
       margin-left: vw(207, 1920);
-      font-family: $font-pretendard;
+      font-family: Pretendard Variable;
       font-weight: 500;
       font-style: Medium;
       font-size: clamp(16px, vw(28, 1920), 28px);
@@ -221,7 +221,7 @@ main {
     gap: vw(20, 1920);
 
         margin-bottom: vw(142, 1920);
-            margin-top: vw(61, 1920);
+            margin-top: 32px;
     li{
       border-radius:15px;
       overflow:hidden;
@@ -416,7 +416,7 @@ main {
           }
 
           th {
-            font-family: $font-pretendard;
+            font-family: 'Pretendard Variable';
             font-weight: 700;
             font-size: clamp(14px, vw(30, 1920), 18px);
             line-height: vw(30, 1920);
@@ -439,7 +439,7 @@ main {
             padding-bottom: vw(5, 1920);
             padding-top: vw(5, 1920);
 
-            font-family: $font-pretendard;
+            font-family: 'Pretendard Variable';
 
             font-weight: 500;
             font-size: clamp(13px, vw(20, 1920), 16px);
@@ -454,7 +454,7 @@ main {
             &:first-child {
               text-align: left;
 
-              font-family: $font-pretendard;
+              font-family: 'Pretendard Variable';
 
               font-weight: 700;
               font-size: clamp(13px, vw(20, 1920), 16px);
@@ -563,7 +563,7 @@ main {
           justify-content: space-between;
 
           p {
-            font-family:$font-pretendard;
+            font-family: Pretendard;
             font-weight: 500;
             font-size: vw(40, 1920);
             line-height: vw(40, 1920);
@@ -616,7 +616,7 @@ main {
       display: none;
     }
     .kr {
-      font-family: $font-pretendard;
+      font-family: Pretendard;
       font-weight: 600;
       font-size: vw(28, 1920);
 
@@ -780,7 +780,7 @@ main {
           text-transform: uppercase;
         }
         p {
-          font-family: $font-pretendard;
+          font-family: Pretendard Variable;
           font-weight: 400;
           font-size: vw(16, 1920);
           line-height: vw(30, 1920);
@@ -1155,7 +1155,7 @@ main {
         margin: mvw(68) 0 0;
         .content_header {
           margin: unset;
-          height: mvw(300);
+          height: mvw(280);
           .left_img {
             width: mvw(215);
             .chat_b {
@@ -1187,13 +1187,6 @@ main {
                 width: 100%;
               }
             }
-            a {
-              position: absolute;
-              top: mvw(97);
-              right: mvw(140);
-              width: mvw(67);
-              height: mvw(20);
-            }
           }
           .bottom_center_gif {
             position: absolute;
@@ -1214,7 +1207,7 @@ main {
             display: none;
           }
           &.mob_only {
-            margin: mvw(100) 0 0;
+            margin: mvw(60) 0 0;
             display: block;
             .accordion_item {
               background: #fff;
@@ -1633,7 +1626,7 @@ main {
           }
         }
       }
-    } 
+    }
     #portfolio {
       padding: mvw(15);
       .section_header {
@@ -1928,10 +1921,6 @@ main {
         }
       }
     }
-  }
-
-  .port_next_btn {
-    display: none;
   }
 }
 

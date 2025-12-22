@@ -48,7 +48,7 @@ text-decoration-thickness: 0%;
 text-decoration-skip-ink: auto;
   &.flex_row{
   display:flex;
-  justify-content: space-between;
+  justify-content: center;
   }
 .arrow{
   font-family: $font-pretendard;
@@ -215,6 +215,7 @@ text-transform: capitalize;
         line-height: mvw(14);
         width: mvw(47);
         text-decoration: none;
+        text-align: center;
 
         .arrow {
           font-family: $font-pretendard;
@@ -229,6 +230,7 @@ text-transform: capitalize;
 
     .footer_info_list {
       flex-direction: column;
+      gap: 0;
 
       > li {
         padding: mvw(16);

@@ -1,10 +1,7 @@
   <footer id="footer">
     <a href="contact.php" class="floating_btn">
-      <p>COntact</p>
+      <p>상담문의</p>
       <p class="flex_row">
-        <span>
-          US
-        </span>
         <span class="arrow">→→</span>
       </p>
     </a>

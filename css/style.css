@@ -292,7 +292,7 @@ header .header_inner .menu {
 }
 #footer .floating_btn p.flex_row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 #footer .floating_btn p .arrow {
   font-family: "Pretendard", sans-serif;
@@ -413,6 +413,7 @@ header .header_inner .menu {
     line-height: min(3.7333333333vw, 14px);
     width: min(12.5333333333vw, 47px);
     text-decoration: none;
+    text-align: center;
   }
   #footer .floating_btn p .arrow {
     font-family: "Pretendard", sans-serif;
@@ -424,6 +425,7 @@ header .header_inner .menu {
   }
   #footer .footer_info_list {
     flex-direction: column;
+    gap: 0;
   }
   #footer .footer_info_list > li {
     padding: min(4.2666666667vw, 16px);
