@@ -408,10 +408,10 @@ $pageCss = 'whoweare';
               이드는 학생 한명 한명 개개인에 맞는 커리큘럼과 일정을 통해 편입을 준비합니다.
             </p>
             <div class="curriculum_news">
-              <div class="news_item"><img src="asset/images/whoweare/news_placeholder.png" alt="뉴스"></div>
-              <div class="news_item"><img src="asset/images/whoweare/news_placeholder.png" alt="뉴스"></div>
-              <div class="news_item"><img src="asset/images/whoweare/news_placeholder.png" alt="뉴스"></div>
-              <div class="news_item"><img src="asset/images/whoweare/news_placeholder.png" alt="뉴스"></div>
+              <div class="news_item"><img src="asset/images/whoweare/News_01.png" alt="뉴스"></div>
+              <div class="news_item"><img src="asset/images/whoweare/News_02.png" alt="뉴스"></div>
+              <div class="news_item"><img src="asset/images/whoweare/News_03.png" alt="뉴스"></div>
+              <div class="news_item"><img src="asset/images/whoweare/News_04.png" alt="뉴스"></div>
             </div>
           </div>
         </div>
