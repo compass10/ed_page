@@ -1,12 +1,58 @@
 <?php
+// 세션 먼저 시작 (lib.php 충돌 방지)
+@session_start();
+
+// Output buffering 시작 (lib.php의 출력 차단)
+ob_start();
+
+// Fatal 에러 핸들러
+function fatalErrorHandler() {
+    $error = error_get_last();
+    if ($error !== null && ($error['type'] == E_ERROR || $error['type'] == E_PARSE || $error['type'] == E_CORE_ERROR || $error['type'] == E_COMPILE_ERROR)) {
+        @ob_end_clean();
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode(array('success' => false, 'message' => "Fatal Error: " . $error['message'] . " in " . $error['file'] . " on line " . $error['line']));
+    }
+}
+register_shutdown_function('fatalErrorHandler');
+
+// 일반 에러 핸들러
+function jsonErrorHandler($errno, $errstr, $errfile, $errline) {
+    // 경고는 무시
+    if ($errno == E_WARNING || $errno == E_NOTICE || $errno == E_DEPRECATED || $errno == E_STRICT) {
+        return true;
+    }
+    @ob_end_clean();
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(array('success' => false, 'message' => "PHP Error: $errstr in $errfile on line $errline"));
+    exit;
+}
+set_error_handler('jsonErrorHandler');
+
+// DB 연결 (운영서버 lib.php 사용)
+$libPath = $_SERVER['DOCUMENT_ROOT'].'/web/lib.php';
+if(!file_exists($libPath)) {
+    @ob_end_clean();
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(array('success' => false, 'message' => 'lib.php 파일을 찾을 수 없습니다: ' . $libPath));
+    exit;
+}
+@include_once($libPath);
+
+// lib.php 출력 버리기
+@ob_end_clean();
+
 header('Content-Type: application/json; charset=utf-8');
 
-// DB 연결
-include_once('./web/lib.php');
+// DB 연결 확인
+if(!isset($inquiry_table) || !$inquiry_table) {
+    echo json_encode(array('success' => false, 'message' => 'DB 연결에 실패했습니다.'));
+    exit;
+}
 
 // POST 요청만 허용
 if($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    echo json_encode(['success' => false, 'message' => '잘못된 요청입니다.']);
+    echo json_encode(array('success' => false, 'message' => '잘못된 요청입니다.'));
     exit;
 }
 
@@ -18,23 +64,23 @@ $message = isset($_POST['message']) ? trim($_POST['message']) : '';
 $privacy = isset($_POST['privacy']) ? $_POST['privacy'] : '';
 
 if(empty($name)) {
-    echo json_encode(['success' => false, 'message' => '이름을 입력해주세요.']);
+    echo json_encode(array('success' => false, 'message' => '이름을 입력해주세요.'));
     exit;
 }
 if(empty($email)) {
-    echo json_encode(['success' => false, 'message' => '이메일을 입력해주세요.']);
+    echo json_encode(array('success' => false, 'message' => '이메일을 입력해주세요.'));
     exit;
 }
 if(empty($title)) {
-    echo json_encode(['success' => false, 'message' => '제목을 입력해주세요.']);
+    echo json_encode(array('success' => false, 'message' => '제목을 입력해주세요.'));
     exit;
 }
 if(empty($message)) {
-    echo json_encode(['success' => false, 'message' => '메세지를 입력해주세요.']);
+    echo json_encode(array('success' => false, 'message' => '메세지를 입력해주세요.'));
     exit;
 }
 if($privacy !== '동의함') {
-    echo json_encode(['success' => false, 'message' => '개인정보 수집·이용에 동의해주세요.']);
+    echo json_encode(array('success' => false, 'message' => '개인정보 수집·이용에 동의해주세요.'));
     exit;
 }
 
@@ -109,26 +155,39 @@ if(count($uploadedFiles) > 0) {
     }
 }
 
-// DB 저장
-$sql = "INSERT INTO $inquiry_table (iname, iemail, isubject, imemo, ifile, idevice, ip, reg_date, isw)
-        VALUES (
+// 세션 UID 생성 (원본 방식 참고)
+if(!isset($_SESSION["session_uid"])) {
+    srand((double)microtime()*1000000);
+    $random_num = rand(100,999);
+    $time = time();
+    $_SESSION["session_uid"] = $time."-".$random_num;
+}
+$uid = $_SESSION["session_uid"];
+
+// DB 저장 (원본 테이블 구조에 맞춤)
+// 원본: insert into $inquiry_table values ('', '$name', '$email', '$subject', '$memo', '', '$uid', '$device', '$this_ip', '', '5', now() )
+$sql = "INSERT INTO $inquiry_table VALUES (
+            '',
             '".addslashes($name)."',
             '".addslashes($email)."',
             '".addslashes($title)."',
             '".addslashes($memo)."',
             '".addslashes($ifile)."',
+            '".addslashes($uid)."',
             '".addslashes($device)."',
             '".addslashes($ip)."',
-            NOW(),
-            '5'
+            '',
+            '5',
+            NOW()
         )";
 
-$result = mysql_query($sql);
+$result = @mysql_query($sql);
 
 if($result) {
-    echo json_encode(['success' => true, 'message' => '문의가 정상적으로 접수되었습니다.']);
+    echo json_encode(array('success' => true, 'message' => '문의가 정상적으로 접수되었습니다.'));
 } else {
-    echo json_encode(['success' => false, 'message' => '문의 접수 중 오류가 발생했습니다.']);
+    $error = @mysql_error();
+    echo json_encode(array('success' => false, 'message' => '문의 접수 중 오류가 발생했습니다. ' . $error));
 }
 
 @mysql_close($connect);

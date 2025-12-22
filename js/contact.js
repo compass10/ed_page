@@ -37,6 +37,45 @@ document.querySelectorAll('.right_tab').forEach(btn => {
   });
 });
 
+// 개인정보 동의함 선택 시 하위 체크박스 자동 체크
+const privacyRadios = document.querySelectorAll('input[name="privacy"]');
+const privacySubCheckboxes = document.querySelectorAll('input[name="privacy_detail[]"]');
+
+privacyRadios.forEach(radio => {
+  radio.addEventListener('change', function() {
+    if (this.value === '동의함' && this.checked) {
+      // 동의함 선택 시 모든 하위 체크박스 체크
+      privacySubCheckboxes.forEach(checkbox => {
+        checkbox.checked = true;
+      });
+    } else if (this.value === '동의안함' && this.checked) {
+      // 동의안함 선택 시 모든 하위 체크박스 해제
+      privacySubCheckboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+    }
+  });
+});
+
+// 첨부파일 선택 시 파일명 표시
+document.querySelectorAll('.form_file').forEach(fileInput => {
+  fileInput.addEventListener('change', function() {
+    const fileName = this.files.length > 0 ? this.files[0].name : '';
+    // 기존 파일명 표시 요소 제거
+    const existingSpan = this.parentNode.querySelector('.file_name');
+    if (existingSpan) {
+      existingSpan.remove();
+    }
+    // 파일이 선택된 경우 파일명 표시
+    if (fileName) {
+      const fileNameSpan = document.createElement('span');
+      fileNameSpan.className = 'file_name';
+      fileNameSpan.textContent = fileName;
+      this.parentNode.appendChild(fileNameSpan);
+    }
+  });
+});
+
 // 상담문의 폼 제출 처리
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {

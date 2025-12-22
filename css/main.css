@@ -1287,8 +1287,6 @@ main {
     top: unset;
     bottom: 13.3333333333vw;
     left: 22.6666666667vw;
-    bottom: min(13.3333333333vw, 50px);
-    left: min(22.6666666667vw, 85px);
   }
   main #opportunity .top_area .top_text ul.top_img_list li:nth-child(1) .chat_b.mobile {
     position: absolute;
@@ -1297,6 +1295,10 @@ main {
     display: block;
     width: 27.4666666667vw;
     height: auto;
+  }
+  main #opportunity .top_area .top_text ul.top_img_list li:nth-child(1) {
+    bottom: min(13.3333333333vw, 50px);
+    left: min(22.6666666667vw, 85px);
   }
   main #opportunity .top_area .top_text ul.top_img_list li:nth-child(2) {
     top: min(74.6666666667vw, 280px);
@@ -1399,8 +1401,6 @@ main {
     bottom: min(92vw, 345px);
     transform: scaleX(-1);
     display: block;
-    max-width: min(21.3333333333vw, 80px);
-    width: 100%;
   }
   main #opportunity .bottom_area .bottom_img_list li:nth-child(1) img {
     max-width: unset;
@@ -1414,6 +1414,10 @@ main {
     display: block;
     width: 33.0666666667vw;
     height: auto;
+  }
+  main #opportunity .bottom_area .bottom_img_list li:nth-child(1) {
+    max-width: min(21.3333333333vw, 80px);
+    width: 100%;
   }
   main #opportunity .bottom_area .grid_row:first-child {
     margin: 0 0 min(10.6666666667vw, 40px);
@@ -1446,7 +1450,6 @@ main {
     position: absolute;
     right: 0;
     top: 0;
-    width: min(44.8vw, 168px);
     font-weight: 400;
     font-size: min(8vw, 30px);
     line-height: min(7.4666666667vw, 28px);
@@ -1460,7 +1463,6 @@ main {
   main #opportunity .floating_wrap.mob_only .floating:last-child {
     top: min(29.3333333333vw, 110px);
     right: min(0vw, 0px);
-    width: min(44.8vw, 168px);
   }
   main #portfolio {
     padding: min(4vw, 15px);
