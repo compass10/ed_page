@@ -168,7 +168,7 @@ br.mob_only {
 .space_list .space_row .space_info .space_top .space_label {
   font-family: "avenir-next-lt-pro-condensed", sans-serif;
   font-weight: 400;
-  font-size: 5.2083333333vw;
+  font-size: max(5.2vw, 30px);
   line-height: 5.2083333333vw;
   letter-spacing: -0.03em;
   text-transform: uppercase;
@@ -176,7 +176,7 @@ br.mob_only {
 .space_list .space_row .space_info .space_top .space_num {
   font-family: Instrument Serif;
   font-weight: 400;
-  font-size: 5.2083333333vw;
+  font-size: max(5.2vw, 30px);
   line-height: 5.2083333333vw;
   letter-spacing: -0.03em;
   text-transform: uppercase;

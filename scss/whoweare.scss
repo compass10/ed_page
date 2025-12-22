@@ -191,7 +191,7 @@ br.mob_only {
         .space_label {
           font-family: $font-avenir;
           font-weight: 400;
-          font-size: vw(100, 1920);
+          font-size: max(5.2vw, 30px);
           line-height: vw(100, 1920);
           letter-spacing: -0.03em;
           text-transform: uppercase;
@@ -200,7 +200,7 @@ br.mob_only {
         .space_num {
           font-family: $font-instru;
           font-weight: 400;
-          font-size: vw(100, 1920);
+          font-size: max(5.2vw, 30px);
           line-height: vw(100, 1920);
           letter-spacing: -0.03em;
           text-transform: uppercase;

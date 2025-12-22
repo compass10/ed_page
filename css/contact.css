@@ -952,8 +952,8 @@
   .location_wrap .contact_right .right_content .contact_form .checkbox_group .score_input .score_label {
     font-family: "Pretendard", sans-serif;
     font-weight: 700;
-    font-size: min(4.2666666667vw, 16px);
-    line-height: min(4.2666666667vw, 16px);
+    font-size: min(3.7333333333vw, 14px);
+    line-height: min(3.7333333333vw, 14px);
     letter-spacing: -0.03em;
     text-transform: uppercase;
   }
