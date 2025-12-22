@@ -665,6 +665,7 @@ br.mob_only {
       letter-spacing: -0.03em;
       text-transform: uppercase;
       padding: mvw(8) mvw(12);
+      color: #000
     }
   }
 
@@ -944,7 +945,7 @@ br.mob_only {
 
     .curriculum_item {
       padding: mvw(16);
-      padding-bottom: mvw(22);
+      padding-bottom: mvw(16);
 
       &.left {
         .curriculum_top {
@@ -1022,6 +1023,7 @@ br.mob_only {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: mvw(8);
+          border-radius: 10px;
         }
       }
     }

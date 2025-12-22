@@ -576,6 +576,7 @@ br.mob_only {
     letter-spacing: -0.03em;
     text-transform: uppercase;
     padding: min(2.1333333333vw, 8px) min(3.2vw, 12px);
+    color: #000;
   }
   .tab_detail {
     flex-direction: column;
@@ -810,7 +811,7 @@ br.mob_only {
   }
   .curriculum_intro .curriculum_item {
     padding: min(4.2666666667vw, 16px);
-    padding-bottom: min(5.8666666667vw, 22px);
+    padding-bottom: min(4.2666666667vw, 16px);
   }
   .curriculum_intro .curriculum_item.left .curriculum_top {
     font-family: "avenir-next-lt-pro-condensed", sans-serif;
@@ -876,6 +877,7 @@ br.mob_only {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: min(2.1333333333vw, 8px);
+    border-radius: 10px;
   }
   .core_value_title {
     font-family: "avenir-next-lt-pro-condensed", sans-serif;
