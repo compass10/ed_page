@@ -255,6 +255,7 @@ text-transform: capitalize;
 
           .cont_area {
             display: var(--show_state);
+            gap: 16px;
           }
         }
 
@@ -292,7 +293,7 @@ text-transform: capitalize;
         &.contact {
           .time {
             font-family: Pretendard Variable;
-            font-weight: 700;
+            font-weight: 400;
             font-size: mvw(12);
             line-height: mvw(18);
             letter-spacing: -0.03em;
@@ -362,14 +363,17 @@ text-transform: capitalize;
               padding: 0;
               border-bottom: none;
               display: block;
+              flex: none;
 
               a {
                 display: inline-block;
                 padding: mvw(4) mvw(13.5);
                 background: #fff;
                 color: #000;
-                border-radius: mvw(4);
+                border-radius: mvw(999);
                 font-size: 0;
+                font-weight: 700;
+                line-height: 1;
 
                 &::before {
                   font-size: mvw(12);
@@ -418,6 +422,8 @@ text-transform: capitalize;
 
           &.follow {
             display: block;
+            border-bottom: none;
+            padding-bottom: 0;
 
             .cont_area {
               display: flex;
@@ -435,7 +441,7 @@ text-transform: capitalize;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: mvw(16);
+        padding: 12px 16px 16px 16px;
       }
     }
   }
