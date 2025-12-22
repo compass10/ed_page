@@ -184,7 +184,7 @@
           font-size: vw(14, 1920);
           line-height: vw(16, 1920);
           letter-spacing: -0.03em;
-          text-transform: uppercase;
+          text-transform: none;
 
           &::placeholder {
             color: #fff;
@@ -213,7 +213,7 @@
           font-size: vw(14, 1920);
           line-height: vw(16, 1920);
           letter-spacing: -0.03em;
-          text-transform: uppercase;
+          text-transform: none;
           resize: none;
 
           &::placeholder {
@@ -249,6 +249,20 @@
 
           .form_file {
             display: none;
+          }
+
+          .file_name {
+            flex: 1;
+            color: #fff;
+            font-family: $font-pretendard;
+            font-weight: 400;
+            font-size: vw(14, 1920);
+            line-height: vw(16, 1920);
+            letter-spacing: -0.03em;
+            text-transform: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
         }
 
@@ -842,7 +856,7 @@
             font-size: mvw(14);
             line-height: mvw(16);
             letter-spacing: -0.03em;
-            text-transform: uppercase;
+            text-transform: none;
 
             &::placeholder {
               font-family: $font-pretendard;
@@ -860,7 +874,7 @@
             font-size: mvw(14);
             line-height: mvw(16);
             letter-spacing: -0.03em;
-            text-transform: uppercase;
+            text-transform: none;
             height: mvw(160);
 
             &::placeholder {
@@ -871,6 +885,11 @@
               letter-spacing: -0.03em;
               text-transform: uppercase;
             }
+          }
+
+          .file_row .file_name {
+            font-size: mvw(12);
+            line-height: mvw(16);
           }
 
           .checkbox_group {

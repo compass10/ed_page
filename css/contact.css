@@ -195,7 +195,7 @@
   font-size: 0.7291666667vw;
   line-height: 0.8333333333vw;
   letter-spacing: -0.03em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 .contact_wrap .contact_right .right_content .contact_form .form_input::placeholder,
 .contact_wrap .contact_right .right_content .contact_form .form_file::placeholder,
@@ -228,7 +228,7 @@
   font-size: 0.7291666667vw;
   line-height: 0.8333333333vw;
   letter-spacing: -0.03em;
-  text-transform: uppercase;
+  text-transform: none;
   resize: none;
 }
 .contact_wrap .contact_right .right_content .contact_form .form_textarea::placeholder,
@@ -265,6 +265,20 @@
 .contact_wrap .contact_right .right_content .contact_form .file_row .form_file,
 .location_wrap .contact_right .right_content .contact_form .file_row .form_file {
   display: none;
+}
+.contact_wrap .contact_right .right_content .contact_form .file_row .file_name,
+.location_wrap .contact_right .right_content .contact_form .file_row .file_name {
+  flex: 1;
+  color: #fff;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 400;
+  font-size: 0.7291666667vw;
+  line-height: 0.8333333333vw;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .contact_wrap .contact_right .right_content .contact_form .checkbox_group,
 .location_wrap .contact_right .right_content .contact_form .checkbox_group {
@@ -856,7 +870,7 @@
     font-size: min(3.7333333333vw, 14px);
     line-height: min(4.2666666667vw, 16px);
     letter-spacing: -0.03em;
-    text-transform: uppercase;
+    text-transform: none;
   }
   .contact_wrap .contact_right .right_content .contact_form .form_input::placeholder,
   .contact_wrap .contact_right .right_content .contact_form .form_file::placeholder,
@@ -876,7 +890,7 @@
     font-size: min(3.7333333333vw, 14px);
     line-height: min(4.2666666667vw, 16px);
     letter-spacing: -0.03em;
-    text-transform: uppercase;
+    text-transform: none;
     height: min(42.6666666667vw, 160px);
   }
   .contact_wrap .contact_right .right_content .contact_form .form_textarea::placeholder,
@@ -887,6 +901,11 @@
     line-height: min(4.2666666667vw, 16px);
     letter-spacing: -0.03em;
     text-transform: uppercase;
+  }
+  .contact_wrap .contact_right .right_content .contact_form .file_row .file_name,
+  .location_wrap .contact_right .right_content .contact_form .file_row .file_name {
+    font-size: min(3.2vw, 12px);
+    line-height: min(4.2666666667vw, 16px);
   }
   .contact_wrap .contact_right .right_content .contact_form .checkbox_group,
   .location_wrap .contact_right .right_content .contact_form .checkbox_group {
