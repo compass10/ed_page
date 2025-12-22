@@ -1608,7 +1608,6 @@ main {
             position: absolute;
             right: 0;
             top: 0;
-            width: mvw(168);
             font-weight: 400;
             font-size: mvw(30);
             line-height: mvw(28);
@@ -1623,7 +1622,6 @@ main {
             &:last-child {
               top: mvw(110);
               right: mvw(0);
-              width: mvw(168);
             }
           }
         }
