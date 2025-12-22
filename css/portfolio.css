@@ -214,6 +214,9 @@ body.dark-theme .sec_title {
   .page_content .sec_title_row {
     justify-content: space-between;
   }
+  .page_content .sec_title_row .sec_title {
+    margin-bottom: min(2.1333333333vw, 8px);
+  }
   .page_content .sec_title_row .sec_title .avenir {
     font-family: "avenir-next-lt-pro-condensed", sans-serif;
     font-weight: 500;
@@ -227,7 +230,7 @@ body.dark-theme .sec_title {
     font-weight: 400;
     font-style: italic;
     font-size: min(10.6666666667vw, 40px);
-    line-height: min(8vw, 30px);
+    line-height: min(9.3333333333vw, 35px);
     letter-spacing: -0.03em;
     text-transform: uppercase;
   }
@@ -240,7 +243,7 @@ body.dark-theme .sec_title {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: min(2.4vw, 9px);
+    margin-bottom: min(8.5333333333vw, 32px);
   }
   .mobile_sub_title .left_text {
     font-family: "avenir-next-lt-pro-condensed", sans-serif;
@@ -327,7 +330,7 @@ body.dark-theme .sec_title {
   }
   .portfolio_filter {
     flex-wrap: wrap;
-    gap: min(3.2vw, 12px);
+    gap: min(2.1333333333vw, 8px);
     margin-top: 0;
     margin-bottom: min(8.5333333333vw, 32px);
   }

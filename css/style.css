@@ -405,10 +405,11 @@ header .header_inner .menu {
     height: min(16vw, 60px);
     bottom: calc(100% + min(4.4vw, 16.5px));
     right: min(4.2666666667vw, 16px);
+    gap: min(0.5333333333vw, 2px);
   }
   #footer .floating_btn p {
     font-family: "avenir-next-lt-pro-condensed", sans-serif;
-    font-size: min(3.7333333333vw, 14px);
+    font-size: min(3.2vw, 12px);
     line-height: min(3.7333333333vw, 14px);
     width: min(12.5333333333vw, 47px);
     text-decoration: none;

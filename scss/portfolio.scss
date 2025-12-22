@@ -252,6 +252,8 @@ body.dark-theme {
       justify-content: space-between;
 
       .sec_title {
+        margin-bottom: mvw(8);
+
         .avenir {
           font-family: $font-avenir;
           font-weight: 500;
@@ -266,7 +268,7 @@ body.dark-theme {
           font-weight: 400;
           font-style: italic;
           font-size: mvw(40);
-          line-height: mvw(30);
+          line-height: mvw(35);
           letter-spacing: -0.03em;
           text-transform: uppercase;
         }
@@ -284,7 +286,7 @@ body.dark-theme {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: mvw(9);
+    margin-bottom: mvw(32);
 
     .left_text {
       font-family: $font-avenir;
@@ -390,7 +392,7 @@ body.dark-theme {
 
   .portfolio_filter {
     flex-wrap: wrap;
-    gap: mvw(12);
+    gap: mvw(8);
     margin-top: 0;
     margin-bottom: mvw(32);
 

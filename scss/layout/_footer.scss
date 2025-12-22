@@ -207,10 +207,11 @@ text-transform: capitalize;
       height: mvw(60);
       bottom: calc(100% + mvw(16.5));
       right: mvw(16);
+      gap: mvw(2);
 
       p {
         font-family: $font-avenir;
-        font-size: mvw(14);
+        font-size: mvw(12);
         line-height: mvw(14);
         width: mvw(47);
         text-decoration: none;
