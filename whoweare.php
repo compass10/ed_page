@@ -384,8 +384,8 @@ $news_result = @mysql_query($news_sql);
         <h2 class="sec_title">
           <span class="avenir">From</span>
           <span class="instru">Basics</span>
-          <span class="avenir">to</span>
           <br class="mob_only"/>
+          <span class="avenir">to</span>
           <span class="instru">Success,</span>
         </h2>
         <h2 class="sec_title">
