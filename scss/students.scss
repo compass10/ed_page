@@ -179,15 +179,16 @@ main {
     .sec_title {
       flex-direction: column;
       margin-bottom: 0;
+      align-items: start;
 
       .avenir {
         font-size: mvw(50);
-        line-height: mvw(40);
+        line-height: mvw(45);
       }
 
       .instru {
         font-size: mvw(50);
-        line-height: mvw(40);
+        line-height: mvw(45);
       }
 
       &:nth-child(2) {

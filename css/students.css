@@ -152,14 +152,15 @@ main {
   .sec_title_row.center .sec_title {
     flex-direction: column;
     margin-bottom: 0;
+    align-items: start;
   }
   .sec_title_row.center .sec_title .avenir {
     font-size: min(13.3333333333vw, 50px);
-    line-height: min(10.6666666667vw, 40px);
+    line-height: min(12vw, 45px);
   }
   .sec_title_row.center .sec_title .instru {
     font-size: min(13.3333333333vw, 50px);
-    line-height: min(10.6666666667vw, 40px);
+    line-height: min(12vw, 45px);
   }
   .sec_title_row.center .sec_title:nth-child(2) {
     display: none;
