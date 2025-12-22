@@ -1115,6 +1115,7 @@
     .location_right {
       order: 1;
       width: 100%;
+      gap: mvw(20);
 
       .location_box {
         padding: mvw(12) mvw(16);

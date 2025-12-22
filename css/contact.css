@@ -1117,6 +1117,7 @@
   .location_wrap .location_right {
     order: 1;
     width: 100%;
+    gap: min(5.3333333333vw, 20px);
   }
   .location_wrap .location_right .location_box {
     padding: min(3.2vw, 12px) min(4.2666666667vw, 16px);
