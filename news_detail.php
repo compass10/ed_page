@@ -4,7 +4,7 @@ $isSubPage = true;
 $pageCss = 'news';
 
 // DB 연결
-include_once('../lib.php');
+include_once('./web/lib.php');
 
 // bno 파라미터 확인
 $bno = isset($_GET['bno']) ? (int)$_GET['bno'] : 0;

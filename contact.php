@@ -4,7 +4,7 @@ $isSubPage = true;
 $pageCss = 'contact';
 
 // DB 연결 (운영서버 lib.php 사용)
-include_once('../lib.php');
+include_once('./web/lib.php');
 
 // 페이지네이션 설정
 $nCount = 10; // 페이지당 표시 개수

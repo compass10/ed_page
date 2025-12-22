@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>202 DESIGN GROUP</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="Jason Jung" />
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/flickity.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<script src="js/modernizr.custom.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="hero">
+			<div class="hero__back hero__back--static"></div>
+			<div class="hero__back hero__back--mover"></div>
+			<div class="hero__front"></div>
+		</div>
+		<header class="codrops-header">
+			<div class="codrops-links">
+				<!--
+				<a class="codrops-icon codrops-icon--prev" href="http://tympanus.net/Development/InteractiveColoringConcept/" title="Previous Demo"><span>Previous Demo</span></a>
+				<a class="codrops-icon codrops-icon--drop" href="http://tympanus.net/codrops/2015/05/06/photography-website-concept/" title="Back to the article"><span>Back to the Codrops article</span></a>
+				//-->
+			</div>
+			<h1 class="codrops-title">202 DESIGN<span>GROUP</span></h1>
+			<nav class="menu">
+				<a class="menu__item" href="./about.html"><span style="text-transform:upper-case;">About</span></a>
+				<a class="menu__item menu__item--current" href="#"><span style="text-transform:upper-case;">Portfolio</span></a>
+				<a class="menu__item" href="#"><span style="text-transform:upper-case;">Inquiry</span></a>
+				<a class="menu__item" href="#"><span style="text-transform:upper-case;">Contact</span></a>
+			</nav>
+		</header>
+		<div class="stack-slider">
+			<div class="stacks-wrapper">
+				<div class="stack">
+					<h2 class="stack-title"><a href="#" data-text="HOSPITAL"><span>HOSPITAL</span></a></h2>
+					<?php
+					for($i=1;$i<6;$i++)
+					{
+					?>
+					<div class="item">
+						<div class="item__content">
+							<img src="img/portfolio_hospital/0<?=$i?>.jpg" alt="" />
+							<h3 class="item__title">병원<?=$i?> <span class="item__date">05/05/2015</span></h3>
+							<div class="item__details">
+								<ul>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목1</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목2</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목3</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목4</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<?php
+					}
+					?>
+
+
+
+
+					
+				</div>
+				<div class="stack">
+					<h2 class="stack-title"><a href="#" data-text="OFFICE"><span>OFFICE</span></a></h2>
+					
+					<?php
+					for($i=1;$i<6;$i++)
+					{
+					?>
+					<div class="item">
+						<div class="item__content">
+							<img src="img/portfolio_fashion/0<?=$i?>.jpg" alt="" />
+							<h3 class="item__title">오피스<?=$i?> <span class="item__date">05/05/2015</span></h3>
+							<div class="item__details">
+								<ul>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목1</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목2</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목3</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목4</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<?php
+					}
+					?>
+
+
+
+					
+				</div>
+				<div class="stack">
+					<h2 class="stack-title"><a href="#" data-text="FASHION"><span>FASHION</span></a></h2>
+					
+					<?php
+					for($i=1;$i<6;$i++)
+					{
+					?>
+					<div class="item">
+						<div class="item__content">
+							<img src="img/portfolio_fashion/0<?=$i?>.jpg" alt="" />
+							<h3 class="item__title">백화점<?=$i?> <span class="item__date">05/05/2015</span></h3>
+							<div class="item__details">
+								<ul>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목1</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목2</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목3</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목4</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<?php
+					}
+					?>
+
+
+
+					
+				</div>
+				<div class="stack">
+					<h2 class="stack-title"><a href="#" data-text="COMMERCIAL"><span>COMMERCIAL</span></a></h2>
+					
+					<?php
+					for($i=1;$i<6;$i++)
+					{
+					?>
+					<div class="item">
+						<div class="item__content">
+							<img src="img/portfolio_commercial/0<?=$i?>.jpg" alt="" />
+							<h3 class="item__title">상가디자인<?=$i?> <span class="item__date">05/05/2015</span></h3>
+							<div class="item__details">
+								<ul>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목1</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목2</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목3</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목4</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<?php
+					}
+					?>
+					
+				</div>
+
+				<div class="stack">
+					<h2 class="stack-title"><a href="#" data-text="ACCOMMODATION"><span>ACCOMMODATION</span></a></h2>
+					
+					<?php
+					for($i=1;$i<6;$i++)
+					{
+					?>
+					<div class="item">
+						<div class="item__content">
+							<img src="img/portfolio_accommodation/0<?=$i?>.jpg" alt="" />
+							<h3 class="item__title">주거디자인<?=$i?> <span class="item__date">05/05/2015</span></h3>
+							<div class="item__details">
+								<ul>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목1</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목2</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목3</span></li>
+									<li><i class="fa fa-check-circle" aria-hidden="true"></i><span>항목4</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<?php
+					}
+					?>
+					
+				</div>
+			</div>
+			<!-- /stacks-wrapper -->
+		</div>
+		<!-- /stacks -->
+		<img class="loader" src="img/three-dots.svg" width="60" alt="Loader image" />
+	</div>
+	<!-- /container -->
+	<!-- Flickity v1.0.0 http://flickity.metafizzy.co/ -->
+	<script src="js/flickity.pkgd.min.js"></script>
+	<script src="js/smoothscroll.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@ $pageCss = 'students';
 $darkTheme = true;
 
 // DB 연결
-include_once('../lib.php');
+include_once('./web/lib.php');
 
 // 포트폴리오 이미지 조회 (순서대로)
 $portfolio_sql = "SELECT * FROM $board_table WHERE bid='portfolio' AND is_hidden='N' ORDER BY bpw ASC, bno DESC";

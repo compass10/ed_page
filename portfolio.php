@@ -5,7 +5,7 @@ $pageCss = 'portfolio';
 $darkTheme = true;
 
 // DB 연결
-include_once('../lib.php');
+include_once('./web/lib.php');
 
 // 포트폴리오 슬라이드 조회 (순서대로)
 $portslide_sql = "SELECT * FROM $board_table WHERE bid='portslide' AND is_hidden='N' ORDER BY bpw ASC, bno DESC";

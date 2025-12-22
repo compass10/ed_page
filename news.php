@@ -5,7 +5,7 @@ $pageCss = 'news';
 $bodyClass = 'news-list';
 
 // DB 연결 (운영서버 lib.php 사용)
-include_once('../lib.php');
+include_once('./web/lib.php');
 
 // 뉴스 데이터 조회 (여러 게시판에서 가져오기 + 날짜순 정렬)
 // notice: 수강생 모집 / review: 합격 소식 / guide: ETC

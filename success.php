@@ -4,7 +4,7 @@ $isSubPage = true;
 $pageCss = 'success';
 
 // DB 연결 (운영서버 lib.php 사용)
-include_once('../lib.php');
+include_once('./web/lib.php');
 
 // 페이지네이션 설정
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;

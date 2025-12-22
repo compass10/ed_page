@@ -1,0 +1,131 @@
+@use 'base/variables' as *;
+@use 'base/functions' as *;
+@use 'base/mixins' as *;
+
+// 서브페이지 공통 스타일
+main {
+  padding-top: vw(98, 1920);
+}
+
+// 서브페이지 타이틀 영역
+.page_title {
+  display: flex;
+  align-items: center;
+  padding-left: vw(30, 1920);
+  font-family: $font-avenir;
+  font-weight: 700;
+  font-size: vw(20, 1920);
+  line-height: vw(20, 1920);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: vw(12, 1920);
+
+  .num {
+    margin-right: vw(80, 1920);
+  }
+}
+
+.page_content {
+  padding-top: 0;
+}
+
+.sec_title {
+  font-size: vw(200, 1920);
+  line-height: vw(170, 1920);
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  .avenir {
+    font-family: $font-avenir;
+    font-weight: 500;
+  }
+
+  .instru {
+    font-family: $font-instru;
+    font-weight: 400;
+    font-style: italic;
+  }
+}
+
+// 공통 페이지네이션 스타일
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: vw(10, 1920);
+  margin-top: vw(40, 1920);
+
+  .page_btn,
+  .page_num {
+    background: none;
+    border: none;
+    font-family: $font-pretendard;
+    font-weight: 400;
+    font-size: vw(14, 1920);
+    line-height: vw(16, 1920);
+    letter-spacing: -0.03em;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+
+    &:disabled,
+    &[disabled] {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    &.active {
+      font-weight: 700;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    padding-top: mvw(54);
+  }
+
+  .page_title {
+    font-size: mvw(11);
+    line-height: mvw(11);
+    padding-left: mvw(16);
+    padding-right: mvw(16);
+    margin-bottom: mvw(12);
+  }
+
+  .section,
+  .section_wrap {
+    padding-left: mvw(16);
+    padding-right: mvw(16);
+  }
+
+  .section:has(.section_wrap) {
+    padding-left: 0;
+    padding-right: 0;
+
+    .section_wrap {
+      padding-left: mvw(16);
+      padding-right: mvw(16);
+    }
+  }
+
+  .sec_title {
+    font-size: mvw(50);
+    line-height: mvw(45);
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: mvw(28);
+
+    .avenir {
+      font-family: $font-avenir;
+      font-weight: 500;
+    }
+
+    .instru {
+      font-family: $font-instru;
+      font-weight: 400;
+      font-style: italic;
+    }
+  }
+}
+

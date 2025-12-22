@@ -2,7 +2,7 @@
 $pageTitle = '메인';
 
 // DB 연결
-include_once('../lib.php');
+include_once('./web/lib.php');
 
 // 뉴스 데이터 조회 (최신순, 10개)
 $news_sql = "SELECT * FROM $board_table
@@ -1809,28 +1809,36 @@ to admission
       </div>
 
       <div class="youtube_grid">
-        <a href="#" class="youtube_item">
-          <img src="asset/images/main/youtube_thumb_01.png" alt="Youtube thumbnail 1">
+        <?php
+        // 유튜브 영상 불러오기 (최대 7개)
+        $youtube_sql = "SELECT * FROM $board_table WHERE bid='youtube' AND is_hidden='N' ORDER BY bpw DESC, bno DESC LIMIT 7";
+        $youtube_result = @mysql_query($youtube_sql);
+        $youtube_count = 0;
+
+        if($youtube_result && @mysql_num_rows($youtube_result) > 0) {
+          while($yt = @mysql_fetch_array($youtube_result)) {
+            $youtube_count++;
+            $yt_url = $yt['blink'] ? 'https://www.youtube.com/watch?v=' . $yt['blink'] : '#';
+            $yt_thumb = $yt['bimg'] ? $_url . 'thumb/youtube/' . $yt['bimg'] : 'asset/images/main/youtube_thumb_0' . $youtube_count . '.png';
+            $yt_title = $yt['btitle'] ? htmlspecialchars($yt['btitle']) : 'Youtube thumbnail ' . $youtube_count;
+        ?>
+        <a href="<?=$yt_url?>" class="youtube_item" target="_blank">
+          <img src="<?=$yt_thumb?>" alt="<?=$yt_title?>">
         </a>
+        <?php
+          }
+        }
+
+        // 7개 미만일 경우 빈 슬롯 채우기 (기본 이미지)
+        for($i = $youtube_count + 1; $i <= 7; $i++) {
+        ?>
         <a href="#" class="youtube_item">
-          <img src="asset/images/main/youtube_thumb_02.png" alt="Youtube thumbnail 2">
+          <img src="asset/images/main/youtube_thumb_0<?=$i?>.png" alt="Youtube thumbnail <?=$i?>">
         </a>
-        <a href="#" class="youtube_item">
-          <img src="asset/images/main/youtube_thumb_03.png" alt="Youtube thumbnail 3">
-        </a>
-        <a href="#" class="youtube_item">
-          <img src="asset/images/main/youtube_thumb_04.png" alt="Youtube thumbnail 4">
-        </a>
-        <a href="#" class="youtube_item">
-          <img src="asset/images/main/youtube_thumb_05.png" alt="Youtube thumbnail 5">
-        </a>
-        <a href="#" class="youtube_item">
-          <img src="asset/images/main/youtube_thumb_06.png" alt="Youtube thumbnail 6">
-        </a>
-        <a href="#" class="youtube_item">
-          <img src="asset/images/main/youtube_thumb_07.png" alt="Youtube thumbnail 7">
-        </a>
-        <div class="youtube_item text_box">
+        <?php } ?>
+
+        <!-- 8번째: 유튜브 채널 링크 (고정) -->
+        <a href="https://www.youtube.com/@edillust_academy" class="youtube_item text_box" target="_blank">
           <div class="text_top">
             More Videos<br>
             on Youtube.<br>
@@ -1840,7 +1848,7 @@ to admission
             <span class="stars">* * *</span>
             <span class="arrow">→</span>
           </div>
-        </div>
+        </a>
       </div>
 
     </section>

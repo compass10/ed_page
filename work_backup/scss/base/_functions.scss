@@ -1,0 +1,8 @@
+@function vw($px, $base: 1920) {
+  @return ($px / $base) * 100vw;
+}
+
+// 모바일용 vw 함수 - max 값 제한 (375px 기준 이상 커지지 않음)
+@function mvw($px, $base: 375) {
+  @return min(($px / $base) * 100vw, #{$px}px);
+}

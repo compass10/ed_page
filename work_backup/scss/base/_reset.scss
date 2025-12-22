@@ -1,0 +1,59 @@
+// CSS Reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+// Remove list styles
+ul, ol {
+  list-style: none;
+}
+
+// Remove default link styles
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Remove default button styles
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+// Remove default input styles
+input, textarea, select {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+// Image styles
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Table reset
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
