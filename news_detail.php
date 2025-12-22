@@ -8,15 +8,14 @@ include_once('./web/lib.php');
 
 // bno 파라미터 확인
 $bno = isset($_GET['bno']) ? (int)$_GET['bno'] : 0;
-$bid = isset($_GET['bid']) ? $_GET['bid'] : '';
 
 if($bno == 0) {
     header('Location: news.php');
     exit;
 }
 
-// 게시물 조회
-$news_sql = "SELECT * FROM $board_table WHERE bno='$bno'";
+// 게시물 조회 (mainnews 게시판)
+$news_sql = "SELECT * FROM $board_table WHERE bno='$bno' AND bid='mainnews'";
 $news_result = mysql_query($news_sql);
 $news = mysql_fetch_array($news_result);
 
@@ -28,24 +27,12 @@ if(!$news) {
 // 조회수 증가
 mysql_query("UPDATE $board_table SET bview = bview + 1 WHERE bno='$bno'");
 
-// bid별 썸네일 경로 매핑
-$thumb_path_map = array(
-    'notice' => 'thumb/notice/',
-    'review' => 'thumb/review/',
-    'guide'  => 'thumb/guide/'
-);
-$thumb_path = $thumb_path_map[$news['bid']];
-$thumb_img = $news['bimg'] ? $_url . $thumb_path . $news['bimg'] : '';
-
-// 게시글 내용에서 첫 번째 이미지 추출
-$content_img = '';
-if(preg_match('/<img[^>]+src=["\']([^"\']+)["\']/', $news['bcontents'], $matches)) {
-    $content_img = $matches[1];
-}
-
-// 첫 번째 이미지가 없으면 썸네일 이미지 사용
-if(!$content_img && $thumb_img) {
-    $content_img = $thumb_img;
+// 우측 이미지: bimg2 필드 사용, 없으면 bcontents에서 첫 번째 이미지 추출
+$right_img = '';
+if($news['bimg2']) {
+    $right_img = $_url . 'thumb/mainnews/' . $news['bimg2'];
+} else if(preg_match('/<img[^>]+src=["\']([^"\']+)["\']/', $news['bcontents'], $matches)) {
+    $right_img = $matches[1];
 }
 
 // 내용에서 이미지 태그 제거
@@ -88,9 +75,9 @@ $content_text = preg_replace('/<img[^>]*>/', '', $news['bcontents']);
             </div>
           </div>
           <div class="detail_right">
-            <?php if($content_img): ?>
+            <?php if($right_img): ?>
             <div class="detail_image">
-              <img src="<?=$content_img?>" alt="<?=htmlspecialchars($news['btitle'])?>">
+              <img src="<?=$right_img?>" alt="<?=htmlspecialchars($news['btitle'])?>">
             </div>
             <?php else: ?>
             <div class="detail_image"></div>

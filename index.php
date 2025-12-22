@@ -4,20 +4,13 @@ $pageTitle = '메인';
 // DB 연결
 include_once('./web/lib.php');
 
-// 뉴스 데이터 조회 (최신순, 10개)
+// 메인 뉴스 데이터 조회 (순서대로, 10개)
 $news_sql = "SELECT * FROM $board_table
-             WHERE bid IN ('notice', 'review', 'guide')
+             WHERE bid='mainnews'
              AND is_hidden='N'
-             ORDER BY bregdate DESC
+             ORDER BY bpw ASC, bno DESC
              LIMIT 0, 10";
 $news_result = mysql_query($news_sql);
-
-// bid별 썸네일 경로 매핑
-$thumb_path_map = array(
-    'notice' => 'thumb/notice/',
-    'review' => 'thumb/review/',
-    'guide'  => 'thumb/guide/'
-);
 
 // 포트폴리오 슬라이드 조회 (순서대로)
 $portslide_sql = "SELECT * FROM $board_table WHERE bid='portslide' AND is_hidden='N' ORDER BY bpw ASC, bno DESC";
@@ -131,9 +124,7 @@ while($row = mysql_fetch_array($portslide_result)) {
             <?php
             if($news_result && mysql_num_rows($news_result) > 0) {
               while($news = mysql_fetch_array($news_result)) {
-                $bid = $news['bid'];
-                $thumb_path = $thumb_path_map[$bid];
-                $thumb_img = $news['bimg'] ? $_url . $thumb_path . $news['bimg'] : "./asset/images/main/02_01.png";
+                $thumb_img = $news['bimg'] ? $_url . 'thumb/mainnews/' . $news['bimg'] : "./asset/images/main/02_01.png";
             ?>
             <li class="swiper-slide">
               <a href="news_detail.php?bno=<?=$news['bno']?>">

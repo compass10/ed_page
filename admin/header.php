@@ -31,6 +31,7 @@ $active_portfolio = in_array($current_page, array('portfolio_list', 'portfolio_f
 $active_portslide = in_array($current_page, array('portslide_list', 'portslide_form')) ? 'active' : '';
 $active_video = in_array($current_page, array('video_list', 'video_form')) ? 'active' : '';
 $active_youtube = in_array($current_page, array('youtube_list', 'youtube_form')) ? 'active' : '';
+$active_mainnews = in_array($current_page, array('mainnews_list', 'mainnews_form')) ? 'active' : '';
 $active_inquiry = in_array($current_page, array('inquiry_list', 'inquiry_form')) ? 'active' : '';
 ?>
 <!DOCTYPE html>
@@ -138,6 +139,9 @@ $active_inquiry = in_array($current_page, array('inquiry_list', 'inquiry_form'))
             </li>
             <li class="<?=$active_youtube?>">
               <a href="youtube_list.php">메인 유튜브</a>
+            </li>
+            <li class="<?=$active_mainnews?>">
+              <a href="mainnews_list.php">메인 뉴스</a>
             </li>
           </ul>
         </div>

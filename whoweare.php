@@ -2,6 +2,17 @@
 $pageTitle = 'Who We Are';
 $isSubPage = true;
 $pageCss = 'whoweare';
+
+// DB 연결
+include_once('./web/lib.php');
+
+// 메인 뉴스 데이터 조회 (최대 4개)
+$news_sql = "SELECT * FROM $board_table
+             WHERE bid='mainnews'
+             AND is_hidden='N'
+             ORDER BY bpw ASC, bno DESC
+             LIMIT 0, 4";
+$news_result = @mysql_query($news_sql);
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -408,10 +419,26 @@ $pageCss = 'whoweare';
               이드는 학생 한명 한명 개개인에 맞는 커리큘럼과 일정을 통해 편입을 준비합니다.
             </p>
             <div class="curriculum_news">
-              <div class="news_item"><img src="asset/images/whoweare/News_01.png" alt="뉴스"></div>
-              <div class="news_item"><img src="asset/images/whoweare/News_02.png" alt="뉴스"></div>
-              <div class="news_item"><img src="asset/images/whoweare/News_03.png" alt="뉴스"></div>
-              <div class="news_item"><img src="asset/images/whoweare/News_04.png" alt="뉴스"></div>
+              <?php
+              $news_count = 0;
+              if($news_result && mysql_num_rows($news_result) > 0) {
+                while($news = mysql_fetch_array($news_result)) {
+                  $thumb_img = $news['bimg'] ? $_url . 'thumb/mainnews/' . $news['bimg'] : 'asset/images/whoweare/News_0'.($news_count+1).'.png';
+              ?>
+              <div class="news_item">
+                <a href="news_detail.php?bno=<?=$news['bno']?>">
+                  <img src="<?=$thumb_img?>" alt="<?=htmlspecialchars($news['btitle'])?>">
+                </a>
+              </div>
+              <?php
+                  $news_count++;
+                }
+              }
+              // DB에 데이터가 없거나 4개 미만일 경우 기본 이미지로 채움
+              for($i = $news_count; $i < 4; $i++) {
+              ?>
+              <div class="news_item"><img src="asset/images/whoweare/News_0<?=($i+1)?>.png" alt="뉴스"></div>
+              <?php } ?>
             </div>
           </div>
         </div>

@@ -4,38 +4,16 @@ $isSubPage = true;
 $pageCss = 'news';
 $bodyClass = 'news-list';
 
-// DB 연결 (운영서버 lib.php 사용)
+// DB 연결
 include_once('./web/lib.php');
 
-// 뉴스 데이터 조회 (여러 게시판에서 가져오기 + 날짜순 정렬)
-// notice: 수강생 모집 / review: 합격 소식 / guide: ETC
+// 메인 뉴스 데이터 조회 (mainnews 게시판)
 $news_sql = "SELECT * FROM $board_table
-             WHERE bid IN ('notice', 'review', 'guide')
+             WHERE bid='mainnews'
              AND is_hidden='N'
-             ORDER BY bregdate DESC
+             ORDER BY bpw ASC, bno DESC
              LIMIT 0, 30";
 $news_result = mysql_query($news_sql);
-
-// bid별 카테고리 매핑
-$category_map = array(
-    'notice' => 'recruit',   // 수강생 모집
-    'review' => 'success',   // 합격 소식
-    'guide'  => 'etc'        // ETC
-);
-
-// bid별 썸네일 경로 매핑
-$thumb_path_map = array(
-    'notice' => 'thumb/notice/',
-    'review' => 'thumb/review/',
-    'guide'  => 'thumb/guide/'
-);
-
-// bid별 상세페이지 pcode 매핑
-$pcode_map = array(
-    'notice' => '1000002',
-    'review' => '3000012',
-    'guide'  => '5000020'
-);
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -82,14 +60,11 @@ $pcode_map = array(
       <div class="news_area news_swiper">
         <ul class="news_list swiper-wrapper">
           <?php
-          if(mysql_num_rows($news_result) > 0) {
+          if($news_result && mysql_num_rows($news_result) > 0) {
             while($news = mysql_fetch_array($news_result)) {
-              // bid에 따라 카테고리, 썸네일 경로, pcode 설정
-              $bid = $news['bid'];
-              $category = $category_map[$bid];
-              $thumb_path = $thumb_path_map[$bid];
-              $pcode = $pcode_map[$bid];
-              $thumb_img = $news['bimg'] ? $_url . $thumb_path . $news['bimg'] : "./asset/images/main/02_01.png";
+              // bcate 필드에서 카테고리 가져오기
+              $category = $news['bcate'] ? $news['bcate'] : 'etc';
+              $thumb_img = $news['bimg'] ? $_url . 'thumb/mainnews/' . $news['bimg'] : "./asset/images/main/02_01.png";
           ?>
           <li class="swiper-slide" data-category="<?=$category?>">
             <a href="news_detail.php?bno=<?=$news['bno']?>">
