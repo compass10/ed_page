@@ -200,7 +200,6 @@
     align-items: flex-start;
 
     &:first-child {
-      margin-top: mvw(40);
 
       .sec_title:nth-child(2) {
         display: block;
@@ -244,7 +243,7 @@
 
   .mobile_desc {
     display: block;
-    margin-top: mvw(32);
+    margin-top: mvw(20);
     margin-bottom: mvw(32);
 
     .desc_kr {
