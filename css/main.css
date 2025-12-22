@@ -1457,7 +1457,6 @@ main {
   }
   main #opportunity .floating_wrap.mob_only .floating .instru {
     font-family: Instrument Serif;
-    font-style: italic;
   }
   main #opportunity .floating_wrap.mob_only .floating:last-child {
     top: min(29.3333333333vw, 110px);
