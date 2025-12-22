@@ -223,6 +223,8 @@ body.news-list {
 @media (max-width: 1024px) {
   body.news-list .page_content {
     height: auto;
+    min-height:100vh;
+    padding-bottom:mvw(140);
   }
 
   .sec_title {

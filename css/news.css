@@ -181,6 +181,8 @@ body.news-list .page_content {
 @media (max-width: 1024px) {
   body.news-list .page_content {
     height: auto;
+    min-height: 100vh;
+    padding-bottom: min(37.3333333333vw, 140px);
   }
   .sec_title {
     margin-bottom: min(8.5333333333vw, 32px);

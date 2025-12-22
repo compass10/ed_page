@@ -1,5 +1,5 @@
 <?php
-$pageTitle = '포트폴리오';
+$pageTitle = '수강생사진';
 include 'header.php';
 
 // 순서 변경 처리
@@ -21,7 +21,7 @@ if(isset($board_table)) {
 ?>
 
 <div class="page_actions">
-  <a href="portfolio_form.php?mode=write" class="btn primary">+ 새 포트폴리오</a>
+  <a href="portfolio_form.php?mode=write" class="btn primary">+ 새 수강생사진</a>
 </div>
 
 <form method="post">
@@ -29,7 +29,7 @@ if(isset($board_table)) {
 
 <div class="table_section full">
   <div class="table_header">
-    <h3>포트폴리오 목록</h3>
+    <h3>수강생사진 목록</h3>
     <button type="submit" class="btn">순서 저장</button>
   </div>
   <table class="data_table">

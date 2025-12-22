@@ -70,7 +70,29 @@ if(!$row) {
     <div class="form_group">
       <label>첨부파일</label>
       <div class="info_box">
-        <img src="<?=$_url?>inquiry_attachment/<?=$row['ifile']?>" style="max-width: 100%;">
+        <?php
+        // 파일 경로 확인 (새 경로 또는 기존 경로)
+        $file_path_new = $_SERVER['DOCUMENT_ROOT'] . '/upload/inquiry/' . $row['ifile'];
+        $file_path_old = $_SERVER['DOCUMENT_ROOT'] . '/web/inquiry_attachment/' . $row['ifile'];
+
+        if(file_exists($file_path_new)) {
+          $file_url = '/upload/inquiry/' . $row['ifile'];
+        } else if(file_exists($file_path_old)) {
+          $file_url = '/web/inquiry_attachment/' . $row['ifile'];
+        } else {
+          $file_url = '';
+        }
+
+        // 이미지 파일인 경우 미리보기
+        $ext = strtolower(pathinfo($row['ifile'], PATHINFO_EXTENSION));
+        if($file_url == ''):
+        ?>
+        <span style="color: #999;">파일을 찾을 수 없습니다: <?=$row['ifile']?></span>
+        <?php elseif(in_array($ext, array('jpg', 'jpeg', 'gif', 'png', 'webp'))): ?>
+        <img src="<?=$file_url?>" style="max-width: 100%;">
+        <?php else: ?>
+        <a href="<?=$file_url?>" target="_blank" style="color: #007bff;"><?=$row['ifile']?> (다운로드)</a>
+        <?php endif; ?>
       </div>
     </div>
     <?php endif; ?>

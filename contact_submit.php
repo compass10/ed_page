@@ -113,9 +113,11 @@ if(preg_match('/Mobile|Android|iPhone|iPad/i', $userAgent)) {
 $ip = $_SERVER['REMOTE_ADDR'];
 
 // 파일 업로드 처리
-$uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/web/upload/inquiry/';
+// 새 페이지는 루트(/)에, 원본은 /web/에 있음
+// 파일은 /upload/inquiry/에 저장 (루트 기준)
+$uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/upload/inquiry/';
 if(!is_dir($uploadDir)) {
-    mkdir($uploadDir, 0755, true);
+    @mkdir($uploadDir, 0755, true);
 }
 
 $uploadedFiles = array();
@@ -164,15 +166,15 @@ if(!isset($_SESSION["session_uid"])) {
 }
 $uid = $_SESSION["session_uid"];
 
-// DB 저장 (원본 테이블 구조에 맞춤)
-// 원본: insert into $inquiry_table values ('', '$name', '$email', '$subject', '$memo', '', '$uid', '$device', '$this_ip', '', '5', now() )
+// DB 저장 (원본 방식: 먼저 INSERT 후 파일 UPDATE)
+// 원본: ('', '$name', '$email', '$subject', '$memo', '', '$uid', '$device', '$this_ip', '', '5', now())
 $sql = "INSERT INTO $inquiry_table VALUES (
             '',
             '".addslashes($name)."',
             '".addslashes($email)."',
             '".addslashes($title)."',
             '".addslashes($memo)."',
-            '".addslashes($ifile)."',
+            '',
             '".addslashes($uid)."',
             '".addslashes($device)."',
             '".addslashes($ip)."',
@@ -184,6 +186,12 @@ $sql = "INSERT INTO $inquiry_table VALUES (
 $result = @mysql_query($sql);
 
 if($result) {
+    // 원본처럼 INSERT 후 파일 UPDATE
+    $ino = @mysql_insert_id();
+    if($ifile && $ino) {
+        $sql_file = "UPDATE $inquiry_table SET ifile='".addslashes($ifile)."' WHERE ino='$ino'";
+        @mysql_query($sql_file);
+    }
     echo json_encode(array('success' => true, 'message' => '문의가 정상적으로 접수되었습니다.'));
 } else {
     $error = @mysql_error();
