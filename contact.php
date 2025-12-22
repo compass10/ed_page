@@ -306,7 +306,7 @@ $inquiry_result = mysql_query($inquiry_sql);
               <div class="location_top">
                 <span class="location_name">건대이드<br/>본원</span>
                 <span class="location_phone">+82 02<br/>464 9197</span>
-                <a href="https://naver.me/GVEQ1tek" target="_blank" class="location_addr">4F, Gunja Building, 512 Cheonho-daero,<br/>Gwangjin-gu, Seoul</a>
+                <a href="https://naver.me/52R2482v" target="_blank" class="location_addr">4F, Gunja Building, 512 Cheonho-daero,<br/>Gwangjin-gu, Seoul</a>
               </div>
               <div class="location_map" id="map_konkuk"></div>
               <div class="location_address">
@@ -317,7 +317,7 @@ $inquiry_result = mysql_query($inquiry_sql);
               <div class="location_top">
                 <span class="location_name">홍대이드</span>
                 <span class="location_phone">+82 02<br/>336 9543</span>
-                <a href="https://naver.me/xQitY2LP" target="_blank" class="location_addr">2F, Eunhye Building, 107-1 Wausan-ro,<br/>Mapo-gu, Seoul</a>
+                <a href="https://naver.me/5M5lXBV7" target="_blank" class="location_addr">2F, Eunhye Building, 107-1 Wausan-ro,<br/>Mapo-gu, Seoul</a>
               </div>
               <div class="location_map" id="map_hongdae"></div>
               <div class="location_address">
