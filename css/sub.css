@@ -74,11 +74,12 @@ main {
     padding-top: min(14.4vw, 54px);
   }
   .page_title {
-    font-size: min(2.9333333333vw, 11px);
+    font-size: min(3.7333333333vw, 14px);
     line-height: min(2.9333333333vw, 11px);
     padding-left: min(4.2666666667vw, 16px);
     padding-right: min(4.2666666667vw, 16px);
     margin-bottom: min(3.2vw, 12px);
+    margin-top: min(1.0666666667vw, 4px);
   }
   .section,
   .section_wrap {
