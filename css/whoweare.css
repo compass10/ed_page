@@ -929,13 +929,15 @@ br.mob_only {
     letter-spacing: -0.03em;
     text-transform: uppercase;
     margin-bottom: min(5.3333333333vw, 20px);
+    margin-top: min(12.8vw, 48px);
   }
   .core_value_list {
     flex-direction: column;
     margin-bottom: min(12.8vw, 48px);
+    gap: min(5.3333333333vw, 20px);
   }
   .core_value_list .core_value_col {
-    gap: min(2.1333333333vw, 8px);
+    gap: min(5.3333333333vw, 20px);
   }
   .core_value_list .core_value_col .core_value_item {
     height: min(11.7333333333vw, 44px);
@@ -959,8 +961,10 @@ br.mob_only {
   }
   .core_value_list .core_value_col .core_value_item .item_header .item_toggle::before {
     width: min(2.9333333333vw, 11px);
+    height: 1.8px;
   }
   .core_value_list .core_value_col .core_value_item .item_header .item_toggle::after {
+    width: 1.8px;
     height: min(2.9333333333vw, 11px);
   }
   .core_value_list .core_value_col .core_value_item .item_header .item_num {
@@ -1083,6 +1087,7 @@ br.mob_only {
   .info_section .info_col .info_boxes {
     flex-direction: column;
     height: auto;
+    gap: min(2.1333333333vw, 8px);
   }
   .info_section .info_col .info_box {
     width: 100%;

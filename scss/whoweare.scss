@@ -1086,14 +1086,16 @@ br.mob_only {
     letter-spacing: -0.03em;
     text-transform: uppercase;
     margin-bottom: mvw(20);
+    margin-top: mvw(48);
   }
 
   .core_value_list {
     flex-direction: column;
     margin-bottom: mvw(48);
+    gap: mvw(20);
 
     .core_value_col {
-      gap: mvw(8);
+      gap: mvw(20);
     }
 
     .core_value_col .core_value_item {
@@ -1123,9 +1125,11 @@ br.mob_only {
 
           &::before {
             width: mvw(11);
+            height: 1.8px;
           }
 
           &::after {
+            width: 1.8px;
             height: mvw(11);
           }
         }
@@ -1273,6 +1277,7 @@ br.mob_only {
       .info_boxes {
         flex-direction: column;
         height: auto;
+        gap: mvw(8);
       }
 
       .info_box {
