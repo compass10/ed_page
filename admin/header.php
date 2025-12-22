@@ -24,15 +24,18 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
 
 // 메뉴 활성화 체크
 $active_setup = in_array($current_page, array('setup', 'mainbanner_list', 'mainbanner_form')) ? 'active' : '';
-$active_page = in_array($current_page, array('page_list', 'page_form')) ? 'active' : '';
-$active_contents = in_array($current_page, array('notice_list', 'notice_form', 'tutor_list', 'tutor_form', 'link_list', 'link_form', 'pass_list', 'pass_form', 'passlist_list', 'passlist_form', 'review_list', 'review_form', 'guide_list', 'guide_form', 'practice_list', 'practice_form', 'faq_list', 'faq_form')) ? 'active' : '';
-$active_gallery = in_array($current_page, array('gallery_list', 'gallery_form')) ? 'active' : '';
+$active_youtube = in_array($current_page, array('youtube_list', 'youtube_form')) ? 'active' : '';
+$active_passlist = in_array($current_page, array('passlist_list', 'passlist_form')) ? 'active' : '';
 $active_portfolio = in_array($current_page, array('portfolio_list', 'portfolio_form')) ? 'active' : '';
 $active_portslide = in_array($current_page, array('portslide_list', 'portslide_form')) ? 'active' : '';
-$active_video = in_array($current_page, array('video_list', 'video_form')) ? 'active' : '';
-$active_youtube = in_array($current_page, array('youtube_list', 'youtube_form')) ? 'active' : '';
 $active_mainnews = in_array($current_page, array('mainnews_list', 'mainnews_form')) ? 'active' : '';
 $active_inquiry = in_array($current_page, array('inquiry_list', 'inquiry_form')) ? 'active' : '';
+// Backup 메뉴
+$active_page = in_array($current_page, array('page_list', 'page_form')) ? 'active' : '';
+$active_contents = in_array($current_page, array('notice_list', 'notice_form', 'tutor_list', 'tutor_form', 'link_list', 'link_form', 'pass_list', 'pass_form', 'review_list', 'review_form', 'guide_list', 'guide_form', 'practice_list', 'practice_form', 'faq_list', 'faq_form')) ? 'active' : '';
+$active_gallery = in_array($current_page, array('gallery_list', 'gallery_form')) ? 'active' : '';
+$active_video = in_array($current_page, array('video_list', 'video_form')) ? 'active' : '';
+$active_backup = ($active_page || $active_contents || $active_gallery || $active_video) ? 'active' : '';
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -78,18 +81,6 @@ $active_inquiry = in_array($current_page, array('inquiry_list', 'inquiry_form'))
                 <li><a href="mainbanner_list.php">메인배너관리</a></li>
               </ul>
             </li>
-            <li class="has_sub <?=$active_page?>">
-              <a href="page_list.php">메뉴설정</a>
-              <ul class="nav_sub">
-                <li><a href="page_list.php">전체 목록</a></li>
-                <li><a href="page_list.php?menucode=1">학원소개</a></li>
-                <li><a href="page_list.php?menucode=2">시각디자인</a></li>
-                <li><a href="page_list.php?menucode=3">공업디자인</a></li>
-                <li><a href="page_list.php?menucode=4">입시정보</a></li>
-                <li><a href="page_list.php?menucode=5">합격자</a></li>
-                <li><a href="page_list.php?menucode=6">커뮤니티</a></li>
-              </ul>
-            </li>
           </ul>
         </div>
 
@@ -97,51 +88,20 @@ $active_inquiry = in_array($current_page, array('inquiry_list', 'inquiry_form'))
         <div class="nav_section">
           <p class="nav_label">Contents</p>
           <ul class="nav_list">
-            <li class="has_sub <?=$active_contents?>">
-              <a href="notice_list.php">컨텐츠관리</a>
-              <ul class="nav_sub">
-                <li><a href="notice_list.php">공지사항</a></li>
-                <li><a href="tutor_list.php">이드강사진</a></li>
-                <li><a href="link_list.php">ED커뮤니티</a></li>
-                <li><a href="pass_list.php">연도별합격자</a></li>
-                <li><a href="passlist_list.php">합격자명단</a></li>
-                <li><a href="review_list.php">합격수기</a></li>
-                <li><a href="guide_list.php">편입모집요강</a></li>
-                <li><a href="practice_list.php">대학별실기</a></li>
-                <li><a href="faq_list.php">자주묻는질문</a></li>
-              </ul>
+            <li class="<?=$active_youtube?>">
+              <a href="youtube_list.php">00 Youtube</a>
             </li>
-            <li class="has_sub <?=$active_gallery?>">
-              <a href="gallery_list.php?type=1">갤러리관리</a>
-              <ul class="nav_sub">
-                <li><a href="gallery_list.php?type=1">일러스트</a></li>
-                <li><a href="gallery_list.php?type=2">제품렌더링</a></li>
-                <li><a href="gallery_list.php?type=3">금속렌더링</a></li>
-                <li><a href="gallery_list.php?type=4">도자렌더링</a></li>
-                <li><a href="gallery_list.php?type=5">색채정밀</a></li>
-                <li><a href="gallery_list.php?type=6">연필정밀</a></li>
-                <li><a href="gallery_list.php?type=7">선생님작품</a></li>
-              </ul>
+            <li class="<?=$active_passlist?>">
+              <a href="passlist_list.php">03 Success Stories</a>
             </li>
             <li class="<?=$active_portfolio?>">
-              <a href="portfolio_list.php">students 관리</a>
+              <a href="portfolio_list.php">04 Our Students</a>
             </li>
             <li class="<?=$active_portslide?>">
-              <a href="portslide_list.php">portfolio 관리</a>
-            </li>
-            <li class="has_sub <?=$active_video?>">
-              <a href="video_list.php?type=1">영상관리</a>
-              <ul class="nav_sub">
-                <li><a href="video_list.php?type=1">학원소개영상</a></li>
-                <li><a href="video_list.php?type=2">시각디자인영상</a></li>
-                <li><a href="video_list.php?type=3">공업디자인영상</a></li>
-              </ul>
-            </li>
-            <li class="<?=$active_youtube?>">
-              <a href="youtube_list.php">메인 유튜브</a>
+              <a href="portslide_list.php">05 Portfolio</a>
             </li>
             <li class="<?=$active_mainnews?>">
-              <a href="mainnews_list.php">메인 뉴스</a>
+              <a href="mainnews_list.php">06 News</a>
             </li>
           </ul>
         </div>
@@ -160,6 +120,58 @@ $active_inquiry = in_array($current_page, array('inquiry_list', 'inquiry_form'))
               ?>
               <span class="badge"><?=$inquiry_cnt?></span>
               <?php endif; } ?>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Backup -->
+        <div class="nav_section">
+          <p class="nav_label">Backup</p>
+          <ul class="nav_list">
+            <li class="has_sub <?=$active_page?>">
+              <a href="page_list.php">메뉴설정</a>
+              <ul class="nav_sub">
+                <li><a href="page_list.php">전체 목록</a></li>
+                <li><a href="page_list.php?menucode=1">학원소개</a></li>
+                <li><a href="page_list.php?menucode=2">시각디자인</a></li>
+                <li><a href="page_list.php?menucode=3">공업디자인</a></li>
+                <li><a href="page_list.php?menucode=4">입시정보</a></li>
+                <li><a href="page_list.php?menucode=5">합격자</a></li>
+                <li><a href="page_list.php?menucode=6">커뮤니티</a></li>
+              </ul>
+            </li>
+            <li class="has_sub <?=$active_contents?>">
+              <a href="notice_list.php">컨텐츠관리</a>
+              <ul class="nav_sub">
+                <li><a href="notice_list.php">공지사항</a></li>
+                <li><a href="tutor_list.php">이드강사진</a></li>
+                <li><a href="link_list.php">ED커뮤니티</a></li>
+                <li><a href="pass_list.php">연도별합격자</a></li>
+                <li><a href="review_list.php">합격수기</a></li>
+                <li><a href="guide_list.php">편입모집요강</a></li>
+                <li><a href="practice_list.php">대학별실기</a></li>
+                <li><a href="faq_list.php">자주묻는질문</a></li>
+              </ul>
+            </li>
+            <li class="has_sub <?=$active_gallery?>">
+              <a href="gallery_list.php?type=1">갤러리관리</a>
+              <ul class="nav_sub">
+                <li><a href="gallery_list.php?type=1">일러스트</a></li>
+                <li><a href="gallery_list.php?type=2">제품렌더링</a></li>
+                <li><a href="gallery_list.php?type=3">금속렌더링</a></li>
+                <li><a href="gallery_list.php?type=4">도자렌더링</a></li>
+                <li><a href="gallery_list.php?type=5">색채정밀</a></li>
+                <li><a href="gallery_list.php?type=6">연필정밀</a></li>
+                <li><a href="gallery_list.php?type=7">선생님작품</a></li>
+              </ul>
+            </li>
+            <li class="has_sub <?=$active_video?>">
+              <a href="video_list.php?type=1">영상관리</a>
+              <ul class="nav_sub">
+                <li><a href="video_list.php?type=1">학원소개영상</a></li>
+                <li><a href="video_list.php?type=2">시각디자인영상</a></li>
+                <li><a href="video_list.php?type=3">공업디자인영상</a></li>
+              </ul>
             </li>
           </ul>
         </div>

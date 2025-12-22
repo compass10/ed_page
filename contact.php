@@ -61,7 +61,7 @@ $inquiry_result = mysql_query($inquiry_sql);
               <button class="right_tab" data-right-tab="board">Board</button>
             </div>
             <div class="right_content active" data-right-tab="contact">
-              <form class="contact_form">
+              <form class="contact_form" id="contactForm" action="contact_submit.php" method="post" enctype="multipart/form-data">
                 <div class="form_row">
                   <label class="form_label">이름</label>
                   <input type="text" class="form_input" name="name" placeholder="이름 입력">
