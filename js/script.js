@@ -10,6 +10,7 @@ function isMobile() {
   return window.innerWidth <= 1024;
 }
 
+
 titleArea.forEach(item => {
   item.addEventListener('click', ()=> {
     if (isMobile()) {
@@ -26,6 +27,22 @@ titleArea.forEach(item => {
       }
     } else {
       // PC: 전체 푸터 토글
+      // const toggleIcons = footer.querySelectorAll('.title_area span:last-child');
+      // if(footer.classList.contains('show_content')){
+      //   footer.classList.remove('show_content');
+      //   toggleIcons.forEach(icon => icon.textContent = '+');
+      // }else{
+      //   footer.classList.add('show_content');
+      //   toggleIcons.forEach(icon => icon.textContent = '-');
+      // }
+    }
+  })
+})
+// 푸터 전체 토글
+footer.addEventListener('click', ()=>{
+  if(isMobile()){
+
+  }else{
       const toggleIcons = footer.querySelectorAll('.title_area span:last-child');
       if(footer.classList.contains('show_content')){
         footer.classList.remove('show_content');
@@ -34,8 +51,8 @@ titleArea.forEach(item => {
         footer.classList.add('show_content');
         toggleIcons.forEach(icon => icon.textContent = '-');
       }
-    }
-  })
+
+  }
 })
 
 menuBtn.addEventListener('click', ()=> {

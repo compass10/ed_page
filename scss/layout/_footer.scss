@@ -74,7 +74,7 @@ text-transform: uppercase;
       }
       .title_area{
         width:100%;
-        
+
         display:flex;
         justify-content: space-between;;
         font-family: $font-avenir;
@@ -83,7 +83,7 @@ font-size: vw(14,1920);
 line-height: vw(25,1920);
 letter-spacing: -0.03em;
 text-transform: uppercase;
-
+        cursor:pointer;
       }
       .cont_area{
         padding-top:vw(20,1920);

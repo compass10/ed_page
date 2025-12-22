@@ -323,6 +323,7 @@ header .header_inner .menu {
   line-height: 1.3020833333vw;
   letter-spacing: -0.03em;
   text-transform: uppercase;
+  cursor: pointer;
 }
 #footer .footer_info_list li .cont_area {
   padding-top: 1.0416666667vw;
