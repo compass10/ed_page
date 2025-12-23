@@ -913,7 +913,6 @@ main {
   main #textEd .text_flex .left_text {
     font-size: min(8vw, 30px);
     line-height: min(8vw, 30px);
-    color: red;
   }
   main #textEd .text_flex .center_text {
     margin-left: unset;
