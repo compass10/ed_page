@@ -719,7 +719,7 @@
   .contact_wrap .location_left,
   .location_wrap .contact_left,
   .location_wrap .location_left {
-    padding-top: min(8.5333333333vw, 32px);
+    /*padding-top: mvw(32);*/
     margin-bottom: min(10.6666666667vw, 40px);
   }
   .contact_wrap .contact_left .left_bottom,
