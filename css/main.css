@@ -116,7 +116,7 @@ main {
   flex-direction: column;
   gap: 2.0833333333vw;
   margin-left: 10.78125vw;
-  font-family: Pretendard Variable;
+  font-family: "Pretendard";
   font-weight: 500;
   font-style: Medium;
   font-size: clamp(16px, 1.4583333333vw, 28px);
@@ -366,7 +366,7 @@ main {
   border-top: 1px solid #000;
 }
 #success .content .content_body.pc_only table th {
-  font-family: "Pretendard Variable";
+  font-family: "Pretendard";
   font-weight: 700;
   font-size: clamp(14px, 1.5625vw, 18px);
   line-height: 1.5625vw;
@@ -387,7 +387,7 @@ main {
   height: fit-content;
   padding-bottom: 0.2604166667vw;
   padding-top: 0.2604166667vw;
-  font-family: "Pretendard Variable";
+  font-family: "Pretendard";
   font-weight: 500;
   font-size: clamp(13px, 1.0416666667vw, 16px);
   line-height: 1.5625vw;
@@ -399,7 +399,7 @@ main {
 }
 #success .content .content_body.pc_only table td:first-child {
   text-align: left;
-  font-family: "Pretendard Variable";
+  font-family: "Pretendard";
   font-weight: 700;
   font-size: clamp(13px, 1.0416666667vw, 16px);
   line-height: 1.5625vw;
@@ -494,7 +494,7 @@ main {
   justify-content: space-between;
 }
 #andMore .pass_list .article_list li .title_area p {
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-weight: 500;
   font-size: 2.0833333333vw;
   line-height: 2.0833333333vw;
@@ -688,7 +688,7 @@ main {
   text-transform: uppercase;
 }
 #opportunity .bottom_area .grid_row .hiding_text p {
-  font-family: Pretendard Variable;
+  font-family: Pretendard;
   font-weight: 400;
   font-size: 0.8333333333vw;
   line-height: 1.5625vw;
