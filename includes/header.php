@@ -135,7 +135,7 @@
           Instagram
         </a>
         <a target="_blank" href="https://blog.naver.com/sunsook1006">Blog #1</a>
-        <a target="_blank" href="https://blog.naver.com/sunsook1006">Blog #2</a>
+        <a target="_blank" href="https://blog.naver.com/hedboss">Blog #2</a>
       </div>
     </div>
   </div>

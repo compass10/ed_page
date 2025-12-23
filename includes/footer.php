@@ -133,7 +133,7 @@
                   </a>
                 </li>
                 <li class="blog_02">
-                  <a href="https://blog.naver.com/sunsook1006" target="_blank">
+                  <a href="https://blog.naver.com/hedboss" target="_blank">
                     Blog #2→
                   </a>
                 </li>
