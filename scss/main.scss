@@ -328,13 +328,13 @@ main {
   }
   .content {
     padding-left: vw(235, 1920);
-    padding-top: vw(160, 1920);
+    padding-top: vw(100, 1920);
 
     & .content_header {
       height: vw(396, 1920);
       width: 100%;
       position: Relative;
-      margin-bottom: vw(150, 1920);
+      margin-bottom: vw(80, 1920);
       .left_img {
         position: absolute;
         top: 0;
