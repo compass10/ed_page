@@ -75,7 +75,8 @@ text-transform: uppercase;
         width:100%;
 
         display:flex;
-        justify-content: space-between;;
+        justify-content: space-between;
+        align-items: center;
         font-family: $font-avenir;
 font-weight: 700;
 font-size: vw(14,1920);
@@ -83,6 +84,38 @@ line-height: vw(25,1920);
 letter-spacing: -0.03em;
 text-transform: uppercase;
         cursor:pointer;
+
+        .toggle_icon {
+          position: relative;
+          width: vw(14, 1920);
+          height: vw(14, 1920);
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            background-color: #fff;
+            transition: transform 0.3s ease;
+          }
+
+          // 가로 막대
+          &::before {
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            transform: translateY(-50%);
+          }
+
+          // 세로 막대
+          &::after {
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            transform: translateX(-50%);
+          }
+        }
       }
       .cont_area{
         padding-top:vw(20,1920);
@@ -185,9 +218,13 @@ text-transform: capitalize;
   &.show_content{
     .footer_info_list{
       li{
-.cont_area{
-      display:var(--show_state)
-    }
+        .title_area .toggle_icon::after {
+          transform: translateX(-50%) rotate(90deg);
+        }
+
+        .cont_area{
+          display:var(--show_state)
+        }
       }
     }
 
@@ -243,6 +280,11 @@ text-transform: capitalize;
           line-height: mvw(14);
           cursor: pointer;
           margin-bottom: 0;
+
+          .toggle_icon {
+            width: mvw(14);
+            height: mvw(14);
+          }
         }
 
         .cont_area {
@@ -253,6 +295,10 @@ text-transform: capitalize;
         &.accordion_open {
           .title_area {
             margin-bottom: mvw(16);
+
+            .toggle_icon::after {
+              transform: translateX(-50%) rotate(90deg);
+            }
           }
 
           .cont_area {

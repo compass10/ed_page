@@ -37,10 +37,10 @@ $news_result = mysql_query($news_sql);
       </div>
       <div class="top_menu_line">
         <div class="news_filter">
-        <button class="filter_btn active" data-filter="all">All</button>
+        <button class="filter_btn en active" data-filter="all">All</button>
         <button class="filter_btn" data-filter="recruit">수강생 모집</button>
         <button class="filter_btn" data-filter="success">합격 소식</button>
-        <button class="filter_btn" data-filter="etc">ETC</button>
+        <button class="filter_btn en" data-filter="etc">ETC</button>
       </div>
       <div class="slide_page_nation">
         <div class="btn_prev pn_btn">

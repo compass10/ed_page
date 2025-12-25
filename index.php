@@ -151,7 +151,7 @@ while($row = mysql_fetch_array($portslide_result)) {
       </div>
       <div class="bottom_banner">
         <p>
-          Make your dream University your reality.You dream it, we help you
+          Make your dream University your reality. You dream it, we help you
           draw the path.
         </p>
       </div>
@@ -1332,7 +1332,7 @@ while($row = mysql_fetch_array($portslide_result)) {
         </ul>
         <ul class="article_list">
           <li>
-            <a href="success.php">
+            <a href="https://www.edillust.co.kr/success_detail.php?bno=790">
               <div class="title_area">
                 <p>2025 합격자 바로가기</p>
                 <div class="btn">
@@ -1350,7 +1350,7 @@ while($row = mysql_fetch_array($portslide_result)) {
             </a>
           </li>
           <li>
-            <a href="success.php">
+            <a href="https://www.edillust.co.kr/success_detail.php?bno=789">
               <div class="title_area">
                 <p>2024 합격자 바로가기</p>
                 <div class="btn">
@@ -1368,7 +1368,7 @@ while($row = mysql_fetch_array($portslide_result)) {
             </a>
           </li>
           <li>
-            <a href="success.php">
+            <a href="https://www.edillust.co.kr/success_detail.php?bno=701">
               <div class="title_area">
                 <p>2023 합격자 바로가기</p>
                 <div class="btn">
@@ -1385,7 +1385,7 @@ while($row = mysql_fetch_array($portslide_result)) {
             </a>
           </li>
           <li>
-            <a href="success.php">
+            <a href="https://www.edillust.co.kr/success_detail.php?bno=700">
               <div class="title_area">
                 <p>2022 합격자 바로가기</p>
                 <div class="btn">
@@ -1402,7 +1402,7 @@ while($row = mysql_fetch_array($portslide_result)) {
             </a>
           </li>
           <li>
-            <a href="success.php">
+            <a href="https://www.edillust.co.kr/success_detail.php?bno=699">
               <div class="title_area">
                 <p>2021 합격자 바로가기</p>
                 <div class="btn">
@@ -1424,7 +1424,7 @@ while($row = mysql_fetch_array($portslide_result)) {
       <!-- 모바일 전용 pass_list -->
       <div class="pass_list_mobile mobile_only">
         <ul class="article_list">
-          <li>
+          <li data-link="https://www.edillust.co.kr/success_detail.php?bno=790">
             <div class="title_area">
               <p>2025 합격자 바로가기</p>
               <div class="btn">
@@ -1438,7 +1438,7 @@ while($row = mysql_fetch_array($portslide_result)) {
               <img src="./asset/images/main/sec_05_left_img_01.jpeg" alt="2025 합격자">
             </div>
           </li>
-          <li>
+          <li data-link="https://www.edillust.co.kr/success_detail.php?bno=789">
             <div class="title_area">
               <p>2024 합격자 바로가기</p>
               <div class="btn">
@@ -1452,7 +1452,7 @@ while($row = mysql_fetch_array($portslide_result)) {
               <img src="./asset/images/main/sec_05_left_img_02.png" alt="2024 합격자">
             </div>
           </li>
-          <li>
+          <li data-link="https://www.edillust.co.kr/success_detail.php?bno=701">
             <div class="title_area">
               <p>2023 합격자 바로가기</p>
               <div class="btn">
@@ -1466,7 +1466,7 @@ while($row = mysql_fetch_array($portslide_result)) {
               <img src="./asset/images/main/sec_05_left_img_03.jpeg" alt="2023 합격자">
             </div>
           </li>
-          <li>
+          <li data-link="https://www.edillust.co.kr/success_detail.php?bno=700">
             <div class="title_area">
               <p>2022 합격자 바로가기</p>
               <div class="btn">
@@ -1480,7 +1480,7 @@ while($row = mysql_fetch_array($portslide_result)) {
               <img src="./asset/images/main/sec_05_left_img_04.png" alt="2022 합격자">
             </div>
           </li>
-          <li>
+          <li data-link="https://www.edillust.co.kr/success_detail.php?bno=699">
             <div class="title_area">
               <p>2021 합격자 바로가기</p>
               <div class="btn">
@@ -1833,7 +1833,7 @@ to admission
           <div class="text_top">
             More Videos<br>
             on Youtube.<br>
-            Click Here!
+            <span class="bold">Click Here!</span>
           </div>
           <div class="text_bottom">
             <span class="stars">* * *</span>

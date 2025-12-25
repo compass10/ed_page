@@ -46,7 +46,7 @@
     <div class="top_area">
       <div class="left">
         <span class="menu_text">MENU</span>
-        <img class="menu_logo" src="./asset/images/svg/logo.svg" alt="ed_logo" />
+        <a href="index.php"><img class="menu_logo" src="./asset/images/svg/logo.svg" alt="ed_logo" /></a>
       </div>
       <div class="right">
         <svg viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">

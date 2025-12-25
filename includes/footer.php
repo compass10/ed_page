@@ -13,9 +13,7 @@
               <span>
                 CREATIVE JOURNEY, BY ED
               </span>
-              <span>
-                +
-              </span>
+              <span class="toggle_icon"></span>
             </div>
             <div class="cont_area">
               <div class="company">
@@ -39,9 +37,7 @@
               <span>
                 Contact Info
               </span>
-              <span>
-                +
-              </span>
+              <span class="toggle_icon"></span>
             </div>
             <div class="cont_area">
               <div class="time">
@@ -69,9 +65,7 @@
               <span>
                 Location info
               </span>
-              <span>
-                +
-              </span>
+              <span class="toggle_icon"></span>
             </div>
             <div class="cont_area">
               <div class="left_cont">
@@ -115,7 +109,7 @@
           <div class="cont">
             <div class="title_area">
               <span>FOLLOW US</span>
-              <span>+</span>
+              <span class="toggle_icon"></span>
             </div>
             <div class="cont_area">
               <ul class="sns_list">

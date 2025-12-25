@@ -234,6 +234,9 @@ body.dark-theme {
 
 @media (max-width: 1024px) {
   .page_content {
+    .section_wrap{
+      padding-bottom:mvw(130);
+    }
     .filter_video_wrap {
       display: flex;
       flex-direction: column;
@@ -334,7 +337,7 @@ body.dark-theme {
       gap: mvw(8);
 
       li {
-        width: mvw(167.5);
+        width: 100%;
         height: mvw(250);
         position: relative;
 
@@ -347,6 +350,7 @@ body.dark-theme {
           background-color: rgba(0, 0, 0, 0.5);
           color: #fff;
           display: flex;
+          flex-direction:column;
           align-items: center;
           justify-content: center;
           transform: translate(-50%, -50%);

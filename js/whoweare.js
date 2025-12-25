@@ -45,14 +45,22 @@ document.querySelectorAll('.core_value_item .item_header').forEach(header => {
   });
 });
 
-// 모바일 아코디언 토글 (right_col_mobile)
+// 모바일 아코디언 토글 (right_col_mobile) - 하나만 열리도록
 document.querySelectorAll('.right_col_mobile .accordion_header').forEach(header => {
   header.addEventListener('click', function() {
     const btn = this.querySelector('.accordion_btn');
     const content = this.nextElementSibling;
     const isExpanded = btn.getAttribute('aria-expanded') === 'true';
 
-    // 토글
+    // 다른 아코디언 모두 닫기
+    document.querySelectorAll('.right_col_mobile .accordion_header').forEach(otherHeader => {
+      if (otherHeader !== header) {
+        otherHeader.querySelector('.accordion_btn').setAttribute('aria-expanded', 'false');
+        otherHeader.nextElementSibling.classList.remove('active');
+      }
+    });
+
+    // 현재 아코디언 토글
     btn.setAttribute('aria-expanded', !isExpanded);
     content.classList.toggle('active');
   });

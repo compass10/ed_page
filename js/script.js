@@ -39,17 +39,22 @@ titleArea.forEach(item => {
   })
 })
 // 푸터 전체 토글
-footer.addEventListener('click', ()=>{
+footer.addEventListener('click', (e)=>{
+  // floating_btn 클릭 시 토글 방지
+  if(e.target.closest('.floating_btn')){
+    return;
+  }
+
   if(isMobile()){
 
   }else{
+
+
       const toggleIcons = footer.querySelectorAll('.title_area span:last-child');
       if(footer.classList.contains('show_content')){
         footer.classList.remove('show_content');
-        toggleIcons.forEach(icon => icon.textContent = '+');
       }else{
         footer.classList.add('show_content');
-        toggleIcons.forEach(icon => icon.textContent = '-');
       }
 
   }

@@ -69,7 +69,7 @@ body.news-list {
   width: vw(415, 1920);
   height: vw(500, 1920);
   transition: all 0.3s ease;
-  border-radius: vw(15, 1920);
+  // border-radius: vw(15, 1920);
   overflow: hidden;
 
   img {
@@ -247,6 +247,10 @@ body.news-list {
       line-height: mvw(14);
       letter-spacing: -0.03em;
       text-transform: uppercase;
+
+      &.en {
+        font-family: $font-avenir;
+      }
     }
   }
 
@@ -268,7 +272,8 @@ body.news-list {
   }
 
   .news_detail {
-    margin-bottom: mvw(60);
+    padding-bottom:mvw(130);
+    margin-bottom: mvw(00);
 
     .back_btn {
       width: mvw(30);

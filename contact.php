@@ -286,6 +286,10 @@ $inquiry_result = mysql_query($inquiry_sql);
           <button class="tab_btn" data-tab="1">상담문의</button>
           <button class="tab_btn active" data-tab="2">위치안내</button>
         </div>
+        <div class="location_mobile_desc mobile_only">
+          <p class="left_text_ko">미대편입 이드는 서울 건대본점과 홍대점, 두 캠퍼스로 운영되며 지하철과 버스 접근이 편리한 서울 중심권에 위치해 있습니다. 오늘의 연습이 내일의 합격으로 이어지는 곳, 그곳이 이드입니다.</p>
+          <p class="left_text_en">Ed academy for art & design transfer operates two campuses in Seoul — Konkuk main and Hongdae — both conveniently located in the heart of the city with easy access to subway and bus lines. A place where today's practice becomes tomorrow's success — that place is Ed.</p>
+        </div>
         <div class="location_wrap">
           <div class="location_left">
             <p class="left_text_ko">미대편입 이드는 서울 건대본점과 홍대점, 두 캠퍼스로 운영되며<br/>지하철과 버스 접근이 편리한 서울 중심권에 위치해 있습니다.<br/>오늘의 연습이 내일의 합격으로 이어지는 곳, 그곳이 이드입니다.</p>

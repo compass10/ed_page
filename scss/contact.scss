@@ -3,6 +3,12 @@
 @use 'base/mixins' as *;
 
 // Contact Us 페이지 전용 스타일
+
+// PC에서 모바일 전용 요소 숨김
+.location_mobile_desc {
+  display: none;
+}
+
 .tab_content {
   display: none;
   padding-bottom: vw(300, 1920);
@@ -981,6 +987,7 @@
             }
 
             .col_author {
+              text-align:right;
               width: mvw(60);
             }
 
@@ -1009,6 +1016,7 @@
 
               .col_author {
                 width: mvw(60);
+                text-align:right;
               }
 
               .col_date,
@@ -1067,6 +1075,29 @@
           }
         }
       }
+    }
+  }
+
+  .location_mobile_desc {
+    display: block;
+    margin-bottom: mvw(40);
+
+    .left_text_ko {
+      margin-bottom: mvw(12);
+      font-family: $font-pretendard;
+      font-weight: 500;
+      font-size: mvw(14);
+      line-height: mvw(20);
+      letter-spacing: -0.03em;
+    }
+
+    .left_text_en {
+      font-family: $font-avenir;
+      font-weight: 500;
+      font-size: mvw(14);
+      line-height: mvw(20);
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
     }
   }
 

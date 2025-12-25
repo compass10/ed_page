@@ -136,3 +136,28 @@ inView('#opportunity', (el)=> {
   const header = document.querySelector('#header');
   header.style.filter = '';
 },{once:false})
+
+// #andMore 모바일 합격자 명단: 첫 클릭 펼침, 두 번째 클릭 링크 이동
+const mobilePassItems = document.querySelectorAll('.pass_list_mobile .article_list li');
+
+mobilePassItems.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    const hidingText = item.querySelector('.hiding_text');
+    const isOpen = hidingText.classList.contains('active');
+    const link = item.dataset.link;
+
+    if (isOpen && link) {
+      // 이미 펼쳐진 상태면 링크로 이동
+      window.location.href = link;
+    } else {
+      // 다른 아이템 닫기
+      mobilePassItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.querySelector('.hiding_text').classList.remove('active');
+        }
+      });
+      // 현재 아이템 펼치기
+      hidingText.classList.add('active');
+    }
+  });
+});
