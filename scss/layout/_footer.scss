@@ -159,8 +159,7 @@ font-size: vw(12,1920);
 
 line-height: vw(18,1920);
 letter-spacing: -0.03em;
-text-transform: capitalize;
-          
+
           gap:vw(74,1920);
 
           b{
@@ -188,11 +187,23 @@ text-transform: capitalize;
             font-weight:700;
           }
 
+          .aca_name,
+          .adr,
+          .adr_en {
+            a {
+              transition: color 0.3s ease;
+
+              &:hover {
+                color: #FFEE6E;
+                text-decoration: underline;
+              }
+            }
+          }
+
         }
       }
       &.follow {
         justify-content: right;
-        ;
         display:flex;
         .cont{
           flex:1;
@@ -207,6 +218,17 @@ letter-spacing: -0.03em;
 text-transform: capitalize;
 
       }
+
+        .sns_list {
+          li a {
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #FFEE6E;
+              text-decoration: underline;
+            }
+          }
+        }
       }
 
       
@@ -345,7 +367,6 @@ text-transform: capitalize;
             font-size: mvw(12);
             line-height: mvw(18);
             letter-spacing: -0.03em;
-            text-transform: capitalize;
           }
 
           .call_mail {
@@ -354,7 +375,6 @@ text-transform: capitalize;
             font-size: mvw(12);
             line-height: mvw(18);
             letter-spacing: -0.03em;
-            text-transform: capitalize;
 
             b {
               font-weight: 700;

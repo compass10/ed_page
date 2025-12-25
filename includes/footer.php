@@ -53,7 +53,7 @@
                   <b>T</b> +82 10 6225 9197
                 </div>
                 <div class="mail">
-                  <b>E</b> sanha10172@gmail.com
+                  <b>e</b> sanha10172@gmail.com
                 </div>
               </div>
             </div>
@@ -70,7 +70,7 @@
             <div class="cont_area">
               <div class="left_cont">
                 <div class="aca_name">
-                  <a href="https://naver.me/GVEQ1tek" target="_blank">
+                  <a href="https://naver.me/52R2482v" target="_blank">
                     건대이드 본원
                   </a>
                 </div>
@@ -78,16 +78,20 @@
                   +82 02 464 9197
                 </div>
                 <div class="adr">
-                  서울시 광진구 천호대로 512 군자빌딩 4층
+                  <a href="https://naver.me/52R2482v" target="_blank">
+                    서울시 광진구 천호대로 512 군자빌딩 4층
+                  </a>
                 </div>
                 <div class="adr_en">
-                  4F, Gunja Building, 512 Cheonho-daero, <br/>
-                  Gwangjin-gu, Seoul
+                  <a href="https://naver.me/52R2482v" target="_blank">
+                    4F, Gunja Building, 512 Cheonho-daero, <br/>
+                    Gwangjin-gu, Seoul
+                  </a>
                 </div>
               </div>
               <div class="right_cont">
                 <div class="aca_name">
-                  <a href="https://naver.me/xQitY2LP" target="_blank">
+                  <a href="https://naver.me/5M5lXBV7" target="_blank">
                     홍대이드
                   </a>
                 </div>
@@ -95,11 +99,15 @@
                   +82 02 336 9543
                 </div>
                 <div class="adr">
-                  서울시 마포구 와우산로 107-1 은혜빌딩2층
+                  <a href="https://naver.me/5M5lXBV7" target="_blank">
+                    서울시 마포구 와우산로 107-1 은혜빌딩2층
+                  </a>
                 </div>
                 <div class="adr_en">
-                  2F, Eunhye Building, 107-1 Wausan-ro, <br/>
-                  Mapo-gu, Seoul
+                  <a href="https://naver.me/5M5lXBV7" target="_blank">
+                    2F, Eunhye Building, 107-1 Wausan-ro, <br/>
+                    Mapo-gu, Seoul
+                  </a>
                 </div>
               </div>
             </div>
@@ -114,7 +122,7 @@
             <div class="cont_area">
               <ul class="sns_list">
                 <li class="youtube">
-                  <a href="https://www.youtube.com/@user-drawing" target="_blank">Youtube →</a>
+                  <a href="https://www.youtube.com/@edillust_academy" target="_blank">Youtube →</a>
                 </li>
                 <li class="insta">
                   <a href="https://www.instagram.com/archive_ed_illust" target="_blank">

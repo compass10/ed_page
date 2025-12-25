@@ -19,6 +19,13 @@ header {
     height: vw(98, 1920);
     padding: vw(30, 1920);
 
+    .logo_area a{
+      display:block;
+      width: vw(60, 1920);
+      img{
+        width:100%;
+      }
+    }
     & .menu {
       cursor: pointer;
     }

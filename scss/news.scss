@@ -260,9 +260,10 @@ body.news-list {
       grid-template-columns: 1fr 1fr;
       gap: mvw(8);
     }
+    
 
     .swiper-slide {
-      width: mvw(167.5);
+      width: 100%;
       height: mvw(200);
     }
   }
