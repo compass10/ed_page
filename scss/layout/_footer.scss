@@ -84,6 +84,16 @@ line-height: vw(25,1920);
 letter-spacing: -0.03em;
 text-transform: uppercase;
         cursor:pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #FFEE6E;
+
+          .toggle_icon::before,
+          .toggle_icon::after {
+            background-color: #FFEE6E;
+          }
+        }
 
         .toggle_icon {
           position: relative;
@@ -95,7 +105,7 @@ text-transform: uppercase;
             content: '';
             position: absolute;
             background-color: #fff;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
           }
 
           // 가로 막대
