@@ -64,7 +64,7 @@ body.dark-theme {
   display: flex;
   gap: vw(10, 1920);
   margin-top: vw(60, 1920);
-  margin-bottom: vw(60, 1920);
+  margin-bottom: vw(75, 1920);
 
   .filter_btn {
     padding: vw(10, 1920) vw(20, 1920);
@@ -104,7 +104,7 @@ body.dark-theme {
 
   .port_slide {
     width: calc(100% - vw(70, 1920));
-    padding: vw(100, 1920) 0 vw(60, 1920);
+    padding: vw(75, 1920) 0 vw(60, 1920);
   }
 }
 
