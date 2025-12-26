@@ -42,7 +42,7 @@
             <div class="cont_area">
               <div class="time">
                 <div class="work">
-                  <b>운영 시간</b> 09:00 AM - 10:00 PM
+                  <b>운영 시간</b> 10:00 AM - 10:00 PM
                 </div>
                 <div class="night">
                   <b>저녁 시간</b> 05:00 PM - 06:00 PM
