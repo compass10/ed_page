@@ -76,7 +76,8 @@ body.news-list {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+    border-radius: vw(15, 1920);
+    }
 }
 
 .top_menu_line{
@@ -228,7 +229,11 @@ body.news-list {
   }
 
   .sec_title {
-    margin-bottom: mvw(8);
+    margin-bottom: 0;
+  }
+
+  .sec_title_row {
+    margin-bottom: mvw(28);
 
     .instru {
       margin-left: mvw(-4);
@@ -264,7 +269,8 @@ body.news-list {
 
     .swiper-slide {
       width: 100%;
-      height: mvw(200);
+      height: fit-content;
+      border-radius: 10px;
     }
   }
 
