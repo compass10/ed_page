@@ -36,9 +36,9 @@ while($row = mysql_fetch_array($portslide_result)) {
           <span> CREATIVE JOURNEY, BY ED </span>
         </div>
         <div class="top_comps">
-          <span> VISUAL DESIGN </span>
-          <span> MOTION DESIGN </span>
           <span> INDUSTRIAL DESIGN </span>
+          <span> MOTION DESIGN </span>
+          <span> VISUAL DESIGN </span>
           <span> CRAFT DESIGN </span>
         </div>
       </div>

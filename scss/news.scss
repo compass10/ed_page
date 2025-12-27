@@ -27,7 +27,7 @@ body.news-list {
     display: flex;
     justify-content: space-between;
     // margin-top: vw(40, 1920);
-    margin-bottom: vw(31, 1920);
+    margin-bottom: 28px;
   }
 }
 
@@ -228,12 +228,9 @@ body.news-list {
     padding-bottom:mvw(140);
   }
 
-  .sec_title {
-    margin-bottom: 0;
-  }
 
   .sec_title_row {
-    margin-bottom: mvw(28);
+    margin-bottom: 0;
 
     .instru {
       margin-left: mvw(-4);

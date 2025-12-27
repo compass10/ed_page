@@ -115,7 +115,7 @@ main {
     line-height: mvw(45);
     letter-spacing: -0.03em;
     text-transform: uppercase;
-    margin-bottom: mvw(28);
+    margin-bottom: 0;
 
     .avenir {
       font-family: $font-avenir;

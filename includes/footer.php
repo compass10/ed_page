@@ -129,7 +129,7 @@
                     Instagram →
                   </a>
                 </li>
-                <li class="blog_01">
+                <!--<li class="blog_01">
                   <a href="https://blog.naver.com/sunsook1006" target="_blank">
                     Blog #1 →
                   </a>
@@ -138,7 +138,7 @@
                   <a href="https://blog.naver.com/hedboss" target="_blank">
                     Blog #2→
                   </a>
-                </li>
+                </li>-->
               </ul>
             </div>
           </div>

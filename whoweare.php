@@ -263,7 +263,7 @@ $news_result = @mysql_query($news_sql);
           <div class="intro_item left">
             <h3 class="intro_title">미대편입이드는, 학생들이 찾는 공간에서 가르칩니다.</h3>
             <p class="intro_content">
-              미대편입이드는 삭막한 학원의 공간이 아닌 학원학생들이 스트레스를 받지 않고 휴식할수 있는 공간으로<br/>
+              미대편입이드는 삭막한 학원의 공간이 아닌 학원 학생들이 스트레스를 받지 않고 휴식할수 있는 공간으로<br/>
               가족과 같은 분위기 속에서 강의합니다. 입시는 장기전이기 때문에 수강환경이 매우 중요합니다.
             </p>
           </div>
@@ -327,7 +327,7 @@ $news_result = @mysql_query($news_sql);
                 <h4 class="space_title">포트폴리오 강의실</h4>
                 <p class="space_desc">
                   포트폴리오 강의실은 실기하는 공간에서 함께하는 것이 아닌  독립공간에서 디자인 제작의 효율을 위해 분리하였습니다.
-                  노트북 사용을 위해 각 자리에 콘센트를 배치하여 원활한 실기를 돕고자 하였습니다.
+                  노트북 사용을 위해 각 자리에 콘센트를 배치하여 원활한 디지털 작업을 돕고자 하였습니다.
                 </p>
               </div>
             </div>
@@ -406,7 +406,7 @@ $news_result = @mysql_query($news_sql);
               미대편입이드는, 주요대학외에 준비하지 않습니다.
             </p>
             <p class="curriculum_bot">
-              "지방대,대학원,순수회화. 이드의 합격자에는 없습니다."<br/>
+              "지방대, 순수회화. 이드의 합격자에는 없습니다."<br/>
               이드의 입시 전략은 디자인 계열의 서울, 수도권 대학만 지도합니다.<br/>
               대량 합격자 양산을 위한 지방대 지원과 누구나 합격할수 있는 대학원 진학 명단은 적어도 이드의 합격자 명단엔 없습니다.
             </p>
@@ -496,7 +496,7 @@ $news_result = @mysql_query($news_sql);
                 <span class="item_toggle"></span>
               </div>
               <div class="item_body">
-                <p>미대 편입 이드는 학점 은행제나, 공모전, 대학원 까지 여러 분야를 분산시켜 다루는 것이 아닌, '미대 편입' 만 전문적으로 집중하여 가르칩니다.</p>
+                <p>미대 편입 이드는 학점 은행제나, 공모전까지 여러 분야를 분산시켜 다루는 것이 아닌, '미대 편입' 만 전문적으로 집중하여 가르칩니다.</p>
               </div>
             </div>
             <div class="core_value_item">
@@ -532,11 +532,11 @@ $news_result = @mysql_query($news_sql);
               <span class="step_title">실기 전형 선택</span>
             </div>
             <div class="step_body">
-              <p>편입 준비 방향을 잡는 것이 중요합니다.<br class="show"/> 실기, 포트폴리오, 영어 중 어떤 과정을 중심으로 준비하실지 선택해 주세요. 어느 것이 정답이라고 할 수는 없습니다. 고객님의 목표와 계획을 가장 잘 실현할 수 있는 방향이 무엇인지 함께 고민해 보는 것이 중요합니다.</p>
+              <p>편입 준비 방향을 잡는 것이 중요합니다.<br class="show"/> 실기, 포트폴리오, 영어 중 어떤 과정을 중심으로 준비하실지 선택해 주세요. 어느 것이 정답이라고 할 수는 없습니다. 학생의 목표와 계획을 가장 잘 실현할 수 있는 방향이 무엇인지 함께 고민해 보는 것이 중요합니다.</p>
               <div class="step_tags">
-                <span class="tag">공인영어</span>
                 <span class="tag">전공실기</span>
-                <span class="tag">면접 포트폴리오</span>
+                <span class="tag">포트폴리오</span>
+                <span class="tag">면접</span>
               </div>
             </div>
           </div>
