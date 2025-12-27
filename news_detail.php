@@ -35,8 +35,9 @@ if($news['bimg2']) {
     $right_img = $matches[1];
 }
 
-// 내용에서 이미지 태그 제거
+// 내용에서 이미지 태그 제거 및 이스케이프 문자 제거
 $content_text = preg_replace('/<img[^>]*>/', '', $news['bcontents']);
+$content_text = stripslashes($content_text);
 ?>
 <?php include 'includes/header.php'; ?>
 

@@ -18,7 +18,7 @@ while($row = mysql_fetch_array($portslide_result)) {
         'bno' => $row['bno'],
         'img' => $row['bimg'] ? $_url . 'thumb/portslide/' . $row['bimg'] : '',
         'category' => $row['bcate'],
-        'text' => $row['btitle']
+        'text' => stripslashes($row['btitle'])
     );
 }
 
@@ -127,27 +127,30 @@ const allSlides = <?=json_encode($slides)?>;
 let portSwiper = null;
 
 // Swiper 초기화 함수
-function initSwiper(slides) {
+function initSwiper(slides, rebuildHtml = true) {
   // 기존 Swiper 제거
   if(portSwiper) {
     portSwiper.destroy(true, true);
   }
 
-  // 슬라이드 HTML 생성
-  const wrapper = document.querySelector('.port_list');
-  wrapper.innerHTML = slides.map(slide => `
-    <li class="swiper-slide" data-category="${slide.category}">
-      <img src="${slide.img}" alt="portfolio_img">
-      <div class="right_text">
-        ${slide.text.replace(/\n/g, '<br>')}
-      </div>
-    </li>
-  `).join('');
+  // 슬라이드 HTML 생성 (rebuildHtml이 true일 때만)
+  if(rebuildHtml) {
+    const wrapper = document.querySelector('.port_list');
+    wrapper.innerHTML = slides.map(slide => `
+      <li class="swiper-slide" data-category="${slide.category}">
+        <img src="${slide.img}" alt="portfolio_img">
+        <div class="right_text">
+          ${slide.text.replace(/\n/g, '<br>')}
+        </div>
+      </li>
+    `).join('');
+  }
 
   // 슬라이드가 있을 때만 Swiper 초기화
-  if(slides.length > 0) {
+  const slideCount = rebuildHtml ? slides.length : document.querySelectorAll('.port_list .swiper-slide').length;
+  if(slideCount > 0) {
     portSwiper = new Swiper('.port_slide', {
-      loop: slides.length > 1,
+      loop: slideCount > 1,
       slidesPerView: 'auto',
       allowTouchMove: false,
       navigation: {
@@ -211,6 +214,6 @@ document.querySelectorAll('.filter_btn').forEach(btn => {
   });
 });
 
-// 초기 로드
-filterSlides();
+// 초기 로드 - PHP로 렌더링된 HTML 유지, Swiper만 초기화
+initSwiper(allSlides, false);
 </script>

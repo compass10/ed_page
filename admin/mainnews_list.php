@@ -41,11 +41,11 @@ if(isset($board_table)) {
       <tr>
         <th width="60">순서</th>
         <th width="100">썸네일</th>
-        <th width="90">카테고리</th>
+        <th width="130">카테고리</th>
         <th>제목</th>
         <th width="100">우측 이미지</th>
-        <th width="80">노출</th>
-        <th width="100">등록일</th>
+        <th width="100">노출</th>
+        <th width="120" style="text-align:center">등록일</th>
         <th width="80">관리</th>
       </tr>
     </thead>
