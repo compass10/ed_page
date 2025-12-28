@@ -89,19 +89,43 @@ articleItems.forEach((item, index) => {
 
 // #opportunity .bottom_area .hiding_text가 화면에 보일 때 active 추가, 나가면 제거 + counting 애니메이션
 (function() {
-  const hidingText = document.querySelector('#opportunity .bottom_area .hiding_text');
-  if (!hidingText) return;
+  const hidingTexts = document.querySelectorAll('#opportunity .bottom_area .hiding_text');
+  if (hidingTexts.length === 0) return;
 
-  let hasCountedUp = false;
+  // 각 hiding_text별로 counting 실행 여부 추적
+  const countedMap = new WeakMap();
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        // counting 애니메이션은 한 번만 실행
-        if (!hasCountedUp) {
-          countUp('#opportunity .bottom_area .counting');
-          hasCountedUp = true;
+        // 해당 hiding_text 내의 counting 애니메이션은 한 번만 실행
+        if (!countedMap.get(entry.target)) {
+          const countingEls = entry.target.querySelectorAll('.counting');
+          countingEls.forEach(el => {
+            const target = parseInt(el.dataset.count, 10) || 0;
+            const span = el.querySelector('span');
+            if (!span) return;
+
+            const duration = 2000;
+            const start = performance.now();
+            const easing = t => t * (2 - t);
+
+            const update = (currentTime) => {
+              const elapsed = currentTime - start;
+              const progress = Math.min(elapsed / duration, 1);
+              const current = Math.floor(easing(progress) * target);
+              span.textContent = current.toLocaleString();
+
+              if (progress < 1) {
+                requestAnimationFrame(update);
+              } else {
+                span.textContent = target.toLocaleString();
+              }
+            };
+            requestAnimationFrame(update);
+          });
+          countedMap.set(entry.target, true);
         }
       } else {
         entry.target.classList.remove('active');
@@ -111,7 +135,7 @@ articleItems.forEach((item, index) => {
     threshold: 0.1
   });
 
-  observer.observe(hidingText);
+  hidingTexts.forEach(el => observer.observe(el));
 })();
 
 
