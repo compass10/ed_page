@@ -148,6 +148,7 @@ justify-content: space-between;
         gap:vw(15,1920);
         a {
           background-color: #000;
+          flex:1;
           color:#fff;  
           padding:vw(10,1920) vw(20,1920);
           border-radius:999px;

@@ -441,7 +441,7 @@ text-transform: capitalize;
               padding: 0;
               border-bottom: none;
               display: block;
-              flex: none;
+              flex: 1;
 
               a {
                 display: inline-block;
@@ -452,7 +452,8 @@ text-transform: capitalize;
                 font-size: 0;
                 font-weight: 700;
                 line-height: 1;
-
+                width:100%;
+                text-align:center;
                 &::before {
                   font-size: mvw(12);
                 }

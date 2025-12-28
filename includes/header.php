@@ -128,7 +128,7 @@
         FOllow us :)
       </div>
       <div class="right_btns">
-        <a target="_blank" href="https://www.youtube.com/@user-drawing">
+        <a target="_blank" href="https://www.youtube.com/@edillust_academy">
           YoutubE
         </a>
         <a target="_blank" href="https://www.instagram.com/archive_ed_illust?utm_source=ig_web_button_share_s">

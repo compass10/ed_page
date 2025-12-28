@@ -292,8 +292,8 @@ $news_result = @mysql_query($news_sql);
               </div>
             </div>
             <div class="space_images">
-              <div class="img_wrap"><img src="asset/images/whoweare/Space01_01.png" alt="실기전용 강의실"></div>
-              <div class="img_wrap"><img src="asset/images/whoweare/Space01_02.png" alt="실기전용 강의실"></div>
+              <div class="img_wrap"><img src="asset/images/whoweare/Space01_01.jpg" alt="실기전용 강의실"></div>
+              <div class="img_wrap"><img src="asset/images/whoweare/Space01_02.jpg" alt="실기전용 강의실"></div>
             </div>
           </div>
 
@@ -373,7 +373,7 @@ $news_result = @mysql_query($news_sql);
               </div>
             </div>
             <div class="space_images">
-              <div class="img_wrap"><img src="asset/images/whoweare/Space05_01.png" alt="원장실 / 상담실"></div>
+              <div class="img_wrap"><img src="asset/images/whoweare/Space05_01.jpg" alt="원장실 / 상담실"></div>
             </div>
           </div>
         </div>
