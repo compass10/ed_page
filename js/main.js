@@ -87,12 +87,32 @@ articleItems.forEach((item, index) => {
   });
 });
 
-// #opportunity .bottom_area .hiding_text가 화면에 보일 때 active 추가 + counting 애니메이션
-inView('#opportunity .bottom_area .hiding_text', (el) => {
-  el.classList.add('active');
-  // counting 애니메이션
-countUp('#opportunity .bottom_area .counting');
-});
+// #opportunity .bottom_area .hiding_text가 화면에 보일 때 active 추가, 나가면 제거 + counting 애니메이션
+(function() {
+  const hidingText = document.querySelector('#opportunity .bottom_area .hiding_text');
+  if (!hidingText) return;
+
+  let hasCountedUp = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // counting 애니메이션은 한 번만 실행
+        if (!hasCountedUp) {
+          countUp('#opportunity .bottom_area .counting');
+          hasCountedUp = true;
+        }
+      } else {
+        entry.target.classList.remove('active');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  observer.observe(hidingText);
+})();
 
 
 inView('#textEd .text_flex .center_text .star', (el)=> {
