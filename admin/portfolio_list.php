@@ -38,9 +38,9 @@ if(isset($board_table)) {
         <th width="60">순서</th>
         <th width="120">이미지</th>
         <th>파일명</th>
-        <th width="80">노출</th>
-        <th width="100">등록일</th>
-        <th width="80">관리</th>
+        <th width="100">노출</th>
+        <th width="120" style="text-align:center">등록일</th>
+        <th width="100">관리</th>
       </tr>
     </thead>
     <tbody>

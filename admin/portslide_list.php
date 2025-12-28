@@ -61,9 +61,9 @@ $categories = array(
         <th width="120">이미지</th>
         <th width="100">카테고리</th>
         <th>문구</th>
-        <th width="80">노출</th>
-        <th width="100">등록일</th>
-        <th width="80">관리</th>
+        <th width="100">노출</th>
+        <th width="120" style="text-align:center">등록일</th>
+        <th width="100">관리</th>
       </tr>
     </thead>
     <tbody>

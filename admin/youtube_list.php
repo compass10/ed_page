@@ -26,8 +26,8 @@ if(isset($board_table)) {
         <th>제목</th>
         <th width="200">유튜브 URL</th>
         <th width="60">가중치</th>
-        <th width="80">노출</th>
-        <th width="100">등록일</th>
+        <th width="100">노출</th>
+        <th width="120" style="text-align:center">등록일</th>
         <th width="80">관리</th>
       </tr>
     </thead>

@@ -47,9 +47,9 @@ $result = mysql_query($sql);
         <th>제목</th>
         <th width="100">작성자</th>
         <th width="150">이메일</th>
-        <th width="100">등록일</th>
-        <th width="80">상태</th>
-        <th width="80">관리</th>
+        <th width="120">등록일</th>
+        <th width="120">상태</th>
+        <th width="100">관리</th>
       </tr>
     </thead>
     <tbody>
