@@ -271,96 +271,72 @@ if(empty($imageSources)) {
 
     if (!stackContainer || totalItems === 0) return;
 
-    // GPU 가속을 위한 will-change 설정
-    stackItems.forEach((item) => {
-      item.style.willChange = 'transform, opacity';
-    });
-
-    // 초기 상태 설정: 모든 이미지를 오른쪽 아래에 배치, 축소된 상태
-    stackItems.forEach((item, index) => {
-      if (index === 0) {
-        // 첫 번째 이미지는 위에 보이게
-        gsap.set(item, {
-          x: 0,
-          y: 0,
-          scale: 1,
-          opacity: 1,
-          zIndex: totalItems - index,
-          force3D: true
-        });
-      } else {
-        // 나머지 이미지는 오른쪽 아래에서 대기, 120px 크기로 축소 (375px 기준 약 32%)
-        gsap.set(item, {
-          x: '30%',
-          y: '100%',
-          scale: 0.32,
-          opacity: 1,
-          zIndex: totalItems - index,
-          force3D: true
-        });
-      }
-    });
-
-    // 스크롤 트리거 설정
     const imageStack = document.querySelector('.mobile_image_stack');
 
+    // 각 전환(1→2, 2→3, 3→4, 4→5)마다 2단계: 현재 이미지 사라짐 + 다음 이미지 올라옴
+    // totalItems=5일 때 전환 4번, 각 전환에 2단계 = 총 8단계
+    const transitions = totalItems - 1; // 전환 횟수
+    const segmentSize = 1 / transitions; // 각 전환당 progress 범위
+
+    // 상태 업데이트 함수
+    function updateStackState(progress) {
+      // 현재 어떤 전환 중인지 계산
+      const currentTransition = Math.min(Math.floor(progress / segmentSize), transitions - 1);
+      const transitionProgress = (progress - currentTransition * segmentSize) / segmentSize;
+
+      stackItems.forEach((item, index) => {
+        if (index < currentTransition) {
+          // 이미 지나간 이미지 - 숨김
+          item.style.transform = 'translate3d(0, -120%, 0) scale(1)';
+          item.style.opacity = '0';
+          item.style.visibility = 'hidden';
+        } else if (index === currentTransition) {
+          // 현재 사라지는 중인 이미지
+          if (progress <= 0 && index === 0) {
+            // 초기 상태
+            item.style.transform = 'translate3d(0, 0, 0) scale(1)';
+            item.style.opacity = '1';
+            item.style.visibility = 'visible';
+          } else {
+            // 위로 사라지는 중
+            const p = transitionProgress;
+            item.style.transform = `translate3d(0, ${-p * 120}%, 0) scale(1)`;
+            item.style.opacity = String(Math.max(0, 1 - p));
+            item.style.visibility = p < 1 ? 'visible' : 'hidden';
+          }
+        } else if (index === currentTransition + 1) {
+          // 다음 이미지 - 올라오는 중
+          const p = transitionProgress;
+          if (p <= 0) {
+            // 대기 상태
+            item.style.transform = 'translate3d(30%, 100%, 0) scale(0.32)';
+            item.style.opacity = '0';
+            item.style.visibility = 'hidden';
+          } else {
+            // 올라오는 중
+            item.style.transform = `translate3d(${(1 - p) * 30}%, ${(1 - p) * 100}%, 0) scale(${0.32 + p * 0.68})`;
+            item.style.opacity = String(p);
+            item.style.visibility = p > 0.01 ? 'visible' : 'hidden';
+          }
+        } else {
+          // 아직 차례 안 된 이미지 - 숨김
+          item.style.transform = 'translate3d(30%, 100%, 0) scale(0.32)';
+          item.style.opacity = '0';
+          item.style.visibility = 'hidden';
+        }
+      });
+    }
+
+    // 초기 상태 설정
+    updateStackState(0);
+
+    // 스크롤 트리거 설정
     ScrollTrigger.create({
       trigger: imageStack,
       start: 'top top',
       end: 'bottom bottom',
-      scrub: 0.3, // 더 빠른 응답
-      onUpdate: (self) => {
-        const progress = self.progress;
-        const segmentSize = 1 / (totalItems - 1);
-
-        stackItems.forEach((item, index) => {
-          // 첫 번째 이미지: 두 번째 이미지가 올라올 때 함께 사라짐
-          if (index === 0) {
-            if (progress > 0 && progress <= segmentSize) {
-              const firstProgress = progress / segmentSize;
-              gsap.set(item, {
-                y: `${-firstProgress * 120}%`,
-                opacity: 1 - firstProgress
-              });
-            } else if (progress > segmentSize) {
-              gsap.set(item, { y: '-120%', opacity: 0 });
-            } else {
-              gsap.set(item, { y: '0%', opacity: 1 });
-            }
-            return;
-          }
-
-          const itemStart = (index - 1) * segmentSize;
-          const itemEnd = index * segmentSize;
-
-          if (progress >= itemStart && progress <= itemEnd) {
-            // 현재 애니메이션 중인 이미지
-            const itemProgress = (progress - itemStart) / segmentSize;
-
-            // gsap.set으로 즉시 적용 (트윈 생성 없이)
-            gsap.set(item, {
-              x: `${(1 - itemProgress) * 30}%`,
-              y: `${(1 - itemProgress) * 100}%`,
-              scale: 0.32 + (itemProgress * 0.68)
-            });
-
-            // 이전 이미지는 위로 사라짐
-            if (index > 0) {
-              const prevItem = stackItems[index - 1];
-              gsap.set(prevItem, {
-                y: `${-itemProgress * 120}%`,
-                opacity: 1 - itemProgress
-              });
-            }
-          } else if (progress > itemEnd) {
-            // 이미 지나간 이미지
-            gsap.set(item, { x: '0%', y: '0%', scale: 1 });
-          } else {
-            // 아직 안 온 이미지 (120px 크기)
-            gsap.set(item, { x: '30%', y: '100%', scale: 0.32, opacity: 1 });
-          }
-        });
-      }
+      scrub: 0.3,
+      onUpdate: (self) => updateStackState(self.progress)
     });
   }
 
@@ -369,12 +345,22 @@ if(empty($imageSources)) {
     initMobileImageStack();
   }
 
-  // 리사이즈 시 재초기화
+  // 리사이즈 시 재초기화 (디바운스 적용)
+  let resizeTimeout;
   window.addEventListener('resize', () => {
-    if (window.innerWidth <= 1024) {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
       ScrollTrigger.getAll().forEach(t => t.kill());
-      initMobileImageStack();
-    }
+      // 인라인 스타일 초기화
+      document.querySelectorAll('.stack_item').forEach(item => {
+        item.style.transform = '';
+        item.style.opacity = '';
+        item.style.visibility = '';
+      });
+      if (window.innerWidth <= 1024) {
+        initMobileImageStack();
+      }
+    }, 100);
   });
 </script>
 

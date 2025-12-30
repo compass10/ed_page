@@ -200,7 +200,7 @@ main {
   .mobile_image_stack {
     display: block;
     position: relative;
-    height: 600vh; // 스크롤 영역 확보 (더 천천히 진행)
+    height: 700vh; // 스크롤 영역 확보 (더 천천히 진행)
 
     .stack_container {
       position: sticky;
@@ -220,6 +220,13 @@ main {
       overflow: hidden;
       will-change: transform, opacity;
       transition: all 0.1s ease;
+      opacity: 0;
+      visibility: hidden;
+
+      &[data-index="0"] {
+        opacity: 1;
+        visibility: visible;
+      }
 
       img {
         width: 100%;

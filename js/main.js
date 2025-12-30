@@ -92,43 +92,43 @@ articleItems.forEach((item, index) => {
   const hidingTexts = document.querySelectorAll('#opportunity .bottom_area .hiding_text');
   if (hidingTexts.length === 0) return;
 
-  // 각 hiding_text별로 counting 실행 여부 추적
-  const countedMap = new WeakMap();
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        // 해당 hiding_text 내의 counting 애니메이션은 한 번만 실행
-        if (!countedMap.get(entry.target)) {
-          const countingEls = entry.target.querySelectorAll('.counting');
-          countingEls.forEach(el => {
-            const target = parseInt(el.dataset.count, 10) || 0;
-            const span = el.querySelector('span');
-            if (!span) return;
+        // counting 애니메이션 실행
+        const countingEls = entry.target.querySelectorAll('.counting');
+        countingEls.forEach(el => {
+          const target = parseInt(el.dataset.count, 10) || 0;
+          const span = el.querySelector('span');
+          if (!span) return;
 
-            const duration = 2000;
-            const start = performance.now();
-            const easing = t => t * (2 - t);
+          const duration = 2000;
+          const start = performance.now();
+          const easing = t => t * (2 - t);
 
-            const update = (currentTime) => {
-              const elapsed = currentTime - start;
-              const progress = Math.min(elapsed / duration, 1);
-              const current = Math.floor(easing(progress) * target);
-              span.textContent = current.toLocaleString();
+          const update = (currentTime) => {
+            const elapsed = currentTime - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const current = Math.floor(easing(progress) * target);
+            span.textContent = current.toLocaleString();
 
-              if (progress < 1) {
-                requestAnimationFrame(update);
-              } else {
-                span.textContent = target.toLocaleString();
-              }
-            };
-            requestAnimationFrame(update);
-          });
-          countedMap.set(entry.target, true);
-        }
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              span.textContent = target.toLocaleString();
+            }
+          };
+          requestAnimationFrame(update);
+        });
       } else {
         entry.target.classList.remove('active');
+        // 화면 벗어나면 숫자 0으로 리셋
+        const countingEls = entry.target.querySelectorAll('.counting');
+        countingEls.forEach(el => {
+          const span = el.querySelector('span');
+          if (span) span.textContent = '0';
+        });
       }
     });
   }, {
