@@ -49,6 +49,12 @@ if($mode == 'modify' && isset($_GET['bno']) && isset($board_table)) {
           <input type="checkbox" name="is_hidden" value="Y" <?=isset($row['is_hidden']) && $row['is_hidden'] == 'Y' ? 'checked' : ''?>> 숨김처리
         </label>
       </div>
+      <div class="form_group">
+        <label>
+          <input type="checkbox" name="is_whoweare" value="Y" <?=isset($row['bext1']) && $row['bext1'] == 'Y' ? 'checked' : ''?>> Who We Are 페이지 노출
+        </label>
+        <p style="font-size: 12px; color: #999; margin-top: 4px;">체크 시 Who We Are 페이지에 노출 (최대 4개)</p>
+      </div>
     </div>
 
     <div class="form_group">

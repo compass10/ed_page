@@ -29,6 +29,7 @@ $active_passlist = in_array($current_page, array('passlist_list', 'passlist_form
 $active_portfolio = in_array($current_page, array('portfolio_list', 'portfolio_form')) ? 'active' : '';
 $active_portslide = in_array($current_page, array('portslide_list', 'portslide_form')) ? 'active' : '';
 $active_mainnews = in_array($current_page, array('mainnews_list', 'mainnews_form')) ? 'active' : '';
+$active_andmore = in_array($current_page, array('andmore_list', 'andmore_form')) ? 'active' : '';
 $active_inquiry = in_array($current_page, array('inquiry_list', 'inquiry_form')) ? 'active' : '';
 // Backup 메뉴
 $active_page = in_array($current_page, array('page_list', 'page_form')) ? 'active' : '';
@@ -102,6 +103,9 @@ $active_backup = ($active_page || $active_contents || $active_gallery || $active
             </li>
             <li class="<?=$active_mainnews?>">
               <a href="mainnews_list.php">06 News</a>
+            </li>
+            <li class="<?=$active_andmore?>">
+              <a href="andmore_list.php">07 And More</a>
             </li>
           </ul>
         </div>

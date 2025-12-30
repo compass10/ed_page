@@ -14,6 +14,55 @@ $thumb_dir = 'passlist';
 
 $is_hidden = isset($_POST['is_hidden']) ? 'Y' : 'N';
 
+// 순서 변경
+if($mode == 'order') {
+  $dir = isset($_GET['dir']) ? $_GET['dir'] : '';
+  $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+  // 현재 항목 정보
+  $current = @mysql_fetch_array(@mysql_query("SELECT bno, bpw FROM $board_table WHERE bno='$bno'"));
+  if($current) {
+    $current_bpw = (int)$current['bpw'];
+
+    if($dir == 'up') {
+      // 위로 이동: 현재보다 bpw가 작은 것 중 가장 큰 것과 교환
+      $target = @mysql_fetch_array(@mysql_query("SELECT bno, bpw FROM $board_table WHERE bid='passlist' AND bpw < $current_bpw ORDER BY bpw DESC LIMIT 1"));
+      if(!$target) {
+        // bpw가 같거나 더 작은 항목이 없으면 bno 기준으로
+        $target = @mysql_fetch_array(@mysql_query("SELECT bno, bpw FROM $board_table WHERE bid='passlist' AND bpw = $current_bpw AND bno < $bno ORDER BY bno DESC LIMIT 1"));
+      }
+    } else {
+      // 아래로 이동: 현재보다 bpw가 큰 것 중 가장 작은 것과 교환
+      $target = @mysql_fetch_array(@mysql_query("SELECT bno, bpw FROM $board_table WHERE bid='passlist' AND bpw > $current_bpw ORDER BY bpw ASC LIMIT 1"));
+      if(!$target) {
+        // bpw가 같거나 더 큰 항목이 없으면 bno 기준으로
+        $target = @mysql_fetch_array(@mysql_query("SELECT bno, bpw FROM $board_table WHERE bid='passlist' AND bpw = $current_bpw AND bno > $bno ORDER BY bno ASC LIMIT 1"));
+      }
+    }
+
+    if($target) {
+      // bpw 값 교환
+      $target_bpw = (int)$target['bpw'];
+      // 같은 값이면 하나를 조정
+      if($current_bpw == $target_bpw) {
+        if($dir == 'up') {
+          @mysql_query("UPDATE $board_table SET bpw = bpw + 1 WHERE bid='passlist' AND bpw >= $current_bpw AND bno != $bno");
+          @mysql_query("UPDATE $board_table SET bpw = $current_bpw WHERE bno = '$bno'");
+        } else {
+          @mysql_query("UPDATE $board_table SET bpw = $target_bpw WHERE bno = '$bno'");
+          @mysql_query("UPDATE $board_table SET bpw = $current_bpw WHERE bno = '{$target['bno']}'");
+        }
+      } else {
+        @mysql_query("UPDATE $board_table SET bpw = $target_bpw WHERE bno = '$bno'");
+        @mysql_query("UPDATE $board_table SET bpw = $current_bpw WHERE bno = '{$target['bno']}'");
+      }
+    }
+  }
+
+  header("Location: passlist_list.php?page=$page");
+  exit;
+}
+
 // 삭제
 if($mode == 'delete') {
   $row = @mysql_fetch_array(@mysql_query("SELECT bimg, bimg2 FROM $board_table WHERE bno='$bno'"));
@@ -33,19 +82,22 @@ if($mode == 'delete') {
 // 등록
 if($mode == 'write' || $mode == '') {
   $btitle = mysql_real_escape_string($_POST['btitle']);
+  $bpw = isset($_POST['bpw']) ? (int)$_POST['bpw'] : 0;
 
-  $sql = "INSERT INTO $board_table (bid, is_hidden, btitle, bregdate)
-    VALUES ('$bid', '$is_hidden', '$btitle', NOW())";
+  $sql = "INSERT INTO $board_table (bid, is_hidden, btitle, bpw, bregdate)
+    VALUES ('$bid', '$is_hidden', '$btitle', '$bpw', NOW())";
   mysql_query($sql);
   $bno = mysql_insert_id();
 
 // 수정
 } else if($mode == 'modify') {
   $btitle = mysql_real_escape_string($_POST['btitle']);
+  $bpw = isset($_POST['bpw']) ? (int)$_POST['bpw'] : 0;
 
   $sql = "UPDATE $board_table SET
     is_hidden='$is_hidden',
-    btitle='$btitle'
+    btitle='$btitle',
+    bpw='$bpw'
     WHERE bno='$bno'";
   mysql_query($sql);
 }

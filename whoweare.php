@@ -6,10 +6,11 @@ $pageCss = 'whoweare';
 // DB 연결
 include_once('./web/lib.php');
 
-// 메인 뉴스 데이터 조회 (최대 4개)
+// Who We Are 페이지용 뉴스 데이터 조회 (bext1='Y'인 것만, 최대 4개)
 $news_sql = "SELECT * FROM $board_table
              WHERE bid='mainnews'
              AND is_hidden='N'
+             AND bext1='Y'
              ORDER BY bpw ASC, bno DESC
              LIMIT 0, 4";
 $news_result = @mysql_query($news_sql);

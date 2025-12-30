@@ -200,7 +200,7 @@ main {
   .mobile_image_stack {
     display: block;
     position: relative;
-    height: 700vh; // 스크롤 영역 확보 (더 천천히 진행)
+    // height는 PHP에서 인라인으로 동적 설정 (이미지 개수 * 100vh + 200vh)
 
     .stack_container {
       position: sticky;

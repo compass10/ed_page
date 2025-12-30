@@ -1,5 +1,5 @@
 <?php
-$pageTitle = '메인 뉴스 관리';
+$pageTitle = 'And More 관리';
 include 'header.php';
 
 // 순서 변경 처리
@@ -13,7 +13,7 @@ if(isset($_POST['update_order']) && isset($board_table)) {
   echo "<script>alert('순서가 저장되었습니다.');</script>";
 }
 
-$bid = 'mainnews';
+$bid = 'andmore';
 
 $result = null;
 if(isset($board_table)) {
@@ -23,29 +23,27 @@ if(isset($board_table)) {
 ?>
 
 <div class="page_actions">
-  <a href="mainnews_form.php?mode=write" class="btn primary">+ 새 뉴스</a>
+  <a href="andmore_form.php?mode=write" class="btn primary">+ 새 항목</a>
 </div>
 
-<p style="color: #888; font-size: 13px; margin-bottom: 15px;">* 메인 페이지 뉴스 섹션, Who We Are 페이지, News 페이지에 노출됩니다.</p>
+<p style="color: #888; font-size: 13px; margin-bottom: 15px;">* 메인 페이지 And More 섹션에 노출됩니다. (최대 5개 권장)</p>
 
 <form method="post">
 <input type="hidden" name="update_order" value="1">
 
 <div class="table_section full">
   <div class="table_header">
-    <h3>뉴스 목록</h3>
+    <h3>And More 목록</h3>
     <button type="submit" class="btn">순서 저장</button>
   </div>
   <table class="data_table">
     <thead>
       <tr>
         <th width="60">순서</th>
-        <th width="100">썸네일</th>
-        <th width="130">카테고리</th>
+        <th width="100">이미지</th>
         <th>제목</th>
-        <th width="100">우측 이미지</th>
+        <th>링크</th>
         <th width="100">노출</th>
-        <th width="100">Who We Are</th>
         <th width="120" style="text-align:center">등록일</th>
         <th width="100">관리</th>
       </tr>
@@ -55,44 +53,39 @@ if(isset($board_table)) {
       if($result && @mysql_num_rows($result) > 0) {
         while($row = @mysql_fetch_array($result)) {
       ?>
-      <?php
-        // 카테고리 라벨 매핑
-        $cate_labels = array('recruit' => '수강생 모집', 'success' => '합격 소식', 'etc' => 'ETC');
-        $cate_label = isset($cate_labels[$row['bcate']]) ? $cate_labels[$row['bcate']] : 'ETC';
-      ?>
       <tr>
         <td><input type="number" name="order[<?=$row['bno']?>]" value="<?=$row['bpw']?>" style="width: 50px; padding: 4px; text-align: center;"></td>
         <td>
           <?php if($row['bimg']): ?>
-          <img src="<?=$_url?>thumb/mainnews/<?=$row['bimg']?>" style="width: 80px; height: 52px; object-fit: cover; border-radius: 4px;">
+          <img src="<?=$_url?>thumb/andmore/<?=$row['bimg']?>" style="width: 80px; height: 52px; object-fit: cover; border-radius: 4px;">
           <?php else: ?>
           <span style="color: #ccc;">-</span>
           <?php endif; ?>
         </td>
-        <td><span class="status"><?=$cate_label?></span></td>
         <td style="text-align: left;">
-          <a href="mainnews_form.php?mode=modify&bno=<?=$row['bno']?>">
+          <a href="andmore_form.php?mode=modify&bno=<?=$row['bno']?>">
             <?=htmlspecialchars($row['btitle']) ? htmlspecialchars($row['btitle']) : '(제목없음)'?>
           </a>
         </td>
-        <td>
-          <?php if($row['bimg2']): ?>
-          <img src="<?=$_url?>thumb/mainnews/<?=$row['bimg2']?>" style="width: 80px; height: 52px; object-fit: cover; border-radius: 4px;">
+        <td style="text-align: left; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+          <?php if($row['blink']): ?>
+          <a href="<?=htmlspecialchars($row['blink'])?>" target="_blank" style="color: #666; font-size: 12px;">
+            <?=htmlspecialchars($row['blink'])?>
+          </a>
           <?php else: ?>
           <span style="color: #ccc;">-</span>
           <?php endif; ?>
         </td>
         <td><?=$row['is_hidden'] == 'N' ? '<span class="status done">노출</span>' : '<span class="status">숨김</span>'?></td>
-        <td><?=$row['bext1'] == 'Y' ? '<span class="status done">노출</span>' : '<span class="status">-</span>'?></td>
         <td><?=date('Y-m-d', strtotime($row['bregdate']))?></td>
-        <td><a href="mainnews_form.php?mode=modify&bno=<?=$row['bno']?>" class="btn" style="padding: 6px 12px; font-size: 11px;">수정</a></td>
+        <td><a href="andmore_form.php?mode=modify&bno=<?=$row['bno']?>" class="btn" style="padding: 6px 12px; font-size: 11px;">수정</a></td>
       </tr>
       <?php
         }
       } else {
       ?>
       <tr>
-        <td colspan="9" class="empty">등록된 뉴스가 없습니다.</td>
+        <td colspan="7" class="empty">등록된 항목이 없습니다.</td>
       </tr>
       <?php } ?>
     </tbody>

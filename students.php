@@ -69,12 +69,10 @@ if(empty($imageSources)) {
       </div>
 
       <!-- 모바일 전용 이미지 스택 애니메이션 -->
-      <div class="mobile_image_stack">
+      <?php $mobileImageCount = count($imageSources); ?>
+      <div class="mobile_image_stack" style="height: <?=($mobileImageCount * 100 + 200)?>vh;">
         <div class="stack_container">
-          <?php
-          $mobileImages = array_slice($imageSources, 0, 5); // 최대 5개만 사용
-          foreach($mobileImages as $idx => $imgSrc):
-          ?>
+          <?php foreach($imageSources as $idx => $imgSrc): ?>
           <div class="stack_item" data-index="<?=$idx?>">
             <img src="<?=$imgSrc?>" alt="student<?=$idx + 1?>">
           </div>
@@ -340,10 +338,29 @@ if(empty($imageSources)) {
     });
   }
 
-  // 모바일에서만 실행
-  if (window.innerWidth <= 1024) {
-    initMobileImageStack();
+  // 모바일에서만 실행 (페이지 로드 완료 후)
+  function checkAndInitMobile() {
+    if (window.innerWidth <= 1024) {
+      // ScrollTrigger refresh 후 초기화
+      ScrollTrigger.refresh();
+      initMobileImageStack();
+    }
   }
+
+  // 로딩 스피너가 숨겨진 후 실행 (레이아웃이 안정화된 후)
+  window.addEventListener('pageLoaderHidden', () => {
+    setTimeout(checkAndInitMobile, 100);
+  });
+
+  // 로딩 스피너가 없는 경우를 위한 fallback
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const pageLoader = document.getElementById('pageLoader');
+      if (!pageLoader || pageLoader.classList.contains('hidden')) {
+        checkAndInitMobile();
+      }
+    }, 600);
+  });
 
   // 리사이즈 시 재초기화 (디바운스 적용)
   let resizeTimeout;

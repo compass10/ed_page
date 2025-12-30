@@ -1,5 +1,5 @@
 <?php
-$pageTitle = '메인';
+$pageTitle = '미대편입이드';
 
 // DB 연결
 include_once('./web/lib.php');
@@ -23,6 +23,18 @@ while($row = mysql_fetch_array($portslide_result)) {
         'img' => $row['bimg'] ? $_url . 'thumb/portslide/' . $row['bimg'] : '',
         'text' => $row['btitle']
     );
+}
+
+// And More 섹션 데이터 조회 (순서대로, 최대 5개)
+$andmore_sql = "SELECT * FROM $board_table
+                WHERE bid='andmore'
+                AND is_hidden='N'
+                ORDER BY bpw ASC, bno DESC
+                LIMIT 0, 5";
+$andmore_result = mysql_query($andmore_sql);
+$andmore_items = array();
+while($row = mysql_fetch_array($andmore_result)) {
+    $andmore_items[] = $row;
 }
 ?>
 <?php include 'includes/header.php'; ?>
@@ -1324,176 +1336,91 @@ while($row = mysql_fetch_array($portslide_result)) {
       </div>
       <div class="pass_list pc_only">
         <ul class="img_list">
-          <li><img src="./asset/images/main/sec_05_left_img_01.jpeg" alt=""></li>
-          <li><img src="./asset/images/main/sec_05_left_img_02.png" alt=""></li>
-          <li><img src="./asset/images/main/sec_05_left_img_03.jpeg" alt=""></li>
-          <li><img src="./asset/images/main/sec_05_left_img_04.png" alt=""></li>
-          <li><img src="./asset/images/main/sec_05_left_img_05.png" alt=""></li>
+          <?php if(count($andmore_items) > 0): ?>
+            <?php foreach($andmore_items as $item): ?>
+            <li><img src="<?=$_url?>thumb/andmore/<?=$item['bimg']?>" alt="<?=htmlspecialchars($item['btitle'])?>"></li>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <li><img src="./asset/images/main/sec_05_left_img_01.jpeg" alt=""></li>
+            <li><img src="./asset/images/main/sec_05_left_img_02.png" alt=""></li>
+            <li><img src="./asset/images/main/sec_05_left_img_03.jpeg" alt=""></li>
+            <li><img src="./asset/images/main/sec_05_left_img_04.png" alt=""></li>
+            <li><img src="./asset/images/main/sec_05_left_img_05.png" alt=""></li>
+          <?php endif; ?>
         </ul>
         <ul class="article_list">
-          <li>
-            <a href="https://www.edillust.co.kr/success_detail.php?bno=790">
-              <div class="title_area">
-                <p>2025 합격자 바로가기</p>
-                <div class="btn">
-                  <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z"
-                      fill="black" />
-                  </svg>
+          <?php if(count($andmore_items) > 0): ?>
+            <?php foreach($andmore_items as $item): ?>
+            <li>
+              <a href="<?=htmlspecialchars($item['blink'])?>">
+                <div class="title_area">
+                  <p><?=htmlspecialchars($item['btitle'])?></p>
+                  <div class="btn">
+                    <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-              <div class="hiding_text">
-                2025년 압도적 점유율 1위대학 30개 대학! 서울 최상위권대학은
-                100% 점유!
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.edillust.co.kr/success_detail.php?bno=789">
-              <div class="title_area">
-                <p>2024 합격자 바로가기</p>
-                <div class="btn">
-                  <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z"
-                      fill="black" />
-                  </svg>
+                <div class="hiding_text">
+                  <?=nl2br(htmlspecialchars($item['bcontents']))?>
                 </div>
-              </div>
-              <div class="hiding_text">
-                2024학년도 이드 합격자 101명! 이드의 합격자는 in서울과 수도권
-                중심 대학만을 지원합니다
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.edillust.co.kr/success_detail.php?bno=701">
-              <div class="title_area">
-                <p>2023 합격자 바로가기</p>
-                <div class="btn">
-                  <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z"
-                      fill="black" />
-                  </svg>
+              </a>
+            </li>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <li>
+              <a href="#">
+                <div class="title_area">
+                  <p>데이터를 등록해주세요</p>
+                  <div class="btn">
+                    <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-              <div class="hiding_text">
-                2023년도 이드합격자 서울,수도권대학 총 98명 합격의 쾌거!
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.edillust.co.kr/success_detail.php?bno=700">
-              <div class="title_area">
-                <p>2022 합격자 바로가기</p>
-                <div class="btn">
-                  <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z"
-                      fill="black" />
-                  </svg>
-                </div>
-              </div>
-              <div class="hiding_text">
-                총 합격자 수 89명! 포트폴리오 전형 29명 합격
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.edillust.co.kr/success_detail.php?bno=699">
-              <div class="title_area">
-                <p>2021 합격자 바로가기</p>
-                <div class="btn">
-                  <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z"
-                      fill="black" />
-                  </svg>
-                </div>
-              </div>
-              <div class="hiding_text">
-                2021년도 총 50명 합격! 홍익대학교 17명, 건국대 12명, 경희대
-                1명, 성신여대 1명, 서울여대 1명 동덕여대 1명!
-              </div>
-            </a>
-          </li>
+                <div class="hiding_text">관리자 페이지에서 And More 항목을 등록해주세요.</div>
+              </a>
+            </li>
+          <?php endif; ?>
         </ul>
       </div>
       <!-- 모바일 전용 pass_list -->
       <div class="pass_list_mobile mobile_only">
         <ul class="article_list">
-          <li data-link="https://www.edillust.co.kr/success_detail.php?bno=790">
-            <div class="title_area">
-              <p>2025 합격자 바로가기</p>
-              <div class="btn">
-                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
-                </svg>
+          <?php if(count($andmore_items) > 0): ?>
+            <?php foreach($andmore_items as $item): ?>
+            <li data-link="<?=htmlspecialchars($item['blink'])?>">
+              <div class="title_area">
+                <p><?=htmlspecialchars($item['btitle'])?></p>
+                <div class="btn">
+                  <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                  </svg>
+                </div>
               </div>
-            </div>
-            <div class="hiding_text">
-              <p>2025년 압도적 점유율 1위대학 30개 대학! 서울 최상위권대학은 100% 점유!</p>
-              <img src="./asset/images/main/sec_05_left_img_01.jpeg" alt="2025 합격자">
-            </div>
-          </li>
-          <li data-link="https://www.edillust.co.kr/success_detail.php?bno=789">
-            <div class="title_area">
-              <p>2024 합격자 바로가기</p>
-              <div class="btn">
-                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
-                </svg>
+              <div class="hiding_text">
+                <p><?=nl2br(htmlspecialchars($item['bcontents']))?></p>
+                <?php if($item['bimg']): ?>
+                <img src="<?=$_url?>thumb/andmore/<?=$item['bimg']?>" alt="<?=htmlspecialchars($item['btitle'])?>">
+                <?php endif; ?>
               </div>
-            </div>
-            <div class="hiding_text">
-              <p>2024학년도 이드 합격자 101명! 이드의 합격자는 in서울과 수도권 중심 대학만을 지원합니다</p>
-              <img src="./asset/images/main/sec_05_left_img_02.png" alt="2024 합격자">
-            </div>
-          </li>
-          <li data-link="https://www.edillust.co.kr/success_detail.php?bno=701">
-            <div class="title_area">
-              <p>2023 합격자 바로가기</p>
-              <div class="btn">
-                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
-                </svg>
+            </li>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <li data-link="#">
+              <div class="title_area">
+                <p>데이터를 등록해주세요</p>
+                <div class="btn">
+                  <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
+                  </svg>
+                </div>
               </div>
-            </div>
-            <div class="hiding_text">
-              <p>2023년도 이드합격자 서울,수도권대학 총 98명 합격의 쾌거!</p>
-              <img src="./asset/images/main/sec_05_left_img_03.jpeg" alt="2023 합격자">
-            </div>
-          </li>
-          <li data-link="https://www.edillust.co.kr/success_detail.php?bno=700">
-            <div class="title_area">
-              <p>2022 합격자 바로가기</p>
-              <div class="btn">
-                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
-                </svg>
+              <div class="hiding_text">
+                <p>관리자 페이지에서 And More 항목을 등록해주세요.</p>
               </div>
-            </div>
-            <div class="hiding_text">
-              <p>총 합격자 수 89명! 포트폴리오 전형 29명 합격</p>
-              <img src="./asset/images/main/sec_05_left_img_04.png" alt="2022 합격자">
-            </div>
-          </li>
-          <li data-link="https://www.edillust.co.kr/success_detail.php?bno=699">
-            <div class="title_area">
-              <p>2021 합격자 바로가기</p>
-              <div class="btn">
-                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.5703 27.6953L11.4062 24.5703L19.8438 16.1328H0V11.5234H19.8438L11.4062 3.125L14.5703 0L28.4375 13.8281L14.5703 27.6953Z" fill="black" />
-                </svg>
-              </div>
-            </div>
-            <div class="hiding_text">
-              <p>2021년도 총 50명 합격! 홍익대학교 17명, 건국대 12명, 경희대 1명, 성신여대 1명, 서울여대 1명 동덕여대 1명!</p>
-              <img src="./asset/images/main/sec_05_left_img_05.png" alt="2021 합격자">
-            </div>
-          </li>
+            </li>
+          <?php endif; ?>
         </ul>
       </div>
     </section>

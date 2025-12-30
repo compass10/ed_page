@@ -26,10 +26,16 @@ if($mode == 'modify' && isset($_GET['bno']) && isset($board_table)) {
     <input type="hidden" name="bno" value="<?=$row['bno']?>">
     <?php endif; ?>
 
-    <div class="form_group">
-      <label>
-        <input type="checkbox" name="is_hidden" value="Y" <?=isset($row['is_hidden']) && $row['is_hidden'] == 'Y' ? 'checked' : ''?>> 숨김처리
-      </label>
+    <div class="form_row">
+      <div class="form_group">
+        <label>
+          <input type="checkbox" name="is_hidden" value="Y" <?=isset($row['is_hidden']) && $row['is_hidden'] == 'Y' ? 'checked' : ''?>> 숨김처리
+        </label>
+      </div>
+      <div class="form_group" style="width: 150px;">
+        <label>순서</label>
+        <input type="number" name="bpw" value="<?=isset($row['bpw']) ? $row['bpw'] : '0'?>" min="0" style="width: 100%;">
+      </div>
     </div>
 
     <div class="form_group">

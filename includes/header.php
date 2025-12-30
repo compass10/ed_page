@@ -29,6 +29,13 @@
   if (isset($bodyClass) && $bodyClass) $classes[] = $bodyClass;
   if (!empty($classes)) echo ' class="' . implode(' ', $classes) . '"';
 ?>>
+  <!-- 로딩 스피너 -->
+  <div id="pageLoader" class="page_loader">
+    <div class="loader_inner">
+      <div class="spinner"></div>
+    </div>
+  </div>
+
   <header id="header" class="down">
     <div class="header_inner">
       <div class="logo_area">

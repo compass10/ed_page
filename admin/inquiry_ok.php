@@ -29,12 +29,12 @@ if($mode == 'modify') {
     if($row['iemail']) {
       // 이메일 발송
       $to = $row['iemail'];
-      $subject = '=?UTF-8?B?'.base64_encode('[이드미술학원] 문의 답변').'?=';
+      $subject = '=?UTF-8?B?'.base64_encode('[미대편입이드] 문의 답변').'?=';
 
       // 이메일 본문
       $message = '<html><head><meta charset="UTF-8"></head><body>';
       $message .= '<div style="max-width:600px;margin:0 auto;padding:20px;font-family:Malgun Gothic,맑은고딕,sans-serif;">';
-      $message .= '<h2 style="color:#333;border-bottom:2px solid #333;padding-bottom:10px;">이드미술학원 문의 답변</h2>';
+      $message .= '<h2 style="color:#333;border-bottom:2px solid #333;padding-bottom:10px;">미대편입이드 문의 답변</h2>';
       $message .= '<p style="color:#666;margin:20px 0;">안녕하세요, <strong>'.$row['iname'].'</strong>님.</p>';
       $message .= '<p style="color:#666;margin:20px 0;">문의해 주셔서 감사합니다. 아래와 같이 답변 드립니다.</p>';
       $message .= '<div style="background:#f5f5f5;padding:20px;margin:20px 0;border-left:4px solid #333;">';
@@ -42,13 +42,13 @@ if($mode == 'modify') {
       $message .= '<strong>답변 내용:</strong><br>'.$ianswer;
       $message .= '</div>';
       $message .= '<p style="color:#999;font-size:12px;margin-top:30px;">본 메일은 발신 전용입니다.</p>';
-      $message .= '<p style="color:#999;font-size:12px;">이드미술학원 | www.edillust.co.kr</p>';
+      $message .= '<p style="color:#999;font-size:12px;">미대편입이드 | www.edillust.co.kr</p>';
       $message .= '</div></body></html>';
 
       // 헤더
       $headers = "MIME-Version: 1.0\r\n";
       $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-      $headers .= "From: =?UTF-8?B?".base64_encode('이드미술학원')."?= <info@edillust.co.kr>\r\n";
+      $headers .= "From: =?UTF-8?B?".base64_encode('미대편입이드')."?= <info@edillust.co.kr>\r\n";
       $headers .= "Reply-To: info@edillust.co.kr\r\n";
 
       // 메일 발송

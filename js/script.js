@@ -1,3 +1,17 @@
+// 페이지 로드 완료 시 로딩 스피너 숨기기
+window.addEventListener('load', function() {
+  const pageLoader = document.getElementById('pageLoader');
+  if (pageLoader) {
+    pageLoader.classList.add('hidden');
+    // 애니메이션 완료 후 DOM에서 제거 및 커스텀 이벤트 발생
+    setTimeout(function() {
+      pageLoader.style.display = 'none';
+      // 로딩 완료 이벤트 발생 (다른 스크립트에서 활용 가능)
+      window.dispatchEvent(new CustomEvent('pageLoaderHidden'));
+    }, 400);
+  }
+});
+
 const titleArea = document.querySelectorAll('.title_area');
 const footer = document.querySelector('#footer');
 const menuBtn = document.querySelector('#header .menu')
