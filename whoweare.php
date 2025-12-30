@@ -374,7 +374,7 @@ $news_result = @mysql_query($news_sql);
               </div>
             </div>
             <div class="space_images">
-              <div class="img_wrap"><img src="asset/images/whoweare/Space05_01.jpg" alt="원장실 / 상담실"></div>
+              <div class="img_wrap"><img src="asset/images/whoweare/Space05_01.JPG" alt="원장실 / 상담실"></div>
             </div>
           </div>
         </div>

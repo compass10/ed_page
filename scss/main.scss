@@ -359,6 +359,7 @@ main {
         bottom: 0;
         right: 0;
         width: vw(729, 1920);
+        transition: all 0.5s ease;
         &:hover{
           transform:scale(1.1);
         }
