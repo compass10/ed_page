@@ -6,3 +6,13 @@
 @function mvw($px, $base: 375) {
   @return min(($px / $base) * 100vw, #{$px}px);
 }
+
+// vh 함수 - 1080px 기준
+@function vh($px, $base: 1080) {
+  @return ($px / $base) * 100vh;
+}
+
+// 모바일용 vh 함수 - 812px 기준, max 값 제한
+@function mvh($px, $base: 812) {
+  @return min(($px / $base) * 100vh, #{$px}px);
+}

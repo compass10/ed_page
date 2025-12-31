@@ -3,6 +3,7 @@ $pageTitle = 'Test';
 $isSubPage = true;
 $pageCss = 'test';
 $darkTheme = true;
+$showLoader = true;
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -12,19 +13,6 @@ $darkTheme = true;
     <span class="title">Our Students</span>
   </div>
   <section class="section page_content">
-    <div class="section_wrap">
-
-      <div class="fan_wrap">
-        <!-- 곡선 path (숨김) -->
-        <svg class="curve_path" viewBox="0 0 1928 208" preserveAspectRatio="none">
-          <path id="motionPath"
-            d="M0.286133 207.5C123.286 121.5 556.686 0.5 970.286 0.5C1383.89 0.5 1810.29 117 1926.79 207.5" fill="none"
-            stroke="transparent" />
-        </svg>
-
-        <!-- 요소들은 JS에서 동적으로 생성됨 -->
-      </div>
-    </div>
   </section>
 </main>
 
@@ -41,7 +29,7 @@ $darkTheme = true;
   const duration = 20;
 
   // 원본 이미지 소스 배열
-  const imageSources = [ 
+  const imageSources = [
     './asset/images/main/02_01.png',
     './asset/images/main/02_02.png',
     './asset/images/main/02_03.png',

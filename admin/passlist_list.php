@@ -5,12 +5,21 @@ include 'header.php';
 // 순서 변경 처리
 if(isset($_POST['update_order']) && isset($board_table)) {
   $orders = $_POST['order'];
+  $success = true;
   foreach($orders as $bno => $order) {
     $order = (int)$order;
     $bno = (int)$bno;
-    @mysql_query("UPDATE $board_table SET bpw='$order' WHERE bno='$bno'");
+    $result = mysql_query("UPDATE $board_table SET bpw='$order' WHERE bno='$bno'");
+    if(!$result) {
+      $success = false;
+    }
   }
-  echo "<script>alert('순서가 저장되었습니다.');</script>";
+  if($success) {
+    echo "<script>alert('순서가 저장되었습니다.'); location.href='passlist_list.php';</script>";
+  } else {
+    echo "<script>alert('순서 저장 중 오류가 발생했습니다.');</script>";
+  }
+  exit;
 }
 
 // 페이지네이션

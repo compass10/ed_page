@@ -4,7 +4,7 @@
 
 // News 페이지 전용 스타일
 main {
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
 }
 
 // News 목록 페이지 전용 (news_detail 제외)
@@ -77,11 +77,11 @@ body.news-list {
     height: 100%;
     object-fit: cover;
     border-radius: vw(15, 1920);
-    }
+  }
 }
 
-.top_menu_line{
-  display:flex;
+.top_menu_line {
+  display: flex;
   justify-content: space-between;
 }
 .slide_page_nation {
@@ -172,17 +172,31 @@ body.news-list {
         letter-spacing: -0.03em;
 
         // 모든 내부 요소 폰트 사이즈 통일
-        h1, h2, h3, h4, h5, h6, p, span, strong, b, em, i, a {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        span,
+        strong,
+        b,
+        em,
+        i,
+        a {
           font-size: inherit;
           line-height: inherit;
           font-weight: inherit;
         }
 
-        strong, b {
+        strong,
+        b {
           font-weight: 700;
         }
 
-        em, i {
+        em,
+        i {
           font-style: italic;
         }
 
@@ -207,7 +221,7 @@ body.news-list {
       .detail_image {
         width: 100%;
         height: auto;
-        aspect-ratio: 1154 / 770;
+        // aspect-ratio: 1154 / 770;
         background: #d9d9d9;
         border: 1px solid #000;
 
@@ -224,10 +238,9 @@ body.news-list {
 @media (max-width: 1024px) {
   body.news-list .page_content {
     height: auto;
-    min-height:100vh;
-    padding-bottom:mvw(140);
+    min-height: 100vh;
+    padding-bottom: mvw(140);
   }
-
 
   .sec_title_row {
     margin-bottom: 0;
@@ -262,7 +275,6 @@ body.news-list {
       grid-template-columns: 1fr 1fr;
       gap: mvw(8);
     }
-    
 
     .swiper-slide {
       width: 100%;
@@ -276,7 +288,7 @@ body.news-list {
   }
 
   .news_detail {
-    padding-bottom:mvw(130);
+    padding-bottom: mvw(130);
     margin-bottom: mvw(00);
 
     .back_btn {

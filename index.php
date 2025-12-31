@@ -1,5 +1,6 @@
 <?php
 $pageTitle = '미대편입이드';
+$showLoader = true;
 
 // DB 연결
 include_once('./web/lib.php');
