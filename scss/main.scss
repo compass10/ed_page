@@ -5,8 +5,8 @@
 .mobile_only {
   display: none;
 }
-.mob_only{
-  display:none;
+.mob_only {
+  display: none;
 }
 @media (max-width: 1024px) {
   .pc_only {
@@ -222,11 +222,11 @@ main {
   .news_list {
     gap: vw(20, 1920);
 
-        margin-bottom: vw(142, 1920);
-            margin-top: 32px;
-    li{
+    margin-bottom: vw(142, 1920);
+    margin-top: 32px;
+    li {
       // border-radius:15px;
-      overflow:hidden;
+      overflow: hidden;
       // border:1px solid #000;
     }
   }
@@ -360,8 +360,8 @@ main {
         right: 0;
         width: vw(729, 1920);
         transition: all 0.5s ease;
-        &:hover{
-          transform:scale(1.1);
+        &:hover {
+          transform: scale(1.05);
         }
         .chat_b {
           &.mobile {
@@ -958,12 +958,12 @@ main {
     right: 0;
     z-index: 10;
   }
-  .bottom_bar a{
+  .bottom_bar a {
     font-family: $font-avenir;
     font-weight: 500;
-    width:100%;
+    width: 100%;
     font-size: vw(40, 1920);
-    display:block;
+    display: block;
     line-height: vw(50, 1920);
     letter-spacing: -0.03em;
     text-align: center;
@@ -1033,7 +1033,7 @@ main {
       }
     }
     #textEd {
-      height:unset;
+      height: unset;
       padding: mvw(80) mvw(15) mvw(160);
       .text_flex {
         display: unset;
@@ -1109,7 +1109,7 @@ main {
           }
         }
         .slide_page_nation {
-          display:none;
+          display: none;
           margin: mvw(25) 0 mvw(25);
           gap: mvw(18);
           .pn_btn {
@@ -1195,7 +1195,7 @@ main {
                 width: 100%;
               }
             }
-            a{
+            a {
               // right: mvw(141);
               // top:mvw(0);
               // width:mvw(67);
@@ -1658,7 +1658,7 @@ main {
           margin: unset;
           display: flex;
           align-items: flex-start;
-          width:100%;
+          width: 100%;
           .box_left {
             position: relative;
             display: flex;
@@ -1686,13 +1686,13 @@ main {
             margin: 0 0 0 mvw(25);
             display: flex;
             flex-direction: column;
-            flex:1;
+            flex: 1;
             .star {
               // position: absolute;
               // right: -19px;
               // top: mvw(-80);
-              width:100%;
-              text-align:right;
+              width: 100%;
+              text-align: right;
               margin: unset;
               padding: mvw(5) 0 0;
               svg {
@@ -1704,7 +1704,7 @@ main {
               // position: absolute;
               // right: mvw(-33);
               // top: mvw(-36);
-              line-height:1;
+              line-height: 1;
               flex: unset;
               font-size: mvw(40);
             }
@@ -1731,12 +1731,12 @@ main {
 
             .right_text {
               font-size: 12px;
-              line-height:1;
+              line-height: 1;
             }
           }
         }
       }
-      .bottom_bar a{
+      .bottom_bar a {
         font-size: mvw(14);
         line-height: mvw(14);
       }

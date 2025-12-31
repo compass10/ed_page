@@ -18,11 +18,11 @@ $count_row = mysql_fetch_array($count_result);
 $total_count = $count_row['cnt'];
 $total_pages = ceil($total_count / $per_page);
 
-// 합격자 명단 데이터 조회 (최신순 = bno DESC)
+// 합격자 명단 데이터 조회 (순서 = bpw ASC, 최신순 = bno DESC)
 $success_sql = "SELECT * FROM $board_table
                 WHERE bid='passlist'
                 AND is_hidden='N'
-                ORDER BY bno DESC
+                ORDER BY bpw ASC, bno DESC
                 LIMIT $offset, $per_page";
 $success_result = mysql_query($success_sql);
 

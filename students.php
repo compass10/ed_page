@@ -3,6 +3,8 @@ $pageTitle = 'Our Students';
 $isSubPage = true;
 $pageCss = 'students';
 $darkTheme = true;
+$showLoader = true;
+$loaderWaitForImages = true;
 
 // DB 연결
 include_once('./web/lib.php');
@@ -29,6 +31,9 @@ if(empty($imageSources)) {
         './asset/images/student/05.jpeg'
     );
 }
+
+// 이미지 프리로드 설정
+$preloadImages = $imageSources;
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -74,7 +79,7 @@ if(empty($imageSources)) {
         <div class="stack_container">
           <?php foreach($imageSources as $idx => $imgSrc): ?>
           <div class="stack_item" data-index="<?=$idx?>">
-            <img src="<?=$imgSrc?>" alt="student<?=$idx + 1?>">
+            <img src="<?=$imgSrc?>" alt="student<?=$idx + 1?>" loading="eager" fetchpriority="<?=$idx < 2 ? 'high' : 'low'?>" decoding="async">
           </div>
           <?php endforeach; ?>
           <p class="stack_text_left">We dream,<br>we draw,<br>we cheer<br>for each other.</p>
@@ -118,7 +123,10 @@ if(empty($imageSources)) {
         img.onerror = resolve;
         img.src = src;
       });
-    }));
+    })).then(() => {
+      // 이미지 로드 완료 이벤트 발생
+      window.dispatchEvent(new CustomEvent('studentsImagesLoaded'));
+    });
   }
 
   // 초기화
@@ -272,68 +280,74 @@ if(empty($imageSources)) {
     const imageStack = document.querySelector('.mobile_image_stack');
 
     // 각 전환(1→2, 2→3, 3→4, 4→5)마다 2단계: 현재 이미지 사라짐 + 다음 이미지 올라옴
-    // totalItems=5일 때 전환 4번, 각 전환에 2단계 = 총 8단계
-    const transitions = totalItems - 1; // 전환 횟수
-    const segmentSize = 1 / transitions; // 각 전환당 progress 범위
+    const transitions = totalItems - 1;
+    const segmentSize = 1 / transitions;
 
-    // 상태 업데이트 함수
+    // 이전 상태 캐싱 (불필요한 DOM 업데이트 방지)
+    let lastTransition = -1;
+    let lastProgress = -1;
+
+    // 상태 업데이트 함수 (최적화)
     function updateStackState(progress) {
-      // 현재 어떤 전환 중인지 계산
+      // progress 변화가 미미하면 업데이트 스킵
+      if (Math.abs(progress - lastProgress) < 0.001) return;
+      lastProgress = progress;
+
       const currentTransition = Math.min(Math.floor(progress / segmentSize), transitions - 1);
       const transitionProgress = (progress - currentTransition * segmentSize) / segmentSize;
 
-      stackItems.forEach((item, index) => {
+      // 전환이 바뀌었을 때만 비활성 아이템들 업데이트
+      const transitionChanged = currentTransition !== lastTransition;
+      lastTransition = currentTransition;
+
+      // 현재 활성 아이템과 다음 아이템만 업데이트
+      for (let index = 0; index < totalItems; index++) {
+        const item = stackItems[index];
+
         if (index < currentTransition) {
-          // 이미 지나간 이미지 - 숨김
-          item.style.transform = 'translate3d(0, -120%, 0) scale(1)';
-          item.style.opacity = '0';
-          item.style.visibility = 'hidden';
+          // 이미 지나간 이미지 - 전환 시에만 업데이트
+          if (transitionChanged) {
+            item.style.cssText = 'transform: translate3d(0, -120%, 0); opacity: 0; visibility: hidden;';
+          }
         } else if (index === currentTransition) {
           // 현재 사라지는 중인 이미지
           if (progress <= 0 && index === 0) {
-            // 초기 상태
-            item.style.transform = 'translate3d(0, 0, 0) scale(1)';
-            item.style.opacity = '1';
-            item.style.visibility = 'visible';
+            item.style.cssText = 'transform: translate3d(0, 0, 0); opacity: 1; visibility: visible;';
           } else {
-            // 위로 사라지는 중
-            const p = transitionProgress;
-            item.style.transform = `translate3d(0, ${-p * 120}%, 0) scale(1)`;
-            item.style.opacity = String(Math.max(0, 1 - p));
-            item.style.visibility = p < 1 ? 'visible' : 'hidden';
+            const y = -transitionProgress * 120;
+            const opacity = Math.max(0, 1 - transitionProgress);
+            item.style.cssText = `transform: translate3d(0, ${y}%, 0); opacity: ${opacity}; visibility: ${transitionProgress < 1 ? 'visible' : 'hidden'};`;
           }
         } else if (index === currentTransition + 1) {
           // 다음 이미지 - 올라오는 중
-          const p = transitionProgress;
-          if (p <= 0) {
-            // 대기 상태
-            item.style.transform = 'translate3d(30%, 100%, 0) scale(0.32)';
-            item.style.opacity = '0';
-            item.style.visibility = 'hidden';
+          if (transitionProgress <= 0) {
+            if (transitionChanged) {
+              item.style.cssText = 'transform: translate3d(30%, 100%, 0) scale(0.32); opacity: 0; visibility: hidden;';
+            }
           } else {
-            // 올라오는 중
-            item.style.transform = `translate3d(${(1 - p) * 30}%, ${(1 - p) * 100}%, 0) scale(${0.32 + p * 0.68})`;
-            item.style.opacity = String(p);
-            item.style.visibility = p > 0.01 ? 'visible' : 'hidden';
+            const x = (1 - transitionProgress) * 30;
+            const y = (1 - transitionProgress) * 100;
+            const scale = 0.32 + transitionProgress * 0.68;
+            item.style.cssText = `transform: translate3d(${x}%, ${y}%, 0) scale(${scale}); opacity: ${transitionProgress}; visibility: ${transitionProgress > 0.01 ? 'visible' : 'hidden'};`;
           }
         } else {
-          // 아직 차례 안 된 이미지 - 숨김
-          item.style.transform = 'translate3d(30%, 100%, 0) scale(0.32)';
-          item.style.opacity = '0';
-          item.style.visibility = 'hidden';
+          // 아직 차례 안 된 이미지 - 전환 시에만 업데이트
+          if (transitionChanged) {
+            item.style.cssText = 'transform: translate3d(30%, 100%, 0) scale(0.32); opacity: 0; visibility: hidden;';
+          }
         }
-      });
+      }
     }
 
     // 초기 상태 설정
     updateStackState(0);
 
-    // 스크롤 트리거 설정
+    // 스크롤 트리거 설정 (scrub 값 증가로 부드러운 보간)
     ScrollTrigger.create({
       trigger: imageStack,
       start: 'top top',
       end: 'bottom bottom',
-      scrub: 0.3,
+      scrub: 2,
       onUpdate: (self) => updateStackState(self.progress)
     });
   }

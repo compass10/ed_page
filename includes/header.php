@@ -12,29 +12,79 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <!-- 로더 이미지 프리로드 -->
+  <link rel="preload" href="asset/images/spiner/img_01.gif" as="image">
+  <link rel="preload" href="asset/images/spiner/img_02.gif" as="image">
+  <link rel="preload" href="asset/images/spiner/img_03.gif" as="image">
+  <link rel="preload" href="asset/images/spiner/chat_b_01.svg" as="image">
+  <link rel="preload" href="asset/images/spiner/chat_b_02.svg" as="image">
+  <link rel="preload" href="asset/images/spiner/chat_b_03.svg" as="image">
+  <?php if (isset($preloadImages) && !empty($preloadImages)): ?>
+    <?php foreach($preloadImages as $imgSrc): ?>
+    <link rel="preload" href="<?php echo $imgSrc; ?>" as="image">
+    <?php endforeach; ?>
+  <?php endif; ?>
   <?php if (isset($isSubPage) && $isSubPage): ?>
-  <link rel="stylesheet" href="css/sub.css" />
+    <link rel="stylesheet" href="css/sub.css" />
   <?php endif; ?>
   <?php if (isset($pageCss) && $pageCss): ?>
-  <link rel="stylesheet" href="css/<?php echo $pageCss; ?>.css" />
+    <link rel="stylesheet" href="css/<?php echo $pageCss; ?>.css" />
   <?php endif; ?>
   <?php if (!isset($isSubPage) || !$isSubPage): ?>
-  <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/main.css" />
   <?php endif; ?>
 </head>
 
 <body<?php
-  $classes = array();
-  if (isset($darkTheme) && $darkTheme) $classes[] = 'dark-theme';
-  if (isset($bodyClass) && $bodyClass) $classes[] = $bodyClass;
-  if (!empty($classes)) echo ' class="' . implode(' ', $classes) . '"';
+$classes = array();
+if (isset($darkTheme) && $darkTheme)
+  $classes[] = 'dark-theme';
+if (isset($bodyClass) && $bodyClass)
+  $classes[] = $bodyClass;
+if (!empty($classes))
+  echo ' class="' . implode(' ', $classes) . '"';
 ?>>
+  <?php if (isset($showLoader) && $showLoader): ?>
   <!-- 로딩 스피너 -->
-  <div id="pageLoader" class="page_loader">
-    <div class="loader_inner">
-      <div class="spinner"></div>
+  <div id="pageLoader" class="page_loader"<?php if (isset($loaderDuration)) echo ' data-duration="' . $loaderDuration . '"'; ?><?php if (isset($loaderWaitForImages) && $loaderWaitForImages) echo ' data-wait-for-images="true"'; ?>>
+      <div class="img_list">
+        <img class="person" src="asset/images/spiner/img_01.gif" alt="loader_img_01" loading="eager" fetchpriority="high">
+        <img class="chat_bubble" src="asset/images/spiner/chat_b_01.svg" alt="loader_chat_01" loading="eager" fetchpriority="high">
+        <img class="person" src="asset/images/spiner/img_02.gif" alt="loader_img_02" loading="eager" fetchpriority="high">
+        <img class="chat_bubble" src="asset/images/spiner/chat_b_02.svg" alt="loader_chat_02" loading="eager" fetchpriority="high">
+        <img class="person" src="asset/images/spiner/img_03.gif" alt="loader_img_03" loading="eager" fetchpriority="high">
+        <img class="chat_bubble" src="asset/images/spiner/chat_b_03.svg" alt="loader_chat_03" loading="eager" fetchpriority="high">
+      </div>
+      <div class="loader_inner">
+        <div class="loader_title_mobile">
+          CREATIVE<br>
+          JOURNEY,<br>
+          BY ED
+        </div>
+        <div class="loader_top">
+          <span>Industrial Design</span>
+          <span>Motion Design</span>
+          <span>Visual Design</span>
+          <span>Craft Design</span>
+        </div>
+        <div class="loader_spinner">
+          <svg width="120" height="128" viewBox="0 0 120 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M51.2713 128L52.5295 76.7371L8.65007 103.627L0 88.5307L45.2949 64.1572L0 39.4693L8.65007 24.3735L52.5295 51.2629L51.2713 0H68.5714L67.3132 51.2629L111.35 24.3735L120 39.4693L74.8624 64.1572L120 88.5307L111.35 103.627L67.3132 76.7371L68.5714 128H51.2713Z"
+              fill="black" />
+          </svg>
+        </div>
+        <div class="loader_marquee">
+          <div class="marquee_track">
+            <span>Creative journey, by ED</span>
+            <span>Creative journey, by ED</span>
+            <span>Creative journey, by ED</span>
+            <span>Creative journey, by ED</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  <?php endif; ?>
 
   <header id="header" class="down">
     <div class="header_inner">
@@ -57,8 +107,10 @@
       </div>
       <div class="right">
         <svg viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.540551 5.65713L6.19741 0.000273908L40.6233 34.4262L34.9664 40.083L0.540551 5.65713Z" fill="black"/>
-          <path d="M5.65688 40.0831L2.73422e-05 34.4262L34.4259 0.000371933L40.0828 5.65723L5.65688 40.0831Z" fill="black"/>
+          <path d="M0.540551 5.65713L6.19741 0.000273908L40.6233 34.4262L34.9664 40.083L0.540551 5.65713Z"
+            fill="black" />
+          <path d="M5.65688 40.0831L2.73422e-05 34.4262L34.4259 0.000371933L40.0828 5.65723L5.65688 40.0831Z"
+            fill="black" />
         </svg>
       </div>
     </div>
@@ -70,7 +122,7 @@
             Who We Are
           </div>
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black"/>
+            <path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black" />
           </svg>
         </a>
       </li>
@@ -81,7 +133,7 @@
             Contact Us
           </div>
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black"/>
+            <path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black" />
           </svg>
         </a>
       </li>
@@ -92,7 +144,7 @@
             Success stories
           </div>
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black"/>
+            <path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black" />
           </svg>
         </a>
       </li>
@@ -103,7 +155,7 @@
             Our Students
           </div>
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black"/>
+            <path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black" />
           </svg>
         </a>
       </li>
@@ -114,7 +166,7 @@
             Portfolio
           </div>
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black"/>
+            <path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black" />
           </svg>
         </a>
       </li>
@@ -125,7 +177,7 @@
             News
           </div>
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black"/>
+            <path d="M12.16 0V8.88H21.04V12.16H12.16V21.04H8.88V12.16H0V8.88H8.88V0H12.16Z" fill="black" />
           </svg>
         </a>
       </li>
