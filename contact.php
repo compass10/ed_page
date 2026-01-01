@@ -200,9 +200,9 @@ $inquiry_result = mysql_query($inquiry_sql);
                         case '10': $status_class = 'complete'; $status_text = '답변완료'; break;
                       }
                   ?>
-                  <li class="board_item">
+                  <li class="board_item" data-ino="<?=$inquiry['ino']?>">
                     <span class="col_no"><?=$num?></span>
-                    <span class="col_title"><a href="javascript:alert('개인정보보호정책과 관련하여 질문의 내용은 타인에게 공개되지 않으며, 답변은 문의 시 등록하신 이메일로 동시 발송됩니다.');"><?=htmlspecialchars($inquiry['isubject'])?></a></span>
+                    <span class="col_title"><?=htmlspecialchars($inquiry['isubject'])?></span>
                     <span class="col_author"><?=$name?></span>
                     <span class="col_date"><?=$date?></span>
                     <span class="col_status <?=$status_class?>"><?=$status_text?></span>
@@ -211,15 +211,25 @@ $inquiry_result = mysql_query($inquiry_sql);
                       // 답변완료인 경우 RE 행 추가
                       if($inquiry['isw'] == '10') {
                   ?>
-                  <li class="board_item reply">
+                  <li class="board_item reply" data-ino="<?=$inquiry['ino']?>">
                     <span class="col_no"></span>
-                    <span class="col_title"><a href="javascript:alert('개인정보보호정책과 관련하여 질문의 내용은 타인에게 공개되지 않으며, 답변은 문의 시 등록하신 이메일로 동시 발송됩니다.');">[re] <?=htmlspecialchars($inquiry['isubject'])?></a></span>
+                    <span class="col_title">[re] <?=htmlspecialchars($inquiry['isubject'])?></span>
                     <span class="col_author">관리자</span>
                     <span class="col_date"><?=$date?></span>
                     <span class="col_status"></span>
                   </li>
                   <?php
                       }
+                  ?>
+                  <li class="board_password_form" data-ino="<?=$inquiry['ino']?>">
+                    <div class="password_form_inner">
+                      <span class="password_label">비밀번호</span>
+                      <input type="password" class="password_input" placeholder="비밀번호 입력">
+                      <button type="button" class="password_submit">확인</button>
+                    </div>
+                    <div class="password_error">비밀번호가 일치하지 않습니다.</div>
+                  </li>
+                  <?php
                       $num--;
                     }
                   } else {

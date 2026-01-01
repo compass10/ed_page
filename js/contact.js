@@ -112,6 +112,107 @@ document.querySelectorAll('.form_file').forEach(fileInput => {
   });
 });
 
+// 게시판 비밀번호 폼 토글
+(function() {
+  const boardBody = document.querySelector('.board_body');
+  if (!boardBody) return;
+
+  // 게시판 아이템 클릭 이벤트
+  boardBody.addEventListener('click', function(e) {
+    const boardItem = e.target.closest('.board_item');
+    if (!boardItem) return;
+
+    const ino = boardItem.dataset.ino;
+    if (!ino) return;
+
+    const passwordForm = boardBody.querySelector(`.board_password_form[data-ino="${ino}"]`);
+    if (!passwordForm) return;
+
+    // 현재 열려있는 폼 닫기
+    const activeForm = boardBody.querySelector('.board_password_form.active');
+    if (activeForm && activeForm !== passwordForm) {
+      activeForm.classList.remove('active');
+      activeForm.querySelector('.password_input').value = '';
+      activeForm.querySelector('.password_error').classList.remove('show');
+    }
+
+    // 클릭한 아이템의 폼 토글
+    if (passwordForm.classList.contains('active')) {
+      passwordForm.classList.remove('active');
+      passwordForm.querySelector('.password_input').value = '';
+      passwordForm.querySelector('.password_error').classList.remove('show');
+    } else {
+      passwordForm.classList.add('active');
+      passwordForm.querySelector('.password_input').focus();
+    }
+  });
+
+  // 비밀번호 확인 버튼 클릭
+  boardBody.addEventListener('click', function(e) {
+    const submitBtn = e.target.closest('.password_submit');
+    if (!submitBtn) return;
+
+    const passwordForm = submitBtn.closest('.board_password_form');
+    const ino = passwordForm.dataset.ino;
+    const passwordInput = passwordForm.querySelector('.password_input');
+    const passwordError = passwordForm.querySelector('.password_error');
+    const password = passwordInput.value.trim();
+
+    if (!password) {
+      passwordError.classList.add('show');
+      passwordError.textContent = '비밀번호를 입력해주세요.';
+      passwordInput.focus();
+      return;
+    }
+
+    // 버튼 비활성화
+    submitBtn.disabled = true;
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = '확인중...';
+
+    // AJAX로 비밀번호 확인
+    fetch('contact_check_password.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `ino=${encodeURIComponent(ino)}&password=${encodeURIComponent(password)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        // 비밀번호 일치 - 상세보기 페이지로 이동
+        window.location.href = `contact_view.php?ino=${ino}&auth=1`;
+      } else {
+        // 비밀번호 불일치
+        passwordError.textContent = data.message || '비밀번호가 일치하지 않습니다.';
+        passwordError.classList.add('show');
+        passwordInput.value = '';
+        passwordInput.focus();
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      passwordError.textContent = '오류가 발생했습니다. 다시 시도해주세요.';
+      passwordError.classList.add('show');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    });
+  });
+
+  // 비밀번호 입력 필드에서 엔터키 처리
+  boardBody.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' && e.target.classList.contains('password_input')) {
+      e.preventDefault();
+      const passwordForm = e.target.closest('.board_password_form');
+      const submitBtn = passwordForm.querySelector('.password_submit');
+      submitBtn.click();
+    }
+  });
+})();
+
 // 상담문의 폼 제출 처리
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
