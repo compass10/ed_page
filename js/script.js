@@ -13,16 +13,9 @@
   // 이미지 로드 대기 여부
   const waitForImages = pageLoader.dataset.waitForImages === 'true';
 
-  // 1.5초 후 콘텐츠 서서히 노출
-  setTimeout(function () {
-    pageLoader.classList.add('show_content');
-    contentShownAt = Date.now();
-
-    // 이미 페이지 로드 완료된 상태라면 숨기기
-    if (canHideLoader()) {
-      hideLoader();
-    }
-  }, 1500);
+  // 콘텐츠 바로 노출
+  pageLoader.classList.add('show_content');
+  contentShownAt = Date.now();
 
   // 로더 숨김 조건 체크
   function canHideLoader() {

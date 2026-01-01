@@ -353,8 +353,12 @@ $preloadImages = $imageSources;
   }
 
   // 모바일에서만 실행 (페이지 로드 완료 후)
+  let mobileInitialized = false;
+
   function checkAndInitMobile() {
+    if (mobileInitialized) return;
     if (window.innerWidth <= 1024) {
+      mobileInitialized = true;
       // ScrollTrigger refresh 후 초기화
       ScrollTrigger.refresh();
       initMobileImageStack();
@@ -366,14 +370,16 @@ $preloadImages = $imageSources;
     setTimeout(checkAndInitMobile, 100);
   });
 
-  // 로딩 스피너가 없는 경우를 위한 fallback
+  // studentsImagesLoaded 이벤트 후에도 초기화 시도
+  window.addEventListener('studentsImagesLoaded', () => {
+    // 로더가 숨겨지기를 기다리지 않고 바로 시도
+    setTimeout(checkAndInitMobile, 500);
+  });
+
+  // 로딩 스피너가 없거나 긴 대기 후 fallback
   window.addEventListener('load', () => {
-    setTimeout(() => {
-      const pageLoader = document.getElementById('pageLoader');
-      if (!pageLoader || pageLoader.classList.contains('hidden')) {
-        checkAndInitMobile();
-      }
-    }, 600);
+    // 10초 후에도 초기화되지 않았으면 강제 초기화
+    setTimeout(checkAndInitMobile, 10000);
   });
 
   // 리사이즈 시 재초기화 (디바운스 적용)
