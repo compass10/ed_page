@@ -5,6 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><?php echo isset($pageTitle) ? $pageTitle . ' | ED' : 'ED'; ?></title>
+
+  <!-- Meta Description -->
+  <meta name="description" content="2025 미대편입이드 합격자 133명! 서울과기대, 국민대 100% 점유! 홍대 31명, 단국대 5명 모집 4명 합격,서울여대 6명 합격, 성신여대 2명 모집 2명 합격, 동덕여대 5명 모집 5명 합격, 건대 24명 합격, 서경대 5명 모집 6명 합격" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="<?php echo isset($pageTitle) ? $pageTitle . ' | ED' : 'ED'; ?>" />
+  <meta property="og:description" content="2025 미대편입이드 합격자 133명! 서울과기대, 국민대 100% 점유! 홍대 31명, 단국대 5명 모집 4명 합격,서울여대 6명 합격, 성신여대 2명 모집 2명 합격, 동덕여대 5명 모집 5명 합격, 건대 24명 합격, 서경대 5명 모집 6명 합격" />
+  <meta property="og:image" content="/asset/images/common/ed_og_img.png" />
+  <meta property="og:url" content="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
+
   <link rel="icon" type="image/png" href="ed_favicon.png" />
   <link rel="stylesheet" href="https://use.typekit.net/ebu3zus.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />

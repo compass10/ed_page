@@ -22,7 +22,7 @@ $total_pages = ceil($total_count / $per_page);
 $success_sql = "SELECT * FROM $board_table
                 WHERE bid='passlist'
                 AND is_hidden='N'
-                ORDER BY bpw ASC, bno DESC
+                ORDER BY CAST(bpw AS SIGNED) ASC, bno DESC
                 LIMIT $offset, $per_page";
 $success_result = mysql_query($success_sql);
 

@@ -170,7 +170,7 @@ document.querySelectorAll('.form_file').forEach(fileInput => {
     const originalText = submitBtn.textContent;
     submitBtn.textContent = '확인중...';
 
-    // AJAX로 비밀번호 확인
+    // AJAX로 비밀번호 확인 및 상세 내용 가져오기
     fetch('contact_check_password.php', {
       method: 'POST',
       headers: {
@@ -181,8 +181,20 @@ document.querySelectorAll('.form_file').forEach(fileInput => {
     .then(response => response.json())
     .then(data => {
       if (data.success) {
-        // 비밀번호 일치 - 상세보기 페이지로 이동
-        window.location.href = `contact_view.php?ino=${ino}&auth=1`;
+        // 비밀번호 일치 - 비밀번호 폼을 상세 내용으로 교체
+        passwordForm.classList.remove('active');
+        passwordForm.classList.add('detail_view');
+
+        // 상세 내용 HTML 생성
+        let detailHtml = `
+          <div class="board_detail_inner">
+            <div class="detail_content">${data.content || ''}</div>
+            ${data.file ? `<div class="detail_file"><span class="file_label">첨부파일:</span> <a href="${data.file}" target="_blank">${data.fileName || '파일 다운로드'}</a></div>` : ''}
+            ${data.reply ? `<div class="detail_reply"><span class="reply_label">답변:</span> ${data.reply}</div>` : ''}
+            <button type="button" class="detail_close">닫기</button>
+          </div>
+        `;
+        passwordForm.innerHTML = detailHtml;
       } else {
         // 비밀번호 불일치
         passwordError.textContent = data.message || '비밀번호가 일치하지 않습니다.';
@@ -210,6 +222,26 @@ document.querySelectorAll('.form_file').forEach(fileInput => {
       const submitBtn = passwordForm.querySelector('.password_submit');
       submitBtn.click();
     }
+  });
+
+  // 상세보기 닫기 버튼
+  boardBody.addEventListener('click', function(e) {
+    const closeBtn = e.target.closest('.detail_close');
+    if (!closeBtn) return;
+
+    const passwordForm = closeBtn.closest('.board_password_form');
+    const ino = passwordForm.dataset.ino;
+
+    // 원래 비밀번호 폼으로 복원
+    passwordForm.classList.remove('detail_view');
+    passwordForm.innerHTML = `
+      <div class="password_form_inner">
+        <span class="password_label">비밀번호</span>
+        <input type="password" class="password_input" placeholder="비밀번호 입력">
+        <button type="button" class="password_submit">확인</button>
+      </div>
+      <div class="password_error">비밀번호가 일치하지 않습니다.</div>
+    `;
   });
 })();
 

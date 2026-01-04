@@ -666,6 +666,88 @@
                 display: block;
               }
             }
+
+            // 상세보기 모드
+            &.detail_view {
+              display: block;
+
+              .board_detail_inner {
+                padding: vw(16, 1920) 0;
+                padding-left: vw(60, 1920);
+
+                .detail_content {
+                  color: #999999;
+                  font-family: $font-pretendard;
+                  font-weight: 400;
+                  font-size: vw(14, 1920);
+                  line-height: vw(22, 1920);
+                  letter-spacing: -0.03em;
+                  margin-bottom: vw(16, 1920);
+                  white-space: pre-wrap;
+                }
+
+                .detail_file {
+                  color: #999999;
+                  font-family: $font-pretendard;
+                  font-weight: 400;
+                  font-size: vw(14, 1920);
+                  line-height: vw(16, 1920);
+                  letter-spacing: -0.03em;
+                  margin-bottom: vw(16, 1920);
+
+                  .file_label {
+                    margin-right: vw(8, 1920);
+                  }
+
+                  a {
+                    color: #fff;
+                    text-decoration: underline;
+
+                    &:hover {
+                      color: #999999;
+                    }
+                  }
+                }
+
+                .detail_reply {
+                  color: #999999;
+                  font-family: $font-pretendard;
+                  font-weight: 400;
+                  font-size: vw(14, 1920);
+                  line-height: vw(22, 1920);
+                  letter-spacing: -0.03em;
+                  margin-bottom: vw(16, 1920);
+                  padding-top: vw(16, 1920);
+                  border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+                  .reply_label {
+                    display: block;
+                    color: #fff;
+                    margin-bottom: vw(8, 1920);
+                  }
+                }
+
+                .detail_close {
+                  background: none;
+                  border: 1px solid #999999;
+                  border-radius: 999px;
+                  color: #999999;
+                  font-family: $font-pretendard;
+                  font-weight: 400;
+                  font-size: vw(14, 1920);
+                  line-height: vw(14, 1920);
+                  letter-spacing: -0.03em;
+                  padding: vw(6, 1920) vw(16, 1920);
+                  cursor: pointer;
+                  transition: all 0.2s ease;
+
+                  &:hover {
+                    background: #999999;
+                    color: #000;
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -1168,6 +1250,47 @@
                 line-height: mvw(14);
                 padding-left: mvw(40);
                 padding-bottom: mvw(8);
+              }
+
+              // 상세보기 모드 - 모바일
+              &.detail_view {
+                .board_detail_inner {
+                  padding: mvw(12) 0;
+                  padding-left: mvw(40);
+
+                  .detail_content {
+                    font-size: mvw(14);
+                    line-height: mvw(20);
+                    margin-bottom: mvw(12);
+                  }
+
+                  .detail_file {
+                    font-size: mvw(12);
+                    line-height: mvw(16);
+                    margin-bottom: mvw(12);
+
+                    .file_label {
+                      margin-right: mvw(6);
+                    }
+                  }
+
+                  .detail_reply {
+                    font-size: mvw(14);
+                    line-height: mvw(20);
+                    margin-bottom: mvw(12);
+                    padding-top: mvw(12);
+
+                    .reply_label {
+                      margin-bottom: mvw(6);
+                    }
+                  }
+
+                  .detail_close {
+                    font-size: mvw(12);
+                    line-height: mvw(12);
+                    padding: mvw(6) mvw(12);
+                  }
+                }
               }
             }
           }
