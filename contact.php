@@ -1,4 +1,7 @@
 <?php
+// 세션 시작
+@session_start();
+
 $pageTitle = 'Contact Us';
 $isSubPage = true;
 $pageCss = 'contact';
@@ -21,6 +24,19 @@ $nTotalPage = ceil($nTotalCount / $nCount);
 $nFrom = ($pg - 1) * $nCount;
 $inquiry_sql = "SELECT * FROM $inquiry_table WHERE isw != '90' ORDER BY ino DESC LIMIT $nFrom, $nCount";
 $inquiry_result = mysql_query($inquiry_sql);
+
+// 상세보기 모드 확인
+$viewMode = false;
+$viewData = null;
+if(isset($_GET['ino']) && isset($_SESSION['inquiry_auth'][$_GET['ino']])) {
+    $view_ino = (int)$_GET['ino'];
+    $view_sql = "SELECT * FROM $inquiry_table WHERE ino='$view_ino'";
+    $view_result = mysql_query($view_sql);
+    if($view_result && mysql_num_rows($view_result) > 0) {
+        $viewData = mysql_fetch_array($view_result);
+        $viewMode = true;
+    }
+}
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -174,6 +190,83 @@ $inquiry_result = mysql_query($inquiry_sql);
               </form>
             </div>
             <div class="right_content" data-right-tab="board">
+              <?php if($viewMode && $viewData): ?>
+              <!-- 상세보기 모드 -->
+              <div class="board_detail">
+                <div class="board_detail_header">
+                  <a href="contact.php?pg=<?=$pg?>#board" class="back_btn">
+                    <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.41406 0.70703L1.41406 6.70703L7.41406 12.707" stroke="white" stroke-width="2"/>
+                    </svg>
+                  </a>
+                  <span class="col_title">제목</span>
+                  <span class="col_author">작성자</span>
+                  <span class="col_date">작성일</span>
+                  <span class="col_status">상태</span>
+                </div>
+                <div class="board_detail_body">
+                  <?php
+                  // 이름 마스킹
+                  $detail_name = mb_substr($viewData['iname'], 0, 1, 'UTF-8') . '**';
+                  $detail_date = date('Y.m.d.', strtotime($viewData['reg_date']));
+                  $detail_status = '';
+                  switch($viewData['isw']) {
+                      case '5': $detail_status = '상담대기'; break;
+                      case '7': $detail_status = '상담보류'; break;
+                      case '10': $detail_status = '상담완료'; break;
+                  }
+                  ?>
+                  <!-- 원글 정보 -->
+                  <div class="detail_row original">
+                    <span class="col_no"><?=$viewData['ino']?></span>
+                    <span class="col_title"><?=htmlspecialchars($viewData['isubject'])?></span>
+                    <span class="col_author"><?=$detail_name?></span>
+                    <span class="col_date"><?=$detail_date?></span>
+                    <span class="col_status"><?=$detail_status?></span>
+                  </div>
+                  <!-- 원글 내용 -->
+                  <div class="detail_content">
+                    <?=nl2br(htmlspecialchars($viewData['imemo']))?>
+                  </div>
+                  <?php
+                  // 첨부파일 처리
+                  if($viewData['ifile']) {
+                      $file_path_new = $_SERVER['DOCUMENT_ROOT'] . '/upload/inquiry/' . $viewData['ifile'];
+                      $file_path_old = $_SERVER['DOCUMENT_ROOT'] . '/web/inquiry_attachment/' . $viewData['ifile'];
+                      if(file_exists($file_path_new)) {
+                          $file_url = '/upload/inquiry/' . $viewData['ifile'];
+                      } else if(file_exists($file_path_old)) {
+                          $file_url = '/web/inquiry_attachment/' . $viewData['ifile'];
+                      } else {
+                          $file_url = '';
+                      }
+                      if($file_url):
+                  ?>
+                  <div class="detail_files">
+                    <a href="<?=$file_url?>" target="_blank" class="file_link">첨부파일 <?=htmlspecialchars($viewData['ifile'])?></a>
+                  </div>
+                  <?php
+                      endif;
+                  }
+                  ?>
+                  <?php if($viewData['isw'] == '10' && $viewData['ianswer']): ?>
+                  <!-- 답변 정보 -->
+                  <div class="detail_row reply">
+                    <span class="col_no"></span>
+                    <span class="col_title">[RE] <?=htmlspecialchars($viewData['isubject'])?></span>
+                    <span class="col_author"></span>
+                    <span class="col_date"><?=$detail_date?></span>
+                    <span class="col_status">답변완료</span>
+                  </div>
+                  <!-- 답변 내용 -->
+                  <div class="detail_content reply_content">
+                    <?=$viewData['ianswer']?>
+                  </div>
+                  <?php endif; ?>
+                </div>
+              </div>
+              <?php else: ?>
+              <!-- 목록 모드 -->
               <div class="board_list">
                 <div class="board_header">
                   <span class="col_no">No.</span>
@@ -281,6 +374,7 @@ $inquiry_result = mysql_query($inquiry_sql);
                 </div>
                 <?php } ?>
               </div>
+              <?php endif; ?>
             </div>
           </div>
         </div>

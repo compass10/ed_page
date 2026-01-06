@@ -1,11 +1,84 @@
+<?php
+// SEO 설정 불러오기 (seo_setup 테이블 사용)
+$seo = array();
+$seo_result = @mysql_query("SELECT * FROM seo_setup LIMIT 1");
+if($seo_result) {
+  $seo = @mysql_fetch_array($seo_result);
+}
+
+// SEO 기본값 설정
+$site_name = isset($seo['site_name']) && $seo['site_name'] ? $seo['site_name'] : 'ED';
+$meta_title = isset($seo['meta_title']) && $seo['meta_title'] ? $seo['meta_title'] : 'ED 편입미술학원';
+$meta_description = isset($seo['meta_description']) && $seo['meta_description'] ? $seo['meta_description'] : '';
+$meta_keywords = isset($seo['meta_keywords']) && $seo['meta_keywords'] ? $seo['meta_keywords'] : '';
+$og_title = isset($seo['og_title']) && $seo['og_title'] ? $seo['og_title'] : $meta_title;
+$og_description = isset($seo['og_description']) && $seo['og_description'] ? $seo['og_description'] : $meta_description;
+$og_image = isset($seo['og_image']) && $seo['og_image'] ? '/upload/seo/' . $seo['og_image'] : '';
+$canonical_url = isset($seo['canonical_url']) && $seo['canonical_url'] ? $seo['canonical_url'] : '';
+$favicon = isset($seo['favicon']) && $seo['favicon'] ? '/upload/seo/' . $seo['favicon'] : 'ed_favicon.png';
+$naver_verification = isset($seo['naver_verification']) ? $seo['naver_verification'] : '';
+$google_verification = isset($seo['google_verification']) ? $seo['google_verification'] : '';
+$site_tel = isset($seo['site_tel']) ? $seo['site_tel'] : '';
+$site_email = isset($seo['site_email']) ? $seo['site_email'] : '';
+$site_addr = isset($seo['site_addr']) ? $seo['site_addr'] : '';
+
+// 페이지별 타이틀 처리
+$final_title = isset($pageTitle) ? $pageTitle . ' | ' . $site_name : $meta_title;
+$current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><?php echo isset($pageTitle) ? $pageTitle . ' | ED' : 'ED'; ?></title>
-  <link rel="icon" type="image/png" href="ed_favicon.png" />
+  <title><?php echo htmlspecialchars($final_title); ?></title>
+
+  <!-- 기본 메타 태그 -->
+  <?php if($meta_description): ?>
+  <meta name="description" content="<?php echo htmlspecialchars($meta_description); ?>" />
+  <?php endif; ?>
+  <?php if($meta_keywords): ?>
+  <meta name="keywords" content="<?php echo htmlspecialchars($meta_keywords); ?>" />
+  <?php endif; ?>
+
+  <!-- Open Graph 메타 태그 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="<?php echo htmlspecialchars($og_title); ?>" />
+  <?php if($og_description): ?>
+  <meta property="og:description" content="<?php echo htmlspecialchars($og_description); ?>" />
+  <?php endif; ?>
+  <?php if($og_image): ?>
+  <meta property="og:image" content="<?php echo htmlspecialchars($og_image); ?>" />
+  <?php endif; ?>
+  <meta property="og:url" content="<?php echo htmlspecialchars($current_url); ?>" />
+  <meta property="og:site_name" content="<?php echo htmlspecialchars($site_name); ?>" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="<?php echo htmlspecialchars($og_title); ?>" />
+  <?php if($og_description): ?>
+  <meta name="twitter:description" content="<?php echo htmlspecialchars($og_description); ?>" />
+  <?php endif; ?>
+  <?php if($og_image): ?>
+  <meta name="twitter:image" content="<?php echo htmlspecialchars($og_image); ?>" />
+  <?php endif; ?>
+
+  <!-- Canonical URL -->
+  <?php if($canonical_url): ?>
+  <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>" />
+  <?php endif; ?>
+
+  <!-- 사이트 인증 -->
+  <?php if($naver_verification): ?>
+  <meta name="naver-site-verification" content="<?php echo htmlspecialchars($naver_verification); ?>" />
+  <?php endif; ?>
+  <?php if($google_verification): ?>
+  <meta name="google-site-verification" content="<?php echo htmlspecialchars($google_verification); ?>" />
+  <?php endif; ?>
+
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" href="<?php echo htmlspecialchars($favicon); ?>" />
   <link rel="stylesheet" href="https://use.typekit.net/ebu3zus.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

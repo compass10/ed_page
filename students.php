@@ -73,17 +73,20 @@ $preloadImages = $imageSources;
         </h2>
       </div>
 
-      <!-- 모바일 전용 이미지 스택 애니메이션 -->
-      <?php $mobileImageCount = count($imageSources); ?>
-      <div class="mobile_image_stack" style="height: <?=($mobileImageCount * 100 + 200)?>vh;">
+      <!-- 모바일 전용 이미지 리스트 -->
+      <div class="mobile_image_stack">
         <div class="stack_container">
           <?php foreach($imageSources as $idx => $imgSrc): ?>
-          <div class="stack_item" data-index="<?=$idx?>">
-            <img src="<?=$imgSrc?>" alt="student<?=$idx + 1?>" loading="eager" fetchpriority="<?=$idx < 2 ? 'high' : 'low'?>" decoding="async">
+          <div class="stack_item">
+            <img src="<?=$imgSrc?>" alt="student<?=$idx + 1?>" loading="lazy">
           </div>
           <?php endforeach; ?>
-          <p class="stack_text_left">We dream,<br>we draw,<br>we cheer<br>for each other.</p>
-          <p class="stack_text_right">We share<br>dreams,<br>colors,<br>and laughter.</p>
+        </div>
+        <div class="bottom_text">
+          <div class="left_col">
+            <p class="stack_text_left">We dream,<br>we draw,<br>we cheer<br>for each other.</p>
+            <p class="stack_text_right">We share<br>dreams,<br>colors,<br>and laughter.</p>
+          </div>
           <div class="stack_title">
             <span class="avenir">together,</span><br/>
             <span class="instru">we grow.</span>
@@ -98,7 +101,6 @@ $preloadImages = $imageSources;
 <!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script>
   gsap.registerPlugin(MotionPathPlugin);
 
@@ -265,140 +267,6 @@ $preloadImages = $imageSources;
     }
   }, true);
 
-  // 모바일 이미지 스택 애니메이션
-  function initMobileImageStack() {
-    if (window.innerWidth > 1024) return;
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const stackContainer = document.querySelector('.stack_container');
-    const stackItems = document.querySelectorAll('.stack_item');
-    const totalItems = stackItems.length;
-
-    if (!stackContainer || totalItems === 0) return;
-
-    const imageStack = document.querySelector('.mobile_image_stack');
-
-    // 각 전환(1→2, 2→3, 3→4, 4→5)마다 2단계: 현재 이미지 사라짐 + 다음 이미지 올라옴
-    const transitions = totalItems - 1;
-    const segmentSize = 1 / transitions;
-
-    // 이전 상태 캐싱 (불필요한 DOM 업데이트 방지)
-    let lastTransition = -1;
-    let lastProgress = -1;
-
-    // 상태 업데이트 함수 (최적화)
-    function updateStackState(progress) {
-      // progress 변화가 미미하면 업데이트 스킵
-      if (Math.abs(progress - lastProgress) < 0.001) return;
-      lastProgress = progress;
-
-      const currentTransition = Math.min(Math.floor(progress / segmentSize), transitions - 1);
-      const transitionProgress = (progress - currentTransition * segmentSize) / segmentSize;
-
-      // 전환이 바뀌었을 때만 비활성 아이템들 업데이트
-      const transitionChanged = currentTransition !== lastTransition;
-      lastTransition = currentTransition;
-
-      // 현재 활성 아이템과 다음 아이템만 업데이트
-      for (let index = 0; index < totalItems; index++) {
-        const item = stackItems[index];
-
-        if (index < currentTransition) {
-          // 이미 지나간 이미지 - 전환 시에만 업데이트
-          if (transitionChanged) {
-            item.style.cssText = 'transform: translate3d(0, -120%, 0); opacity: 0; visibility: hidden;';
-          }
-        } else if (index === currentTransition) {
-          // 현재 사라지는 중인 이미지
-          if (progress <= 0 && index === 0) {
-            item.style.cssText = 'transform: translate3d(0, 0, 0); opacity: 1; visibility: visible;';
-          } else {
-            const y = -transitionProgress * 120;
-            const opacity = Math.max(0, 1 - transitionProgress);
-            item.style.cssText = `transform: translate3d(0, ${y}%, 0); opacity: ${opacity}; visibility: ${transitionProgress < 1 ? 'visible' : 'hidden'};`;
-          }
-        } else if (index === currentTransition + 1) {
-          // 다음 이미지 - 올라오는 중
-          if (transitionProgress <= 0) {
-            if (transitionChanged) {
-              item.style.cssText = 'transform: translate3d(30%, 100%, 0) scale(0.32); opacity: 0; visibility: hidden;';
-            }
-          } else {
-            const x = (1 - transitionProgress) * 30;
-            const y = (1 - transitionProgress) * 100;
-            const scale = 0.32 + transitionProgress * 0.68;
-            item.style.cssText = `transform: translate3d(${x}%, ${y}%, 0) scale(${scale}); opacity: ${transitionProgress}; visibility: ${transitionProgress > 0.01 ? 'visible' : 'hidden'};`;
-          }
-        } else {
-          // 아직 차례 안 된 이미지 - 전환 시에만 업데이트
-          if (transitionChanged) {
-            item.style.cssText = 'transform: translate3d(30%, 100%, 0) scale(0.32); opacity: 0; visibility: hidden;';
-          }
-        }
-      }
-    }
-
-    // 초기 상태 설정
-    updateStackState(0);
-
-    // 스크롤 트리거 설정 (scrub 값 증가로 부드러운 보간)
-    ScrollTrigger.create({
-      trigger: imageStack,
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: 2,
-      onUpdate: (self) => updateStackState(self.progress)
-    });
-  }
-
-  // 모바일에서만 실행 (페이지 로드 완료 후)
-  let mobileInitialized = false;
-
-  function checkAndInitMobile() {
-    if (mobileInitialized) return;
-    if (window.innerWidth <= 1024) {
-      mobileInitialized = true;
-      // ScrollTrigger refresh 후 초기화
-      ScrollTrigger.refresh();
-      initMobileImageStack();
-    }
-  }
-
-  // 로딩 스피너가 숨겨진 후 실행 (레이아웃이 안정화된 후)
-  window.addEventListener('pageLoaderHidden', () => {
-    setTimeout(checkAndInitMobile, 100);
-  });
-
-  // studentsImagesLoaded 이벤트 후에도 초기화 시도
-  window.addEventListener('studentsImagesLoaded', () => {
-    // 로더가 숨겨지기를 기다리지 않고 바로 시도
-    setTimeout(checkAndInitMobile, 500);
-  });
-
-  // 로딩 스피너가 없거나 긴 대기 후 fallback
-  window.addEventListener('load', () => {
-    // 10초 후에도 초기화되지 않았으면 강제 초기화
-    setTimeout(checkAndInitMobile, 10000);
-  });
-
-  // 리사이즈 시 재초기화 (디바운스 적용)
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-      // 인라인 스타일 초기화
-      document.querySelectorAll('.stack_item').forEach(item => {
-        item.style.transform = '';
-        item.style.opacity = '';
-        item.style.visibility = '';
-      });
-      if (window.innerWidth <= 1024) {
-        initMobileImageStack();
-      }
-    }, 100);
-  });
 </script>
 
 <?php include 'includes/footer.php'; ?>

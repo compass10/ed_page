@@ -166,9 +166,8 @@ if(!isset($_SESSION["session_uid"])) {
 }
 $uid = $_SESSION["session_uid"];
 
-// DB 저장 (원본 방식: 먼저 INSERT 후 파일 UPDATE)
-// 원본: ('', '$name', '$email', '$subject', '$memo', '', '$uid', '$device', '$this_ip', '', '5', now())
-$sql = "INSERT INTO $inquiry_table VALUES (
+// DB 저장 (ipw 컬럼 추가됨)
+$sql = "INSERT INTO $inquiry_table (ino, iname, iemail, isubject, imemo, ianswer, uid, idevice, ip, ipw, ifile, isw, reg_date) VALUES (
             '',
             '".addslashes($name)."',
             '".addslashes($email)."',
@@ -178,6 +177,7 @@ $sql = "INSERT INTO $inquiry_table VALUES (
             '".addslashes($uid)."',
             '".addslashes($device)."',
             '".addslashes($ip)."',
+            '".addslashes($password)."',
             '',
             '5',
             NOW()
