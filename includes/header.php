@@ -8,7 +8,7 @@ if ($seo_result) {
 
 // SEO 기본값 설정
 $site_name = isset($seo['site_name']) && $seo['site_name'] ? $seo['site_name'] : 'ED';
-$meta_title = isset($seo['meta_title']) && $seo['meta_title'] ? $seo['meta_title'] : 'ED 편입미술학원';
+$meta_title = isset($seo['meta_title']) && $seo['meta_title'] ? $seo['meta_title'] : '미대편입이드';
 $meta_description = isset($seo['meta_description']) && $seo['meta_description'] ? $seo['meta_description'] : '';
 $meta_keywords = isset($seo['meta_keywords']) && $seo['meta_keywords'] ? $seo['meta_keywords'] : '';
 $og_title = isset($seo['og_title']) && $seo['og_title'] ? $seo['og_title'] : $meta_title;
