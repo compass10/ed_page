@@ -186,7 +186,7 @@ document.querySelectorAll('.form_file').forEach((fileInput) => {
     const originalText = submitBtn.textContent;
     submitBtn.textContent = '확인중...';
 
-    // AJAX로 비밀번호 확인
+    // AJAX로 비밀번호 확인 및 상세 내용 가져오기
     fetch('contact_check_password.php', {
       method: 'POST',
       headers: {
@@ -232,6 +232,26 @@ document.querySelectorAll('.form_file').forEach((fileInput) => {
       const submitBtn = passwordForm.querySelector('.password_submit');
       submitBtn.click();
     }
+  });
+
+  // 상세보기 닫기 버튼
+  boardBody.addEventListener('click', function (e) {
+    const closeBtn = e.target.closest('.detail_close');
+    if (!closeBtn) return;
+
+    const passwordForm = closeBtn.closest('.board_password_form');
+    const ino = passwordForm.dataset.ino;
+
+    // 원래 비밀번호 폼으로 복원
+    passwordForm.classList.remove('detail_view');
+    passwordForm.innerHTML = `
+      <div class="password_form_inner">
+        <span class="password_label">비밀번호</span>
+        <input type="password" class="password_input" placeholder="비밀번호 입력">
+        <button type="button" class="password_submit">확인</button>
+      </div>
+      <div class="password_error">비밀번호가 일치하지 않습니다.</div>
+    `;
   });
 })();
 

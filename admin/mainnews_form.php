@@ -88,7 +88,7 @@ if($mode == 'modify' && isset($_GET['bno']) && isset($board_table)) {
 
     <div class="form_group">
       <label>내용</label>
-      <textarea name="bcontents" id="bcontents"><?=isset($row['bcontents']) ? htmlspecialchars($row['bcontents']) : ''?></textarea>
+      <textarea name="bcontents" id="bcontents"><?=isset($row['bcontents']) ? stripslashes($row['bcontents']) : ''?></textarea>
     </div>
 
     <div class="form_actions">
@@ -111,7 +111,11 @@ if(typeof CKEDITOR !== 'undefined') {
     filebrowserImageBrowseUrl: '<?=$_url?>ckfinder/ckfinder.html?Type=Images',
     filebrowserUploadUrl: '<?=$_url?>ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
     filebrowserImageUploadUrl: '<?=$_url?>ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-    language: 'ko'
+    language: 'ko',
+    entities: false,
+    basicEntities: false,
+    entities_greek: false,
+    entities_latin: false
   });
 }
 </script>
