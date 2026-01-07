@@ -29,7 +29,7 @@
     const now = Date.now();
     const elapsed = contentShownAt ? now - contentShownAt : 0;
     // 이미지 대기 모드일 때는 이미지 로드 후 8초 더 대기
-    const duration = waitForImages ? 8000 : minDuration;
+    const duration = waitForImages ? 2000 : minDuration;
     const delay = Math.max(0, duration - elapsed);
 
     setTimeout(function () {
