@@ -284,22 +284,35 @@
             display: flex;
             align-items: center;
             gap: vw(8, 1920);
+            cursor: pointer;
 
             &.teps {
               margin-right: vw(128, 1920);
             }
 
+            &:hover {
+              input[type='checkbox'],
+              input[type='radio'] {
+                border-color: #FFEE6E;
+              }
+
+              .checkbox_label {
+                color: #FFEE6E;
+              }
+            }
+
             input[type='checkbox'],
             input[type='radio'] {
               appearance: none;
-              width: vw(9, 1920);
-              height: vw(9, 1920);
-              border: 1px solid #fff;
+              width: vw(12, 1920);
+              height: vw(12, 1920);
+              border: 1.5px solid #fff;
               background: none;
               cursor: pointer;
 
               &:checked {
                 background-color: #fff;
+                border-color: #fff;
               }
             }
 
@@ -765,7 +778,7 @@
           .back_btn {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: left;
             width: vw(50, 1920);
             margin-right: vw(10, 1920);
 
@@ -1295,18 +1308,19 @@
               text-transform: uppercase;
             }
 
-            .col_no {
-              width: mvw(40);
+            .col_no,
+            .col_status {
+              display: none;
+            }
+
+            .col_date {
+              width: mvw(80);
+              text-align: right;
             }
 
             .col_author {
-              text-align:right;
-              width: mvw(60);
-            }
-
-            .col_date,
-            .col_status {
-              display: none;
+              text-align: right;
+              width: mvw(50);
             }
           }
 
@@ -1323,18 +1337,19 @@
                 text-transform: uppercase;
               }
 
-              .col_no {
-                width: mvw(40);
+              .col_no,
+              .col_status {
+                display: none;
+              }
+
+              .col_date {
+                width: mvw(80);
+                text-align: right;
               }
 
               .col_author {
-                width: mvw(60);
-                text-align:right;
-              }
-
-              .col_date,
-              .col_status {
-                display: none;
+                width: mvw(50);
+                text-align: right;
               }
 
               &:has(+ .reply) {
@@ -1444,6 +1459,7 @@
             .back_btn {
               width: mvw(40);
               margin-right: 0;
+              justify-content: left;
 
               svg {
                 width: mvw(9);
@@ -1477,8 +1493,7 @@
               }
 
               .col_no {
-                width: mvw(40);
-                margin-right: 0;
+                display: none;
               }
 
               .col_author {

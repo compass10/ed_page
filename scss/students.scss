@@ -162,6 +162,10 @@ main {
 
   .page_content {
     overflow: visible;
+
+    .section_wrap {
+      padding-bottom: mvw(130);
+    }
   }
 
   .fan_wrap {
@@ -301,7 +305,8 @@ main {
 
       .stack_text_right {
         margin-top: mvw(8);
-        text-align: right;
+        text-align: left;
+        margin-left: auto;
       }
 
       .stack_title {

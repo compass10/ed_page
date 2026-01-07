@@ -78,7 +78,7 @@ $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
   <?php endif; ?>
 
   <!-- 파비콘 -->
-  <link rel="icon" type="image/png" href="<?php echo htmlspecialchars($favicon); ?>" />
+  <link rel="icon" type="image/png" href="<?php echo htmlspecialchars($favicon); ?>?v=20260107" />
   <link rel="stylesheet" href="https://use.typekit.net/ebu3zus.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

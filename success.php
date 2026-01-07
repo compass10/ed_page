@@ -83,7 +83,7 @@ $upload_path = 'thumb/passlist/';
             $thumb_img = $row['bimg'] ? $_url . $upload_path . $row['bimg'] : '';
         ?>
         <?php if($thumb_img): ?>
-        <a href="success_detail.php?bno=<?=$row['bno']?>" class="success_item" style="background-image: url('<?=$thumb_img?>'); background-repeat: no-repeat; background-size: cover; background-position: center;"></a>
+        <a href="success_detail.php?bno=<?=$row['bno']?>" class="success_item"><img src="<?=$thumb_img?>" alt="합격자"></a>
         <?php else: ?>
         <a href="success_detail.php?bno=<?=$row['bno']?>" class="success_item no_image"><p>이미지 없음</p></a>
         <?php endif; ?>

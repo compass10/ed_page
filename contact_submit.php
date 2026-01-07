@@ -192,7 +192,7 @@ if($result) {
         $sql_file = "UPDATE $inquiry_table SET ifile='".addslashes($ifile)."' WHERE ino='$ino'";
         @mysql_query($sql_file);
     }
-    echo json_encode(array('success' => true, 'message' => '문의가 정상적으로 접수되었습니다.'));
+    echo json_encode(array('success' => true, 'message' => "등록하신 이메일로 답변이 발송되며,\n홈페이지에서도 답변을 확인하실 수 있습니다."));
 } else {
     $error = @mysql_error();
     echo json_encode(array('success' => false, 'message' => '문의 접수 중 오류가 발생했습니다. ' . $error));
