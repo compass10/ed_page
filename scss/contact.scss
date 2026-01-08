@@ -1342,9 +1342,17 @@
                 display: none;
               }
 
+              .col_title {
+                flex: 1;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+
               .col_date {
                 width: mvw(80);
                 text-align: right;
+                padding-bottom: mvw(8);
               }
 
               .col_author {
@@ -1356,7 +1364,8 @@
                 padding-bottom: 0;
 
                 .col_title,
-                .col_author {
+                .col_author,
+                .col_date {
                   padding-bottom: mvw(8);
                 }
               }
