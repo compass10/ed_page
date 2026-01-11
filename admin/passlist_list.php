@@ -41,7 +41,7 @@ if(isset($board_table)) {
   }
 
   // 데이터 조회 (bpw 순서로 정렬 - 숫자로 캐스팅)
-  $sql = "SELECT * FROM $board_table WHERE bid='passlist' ORDER BY CAST(bpw AS SIGNED) ASC, bno DESC LIMIT $offset, $per_page";
+  $sql = "SELECT * FROM $board_table WHERE bid='passlist' ORDER BY (bpw+0) ASC, bno DESC LIMIT $offset, $per_page";
   $result = @mysql_query($sql);
 }
 ?>
