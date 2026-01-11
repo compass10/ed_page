@@ -151,7 +151,7 @@
         .form_row {
           display: flex;
           align-items: center;
-          padding: vw(8, 1920) 0;
+          padding: vw(9.6, 1920) 0;
           border-bottom: 1px solid #fff;
 
           &:first-child {
@@ -161,6 +161,9 @@
           &:last-child {
             padding-top: vw(30, 1920);
             border-bottom: none;
+          }
+          &:has(input[type="file"]):hover .form_label{
+            color:#FFEE6E;
           }
         }
 
@@ -173,6 +176,7 @@
           line-height: vw(16, 1920);
           letter-spacing: -0.03em;
           text-transform: uppercase;
+       
         }
 
         .form_row:last-child .form_label {
@@ -1481,12 +1485,13 @@
             .col_status {
               display: none;
             }
+         
           }
 
           .board_detail_body {
             .detail_row {
               padding: mvw(8) 0;
-
+              
               span {
                 font-size: mvw(14);
                 line-height: mvw(16);
@@ -1505,6 +1510,9 @@
               .col_status {
                 display: none;
               }
+                 .col_title{
+              padding-left:mvw(40);
+            }
             }
 
             .detail_content {

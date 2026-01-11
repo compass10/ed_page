@@ -266,6 +266,7 @@ if (contactForm) {
     const email = this.querySelector('input[name="email"]').value.trim();
     const title = this.querySelector('input[name="title"]').value.trim();
     const message = this.querySelector('textarea[name="message"]').value.trim();
+    const password = this.querySelector('input[name="password"]').value.trim();
     const privacy = this.querySelector('input[name="privacy"]:checked');
 
     if (!name) {
@@ -286,6 +287,11 @@ if (contactForm) {
     if (!message) {
       alert('메세지를 입력해주세요.');
       this.querySelector('textarea[name="message"]').focus();
+      return;
+    }
+    if (!password) {
+      alert('암호를 입력해주세요.');
+      this.querySelector('input[name="password"]').focus();
       return;
     }
     if (!privacy || privacy.value !== '동의함') {

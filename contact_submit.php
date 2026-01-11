@@ -84,6 +84,13 @@ if($privacy !== '동의함') {
     exit;
 }
 
+// 비밀번호 필수 검증
+$password = isset($_POST['password']) ? trim($_POST['password']) : '';
+if(empty($password)) {
+    echo json_encode(array('success' => false, 'message' => '암호를 입력해주세요.'));
+    exit;
+}
+
 // 추가 필드
 $university = isset($_POST['university']) ? trim($_POST['university']) : '';
 $type = isset($_POST['type']) ? implode(', ', $_POST['type']) : '';
